@@ -30,8 +30,10 @@ export default function Home() {
     <div className="mx-auto max-w-3xl px-6 py-16 space-y-12">
       <header className="flex items-start justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">my-ui</h1>
-          <p className="mt-2 text-muted-foreground">あさひのUIライブラリ</p>
+          <h1 className="text-2xl font-bold tracking-tight">my-ui</h1>
+          <p className="mt-2 text-sm text-muted-foreground">
+            あさひのUIライブラリ
+          </p>
         </div>
         <ThemeToggle />
       </header>

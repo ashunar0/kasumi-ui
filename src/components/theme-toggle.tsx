@@ -1,19 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
-
-type Theme = "system" | "light" | "dark";
+import { useTheme } from "@/components/theme-provider";
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("system");
-
-  useEffect(() => {
-    const root = document.documentElement;
-    root.classList.remove("light", "dark");
-    if (theme !== "system") {
-      root.classList.add(theme);
-    }
-  }, [theme]);
+  const { theme, setTheme } = useTheme();
 
   return (
     <div className="flex gap-1 rounded-lg border border-border p-1">
