@@ -114,7 +114,7 @@ export default function Home() {
 
       {/* Card */}
       <Section title="カード">
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid items-start gap-6 sm:grid-cols-2">
           <Card>
             <CardHeader>
               <CardTitle>予定の確認</CardTitle>
