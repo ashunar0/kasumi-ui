@@ -1,3 +1,4 @@
+import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -15,9 +16,12 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 export default function Home() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-16 space-y-12">
-      <header>
-        <h1 className="text-3xl font-bold tracking-tight">my-ui</h1>
-        <p className="mt-2 text-muted-foreground">あさひのUIライブラリ</p>
+      <header className="flex items-start justify-between">
+        <div>
+          <h1 className="text-3xl font-bold tracking-tight">my-ui</h1>
+          <p className="mt-2 text-muted-foreground">あさひのUIライブラリ</p>
+        </div>
+        <ThemeToggle />
       </header>
 
       {/* Button */}
