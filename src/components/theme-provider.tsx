@@ -3,26 +3,26 @@
 import { createContext, useContext, useState, useEffect } from "react";
 
 type Theme = "system" | "light" | "dark";
-export type ColorTheme = "yamabuki" | "teal";
+type Warmth = "mecha-honnori" | "honnori";
 
 const ThemeContext = createContext<{
   theme: Theme;
   setTheme: (theme: Theme) => void;
-  colorTheme: ColorTheme;
-  setColorTheme: (colorTheme: ColorTheme) => void;
+  warmth: Warmth;
+  setWarmth: (warmth: Warmth) => void;
 }>({
   theme: "system",
   setTheme: () => {},
-  colorTheme: "yamabuki",
-  setColorTheme: () => {},
+  warmth: "mecha-honnori",
+  setWarmth: () => {},
 });
 
 const STORAGE_KEY = "my-ui-theme";
-const COLOR_THEME_KEY = "my-ui-color-theme";
+const WARMTH_KEY = "my-ui-warmth";
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>("system");
-  const [colorTheme, setColorTheme] = useState<ColorTheme>("yamabuki");
+  const [warmth, setWarmth] = useState<Warmth>("mecha-honnori");
   const [mounted, setMounted] = useState(false);
 
   // localStorage から復元
@@ -31,9 +31,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     if (stored === "light" || stored === "dark" || stored === "system") {
       setTheme(stored);
     }
-    const storedColor = localStorage.getItem(COLOR_THEME_KEY);
-    if (storedColor === "yamabuki" || storedColor === "teal") {
-      setColorTheme(storedColor);
+    const storedWarmth = localStorage.getItem(WARMTH_KEY);
+    if (storedWarmth === "mecha-honnori" || storedWarmth === "honnori") {
+      setWarmth(storedWarmth);
     }
     setMounted(true);
   }, []);
@@ -49,19 +49,19 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem(STORAGE_KEY, theme);
   }, [theme, mounted]);
 
-  // カラーテーマ変更時に HTML クラスと localStorage を更新
+  // Warmth 変更時に HTML クラスと localStorage を更新
   useEffect(() => {
     if (!mounted) return;
     const root = document.documentElement;
-    root.classList.remove("theme-teal");
-    if (colorTheme === "teal") {
-      root.classList.add("theme-teal");
+    root.classList.remove("warmth-honnori");
+    if (warmth === "honnori") {
+      root.classList.add("warmth-honnori");
     }
-    localStorage.setItem(COLOR_THEME_KEY, colorTheme);
-  }, [colorTheme, mounted]);
+    localStorage.setItem(WARMTH_KEY, warmth);
+  }, [warmth, mounted]);
 
   return (
-    <ThemeContext value={{ theme, setTheme, colorTheme, setColorTheme }}>
+    <ThemeContext value={{ theme, setTheme, warmth, setWarmth }}>
       {children}
     </ThemeContext>
   );
