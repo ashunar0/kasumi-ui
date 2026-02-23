@@ -136,6 +136,9 @@ export default function Home() {
             </CardContent>
             <CardFooter>
               <Button size="sm">候補を見る</Button>
+              <Button size="sm" variant="outline">
+                キャンセル
+              </Button>
             </CardFooter>
           </Card>
         </div>
