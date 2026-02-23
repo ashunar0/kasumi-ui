@@ -2,9 +2,21 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card";
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
+function Section({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
   return (
     <section className="space-y-4">
       <h2 className="text-xl font-semibold tracking-tight">{title}</h2>
@@ -24,66 +36,104 @@ export default function Home() {
         <ThemeToggle />
       </header>
 
+      {/* Typography */}
+      <Section title="タイポグラフィ">
+        <div className="space-y-4">
+          <h1 className="text-3xl font-bold tracking-tight">
+            H1 日程調整アプリ（30px）
+          </h1>
+          <h2 className="text-2xl font-semibold tracking-tight">
+            H2 スケジュール管理（24px）
+          </h2>
+          <h3 className="text-xl font-semibold tracking-tight">
+            H3 今週の予定（20px）
+          </h3>
+          <h4 className="text-lg font-semibold tracking-tight">
+            H4 ミーティング一覧（18px）
+          </h4>
+          <p className="text-base leading-7">
+            本文（16px / line-height: 28px） —
+            日程調整アプリは、参加者全員の空き時間を自動で照合し、最適な候補日を提案します。複数のカレンダーと連携できるため、手動で調整する手間がなくなります。
+          </p>
+          <p className="text-sm leading-relaxed">
+            UI文（14px / line-height: 1.625） —
+            予定が3件あります。タップして詳細を確認してください。次のミーティングは来週の月曜日10:00からで、参加者は田中さん、佐藤さん、鈴木さんの3名です。議題は「第3四半期のスケジュール調整」となっています。
+          </p>
+        </div>
+      </Section>
+
       {/* Button */}
-      <Section title="Button">
+      <Section title="ボタン">
         <div className="space-y-4">
           <div className="flex flex-wrap items-center gap-3">
-            <Button variant="primary">Primary</Button>
-            <Button variant="secondary">Secondary</Button>
-            <Button variant="outline">Outline</Button>
-            <Button variant="ghost">Ghost</Button>
-            <Button variant="destructive">Destructive</Button>
+            <Button variant="primary">保存する</Button>
+            <Button variant="secondary">下書き保存</Button>
+            <Button variant="outline">キャンセル</Button>
+            <Button variant="ghost">もっと見る</Button>
+            <Button variant="destructive">削除する</Button>
           </div>
           <div className="flex flex-wrap items-center gap-3">
-            <Button size="sm">Small</Button>
-            <Button size="md">Medium</Button>
-            <Button size="lg">Large</Button>
+            <Button size="sm">小さい</Button>
+            <Button size="md">ふつう</Button>
+            <Button size="lg">大きい</Button>
           </div>
           <div className="flex flex-wrap items-center gap-3">
-            <Button disabled>Disabled</Button>
+            <Button disabled>送信済み</Button>
           </div>
         </div>
       </Section>
 
       {/* Input */}
-      <Section title="Input">
+      <Section title="テキスト入力">
         <div className="space-y-4 max-w-sm">
-          <Input placeholder="Default input" />
-          <Input placeholder="Error state" error />
-          <Input placeholder="Disabled" disabled />
+          <Input placeholder="お名前を入力してください" />
+          <Input placeholder="正しいメールアドレスを入力してください" error />
+          <Input placeholder="入力できません" disabled />
         </div>
       </Section>
 
       {/* Label */}
-      <Section title="Label">
+      <Section title="ラベル">
         <div className="space-y-4 max-w-sm">
           <div className="space-y-2">
             <Label htmlFor="demo-email">メールアドレス</Label>
-            <Input id="demo-email" type="email" placeholder="you@example.com" />
+            <Input
+              id="demo-email"
+              type="email"
+              placeholder="taro@example.com"
+            />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="demo-name">お名前</Label>
+            <Input id="demo-name" placeholder="山田 太郎" />
           </div>
         </div>
       </Section>
 
       {/* Card */}
-      <Section title="Card">
+      <Section title="カード">
         <div className="grid gap-4 sm:grid-cols-2">
           <Card>
             <CardHeader>
-              <CardTitle>基本カード</CardTitle>
+              <CardTitle>予定の確認</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">シンプルなカードコンポーネント。</p>
+              <p className="text-sm text-muted-foreground">
+                来週の月曜日、10:00〜11:00にミーティングがあります。
+              </p>
             </CardContent>
           </Card>
           <Card>
             <CardHeader>
-              <CardTitle>フッター付き</CardTitle>
+              <CardTitle>日程を調整する</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-muted-foreground">アクション付きのカード。</p>
+              <p className="text-sm text-muted-foreground">
+                参加者3人の空き時間から候補を選びましょう。
+              </p>
             </CardContent>
             <CardFooter>
-              <Button size="sm">アクション</Button>
+              <Button size="sm">候補を見る</Button>
             </CardFooter>
           </Card>
         </div>
