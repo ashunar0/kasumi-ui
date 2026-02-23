@@ -42,16 +42,18 @@ src/
 
 ## タイポグラフィ
 
-| 用途 | クラス | サイズ | 補足 |
-|------|--------|--------|------|
-| H1 | `text-3xl font-bold tracking-tight` | 30px | — |
-| H2 | `text-2xl font-semibold tracking-tight` | 24px | — |
-| H3 | `text-xl font-semibold tracking-tight` | 20px | — |
-| H4 | `text-lg font-semibold tracking-tight` | 18px | — |
-| 本文（記事・説明文） | `text-base leading-7` | 16px | line-height: 28px |
-| UI文（アプリ内テキスト） | `text-sm leading-relaxed` | 14px | line-height: 1.625 |
+Minor Third (×1.2) の Modular Scale を採用。詳細は [`docs/design-decisions/typography.md`](docs/design-decisions/typography.md) を参照。
 
-日本語はデフォルトの行間だと窮屈なため、本文系テキストには `leading-7` や `leading-relaxed` を指定する。
+| 用途 | クラス | サイズ | line-height | 根拠 |
+|------|--------|--------|-------------|------|
+| H1 | `text-h1 font-bold tracking-tight` | 33px | デフォルト | base × 1.2⁴ |
+| H2 | `text-h2 font-semibold tracking-tight` | 28px | デフォルト | base × 1.2³ |
+| H3 | `text-h3 font-semibold tracking-tight` | 23px | デフォルト | base × 1.2² |
+| H4 | `text-h4 font-semibold tracking-tight` | 19px | デフォルト | base × 1.2¹ |
+| 本文（記事・説明文） | `text-body` | 16px | ×2.25 (36px) | base, JLREQ + 実測 |
+| UI文（アプリ内テキスト） | `text-ui` | 14px | ×1.75 | 可読性優先 |
+
+日本語はデフォルトの行間だと窮屈なため、本文・UI文にはカスタムトークンで行間を組み込み済み。
 見出しやボタンの行間はデフォルトのまま。
 
 ## コンポーネント設計ルール
@@ -69,6 +71,7 @@ src/
 - 色: background, foreground, primary, secondary, muted, accent, destructive, border, input, ring
 - 角丸: radius (sm/md/lg/xl)
 - フォント: sans (Inter), mono (Geist Mono)
+- タイポグラフィ: text-ui, text-body, text-h4, text-h3, text-h2, text-h1（Minor Third スケール）
 - ライト/ダークモード両対応
 
 ## ダークモード

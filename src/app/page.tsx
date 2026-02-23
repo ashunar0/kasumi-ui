@@ -19,7 +19,7 @@ function Section({
 }) {
   return (
     <section className="space-y-4">
-      <h2 className="text-xl font-semibold tracking-tight">{title}</h2>
+      <h2 className="text-h3 font-semibold tracking-tight">{title}</h2>
       <div className="border-t border-border pt-4">{children}</div>
     </section>
   );
@@ -30,7 +30,7 @@ export default function Home() {
     <div className="mx-auto max-w-3xl px-6 py-16 space-y-12">
       <header className="flex items-start justify-between">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight">my-ui</h1>
+          <h1 className="text-h2 font-bold tracking-tight">my-ui</h1>
           <p className="mt-2 text-sm text-muted-foreground">
             あさひのUIライブラリ
           </p>
@@ -41,24 +41,24 @@ export default function Home() {
       {/* Typography */}
       <Section title="タイポグラフィ">
         <div className="space-y-4">
-          <h1 className="text-3xl font-bold tracking-tight">
-            H1 日程調整アプリ（30px）
+          <h1 className="text-h1 font-bold tracking-tight">
+            H1 日程調整アプリ（33px）
           </h1>
-          <h2 className="text-2xl font-semibold tracking-tight">
-            H2 スケジュール管理（24px）
+          <h2 className="text-h2 font-semibold tracking-tight">
+            H2 スケジュール管理（28px）
           </h2>
-          <h3 className="text-xl font-semibold tracking-tight">
-            H3 今週の予定（20px）
+          <h3 className="text-h3 font-semibold tracking-tight">
+            H3 今週の予定（23px）
           </h3>
-          <h4 className="text-lg font-semibold tracking-tight">
-            H4 ミーティング一覧（18px）
+          <h4 className="text-h4 font-semibold tracking-tight">
+            H4 ミーティング一覧（19px）
           </h4>
-          <p className="text-base leading-7">
-            本文（16px / line-height: 28px） —
+          <p className="text-body">
+            本文（16px） —
             日程調整アプリは、参加者全員の空き時間を自動で照合し、最適な候補日を提案します。複数のカレンダーと連携できるため、手動で調整する手間がなくなります。
           </p>
-          <p className="text-sm leading-relaxed">
-            UI文（14px / line-height: 1.625） —
+          <p className="text-ui">
+            UI文（14px） —
             予定が3件あります。タップして詳細を確認してください。次のミーティングは来週の月曜日10:00からで、参加者は田中さん、佐藤さん、鈴木さんの3名です。議題は「第3四半期のスケジュール調整」となっています。
           </p>
         </div>

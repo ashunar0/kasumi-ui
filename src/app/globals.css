@@ -81,6 +81,15 @@
   --radius-xl: calc(var(--radius) + 4px);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
+  /* Typography Scale: Minor Third (1.2), base 16px */
+  --text-ui: 0.875rem;              /* 14px — 可読性優先でスケール外 */
+  --text-ui--line-height: 1.75;     /* ×1.75 = 24.5px */
+  --text-body: 1rem;                /* 16px — base */
+  --text-body--line-height: 2.25rem; /* 36px, ×2.25 — 日本語本文にゆとりある行間 */
+  --text-h4: 1.1875rem;             /* 19px — base × 1.2¹ */
+  --text-h3: 1.4375rem;             /* 23px — base × 1.2² */
+  --text-h2: 1.75rem;               /* 28px — base × 1.2³ */
+  --text-h1: 2.0625rem;             /* 33px — base × 1.2⁴ */
 }
 
 body {
