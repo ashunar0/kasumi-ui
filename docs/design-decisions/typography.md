@@ -9,15 +9,19 @@
 **Modular Scale** を採用。基準サイズ（base）に一定の比率を掛けて段階を作る手法。
 
 - **比率**: 1.2（Minor Third）
-- **base**: 16px（ブラウザデフォルト）
+- **base**: 14px（Figma, GitHub, Linearと同等。日本語でも可読性を維持できるサイズ）
 
 ```
-base × 1.2⁰ = 16px  (本文)
-base × 1.2¹ = 19px  (H4)
-base × 1.2² = 23px  (H3)
-base × 1.2³ = 28px  (H2)
-base × 1.2⁴ = 33px  (H1)
+base × 1.2⁰ = 14px  (本文)
+base × 1.2¹ = 17px  (H4)
+base × 1.2² = 20px  (H3)
+base × 1.2³ = 24px  (H2)
+base × 1.2⁴ = 29px  (H1)
 ```
+
+### なぜ 14px ベースか
+
+Figma、GitHub、Linearと同等。14pxは日本語でも可読性を維持できるサイズ。「コンパクトだけど洗練」のCompact Eleganceコンセプトに基づく変更。
 
 ### なぜ Minor Third (1.2) か
 
@@ -31,22 +35,22 @@ base × 1.2⁴ = 33px  (H1)
 | 1.333 | Perfect Fourth | ジャンプが大きい | 段階が足りない |
 | 1.618 | 黄金比 | 段階が極端 | UIには不向き |
 
-### UI文（14px）について
+### UI文（12px）について
 
-スケール上の値は 16 / 1.2 = 13.3px だが、**14px に丸めている**。
+スケール上の値は 14 / 1.2 = 11.7px だが、**12px に丸めている**。
 
-理由: 日本語は画数が多く、13pxだと文字が潰れて可読性が落ちる。スケールは「指針」であり「絶対」ではない。実用性を優先した。
+理由: 日本語は画数が多く、11pxだと文字が潰れて可読性が落ちる。スケールは「指針」であり「絶対」ではない。実用性を優先した。
 
 ## 行間（line-height）
 
-### 本文: ×2.25 (36px)
+### 本文: ×1.8
 
 - 日本語はデフォルトの行間（約×1.5）では窮屈に見える
 - W3C「日本語組版処理の要件（JLREQ）」では本文の行間に **0.5〜1.0字分** を推奨（= line-height 1.5〜2.0）
-- JLREQ推奨上限の×2.0から検証を開始し、実際の表示を確認して **×2.25** に決定
-- 他の日本語Webサイトの本文line-height（33〜36px帯）とも同等
+- JLREQ推奨範囲内で実際の表示を確認して **×1.8** に決定
+- 14pxベースでコンパクトにまとめつつ、日本語の可読性を確保
 
-### UI文: ×1.75 (24.5px)
+### UI文: ×1.6
 
 - 本文ほどのゆとりは不要だが、デフォルト（×1.5）よりは広く
 - UIテキスト（通知、説明文等）は情報密度とのバランスを取る
@@ -59,27 +63,27 @@ base × 1.2⁴ = 33px  (H1)
 
 | 用途 | クラス | サイズ | line-height | 根拠 |
 |------|--------|--------|-------------|------|
-| UI文 | `text-ui` | 14px | ×1.75 | 可読性優先でスケール外 |
-| 本文 | `text-body` | 16px | ×2.25 (36px) | base, JLREQ + 実測調整 |
-| H4 | `text-h4` | 19px | デフォルト | base × 1.2¹ |
-| H3 | `text-h3` | 23px | デフォルト | base × 1.2² |
-| H2 | `text-h2` | 28px | デフォルト | base × 1.2³ |
-| H1 | `text-h1` | 33px | デフォルト | base × 1.2⁴ |
+| UI文 | `text-ui` | 12px | ×1.6 | 可読性優先でスケール外 |
+| 本文 | `text-body` | 14px | ×1.8 | base, JLREQ + 実測調整 |
+| H4 | `text-h4` | 17px | デフォルト | base × 1.2¹ |
+| H3 | `text-h3` | 20px | デフォルト | base × 1.2² |
+| H2 | `text-h2` | 24px | デフォルト | base × 1.2³ |
+| H1 | `text-h1` | 29px | デフォルト | base × 1.2⁴ |
 
 ## 実装
 
 `globals.css` の `@theme inline` 内で Tailwind CSS 4 のカスタムトークンとして定義:
 
 ```css
-/* Typography Scale: Minor Third (1.2), base 16px */
---text-ui: 0.875rem;              /* 14px */
---text-ui--line-height: 1.75;
---text-body: 1rem;                /* 16px */
---text-body--line-height: 2.25rem; /* 36px */
---text-h4: 1.1875rem;             /* 19px */
---text-h3: 1.4375rem;             /* 23px */
---text-h2: 1.75rem;               /* 28px */
---text-h1: 2.0625rem;             /* 33px */
+/* Typography Scale: Minor Third (1.2), base 14px */
+--text-ui: 0.75rem;               /* 12px */
+--text-ui--line-height: 1.6;
+--text-body: 0.875rem;            /* 14px */
+--text-body--line-height: 1.8;
+--text-h4: 1.0625rem;             /* 17px */
+--text-h3: 1.25rem;               /* 20px */
+--text-h2: 1.5rem;                /* 24px */
+--text-h1: 1.8125rem;             /* 29px */
 ```
 
 `text-h1`, `text-body` 等のユーティリティクラスが自動生成され、インラインスタイル不要で使える。
