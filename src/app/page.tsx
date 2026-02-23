@@ -18,16 +18,16 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className="space-y-4">
+    <section className="space-y-6">
       <h2 className="text-h3 font-semibold tracking-tight">{title}</h2>
-      <div className="border-t border-border pt-4">{children}</div>
+      <div className="border-t border-border pt-6">{children}</div>
     </section>
   );
 }
 
 export default function Home() {
   return (
-    <div className="mx-auto max-w-3xl px-6 py-16 space-y-12">
+    <div className="mx-auto max-w-3xl px-6 py-16 space-y-16">
       <header className="flex items-start justify-between">
         <div>
           <h1 className="text-h2 font-bold tracking-tight">my-ui</h1>
@@ -42,23 +42,23 @@ export default function Home() {
       <Section title="タイポグラフィ">
         <div className="space-y-4">
           <h1 className="text-h1 font-bold tracking-tight">
-            H1 日程調整アプリ（33px）
+            H1 日程調整アプリ（29px）
           </h1>
           <h2 className="text-h2 font-semibold tracking-tight">
-            H2 スケジュール管理（28px）
+            H2 スケジュール管理（24px）
           </h2>
           <h3 className="text-h3 font-semibold tracking-tight">
-            H3 今週の予定（23px）
+            H3 今週の予定（20px）
           </h3>
           <h4 className="text-h4 font-semibold tracking-tight">
-            H4 ミーティング一覧（19px）
+            H4 ミーティング一覧（17px）
           </h4>
           <p className="text-body">
-            本文（16px） —
+            本文（14px） —
             日程調整アプリは、参加者全員の空き時間を自動で照合し、最適な候補日を提案します。複数のカレンダーと連携できるため、手動で調整する手間がなくなります。
           </p>
           <p className="text-ui">
-            UI文（14px） —
+            UI文（12px） —
             予定が3件あります。タップして詳細を確認してください。次のミーティングは来週の月曜日10:00からで、参加者は田中さん、佐藤さん、鈴木さんの3名です。議題は「第3四半期のスケジュール調整」となっています。
           </p>
         </div>
@@ -67,19 +67,19 @@ export default function Home() {
       {/* Button */}
       <Section title="ボタン">
         <div className="space-y-4">
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center gap-4">
             <Button variant="primary">保存する</Button>
             <Button variant="secondary">下書き保存</Button>
             <Button variant="outline">キャンセル</Button>
             <Button variant="ghost">もっと見る</Button>
             <Button variant="destructive">削除する</Button>
           </div>
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center gap-4">
             <Button size="sm">小さい</Button>
             <Button size="md">ふつう</Button>
             <Button size="lg">大きい</Button>
           </div>
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center gap-4">
             <Button disabled>送信済み</Button>
           </div>
         </div>
@@ -114,7 +114,7 @@ export default function Home() {
 
       {/* Card */}
       <Section title="カード">
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-6 sm:grid-cols-2">
           <Card>
             <CardHeader>
               <CardTitle>予定の確認</CardTitle>
