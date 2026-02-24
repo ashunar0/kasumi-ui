@@ -29,7 +29,8 @@ src/
         ├── card.tsx
         ├── radio.tsx
         ├── select.tsx
-        └── switch.tsx
+        ├── switch.tsx
+        └── textarea.tsx
 ```
 
 ## デザイン方針
@@ -105,6 +106,7 @@ Minor Third (×1.2) の Modular Scale を採用。詳細は [`docs/design-decisi
 - **Checkbox** — size: sm/md/lg、error prop でエラー状態切り替え
 - **Radio** — size: sm/md/lg、error prop でエラー状態切り替え、name 属性でグルーピング
 - **Switch** — size: sm/md/lg、error prop でエラー状態切り替え、role="switch" 付与
+- **Textarea** — error prop でエラー状態切り替え、resize-y でリサイズ可能
 
 ## 設計判断メモ
 

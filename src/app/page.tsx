@@ -15,6 +15,7 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { Radio } from "@/components/ui/radio";
 import { Switch } from "@/components/ui/switch";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Card,
   CardHeader,
@@ -230,6 +231,15 @@ export default function Home() {
               disabled
             />
           </div>
+        </div>
+      </Section>
+
+      {/* Textarea */}
+      <Section title="テキストエリア">
+        <div className="space-y-3 max-w-sm">
+          <Textarea placeholder="メッセージを入力してください" />
+          <Textarea placeholder="正しい内容を入力してください" error />
+          <Textarea placeholder="入力できません" disabled />
         </div>
       </Section>
 
