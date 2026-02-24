@@ -6,6 +6,7 @@ import {
   useState,
   useRef,
   useCallback,
+  useEffect,
   type ReactNode,
   type ComponentProps,
 } from "react";
@@ -134,4 +135,102 @@ export function SelectValue({ placeholder }: { placeholder?: string }) {
   }
 
   return <span>{itemLabels.get(value) ?? value}</span>;
+}
+
+export function SelectContent({
+  className = "",
+  children,
+  ...props
+}: ComponentProps<"div">) {
+  const { open, setOpen, contentRef, triggerRef } = useSelectContext();
+
+  // クリック外で閉じる
+  useEffect(() => {
+    if (!open) return;
+
+    function handleClickOutside(e: MouseEvent) {
+      const target = e.target as Node;
+      if (
+        contentRef.current &&
+        !contentRef.current.contains(target) &&
+        triggerRef.current &&
+        !triggerRef.current.contains(target)
+      ) {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [open, setOpen, contentRef, triggerRef]);
+
+  if (!open) return null;
+
+  return (
+    <div
+      ref={contentRef}
+      role="listbox"
+      className={`absolute z-50 mt-1 w-full overflow-hidden rounded-lg border border-border bg-background shadow-md ${className}`}
+      {...props}
+    >
+      <div className="p-1">
+        {children}
+      </div>
+    </div>
+  );
+}
+
+export function SelectItem({
+  value: itemValue,
+  disabled = false,
+  className = "",
+  children,
+  ...props
+}: ComponentProps<"div"> & { value: string; disabled?: boolean }) {
+  const { value, onValueChange, registerItemLabel } = useSelectContext();
+  const isSelected = value === itemValue;
+
+  // ラベル登録（SelectValue 用）
+  useEffect(() => {
+    const label =
+      typeof children === "string"
+        ? children
+        : itemValue;
+    registerItemLabel(itemValue, label);
+  }, [itemValue, children, registerItemLabel]);
+
+  return (
+    <div
+      role="option"
+      aria-selected={isSelected}
+      aria-disabled={disabled}
+      data-disabled={disabled || undefined}
+      onClick={() => {
+        if (!disabled) onValueChange(itemValue);
+      }}
+      className={`relative flex w-full cursor-pointer select-none items-center rounded-md py-1.5 pl-8 pr-2 text-sm outline-none hover:bg-accent hover:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 ${
+        isSelected ? "bg-accent text-accent-foreground" : ""
+      } ${className}`}
+      {...props}
+    >
+      {isSelected && (
+        <span className="absolute left-2 flex h-4 w-4 items-center justify-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M20 6 9 17l-5-5" />
+          </svg>
+        </span>
+      )}
+      {children}
+    </div>
+  );
 }
