@@ -84,12 +84,21 @@ export function Select({
   );
 }
 
+type SelectTriggerSize = "sm" | "md" | "lg";
+
+const triggerSizeStyles: Record<SelectTriggerSize, string> = {
+  sm: "h-9 rounded-md",
+  md: "h-10 rounded-lg",
+  lg: "h-11 rounded-lg",
+};
+
 export function SelectTrigger({
   error,
+  size = "md",
   className = "",
   children,
   ...props
-}: ComponentProps<"button"> & { error?: boolean }) {
+}: ComponentProps<"button"> & { error?: boolean; size?: SelectTriggerSize }) {
   const { open, setOpen, disabled, triggerRef } = useSelectContext();
 
   return (
@@ -101,7 +110,7 @@ export function SelectTrigger({
       aria-haspopup="listbox"
       disabled={disabled}
       onClick={() => setOpen(!open)}
-      className={`flex h-10 w-full items-center justify-between rounded-lg border bg-background px-3 py-2 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${
+      className={`flex w-full items-center justify-between border bg-background px-3 py-2 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${triggerSizeStyles[size]} ${
         error
           ? "border-destructive focus-visible:ring-destructive"
           : "border-input"
