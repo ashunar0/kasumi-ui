@@ -12,6 +12,7 @@ import {
   SelectContent,
   SelectItem,
 } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Card,
   CardHeader,
@@ -233,6 +234,43 @@ export default function Home() {
       {/* Select */}
       <Section title="セレクト">
         <SelectDemo />
+      </Section>
+
+      {/* Checkbox */}
+      <Section title="チェックボックス">
+        <div className="space-y-8 max-w-sm">
+          <div className="space-y-3">
+            <p className="text-xs font-medium text-muted-foreground">md</p>
+            <label className="flex items-center gap-2">
+              <Checkbox />
+              <span className="text-sm">利用規約に同意する</span>
+            </label>
+            <label className="flex items-center gap-2">
+              <Checkbox defaultChecked />
+              <span className="text-sm">メール通知を受け取る</span>
+            </label>
+            <label className="flex items-center gap-2">
+              <Checkbox error />
+              <span className="text-sm text-destructive">必須項目です</span>
+            </label>
+            <label className="flex items-center gap-2">
+              <Checkbox disabled />
+              <span className="text-sm text-muted-foreground">選択できません</span>
+            </label>
+          </div>
+
+          <div className="space-y-3">
+            <p className="text-xs font-medium text-muted-foreground">lg</p>
+            <label className="flex items-center gap-2">
+              <Checkbox size="lg" />
+              <span className="text-sm">利用規約に同意する</span>
+            </label>
+            <label className="flex items-center gap-2">
+              <Checkbox size="lg" defaultChecked />
+              <span className="text-sm">メール通知を受け取る</span>
+            </label>
+          </div>
+        </div>
       </Section>
 
       {/* Label */}

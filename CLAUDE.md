@@ -22,9 +22,11 @@ src/
     ├── theme-toggle.tsx   # ライト/ダークモード切り替えボタン
     └── ui/               # UIコンポーネント置き場
         ├── button.tsx
+        ├── checkbox.tsx
         ├── input.tsx
         ├── label.tsx
-        └── card.tsx
+        ├── card.tsx
+        └── select.tsx
 ```
 
 ## デザイン方針
@@ -97,6 +99,7 @@ Minor Third (×1.2) の Modular Scale を採用。詳細は [`docs/design-decisi
 - **Label** — peer-disabled 連動
 - **Card** — Card / CardHeader / CardTitle / CardContent / CardFooter の5パーツ構成
 - **Select** — 複合コンポーネント（Select/SelectTrigger/SelectValue/SelectContent/SelectItem）、error/disabled 対応、キーボードナビゲーション
+- **Checkbox** — size: sm/md/lg、error prop でエラー状態切り替え
 
 ## 設計判断メモ
 
