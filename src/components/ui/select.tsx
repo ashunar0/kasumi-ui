@@ -142,7 +142,8 @@ export function SelectContent({
   children,
   ...props
 }: ComponentProps<"div">) {
-  const { open, setOpen, contentRef, triggerRef } = useSelectContext();
+  const { open, setOpen, value, onValueChange, contentRef, triggerRef } =
+    useSelectContext();
 
   // クリック外で閉じる
   useEffect(() => {
@@ -164,12 +165,99 @@ export function SelectContent({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [open, setOpen, contentRef, triggerRef]);
 
+  // ドロップダウンが開いたら、選択中のアイテム（なければ最初のアイテム）にフォーカス
+  useEffect(() => {
+    if (!open || !contentRef.current) return;
+
+    // レンダリング後にフォーカスを当てるため requestAnimationFrame を使う
+    const id = requestAnimationFrame(() => {
+      if (!contentRef.current) return;
+      const items = contentRef.current.querySelectorAll<HTMLElement>(
+        '[role="option"]:not([data-disabled])'
+      );
+      if (items.length === 0) return;
+
+      // 選択中のアイテムがあればそこへ、なければ最初のアイテムへ
+      const selected = value
+        ? contentRef.current.querySelector<HTMLElement>(
+            `[role="option"][data-value="${value}"]`
+          )
+        : null;
+      const target =
+        selected && !selected.hasAttribute("data-disabled")
+          ? selected
+          : items[0];
+      target.focus();
+    });
+
+    return () => cancelAnimationFrame(id);
+  }, [open, value, contentRef]);
+
+  // キーボードナビゲーション
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLDivElement>) => {
+      if (!contentRef.current) return;
+
+      const items = Array.from(
+        contentRef.current.querySelectorAll<HTMLElement>(
+          '[role="option"]:not([data-disabled])'
+        )
+      );
+      if (items.length === 0) return;
+
+      const currentIndex = items.findIndex(
+        (item) => item === document.activeElement
+      );
+
+      switch (e.key) {
+        case "ArrowDown": {
+          e.preventDefault();
+          const next =
+            currentIndex < 0 || currentIndex >= items.length - 1
+              ? 0
+              : currentIndex + 1;
+          items[next].focus();
+          break;
+        }
+        case "ArrowUp": {
+          e.preventDefault();
+          const prev =
+            currentIndex <= 0 ? items.length - 1 : currentIndex - 1;
+          items[prev].focus();
+          break;
+        }
+        case "Enter":
+        case " ": {
+          e.preventDefault();
+          const focused = document.activeElement as HTMLElement | null;
+          const itemValue = focused?.getAttribute("data-value");
+          if (itemValue) onValueChange(itemValue);
+          break;
+        }
+        case "Escape": {
+          e.preventDefault();
+          setOpen(false);
+          triggerRef.current?.focus();
+          break;
+        }
+        case "Tab": {
+          // Tab はデフォルト動作を止めずにドロップダウンを閉じる
+          setOpen(false);
+          triggerRef.current?.focus();
+          break;
+        }
+      }
+    },
+    [contentRef, triggerRef, setOpen, onValueChange]
+  );
+
   if (!open) return null;
 
   return (
     <div
       ref={contentRef}
       role="listbox"
+      onKeyDown={handleKeyDown}
       className={`absolute z-50 mt-1 w-full overflow-hidden rounded-lg border border-border bg-background shadow-md ${className}`}
       {...props}
     >
@@ -205,6 +293,8 @@ export function SelectItem({
       aria-selected={isSelected}
       aria-disabled={disabled}
       data-disabled={disabled || undefined}
+      data-value={itemValue}
+      tabIndex={disabled ? undefined : 0}
       onClick={() => {
         if (!disabled) onValueChange(itemValue);
       }}
