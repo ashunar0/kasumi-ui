@@ -32,7 +32,7 @@ export function Radio({
         {...props}
       />
       <span
-        className={`pointer-events-none absolute hidden rounded-full bg-primary-foreground peer-checked:block ${s.dot}`}
+        className={`pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 hidden rounded-full bg-primary-foreground peer-checked:block ${s.dot}`}
       />
     </span>
   );
