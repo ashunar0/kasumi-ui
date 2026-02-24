@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fdfdfc;
-  --foreground: #1c1917;
-  --primary: #2c2926;
-  --primary-foreground: #faf8f5;
+  --background: #ffffff;
+  --foreground: #33312b;
+  --primary: #33312b;
+  --primary-foreground: #ffffff;
   --secondary: #f3f2f0;
-  --secondary-foreground: #1c1917;
+  --secondary-foreground: #33312b;
   --muted: #f3f2f0;
-  --muted-foreground: #87847f;
+  --muted-foreground: #75726e;
   --accent: #f3f2f0;
-  --accent-foreground: #1c1917;
-  --destructive: #e8572a;
-  --destructive-foreground: #faf8f5;
+  --accent-foreground: #33312b;
+  --destructive: #c4431a;
+  --destructive-foreground: #ffffff;
   --border: #e6e4e1;
   --input: #e6e4e1;
-  --ring: #2c2926;
+  --ring: #33312b;
   --radius: 0.5rem;
 }
 
@@ -24,15 +24,15 @@
     --background: #0f0e0d;
     --foreground: #f5f3f0;
     --primary: #f5f3f0;
-    --primary-foreground: #1c1917;
+    --primary-foreground: #33312b;
     --secondary: #1f1e1c;
     --secondary-foreground: #f5f3f0;
     --muted: #1f1e1c;
     --muted-foreground: #a09c97;
     --accent: #1f1e1c;
     --accent-foreground: #f5f3f0;
-    --destructive: #d44a20;
-    --destructive-foreground: #faf8f5;
+    --destructive: #c4431a;
+    --destructive-foreground: #ffffff;
     --border: #2e2c2a;
     --input: #2e2c2a;
     --ring: #d6d2cd;
@@ -44,48 +44,19 @@
   --background: #0f0e0d;
   --foreground: #f5f3f0;
   --primary: #f5f3f0;
-  --primary-foreground: #1c1917;
+  --primary-foreground: #33312b;
   --secondary: #1f1e1c;
   --secondary-foreground: #f5f3f0;
   --muted: #1f1e1c;
   --muted-foreground: #a09c97;
   --accent: #1f1e1c;
   --accent-foreground: #f5f3f0;
-  --destructive: #d44a20;
-  --destructive-foreground: #faf8f5;
+  --destructive: #c4431a;
+  --destructive-foreground: #ffffff;
   --border: #2e2c2a;
   --input: #2e2c2a;
   --ring: #d6d2cd;
   --radius: 0.5rem;
-}
-
-.warmth-honnori {
-  --background: #faf9f7;
-  --secondary: #f0eeeb;
-  --muted: #f0eeeb;
-  --border: #e0ddd8;
-  --input: #e0ddd8;
-  --muted-foreground: #868280;
-}
-
-@media (prefers-color-scheme: dark) {
-  .warmth-honnori:not(.light) {
-    --background: #100f0e;
-    --secondary: #221f1d;
-    --muted: #221f1d;
-    --border: #322f2c;
-    --input: #322f2c;
-    --muted-foreground: #9e9a95;
-  }
-}
-
-.warmth-honnori.dark {
-  --background: #100f0e;
-  --secondary: #221f1d;
-  --muted: #221f1d;
-  --border: #322f2c;
-  --input: #322f2c;
-  --muted-foreground: #9e9a95;
 }
 
 @theme inline {
@@ -110,15 +81,15 @@
   --radius-xl: calc(var(--radius) + 4px);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
-  /* Typography Scale: Minor Third (1.2), base 14px */
-  --text-ui: 0.75rem;               /* 12px — 最小可読サイズ */
+  /* Typography Scale: Minor Third (1.2), base 16px */
+  --text-ui: 0.875rem;              /* 14px — コンパクトUI文 */
   --text-ui--line-height: 1.6;      /* ×1.6 */
-  --text-body: 0.875rem;            /* 14px — base */
-  --text-body--line-height: 1.8;    /* ×1.8 — コンパクトだが窮屈でない */
-  --text-h4: 1.0625rem;             /* 17px — base × 1.2¹ */
-  --text-h3: 1.25rem;               /* 20px — base × 1.2² */
-  --text-h2: 1.5rem;                /* 24px — base × 1.2³ */
-  --text-h1: 1.8125rem;             /* 29px — base × 1.2⁴ */
+  --text-body: 1rem;                /* 16px — base */
+  --text-body--line-height: 1.8;    /* ×1.8 — JLREQ準拠 */
+  --text-h4: 1.1875rem;             /* 19px — base × 1.2¹ */
+  --text-h3: 1.4375rem;             /* 23px — base × 1.2² */
+  --text-h2: 1.75rem;               /* 28px — base × 1.2³ */
+  --text-h1: 2.0625rem;             /* 33px — base × 1.2⁴ */
 }
 
 body {
