@@ -509,8 +509,8 @@ export default function ComparePage() {
                 <span
                   className="inline-block h-3 w-3 rounded-full"
                   style={{
-                    backgroundColor: system.primary,
-                    border: `1px solid ${system.border}`,
+                    backgroundColor: system.light.primary,
+                    border: `1px solid ${system.light.border}`,
                   }}
                 />
                 {system.name}
