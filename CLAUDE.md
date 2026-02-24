@@ -1,6 +1,7 @@
 # my-ui
 
-あさひのオリジナルUIコンポーネントライブラリ。
+あさひの自分専用デザインシステム＆UIコンポーネントライブラリ。
+コンポーネントを一通り揃えて、デザインシステムとして完成させることが目標。
 
 ## 技術スタック
 
@@ -26,6 +27,7 @@ src/
         ├── input.tsx
         ├── label.tsx
         ├── card.tsx
+        ├── radio.tsx
         └── select.tsx
 ```
 
@@ -100,6 +102,7 @@ Minor Third (×1.2) の Modular Scale を採用。詳細は [`docs/design-decisi
 - **Card** — Card / CardHeader / CardTitle / CardContent / CardFooter の5パーツ構成
 - **Select** — 複合コンポーネント（Select/SelectTrigger/SelectValue/SelectContent/SelectItem）、error/disabled 対応、キーボードナビゲーション
 - **Checkbox** — size: sm/md/lg、error prop でエラー状態切り替え
+- **Radio** — size: sm/md/lg、error prop でエラー状態切り替え、name 属性でグルーピング
 
 ## 設計判断メモ
 
