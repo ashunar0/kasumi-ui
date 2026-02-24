@@ -37,36 +37,68 @@ function Section({
 
 function SelectDemo() {
   const [value, setValue] = useState("");
+  const [valueLg, setValueLg] = useState("");
   return (
-    <div className="space-y-4 max-w-sm">
-      <Select value={value} onValueChange={setValue}>
-        <SelectTrigger>
-          <SelectValue placeholder="都道府県を選択" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="tokyo">東京</SelectItem>
-          <SelectItem value="osaka">大阪</SelectItem>
-          <SelectItem value="fukuoka">福岡</SelectItem>
-        </SelectContent>
-      </Select>
+    <div className="space-y-8 max-w-sm">
+      <div className="space-y-3">
+        <p className="text-xs font-medium text-muted-foreground">md</p>
+        <Select value={value} onValueChange={setValue}>
+          <SelectTrigger>
+            <SelectValue placeholder="都道府県を選択" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="tokyo">東京</SelectItem>
+            <SelectItem value="osaka">大阪</SelectItem>
+            <SelectItem value="fukuoka">福岡</SelectItem>
+          </SelectContent>
+        </Select>
+        <Select value="" onValueChange={() => {}}>
+          <SelectTrigger error>
+            <SelectValue placeholder="必須項目です" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="a">選択肢A</SelectItem>
+          </SelectContent>
+        </Select>
+        <Select disabled>
+          <SelectTrigger>
+            <SelectValue placeholder="選択できません" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="a">選択肢A</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
 
-      <Select value="" onValueChange={() => {}}>
-        <SelectTrigger error>
-          <SelectValue placeholder="必須項目です" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="a">選択肢A</SelectItem>
-        </SelectContent>
-      </Select>
-
-      <Select disabled>
-        <SelectTrigger>
-          <SelectValue placeholder="選択できません" />
-        </SelectTrigger>
-        <SelectContent>
-          <SelectItem value="a">選択肢A</SelectItem>
-        </SelectContent>
-      </Select>
+      <div className="space-y-3">
+        <p className="text-xs font-medium text-muted-foreground">lg</p>
+        <Select value={valueLg} onValueChange={setValueLg}>
+          <SelectTrigger size="lg">
+            <SelectValue placeholder="都道府県を選択" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="tokyo">東京</SelectItem>
+            <SelectItem value="osaka">大阪</SelectItem>
+            <SelectItem value="fukuoka">福岡</SelectItem>
+          </SelectContent>
+        </Select>
+        <Select value="" onValueChange={() => {}}>
+          <SelectTrigger size="lg" error>
+            <SelectValue placeholder="必須項目です" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="a">選択肢A</SelectItem>
+          </SelectContent>
+        </Select>
+        <Select disabled>
+          <SelectTrigger size="lg">
+            <SelectValue placeholder="選択できません" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="a">選択肢A</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
     </div>
   );
 }

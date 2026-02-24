@@ -37,19 +37,17 @@ function Sidebar() {
   return (
     <aside className="flex h-screen w-60 shrink-0 flex-col border-r border-border bg-secondary">
       {/* Workspace */}
-      <div className="flex items-center gap-2 px-4 py-3 border-b border-border">
+      <div className="flex items-center gap-2 px-4 py-3">
         <div className="flex h-6 w-6 items-center justify-center rounded bg-primary text-primary-foreground text-ui font-bold">
           A
         </div>
-        <span className="text-ui font-semibold text-foreground">
-          あさひのワークスペース
-        </span>
+        <span className="text-ui font-semibold text-foreground">my-ui</span>
       </div>
 
       {/* Navigation */}
       <nav className="flex-1 overflow-y-auto px-2 py-3 space-y-0.5">
         <div className="px-2 py-1.5 text-ui text-muted-foreground font-medium">
-          プライベート
+          設計
         </div>
         <SidebarItem active>
           <svg
@@ -65,7 +63,7 @@ function Sidebar() {
               d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
             />
           </svg>
-          設計ドキュメント
+          デザインシステム
         </SidebarItem>
         <SidebarItem>
           <svg
@@ -78,10 +76,10 @@ function Sidebar() {
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25Z"
+              d="M4.098 19.902a3.75 3.75 0 0 0 5.304 0l6.401-6.402M6.75 21A3.75 3.75 0 0 1 3 17.25V4.125C3 3.504 3.504 3 4.125 3h5.25c.621 0 1.125.504 1.125 1.125v4.072M6.75 21a3.75 3.75 0 0 0 3.75-3.75V8.197M6.75 21h13.125c.621 0 1.125-.504 1.125-1.125v-5.25c0-.621-.504-1.125-1.125-1.125h-4.072M10.5 8.197l2.88-2.88c.438-.439 1.15-.439 1.59 0l3.712 3.713c.44.44.44 1.152 0 1.59l-2.879 2.88M6.75 17.25h.008v.008H6.75v-.008Z"
             />
           </svg>
-          議事録
+          カラー設計
         </SidebarItem>
         <SidebarItem>
           <svg
@@ -94,10 +92,10 @@ function Sidebar() {
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.076-4.076a1.526 1.526 0 0 1 1.037-.443 48.282 48.282 0 0 0 5.68-.494c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"
             />
           </svg>
-          TODO
+          タイポグラフィ
         </SidebarItem>
         <SidebarItem>
           <svg
@@ -110,14 +108,14 @@ function Sidebar() {
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5"
+              d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 0 1-.657.643 48.491 48.491 0 0 1-4.163-.3c-1.585-.233-2.708-1.626-2.708-3.228V6.741c0-1.602 1.123-2.995 2.708-3.228A48.394 48.394 0 0 1 12 3c2.392 0 4.744.175 7.043.513 1.585.233 2.708 1.626 2.708 3.228v.019c0 1.602-1.123 2.995-2.708 3.228a48.486 48.486 0 0 1-4.163.3.64.64 0 0 1-.657-.643v0Z"
             />
           </svg>
-          スケジュール
+          設計判断ログ
         </SidebarItem>
 
         <div className="px-2 py-1.5 mt-4 text-ui text-muted-foreground font-medium">
-          チーム
+          コンポーネント
         </div>
         <SidebarItem>
           <svg
@@ -130,10 +128,10 @@ function Sidebar() {
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z"
+              d="M6.429 9.75 2.25 12l4.179 2.25m0-4.5 5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0 4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0-5.571 3-5.571-3"
             />
           </svg>
-          プロジェクト共有
+          UIカタログ
         </SidebarItem>
       </nav>
 
@@ -175,11 +173,11 @@ export default function DemoPage() {
 
       <main className="flex-1 overflow-y-auto">
         {/* Top bar */}
-        <div className="sticky top-0 z-10 flex items-center justify-between border-b border-border bg-background/80 backdrop-blur-sm px-8 py-2">
+        <div className="sticky top-0 z-10 flex items-center justify-between bg-background/80 backdrop-blur-sm px-8 py-2">
           <div className="flex items-center gap-2 text-ui text-muted-foreground">
-            <span>プライベート</span>
+            <span>設計</span>
             <span>/</span>
-            <span className="text-foreground">設計ドキュメント</span>
+            <span className="text-foreground">デザインシステム</span>
           </div>
           <ThemeToggle />
         </div>
@@ -189,7 +187,7 @@ export default function DemoPage() {
           {/* Title & Meta */}
           <div className="space-y-3">
             <h1 className="text-h2 font-bold tracking-tight">
-              日程調整アプリ — 設計ドキュメント
+              my-ui デザインシステム
             </h1>
             <div className="flex items-center gap-4 text-ui text-muted-foreground">
               <span>最終更新: 2026年2月24日</span>
@@ -203,130 +201,133 @@ export default function DemoPage() {
           <section className="space-y-4">
             <h2 className="text-h3 font-semibold tracking-tight">概要</h2>
             <p className="text-body">
-              日程調整アプリは、参加者全員の空き時間を自動で照合し、最適な候補日を提案するWebアプリケーションです。Googleカレンダーとの連携により、手動で日程を調整する手間を大幅に削減します。
+              my-uiは、日本語に最適化されたオリジナルUIコンポーネントライブラリです。shadcn/uiのシンプルさをベースにしつつ、日本語特有のタイポグラフィ課題を解決し、数学的根拠のあるデザイントークンで構成されています。
             </p>
             <p className="text-body">
-              ターゲットユーザーは、週に複数回のミーティングを調整する必要があるチームリーダーやプロジェクトマネージャーです。既存ツールでは「候補日を3つ挙げてメールで送る」という手間が発生しますが、本アプリではリンクを共有するだけで完結します。
+              「なんとなく」ではなく「なぜこの値か」を説明できる設計を目指しています。フォントサイズはModular
+              Scale、カラーはWCAGコントラスト比、行間はJLREQ準拠。すべてのトークンに選定理由があります。
             </p>
           </section>
 
-          {/* Tech Stack */}
+          {/* Color System */}
           <section className="space-y-4">
             <h2 className="text-h3 font-semibold tracking-tight">
-              技術スタック
+              カラーシステム
             </h2>
             <div className="grid gap-4 sm:grid-cols-2">
               <Card>
                 <CardHeader>
-                  <CardTitle>フロントエンド</CardTitle>
+                  <CardTitle>ライトモード</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-1.5 text-ui text-muted-foreground">
-                    <li>Next.js 16 (App Router)</li>
-                    <li>React 19</li>
-                    <li>Tailwind CSS 4</li>
-                    <li>TypeScript strict</li>
+                    <li>背景: #ffffff（純白）</li>
+                    <li>テキスト: #1c1917（17.5:1）</li>
+                    <li>セカンダリ: #f3f2f0（暖白）</li>
+                    <li>ボーダー: #e6e4e1（控えめ）</li>
                   </ul>
                 </CardContent>
               </Card>
               <Card>
                 <CardHeader>
-                  <CardTitle>バックエンド</CardTitle>
+                  <CardTitle>ダークモード</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-1.5 text-ui text-muted-foreground">
-                    <li>Hono (API)</li>
-                    <li>Drizzle ORM</li>
-                    <li>PostgreSQL</li>
-                    <li>Google Calendar API</li>
+                    <li>背景: #0f0e0d（暖黒）</li>
+                    <li>テキスト: #f5f3f0（17.4:1）</li>
+                    <li>セカンダリ: #1f1e1c</li>
+                    <li>ボーダー: #2e2c2a</li>
                   </ul>
                 </CardContent>
               </Card>
             </div>
           </section>
 
-          {/* Blockquote */}
+          {/* Design Philosophy */}
           <section className="space-y-4">
-            <h2 className="text-h3 font-semibold tracking-tight">
-              設計思想
-            </h2>
+            <h2 className="text-h3 font-semibold tracking-tight">設計思想</h2>
             <blockquote className="border-l-2 border-border pl-4 text-body text-muted-foreground italic">
-              「最小限のインターフェースで、最大限の効率を。ユーザーが考える時間を減らし、決める時間を増やす。」
+              「なんとなくNotionっぽい」ではなく、各値にWCAGコントラスト比の根拠を持つ。背景は純白、暖かさはテキストとサーフェスで出す。
             </blockquote>
-            <p className="text-body">
-              この原則に基づき、以下の3点を重視します:
-            </p>
+            <p className="text-body">以下の3つの原則を設計の柱としています:</p>
             <ol className="list-decimal list-inside space-y-2 text-body pl-2">
               <li>
-                <strong>ワンアクション原則</strong>{" "}
-                — 1つの画面で1つの判断だけ求める
+                <strong>数学的根拠</strong> — Modular
+                Scale、WCAG準拠など、すべてのトークンに「なぜこの値か」の理由がある
               </li>
               <li>
-                <strong>コンテキスト保持</strong>{" "}
-                — 前回の選択を記憶し、次回の提案に活かす
+                <strong>日本語最適化</strong> — Hiragino
+                Sansのウェイト制約、JLREQの行間推奨を考慮した設計
               </li>
               <li>
-                <strong>通知の最小化</strong>{" "}
-                — 本当に必要な時だけ、適切な手段で通知する
+                <strong>YAGNI</strong> —
+                cn関数、Typographyコンポーネント、Webフォント等は必要になるまで入れない
               </li>
             </ol>
           </section>
 
-          {/* Table */}
+          {/* Typography Scale Table */}
           <section className="space-y-4">
             <h2 className="text-h3 font-semibold tracking-tight">
-              マイルストーン
+              タイポグラフィスケール
             </h2>
+            <p className="text-body">
+              Minor Third（×1.2）のModular
+              Scaleを採用。基準サイズ16pxに比率を掛けて段階を生成しています。
+            </p>
             <div className="overflow-x-auto rounded-lg border border-border">
               <table className="w-full text-ui">
                 <thead>
                   <tr className="border-b border-border bg-secondary">
                     <th className="px-4 py-2.5 text-left font-medium text-muted-foreground">
-                      フェーズ
+                      用途
                     </th>
                     <th className="px-4 py-2.5 text-left font-medium text-muted-foreground">
-                      内容
+                      サイズ
                     </th>
                     <th className="px-4 py-2.5 text-left font-medium text-muted-foreground">
-                      ステータス
+                      行間
                     </th>
                   </tr>
                 </thead>
                 <tbody className="text-foreground">
                   <tr className="border-b border-border">
-                    <td className="px-4 py-2.5 font-medium">Phase 1</td>
+                    <td className="px-4 py-2.5 font-medium">UI文</td>
+                    <td className="px-4 py-2.5">14px</td>
+                    <td className="px-4 py-2.5">×1.6</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="px-4 py-2.5 font-medium">本文</td>
+                    <td className="px-4 py-2.5">16px（base）</td>
+                    <td className="px-4 py-2.5">×1.8</td>
+                  </tr>
+                  <tr className="border-b border-border">
+                    <td className="px-4 py-2.5 font-medium">H4</td>
+                    <td className="px-4 py-2.5">19px</td>
                     <td className="px-4 py-2.5">
-                      デザインシステム構築
-                    </td>
-                    <td className="px-4 py-2.5">
-                      <span className="inline-flex items-center rounded-full bg-primary px-2 py-0.5 text-xs font-medium text-primary-foreground">
-                        進行中
-                      </span>
+                      <span className="text-muted-foreground">デフォルト</span>
                     </td>
                   </tr>
                   <tr className="border-b border-border">
-                    <td className="px-4 py-2.5 font-medium">Phase 2</td>
+                    <td className="px-4 py-2.5 font-medium">H3</td>
+                    <td className="px-4 py-2.5">23px</td>
                     <td className="px-4 py-2.5">
-                      カレンダー連携 &amp; API設計
-                    </td>
-                    <td className="px-4 py-2.5">
-                      <span className="text-muted-foreground">未着手</span>
+                      <span className="text-muted-foreground">デフォルト</span>
                     </td>
                   </tr>
                   <tr className="border-b border-border">
-                    <td className="px-4 py-2.5 font-medium">Phase 3</td>
+                    <td className="px-4 py-2.5 font-medium">H2</td>
+                    <td className="px-4 py-2.5">28px</td>
                     <td className="px-4 py-2.5">
-                      日程調整ロジック実装
-                    </td>
-                    <td className="px-4 py-2.5">
-                      <span className="text-muted-foreground">未着手</span>
+                      <span className="text-muted-foreground">デフォルト</span>
                     </td>
                   </tr>
                   <tr>
-                    <td className="px-4 py-2.5 font-medium">Phase 4</td>
-                    <td className="px-4 py-2.5">通知 &amp; リリース</td>
+                    <td className="px-4 py-2.5 font-medium">H1</td>
+                    <td className="px-4 py-2.5">33px</td>
                     <td className="px-4 py-2.5">
-                      <span className="text-muted-foreground">未着手</span>
+                      <span className="text-muted-foreground">デフォルト</span>
                     </td>
                   </tr>
                 </tbody>
@@ -337,66 +338,55 @@ export default function DemoPage() {
           {/* Form section using existing components */}
           <section className="space-y-4">
             <h2 className="text-h3 font-semibold tracking-tight">
-              クイック作成
+              コンポーネント追加
             </h2>
             <Card>
               <CardHeader>
-                <CardTitle>新しいミーティングを作成</CardTitle>
+                <CardTitle>新しいコンポーネントを登録</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   <div className="space-y-2">
-                    <Label htmlFor="demo-title">タイトル</Label>
-                    <Input
-                      id="demo-title"
-                      placeholder="例: 週次定例ミーティング"
-                    />
+                    <Label htmlFor="demo-name">コンポーネント名</Label>
+                    <Input id="demo-name" placeholder="例: Dialog" />
                   </div>
                   <div className="grid gap-4 sm:grid-cols-2">
                     <div className="space-y-2">
-                      <Label htmlFor="demo-duration">所要時間</Label>
-                      <Input
-                        id="demo-duration"
-                        placeholder="60分"
-                      />
+                      <Label htmlFor="demo-category">カテゴリ</Label>
+                      <Input id="demo-category" placeholder="フィードバック" />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="demo-participants">参加者数</Label>
-                      <Input
-                        id="demo-participants"
-                        placeholder="3人"
-                      />
+                      <Label htmlFor="demo-variants">バリアント数</Label>
+                      <Input id="demo-variants" placeholder="3" />
                     </div>
                   </div>
                 </div>
               </CardContent>
               <CardFooter>
-                <Button>候補日を検索</Button>
+                <Button>登録する</Button>
                 <Button variant="outline">下書き保存</Button>
               </CardFooter>
             </Card>
           </section>
 
-          {/* Inline code / small details */}
+          {/* Implementation Notes */}
           <section className="space-y-4">
-            <h2 className="text-h3 font-semibold tracking-tight">
-              API仕様メモ
-            </h2>
+            <h2 className="text-h3 font-semibold tracking-tight">実装メモ</h2>
             <p className="text-body">
-              エンドポイントは{" "}
+              デザイントークンは{" "}
               <code className="rounded bg-secondary px-1.5 py-0.5 text-ui font-mono">
-                /api/v1/schedules
+                globals.css
               </code>{" "}
-              に統一します。レスポンスは JSON 形式で、ページネーションには
-              cursor ベースを採用。一度に返す最大件数はデフォルトで{" "}
+              のCSS変数として定義し、Tailwind CSS 4 の{" "}
               <code className="rounded bg-secondary px-1.5 py-0.5 text-ui font-mono">
-                20
+                @theme inline
               </code>{" "}
-              件とします。
+              でユーティリティクラスに登録しています。
             </p>
             <p className="text-body">
-              認証には JWT を使用し、アクセストークンの有効期限は15分、リフレッシュトークンは30日に設定します。Google OAuth
-              2.0 との連携で、カレンダーの読み取り権限のみを要求します。
+              テキスト色がNotionより暗い（#1c1917 vs #37352F）のは、Hiragino
+              Sansのウェイト制約が理由です。W3とW6しかなく中間ウェイトが取れないため、コントラストを上げて可読性を確保しています。将来Noto
+              Sans JPを導入すれば、より明るい暖色に移行する余地があります。
             </p>
           </section>
 
