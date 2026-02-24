@@ -40,15 +40,15 @@ export function Switch({
       <input
         type="checkbox"
         role="switch"
-        className={`peer appearance-none cursor-pointer rounded-full border bg-input transition-colors checked:bg-primary checked:border-primary focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 ${s.track} ${
+        className={`peer appearance-none cursor-pointer rounded-full border bg-switch-track transition-colors checked:bg-primary checked:border-primary focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 ${s.track} ${
           error
             ? "border-destructive focus-visible:border-destructive"
-            : "border-input focus-visible:border-foreground"
+            : "border-switch-track focus-visible:border-foreground"
         } ${className}`}
         {...props}
       />
       <span
-        className={`pointer-events-none absolute top-1/2 left-0.5 -translate-y-1/2 rounded-full bg-foreground peer-checked:bg-primary-foreground transition-transform ${s.translate} ${s.thumb}`}
+        className={`pointer-events-none absolute top-1/2 left-0.5 -translate-y-1/2 rounded-full bg-switch-thumb peer-checked:bg-primary-foreground transition-all ${s.translate} ${s.thumb}`}
       />
     </span>
   );

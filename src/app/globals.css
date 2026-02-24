@@ -15,6 +15,8 @@
   --destructive-foreground: #ffffff;
   --border: #e6e4e1;
   --input: #e6e4e1;
+  --switch-track: #e5e5e5;
+  --switch-thumb: #ffffff;
   --ring: #1c1917;
   --radius: 0.5rem;
 }
@@ -35,6 +37,8 @@
     --destructive-foreground: #ffffff;
     --border: #2e2c2a;
     --input: #2e2c2a;
+    --switch-track: #4a4a48;
+    --switch-thumb: #f5f3f0;
     --ring: #d6d2cd;
     --radius: 0.5rem;
   }
@@ -55,6 +59,8 @@
   --destructive-foreground: #ffffff;
   --border: #2e2c2a;
   --input: #2e2c2a;
+  --switch-track: #4a4a48;
+  --switch-thumb: #f5f3f0;
   --ring: #d6d2cd;
   --radius: 0.5rem;
 }
@@ -74,6 +80,8 @@
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
+  --color-switch-track: var(--switch-track);
+  --color-switch-thumb: var(--switch-thumb);
   --color-ring: var(--ring);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
