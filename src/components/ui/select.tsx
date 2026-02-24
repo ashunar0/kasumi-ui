@@ -110,7 +110,7 @@ export function SelectTrigger({
       aria-haspopup="listbox"
       disabled={disabled}
       onClick={() => setOpen(!open)}
-      className={`flex w-full items-center justify-between border bg-background px-3 py-2 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${triggerSizeStyles[size]} ${
+      className={`flex w-full items-center justify-between border bg-background px-3.5 py-2 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 ${triggerSizeStyles[size]} ${
         error
           ? "border-destructive focus-visible:ring-destructive"
           : "border-input"

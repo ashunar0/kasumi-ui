@@ -133,10 +133,38 @@ export default function Home() {
 
       {/* Input */}
       <Section title="テキスト入力">
-        <div className="space-y-4 max-w-sm">
-          <Input placeholder="お名前を入力してください" />
-          <Input placeholder="正しいメールアドレスを入力してください" error />
-          <Input placeholder="入力できません" disabled />
+        <div className="space-y-8 max-w-sm">
+          {/* outline (デフォルト) — md */}
+          <div className="space-y-3">
+            <p className="text-xs font-medium text-muted-foreground">outline — md</p>
+            <Input placeholder="お名前を入力してください" />
+            <Input placeholder="正しいメールアドレスを入力してください" error />
+            <Input placeholder="入力できません" disabled />
+          </div>
+
+          {/* outline — lg */}
+          <div className="space-y-3">
+            <p className="text-xs font-medium text-muted-foreground">outline — lg</p>
+            <Input placeholder="お名前を入力してください" size="lg" />
+            <Input placeholder="正しいメールアドレスを入力してください" size="lg" error />
+            <Input placeholder="入力できません" size="lg" disabled />
+          </div>
+
+          {/* underline — md */}
+          <div className="space-y-3">
+            <p className="text-xs font-medium text-muted-foreground">underline — md</p>
+            <Input variant="underline" placeholder="お名前を入力してください" />
+            <Input variant="underline" placeholder="正しいメールアドレスを入力してください" error />
+            <Input variant="underline" placeholder="入力できません" disabled />
+          </div>
+
+          {/* underline — lg */}
+          <div className="space-y-3">
+            <p className="text-xs font-medium text-muted-foreground">underline — lg</p>
+            <Input variant="underline" size="lg" placeholder="お名前を入力してください" />
+            <Input variant="underline" size="lg" placeholder="正しいメールアドレスを入力してください" error />
+            <Input variant="underline" size="lg" placeholder="入力できません" disabled />
+          </div>
         </div>
       </Section>
 
