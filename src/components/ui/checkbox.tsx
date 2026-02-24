@@ -10,10 +10,10 @@ type CheckboxProps = Omit<ComponentProps<"input">, "size" | "type"> & {
 function CheckIcon() {
   return (
     <svg
-      className="pointer-events-none absolute inset-0 hidden p-[2px] peer-checked:block"
+      className="pointer-events-none absolute inset-0 hidden p-[2px] text-primary-foreground peer-checked:block"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="white"
+      stroke="currentColor"
       strokeWidth={3}
       strokeLinecap="round"
       strokeLinejoin="round"
