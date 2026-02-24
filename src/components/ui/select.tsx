@@ -307,9 +307,7 @@ export function SelectItem({
       onClick={() => {
         if (!disabled) onValueChange(itemValue);
       }}
-      className={`relative flex w-full cursor-pointer select-none items-center rounded-md py-1.5 pl-8 pr-2 text-sm outline-none hover:bg-accent hover:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 ${
-        isSelected ? "bg-accent text-accent-foreground" : ""
-      } ${className}`}
+      className={`relative flex w-full cursor-pointer select-none items-center rounded-md py-1.5 pl-8 pr-2 text-sm outline-none hover:bg-accent hover:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 ${className}`}
       {...props}
     >
       {isSelected && (

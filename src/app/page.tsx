@@ -242,6 +242,7 @@ export default function Home() {
             <Label htmlFor="demo-email">メールアドレス</Label>
             <Input
               variant="underline"
+              size="lg"
               id="demo-email"
               type="email"
               placeholder="taro@example.com"
@@ -249,7 +250,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-2">
             <Label htmlFor="demo-name">お名前</Label>
-            <Input variant="underline" id="demo-name" placeholder="山田 太郎" />
+            <Input variant="outline" size="lg" id="demo-name" placeholder="山田 太郎" />
           </div>
         </div>
       </Section>
