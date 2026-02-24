@@ -46,18 +46,13 @@ export function Checkbox({
   return (
     <input
       type="checkbox"
-      className={`appearance-none border bg-transparent transition-colors cursor-pointer focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 checked:bg-primary checked:border-primary checked:bg-[${checkSvg}] checked:bg-center checked:bg-no-repeat checked:bg-[length:75%_75%] ${sizeStyles[size]} ${
-        error
-          ? "border-destructive focus-visible:border-destructive"
-          : "border-input focus-visible:border-foreground"
-      } ${className}`}
-      {...props}
+      (実装済み — peer + SVG 方式に変更)
     />
   );
 }
 ```
 
-注意: `size-4.5` は Tailwind CSS 4 で `18px` に対応する。もし存在しない場合は `h-[18px] w-[18px]` にフォールバック。`bg-[url()]` のインライン SVG は Tailwind のビルドで問題が出る可能性があるため、動作確認して必要なら CSS 変数 or `style` prop で対応。
+注意: 当初の background-image インライン方式は Turbopack が data URL を解決しようとしてビルドエラーになるため、peer + SVG 要素方式に変更済み。
 
 **Step 2: ブラウザで動作確認**
 

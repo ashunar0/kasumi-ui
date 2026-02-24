@@ -53,8 +53,8 @@ type CheckboxProps = Omit<ComponentProps<"input">, "type" | "size"> & {
 
 ## チェックマーク
 
-`checked:` 修飾子 + `bg-[url('data:image/svg+xml,...')]` で SVG チェックマークをインライン表示。
-JavaScript 不要でチェック状態に応じて自動切り替え。
+`peer` + SVG 要素方式。`peer-checked:block` でチェック時のみ SVG を表示。
+Turbopack が CSS の `url()` を解決しようとする問題を回避。
 
 ## カタログ配置
 
