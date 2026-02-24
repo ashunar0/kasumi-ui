@@ -7,6 +7,7 @@ import {
   useRef,
   useCallback,
   type ReactNode,
+  type ComponentProps,
 } from "react";
 
 type SelectContextValue = {
@@ -80,4 +81,57 @@ export function Select({
       </div>
     </SelectContext>
   );
+}
+
+export function SelectTrigger({
+  error,
+  className = "",
+  children,
+  ...props
+}: ComponentProps<"button"> & { error?: boolean }) {
+  const { open, setOpen, disabled, triggerRef } = useSelectContext();
+
+  return (
+    <button
+      ref={triggerRef}
+      type="button"
+      role="combobox"
+      aria-expanded={open}
+      aria-haspopup="listbox"
+      disabled={disabled}
+      onClick={() => setOpen(!open)}
+      className={`flex h-10 w-full items-center justify-between rounded-lg border bg-background px-3 py-2 text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${
+        error
+          ? "border-destructive focus-visible:ring-destructive"
+          : "border-input"
+      } ${className}`}
+      {...props}
+    >
+      {children}
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="ml-2 shrink-0 opacity-50"
+      >
+        <path d="m6 9 6 6 6-6" />
+      </svg>
+    </button>
+  );
+}
+
+export function SelectValue({ placeholder }: { placeholder?: string }) {
+  const { value, itemLabels } = useSelectContext();
+
+  if (!value) {
+    return <span className="text-muted-foreground">{placeholder}</span>;
+  }
+
+  return <span>{itemLabels.get(value) ?? value}</span>;
 }
