@@ -7,6 +7,22 @@ type CheckboxProps = Omit<ComponentProps<"input">, "size" | "type"> & {
   size?: CheckboxSize;
 };
 
+function CheckIcon() {
+  return (
+    <svg
+      className="pointer-events-none absolute inset-0 hidden p-[2px] peer-checked:block"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="white"
+      strokeWidth={3}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <polyline points="20 6 9 17 4 12" />
+    </svg>
+  );
+}
+
 const sizeStyles: Record<CheckboxSize, string> = {
   sm: "h-4 w-4 rounded",
   md: "h-[18px] w-[18px] rounded",
@@ -30,17 +46,7 @@ export function Checkbox({
         } ${className}`}
         {...props}
       />
-      <svg
-        className="pointer-events-none absolute inset-0 hidden p-[2px] peer-checked:block"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="white"
-        strokeWidth={3}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <polyline points="20 6 9 17 4 12" />
-      </svg>
+      <CheckIcon />
     </span>
   );
 }
