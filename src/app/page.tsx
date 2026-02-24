@@ -1,7 +1,17 @@
+"use client";
+
+import { useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from "@/components/ui/select";
 import {
   Card,
   CardHeader,
@@ -22,6 +32,42 @@ function Section({
       <h2 className="text-h3 font-semibold tracking-tight">{title}</h2>
       <div className="border-t border-border pt-6">{children}</div>
     </section>
+  );
+}
+
+function SelectDemo() {
+  const [value, setValue] = useState("");
+  return (
+    <div className="space-y-4 max-w-sm">
+      <Select value={value} onValueChange={setValue}>
+        <SelectTrigger>
+          <SelectValue placeholder="都道府県を選択" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="tokyo">東京</SelectItem>
+          <SelectItem value="osaka">大阪</SelectItem>
+          <SelectItem value="fukuoka">福岡</SelectItem>
+        </SelectContent>
+      </Select>
+
+      <Select value="" onValueChange={() => {}}>
+        <SelectTrigger error>
+          <SelectValue placeholder="必須項目です" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="a">選択肢A</SelectItem>
+        </SelectContent>
+      </Select>
+
+      <Select disabled>
+        <SelectTrigger>
+          <SelectValue placeholder="選択できません" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="a">選択肢A</SelectItem>
+        </SelectContent>
+      </Select>
+    </div>
   );
 }
 
@@ -92,6 +138,11 @@ export default function Home() {
           <Input placeholder="正しいメールアドレスを入力してください" error />
           <Input placeholder="入力できません" disabled />
         </div>
+      </Section>
+
+      {/* Select */}
+      <Section title="セレクト">
+        <SelectDemo />
       </Section>
 
       {/* Label */}
