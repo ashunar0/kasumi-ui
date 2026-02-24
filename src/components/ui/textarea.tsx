@@ -1,17 +1,26 @@
 import { type ComponentProps } from "react";
 
-type TextareaProps = ComponentProps<"textarea"> & {
+type TextareaSize = "md" | "lg";
+
+type TextareaProps = Omit<ComponentProps<"textarea">, "size"> & {
   error?: boolean;
+  size?: TextareaSize;
+};
+
+const sizeStyles: Record<TextareaSize, string> = {
+  md: "px-3.5 py-2",
+  lg: "px-4 py-2.5",
 };
 
 export function Textarea({
   error,
+  size = "md",
   className = "",
   ...props
 }: TextareaProps) {
   return (
     <textarea
-      className={`flex w-full min-h-20 resize-y rounded-lg border bg-background px-3.5 py-2 text-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 ${
+      className={`flex w-full min-h-20 resize-y rounded-lg border bg-background text-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 ${sizeStyles[size]} ${
         error
           ? "border-destructive focus-visible:border-destructive"
           : "border-input focus-visible:border-foreground"

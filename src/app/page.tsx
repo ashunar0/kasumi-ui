@@ -43,9 +43,9 @@ function SelectDemo() {
   const [value, setValue] = useState("");
   const [valueLg, setValueLg] = useState("");
   return (
-    <div className="space-y-8 max-w-sm">
-      <div className="space-y-3">
-        <p className="text-xs font-medium text-muted-foreground">md</p>
+    <div className="flex gap-8">
+      <div className="space-y-3 flex-1">
+        <p className="text-ui text-muted-foreground">md</p>
         <Select value={value} onValueChange={setValue}>
           <SelectTrigger>
             <SelectValue placeholder="都道府県を選択" />
@@ -74,8 +74,8 @@ function SelectDemo() {
         </Select>
       </div>
 
-      <div className="space-y-3">
-        <p className="text-xs font-medium text-muted-foreground">lg</p>
+      <div className="space-y-3 flex-1">
+        <p className="text-ui text-muted-foreground">lg</p>
         <Select value={valueLg} onValueChange={setValueLg}>
           <SelectTrigger size="lg">
             <SelectValue placeholder="都道府県を選択" />
@@ -169,77 +169,56 @@ export default function Home() {
 
       {/* Input */}
       <Section title="テキスト入力">
-        <div className="space-y-8 max-w-sm">
-          {/* outline (デフォルト) — md */}
-          <div className="space-y-3">
-            <p className="text-xs font-medium text-muted-foreground">
-              outline — md
-            </p>
-            <Input placeholder="お名前を入力してください" />
-            <Input placeholder="正しいメールアドレスを入力してください" error />
-            <Input placeholder="入力できません" disabled />
+        <div className="space-y-8">
+          {/* outline */}
+          <div className="flex gap-8">
+            <div className="space-y-3 flex-1">
+              <p className="text-ui text-muted-foreground">outline — md</p>
+              <Input placeholder="お名前を入力してください" />
+              <Input placeholder="正しいメールアドレスを入力してください" error />
+              <Input placeholder="入力できません" disabled />
+            </div>
+            <div className="space-y-3 flex-1">
+              <p className="text-ui text-muted-foreground">outline — lg</p>
+              <Input size="lg" placeholder="お名前を入力してください" />
+              <Input size="lg" placeholder="正しいメールアドレスを入力してください" error />
+              <Input size="lg" placeholder="入力できません" disabled />
+            </div>
           </div>
 
-          {/* outline — lg */}
-          <div className="space-y-3">
-            <p className="text-xs font-medium text-muted-foreground">
-              outline — lg
-            </p>
-            <Input placeholder="お名前を入力してください" size="lg" />
-            <Input
-              placeholder="正しいメールアドレスを入力してください"
-              size="lg"
-              error
-            />
-            <Input placeholder="入力できません" size="lg" disabled />
-          </div>
-
-          {/* underline — md */}
-          <div className="space-y-3">
-            <p className="text-xs font-medium text-muted-foreground">
-              underline — md
-            </p>
-            <Input variant="underline" placeholder="お名前を入力してください" />
-            <Input
-              variant="underline"
-              placeholder="正しいメールアドレスを入力してください"
-              error
-            />
-            <Input variant="underline" placeholder="入力できません" disabled />
-          </div>
-
-          {/* underline — lg */}
-          <div className="space-y-3">
-            <p className="text-xs font-medium text-muted-foreground">
-              underline — lg
-            </p>
-            <Input
-              variant="underline"
-              size="lg"
-              placeholder="お名前を入力してください"
-            />
-            <Input
-              variant="underline"
-              size="lg"
-              placeholder="正しいメールアドレスを入力してください"
-              error
-            />
-            <Input
-              variant="underline"
-              size="lg"
-              placeholder="入力できません"
-              disabled
-            />
+          {/* underline */}
+          <div className="flex gap-8">
+            <div className="space-y-3 flex-1">
+              <p className="text-ui text-muted-foreground">underline — md</p>
+              <Input variant="underline" placeholder="お名前を入力してください" />
+              <Input variant="underline" placeholder="正しいメールアドレスを入力してください" error />
+              <Input variant="underline" placeholder="入力できません" disabled />
+            </div>
+            <div className="space-y-3 flex-1">
+              <p className="text-ui text-muted-foreground">underline — lg</p>
+              <Input variant="underline" size="lg" placeholder="お名前を入力してください" />
+              <Input variant="underline" size="lg" placeholder="正しいメールアドレスを入力してください" error />
+              <Input variant="underline" size="lg" placeholder="入力できません" disabled />
+            </div>
           </div>
         </div>
       </Section>
 
       {/* Textarea */}
       <Section title="テキストエリア">
-        <div className="space-y-3 max-w-sm">
-          <Textarea placeholder="メッセージを入力してください" />
-          <Textarea placeholder="正しい内容を入力してください" error />
-          <Textarea placeholder="入力できません" disabled />
+        <div className="flex gap-8">
+          <div className="space-y-3 flex-1">
+            <p className="text-ui text-muted-foreground">md</p>
+            <Textarea placeholder="メッセージを入力してください" />
+            <Textarea placeholder="正しい内容を入力してください" error />
+            <Textarea placeholder="入力できません" disabled />
+          </div>
+          <div className="space-y-3 flex-1">
+            <p className="text-ui text-muted-foreground">lg</p>
+            <Textarea size="lg" placeholder="メッセージを入力してください" />
+            <Textarea size="lg" placeholder="正しい内容を入力してください" error />
+            <Textarea size="lg" placeholder="入力できません" disabled />
+          </div>
         </div>
       </Section>
 
@@ -250,9 +229,9 @@ export default function Home() {
 
       {/* Checkbox */}
       <Section title="チェックボックス">
-        <div className="space-y-8 max-w-sm">
-          <div className="space-y-3">
-            <p className="text-xs font-medium text-muted-foreground">md</p>
+        <div className="flex gap-8">
+          <div className="space-y-3 flex-1">
+            <p className="text-ui text-muted-foreground">md</p>
             <label className="flex items-center gap-2">
               <Checkbox />
               <span className="text-sm">利用規約に同意する</span>
@@ -271,8 +250,8 @@ export default function Home() {
             </label>
           </div>
 
-          <div className="space-y-3">
-            <p className="text-xs font-medium text-muted-foreground">lg</p>
+          <div className="space-y-3 flex-1">
+            <p className="text-ui text-muted-foreground">lg</p>
             <label className="flex items-center gap-2">
               <Checkbox size="lg" />
               <span className="text-sm">利用規約に同意する</span>
@@ -281,15 +260,23 @@ export default function Home() {
               <Checkbox size="lg" defaultChecked />
               <span className="text-sm">メール通知を受け取る</span>
             </label>
+            <label className="flex items-center gap-2">
+              <Checkbox size="lg" error />
+              <span className="text-sm text-destructive">必須項目です</span>
+            </label>
+            <label className="flex items-center gap-2">
+              <Checkbox size="lg" disabled />
+              <span className="text-sm text-muted-foreground">選択できません</span>
+            </label>
           </div>
         </div>
       </Section>
 
       {/* Radio */}
       <Section title="ラジオボタン">
-        <div className="space-y-8 max-w-sm">
-          <div className="space-y-3">
-            <p className="text-xs font-medium text-muted-foreground">md</p>
+        <div className="flex gap-8">
+          <div className="space-y-3 flex-1">
+            <p className="text-ui text-muted-foreground">md</p>
             <label className="flex items-center gap-2">
               <Radio name="demo-md" value="a" />
               <span className="text-sm">参加する</span>
@@ -308,8 +295,8 @@ export default function Home() {
             </label>
           </div>
 
-          <div className="space-y-3">
-            <p className="text-xs font-medium text-muted-foreground">lg</p>
+          <div className="space-y-3 flex-1">
+            <p className="text-ui text-muted-foreground">lg</p>
             <label className="flex items-center gap-2">
               <Radio name="demo-lg" value="a" size="lg" />
               <span className="text-sm">参加する</span>
@@ -318,15 +305,23 @@ export default function Home() {
               <Radio name="demo-lg" value="b" size="lg" defaultChecked />
               <span className="text-sm">不参加</span>
             </label>
+            <label className="flex items-center gap-2">
+              <Radio name="demo-lg-state" value="error" size="lg" error />
+              <span className="text-sm text-destructive">必須項目です</span>
+            </label>
+            <label className="flex items-center gap-2">
+              <Radio name="demo-lg-state" value="disabled" size="lg" disabled />
+              <span className="text-sm text-muted-foreground">選択できません</span>
+            </label>
           </div>
         </div>
       </Section>
 
       {/* Switch */}
       <Section title="スイッチ">
-        <div className="space-y-8 max-w-sm">
-          <div className="space-y-3">
-            <p className="text-xs font-medium text-muted-foreground">md</p>
+        <div className="flex gap-8">
+          <div className="space-y-3 flex-1">
+            <p className="text-ui text-muted-foreground">md</p>
             <label className="flex items-center gap-2">
               <Switch />
               <span className="text-sm">通知を受け取る</span>
@@ -345,8 +340,8 @@ export default function Home() {
             </label>
           </div>
 
-          <div className="space-y-3">
-            <p className="text-xs font-medium text-muted-foreground">lg</p>
+          <div className="space-y-3 flex-1">
+            <p className="text-ui text-muted-foreground">lg</p>
             <label className="flex items-center gap-2">
               <Switch size="lg" />
               <span className="text-sm">通知を受け取る</span>
@@ -354,6 +349,14 @@ export default function Home() {
             <label className="flex items-center gap-2">
               <Switch size="lg" defaultChecked />
               <span className="text-sm">ダークモード</span>
+            </label>
+            <label className="flex items-center gap-2">
+              <Switch size="lg" error />
+              <span className="text-sm text-destructive">必須項目です</span>
+            </label>
+            <label className="flex items-center gap-2">
+              <Switch size="lg" disabled />
+              <span className="text-sm text-muted-foreground">変更できません</span>
             </label>
           </div>
         </div>
