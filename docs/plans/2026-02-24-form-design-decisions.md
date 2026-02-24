@@ -39,13 +39,33 @@ sm サイズのボタンは 6px に縮小（小さい要素に大きな角丸は
 
 > **「日本語のための UI」** — 下線型フォーム + 丸みのあるアクション + ゆとりのある余白
 
-## 未決定事項（次回以降）
+### 4. font-size：全サイズ `text-sm` (14px) 統一
 
-- font-size トークンの関係（全サイズ `text-sm` 統一でいいか）
-- padding のバラつき（Button vs Input/Select）
-- disabled の挙動統一（`opacity-50` + `pointer-events-none` vs `cursor-not-allowed`）
-- Button の font-weight（`font-bold` vs `font-medium`）
+ボタンは位置・色・形で認知させる。テキストは補助的な情報であり、読ませるものではない。小さいテキストの方が情報のノイズが少なく、視覚的ヒエラルキーが際立つ。
 
-## カタログの状態
+### 5. Button の padding と最低幅
 
-`page.tsx` に実験用の比較セクションが残っている。実装時に整理する。
+| size | padding | min-width |
+|------|---------|-----------|
+| sm | `px-3` | — |
+| md/lg | `px-5` | `80px` |
+
+短いテキスト（「送信」）でも窮屈にならず、長いテキスト（「保存する」）でも余裕がある。
+
+### 6. Input / Select の padding
+
+| variant | size | padding |
+|---------|------|---------|
+| outline | sm | `px-3` |
+| outline | md/lg | `px-3.5` (14px) |
+| underline | 全サイズ | `px-2` (8px) |
+
+outline の `px-3.5` は上下余白（md: 10px, lg: 12px）とのバランスを崩さない値。underline は枠がないぶん控えめだが、`px-1` の詰まり感を解消。
+
+### 7. disabled の挙動：`pointer-events-none` + `opacity-50` に統一
+
+全コンポーネント共通。`cursor-not-allowed` は不採用（ミニマルさ優先、カーソル変化のチカチカがない）。
+
+### 8. Button の font-weight：`font-semibold` (600)
+
+`font-bold` (700) は primary/destructive で視認性は良いが主張が強い。`font-medium` (500) は濃い背景で潰れて弱々しく見える。`font-semibold` は両方のバランスを取り、ダークモードでも安定した視認性を保つ。
