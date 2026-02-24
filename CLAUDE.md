@@ -28,7 +28,8 @@ src/
         ├── label.tsx
         ├── card.tsx
         ├── radio.tsx
-        └── select.tsx
+        ├── select.tsx
+        └── switch.tsx
 ```
 
 ## デザイン方針
@@ -103,6 +104,7 @@ Minor Third (×1.2) の Modular Scale を採用。詳細は [`docs/design-decisi
 - **Select** — 複合コンポーネント（Select/SelectTrigger/SelectValue/SelectContent/SelectItem）、error/disabled 対応、キーボードナビゲーション
 - **Checkbox** — size: sm/md/lg、error prop でエラー状態切り替え
 - **Radio** — size: sm/md/lg、error prop でエラー状態切り替え、name 属性でグルーピング
+- **Switch** — size: sm/md/lg、error prop でエラー状態切り替え、role="switch" 付与
 
 ## 設計判断メモ
 

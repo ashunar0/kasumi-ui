@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Radio } from "@/components/ui/radio";
+import { Switch } from "@/components/ui/switch";
 import {
   Card,
   CardHeader,
@@ -306,6 +307,43 @@ export default function Home() {
             <label className="flex items-center gap-2">
               <Radio name="demo-lg" value="b" size="lg" defaultChecked />
               <span className="text-sm">不参加</span>
+            </label>
+          </div>
+        </div>
+      </Section>
+
+      {/* Switch */}
+      <Section title="スイッチ">
+        <div className="space-y-8 max-w-sm">
+          <div className="space-y-3">
+            <p className="text-xs font-medium text-muted-foreground">md</p>
+            <label className="flex items-center gap-2">
+              <Switch />
+              <span className="text-sm">通知を受け取る</span>
+            </label>
+            <label className="flex items-center gap-2">
+              <Switch defaultChecked />
+              <span className="text-sm">ダークモード</span>
+            </label>
+            <label className="flex items-center gap-2">
+              <Switch error />
+              <span className="text-sm text-destructive">必須項目です</span>
+            </label>
+            <label className="flex items-center gap-2">
+              <Switch disabled />
+              <span className="text-sm text-muted-foreground">変更できません</span>
+            </label>
+          </div>
+
+          <div className="space-y-3">
+            <p className="text-xs font-medium text-muted-foreground">lg</p>
+            <label className="flex items-center gap-2">
+              <Switch size="lg" />
+              <span className="text-sm">通知を受け取る</span>
+            </label>
+            <label className="flex items-center gap-2">
+              <Switch size="lg" defaultChecked />
+              <span className="text-sm">ダークモード</span>
             </label>
           </div>
         </div>
