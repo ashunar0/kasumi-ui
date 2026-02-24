@@ -168,7 +168,9 @@ export default function Home() {
         <div className="space-y-8 max-w-sm">
           {/* outline (デフォルト) — md */}
           <div className="space-y-3">
-            <p className="text-xs font-medium text-muted-foreground">outline — md</p>
+            <p className="text-xs font-medium text-muted-foreground">
+              outline — md
+            </p>
             <Input placeholder="お名前を入力してください" />
             <Input placeholder="正しいメールアドレスを入力してください" error />
             <Input placeholder="入力できません" disabled />
@@ -176,26 +178,54 @@ export default function Home() {
 
           {/* outline — lg */}
           <div className="space-y-3">
-            <p className="text-xs font-medium text-muted-foreground">outline — lg</p>
+            <p className="text-xs font-medium text-muted-foreground">
+              outline — lg
+            </p>
             <Input placeholder="お名前を入力してください" size="lg" />
-            <Input placeholder="正しいメールアドレスを入力してください" size="lg" error />
+            <Input
+              placeholder="正しいメールアドレスを入力してください"
+              size="lg"
+              error
+            />
             <Input placeholder="入力できません" size="lg" disabled />
           </div>
 
           {/* underline — md */}
           <div className="space-y-3">
-            <p className="text-xs font-medium text-muted-foreground">underline — md</p>
+            <p className="text-xs font-medium text-muted-foreground">
+              underline — md
+            </p>
             <Input variant="underline" placeholder="お名前を入力してください" />
-            <Input variant="underline" placeholder="正しいメールアドレスを入力してください" error />
+            <Input
+              variant="underline"
+              placeholder="正しいメールアドレスを入力してください"
+              error
+            />
             <Input variant="underline" placeholder="入力できません" disabled />
           </div>
 
           {/* underline — lg */}
           <div className="space-y-3">
-            <p className="text-xs font-medium text-muted-foreground">underline — lg</p>
-            <Input variant="underline" size="lg" placeholder="お名前を入力してください" />
-            <Input variant="underline" size="lg" placeholder="正しいメールアドレスを入力してください" error />
-            <Input variant="underline" size="lg" placeholder="入力できません" disabled />
+            <p className="text-xs font-medium text-muted-foreground">
+              underline — lg
+            </p>
+            <Input
+              variant="underline"
+              size="lg"
+              placeholder="お名前を入力してください"
+            />
+            <Input
+              variant="underline"
+              size="lg"
+              placeholder="正しいメールアドレスを入力してください"
+              error
+            />
+            <Input
+              variant="underline"
+              size="lg"
+              placeholder="入力できません"
+              disabled
+            />
           </div>
         </div>
       </Section>
@@ -207,18 +237,19 @@ export default function Home() {
 
       {/* Label */}
       <Section title="ラベル">
-        <div className="space-y-4 max-w-sm">
-          <div className="space-y-2">
+        <div className="space-y-8 max-w-sm">
+          <div className="flex flex-col gap-2">
             <Label htmlFor="demo-email">メールアドレス</Label>
             <Input
+              variant="underline"
               id="demo-email"
               type="email"
               placeholder="taro@example.com"
             />
           </div>
-          <div className="space-y-2">
+          <div className="flex flex-col gap-2">
             <Label htmlFor="demo-name">お名前</Label>
-            <Input id="demo-name" placeholder="山田 太郎" />
+            <Input variant="underline" id="demo-name" placeholder="山田 太郎" />
           </div>
         </div>
       </Section>
