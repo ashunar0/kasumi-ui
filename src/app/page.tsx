@@ -42,23 +42,23 @@ export default function Home() {
       <Section title="タイポグラフィ">
         <div className="space-y-4">
           <h1 className="text-h1 font-bold tracking-tight">
-            H1 日程調整アプリ（29px）
+            H1 日程調整アプリ（33px）
           </h1>
           <h2 className="text-h2 font-semibold tracking-tight">
-            H2 スケジュール管理（24px）
+            H2 スケジュール管理（28px）
           </h2>
           <h3 className="text-h3 font-semibold tracking-tight">
-            H3 今週の予定（20px）
+            H3 今週の予定（23px）
           </h3>
           <h4 className="text-h4 font-semibold tracking-tight">
-            H4 ミーティング一覧（17px）
+            H4 ミーティング一覧（19px）
           </h4>
           <p className="text-body">
-            本文（14px） —
+            本文（16px） —
             日程調整アプリは、参加者全員の空き時間を自動で照合し、最適な候補日を提案します。複数のカレンダーと連携できるため、手動で調整する手間がなくなります。
           </p>
           <p className="text-ui">
-            UI文（12px） —
+            UI文（14px） —
             予定が3件あります。タップして詳細を確認してください。次のミーティングは来週の月曜日10:00からで、参加者は田中さん、佐藤さん、鈴木さんの3名です。議題は「第3四半期のスケジュール調整」となっています。
           </p>
         </div>
