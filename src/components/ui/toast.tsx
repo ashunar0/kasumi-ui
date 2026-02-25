@@ -108,10 +108,10 @@ const variantClasses: Record<ToastVariant, string> = {
 
 const variantIcons: Record<ToastVariant, ReactNode> = {
   default: null,
-  success: <CircleCheck size={16} className="text-emerald-600 dark:text-emerald-400" />,
-  info: <Info size={16} className="text-blue-600 dark:text-blue-400" />,
-  warning: <TriangleAlert size={16} className="text-amber-600 dark:text-amber-400" />,
-  error: <OctagonAlert size={16} className="text-red-600 dark:text-red-400" />,
+  success: <CircleCheck size={16} className="text-emerald-600 dark:text-emerald-100" />,
+  info: <Info size={16} className="text-blue-600 dark:text-blue-100" />,
+  warning: <TriangleAlert size={16} className="text-amber-600 dark:text-amber-100" />,
+  error: <OctagonAlert size={16} className="text-red-600 dark:text-red-100" />,
 };
 
 // --- ToastProvider ---
