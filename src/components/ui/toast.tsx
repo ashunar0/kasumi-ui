@@ -96,18 +96,22 @@ const PositionContext = createContext<Position>("top-right");
 
 const variantClasses: Record<ToastVariant, string> = {
   default: "border-border bg-background text-foreground",
-  success: "border-emerald-500/50 bg-[#ECFBF6] text-foreground",
-  info: "border-blue-400/50 bg-[#E5FAFD] text-foreground",
-  warning: "border-amber-500/50 bg-[#FFF9EB] text-foreground",
-  error: "border-destructive/30 bg-[#FDEDEE] text-foreground",
+  success:
+    "border-emerald-300 bg-emerald-100 text-emerald-800 dark:border-emerald-700 dark:bg-emerald-900 dark:text-emerald-200",
+  info:
+    "border-blue-300 bg-blue-100 text-blue-800 dark:border-blue-700 dark:bg-blue-900 dark:text-blue-200",
+  warning:
+    "border-amber-300 bg-amber-100 text-amber-800 dark:border-amber-700 dark:bg-amber-900 dark:text-amber-200",
+  error:
+    "border-red-300 bg-red-100 text-red-800 dark:border-red-700 dark:bg-red-900 dark:text-red-200",
 };
 
 const variantIcons: Record<ToastVariant, ReactNode> = {
   default: null,
-  success: <CircleCheck size={16} className="text-emerald-500" />,
-  info: <Info size={16} className="text-blue-500" />,
-  warning: <TriangleAlert size={16} className="text-amber-500" />,
-  error: <OctagonAlert size={16} className="text-destructive" />,
+  success: <CircleCheck size={16} className="text-emerald-600 dark:text-emerald-400" />,
+  info: <Info size={16} className="text-blue-600 dark:text-blue-400" />,
+  warning: <TriangleAlert size={16} className="text-amber-600 dark:text-amber-400" />,
+  error: <OctagonAlert size={16} className="text-red-600 dark:text-red-400" />,
 };
 
 // --- ToastProvider ---
