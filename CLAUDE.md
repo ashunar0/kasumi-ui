@@ -30,6 +30,7 @@ src/
         ├── label.tsx
         ├── card.tsx
         ├── radio.tsx
+        ├── dialog.tsx
         ├── select.tsx
         ├── switch.tsx
         └── textarea.tsx
@@ -96,7 +97,7 @@ Minor Third (×1.2) の Modular Scale を採用。詳細は [`docs/design-decisi
 ## カタログページ
 
 - `page.tsx` にセクション区切り型で全コンポーネントを縦並び表示
-- セクション: タイポグラフィ → ボタン → テキスト入力 → ラベル → カード
+- セクション: タイポグラフィ → ボタン → テキスト入力 → ラベル → カード → ダイアログ
 - テキストは日本語で記述（日程調整アプリを想定した実用的な内容）
 - コードスニペットやProps一覧は不要（シンプルに保つ）
 
@@ -111,6 +112,7 @@ Minor Third (×1.2) の Modular Scale を採用。詳細は [`docs/design-decisi
 - **Radio** — size: sm/md/lg、error prop でエラー状態切り替え、name 属性でグルーピング
 - **Switch** — size: sm/md/lg、error prop でエラー状態切り替え、role="switch" 付与
 - **Textarea** — error prop でエラー状態切り替え、resize-y でリサイズ可能
+- **Dialog** — Radix UI ベース、複合コンポーネント（Dialog/DialogTrigger/DialogContent/DialogHeader/DialogTitle/DialogDescription/DialogFooter/DialogClose）、Portal・フォーカストラップ・Escape キー対応
 
 ## 設計判断メモ
 
