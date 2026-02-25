@@ -1,9 +1,13 @@
 "use client";
 
 import * as ToastPrimitive from "@radix-ui/react-toast";
-import { X } from "lucide-react";
 import {
-  type ComponentProps,
+  CircleCheck,
+  Info,
+  TriangleAlert,
+  OctagonAlert,
+} from "lucide-react";
+import {
   type ReactNode,
   createContext,
   useCallback,
@@ -21,7 +25,7 @@ type Position =
   | "top-center"
   | "bottom-center";
 
-type ToastVariant = "default" | "destructive";
+type ToastVariant = "default" | "success" | "info" | "warning" | "error";
 
 type ToastData = {
   id: string;
@@ -86,13 +90,34 @@ const slideAnimationClasses: Record<Position, string> = {
 
 // --- Position Context (内部用) ---
 
-const PositionContext = createContext<Position>("bottom-right");
+const PositionContext = createContext<Position>("top-right");
+
+// --- Variant styles (Alert Callout 風) ---
+
+const variantClasses: Record<ToastVariant, string> = {
+  default: "border-border bg-background text-foreground",
+  success:
+    "border-emerald-500/50 bg-emerald-600/10 text-emerald-500 dark:border-emerald-600/50 dark:bg-emerald-600/15",
+  info: "border-blue-400/50 bg-blue-500/10 text-blue-500 dark:border-blue-600/60 dark:bg-blue-600/20 dark:text-blue-400",
+  warning:
+    "border-amber-500/50 bg-amber-600/10 text-amber-500 dark:border-amber-600/50 dark:bg-amber-600/15",
+  error:
+    "border-destructive/30 bg-destructive/10 text-destructive dark:border-destructive/50 dark:bg-destructive/15",
+};
+
+const variantIcons: Record<ToastVariant, ReactNode> = {
+  default: null,
+  success: <CircleCheck size={16} />,
+  info: <Info size={16} />,
+  warning: <TriangleAlert size={16} />,
+  error: <OctagonAlert size={16} />,
+};
 
 // --- ToastProvider ---
 
 export function ToastProvider({
   children,
-  position = "bottom-right",
+  position = "top-right",
   duration = 5000,
 }: {
   children: ReactNode;
@@ -112,7 +137,11 @@ export function ToastProvider({
   return (
     <ToastContext.Provider value={{ toast }}>
       <PositionContext.Provider value={position}>
-        <ToastPrimitive.Provider duration={duration} label="通知">
+        <ToastPrimitive.Provider
+          duration={duration}
+          swipeDirection="right"
+          label="通知"
+        >
           {children}
           {state.toasts.map((t) => (
             <ToastItem
@@ -132,11 +161,6 @@ export function ToastProvider({
 
 // --- ToastItem (内部コンポーネント) ---
 
-const variantClasses: Record<ToastVariant, string> = {
-  default: "bg-background border-border text-foreground",
-  destructive: "bg-destructive border-destructive text-destructive-foreground",
-};
-
 function ToastItem({
   data,
   onClose,
@@ -146,6 +170,7 @@ function ToastItem({
 }) {
   const position = useContext(PositionContext);
   const variant = data.variant ?? "default";
+  const icon = variantIcons[variant];
 
   return (
     <ToastPrimitive.Root
@@ -153,20 +178,21 @@ function ToastItem({
       onOpenChange={(open) => {
         if (!open) onClose();
       }}
-      className={`rounded-xl border shadow-lg p-4 pr-10 relative data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 ${slideAnimationClasses[position]} duration-200 ${variantClasses[variant]}`}
+      className={`rounded-xl border shadow-lg p-4 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=cancel]:translate-x-0 data-[swipe=cancel]:transition-transform data-[swipe=end]:animate-out data-[swipe=end]:fade-out-0 data-[swipe=end]:slide-out-to-right-full ${slideAnimationClasses[position]} duration-200 ${variantClasses[variant]}`}
     >
-      <ToastPrimitive.Title className="text-sm font-semibold">
-        {data.title}
-      </ToastPrimitive.Title>
-      {data.description && (
-        <ToastPrimitive.Description className="mt-1 text-sm opacity-80">
-          {data.description}
-        </ToastPrimitive.Description>
-      )}
-      <ToastPrimitive.Close className="absolute right-3 top-3 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-        <X size={14} />
-        <span className="sr-only">閉じる</span>
-      </ToastPrimitive.Close>
+      <div className={`flex gap-3 ${icon ? "items-start" : ""}`}>
+        {icon && <span className="mt-0.5 shrink-0">{icon}</span>}
+        <div className="flex-1">
+          <ToastPrimitive.Title className="text-sm font-semibold">
+            {data.title}
+          </ToastPrimitive.Title>
+          {data.description && (
+            <ToastPrimitive.Description className="mt-1 text-sm opacity-80">
+              {data.description}
+            </ToastPrimitive.Description>
+          )}
+        </div>
+      </div>
     </ToastPrimitive.Root>
   );
 }

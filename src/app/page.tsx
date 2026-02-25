@@ -125,10 +125,38 @@ function ToastDemo() {
       <Button
         variant="primary"
         onClick={() =>
-          toast({ title: "保存しました", description: "予定を保存しました。" })
+          toast({
+            title: "保存しました",
+            description: "予定を保存しました。",
+            variant: "success",
+          })
         }
       >
-        成功 Toast
+        成功
+      </Button>
+      <Button
+        variant="outline"
+        onClick={() =>
+          toast({
+            title: "新しいバージョンがあります",
+            description: "アプリを更新してください。",
+            variant: "info",
+          })
+        }
+      >
+        情報
+      </Button>
+      <Button
+        variant="outline"
+        onClick={() =>
+          toast({
+            title: "変更を上書きします",
+            description: "既存のデータが失われる可能性があります。",
+            variant: "warning",
+          })
+        }
+      >
+        警告
       </Button>
       <Button
         variant="destructive"
@@ -136,17 +164,17 @@ function ToastDemo() {
           toast({
             title: "エラーが発生しました",
             description: "保存に失敗しました。もう一度お試しください。",
-            variant: "destructive",
+            variant: "error",
           })
         }
       >
-        エラー Toast
+        エラー
       </Button>
       <Button
-        variant="outline"
+        variant="ghost"
         onClick={() => toast({ title: "リンクをコピーしました" })}
       >
-        タイトルのみ
+        デフォルト
       </Button>
     </div>
   );
