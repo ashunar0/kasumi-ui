@@ -75,17 +75,17 @@ const viewportPositionClasses: Record<Position, string> = {
 // position に応じたスライドイン/アウト方向
 const slideAnimationClasses: Record<Position, string> = {
   "top-left":
-    "data-[state=open]:slide-in-from-top-full data-[state=closed]:slide-out-to-left-full",
+    "data-[state=open]:slide-in-from-left-full data-[state=closed]:slide-out-to-left-full",
   "top-center":
     "data-[state=open]:slide-in-from-top-full data-[state=closed]:slide-out-to-top-full",
   "top-right":
-    "data-[state=open]:slide-in-from-top-full data-[state=closed]:slide-out-to-right-full",
+    "data-[state=open]:slide-in-from-right-full data-[state=closed]:slide-out-to-right-full",
   "bottom-left":
-    "data-[state=open]:slide-in-from-bottom-full data-[state=closed]:slide-out-to-left-full",
+    "data-[state=open]:slide-in-from-left-full data-[state=closed]:slide-out-to-left-full",
   "bottom-center":
     "data-[state=open]:slide-in-from-bottom-full data-[state=closed]:slide-out-to-bottom-full",
   "bottom-right":
-    "data-[state=open]:slide-in-from-bottom-full data-[state=closed]:slide-out-to-right-full",
+    "data-[state=open]:slide-in-from-right-full data-[state=closed]:slide-out-to-right-full",
 };
 
 // --- Position Context (内部用) ---
