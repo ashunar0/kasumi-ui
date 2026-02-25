@@ -96,18 +96,18 @@ const PositionContext = createContext<Position>("top-right");
 
 const variantClasses: Record<ToastVariant, string> = {
   default: "border-border bg-background text-foreground",
-  success: "border-emerald-500/50 bg-emerald-600/20 text-emerald-500 font-medium",
-  info: "border-blue-400/50 bg-blue-500/20 text-blue-500 font-medium",
-  warning: "border-amber-500/50 bg-amber-600/20 text-amber-500 font-medium",
-  error: "border-destructive/30 bg-destructive/20 text-destructive font-medium",
+  success: "border-emerald-500/50 bg-emerald-600/20 text-foreground",
+  info: "border-blue-400/50 bg-blue-500/20 text-foreground",
+  warning: "border-amber-500/50 bg-amber-600/20 text-foreground",
+  error: "border-destructive/30 bg-destructive/20 text-foreground",
 };
 
 const variantIcons: Record<ToastVariant, ReactNode> = {
   default: null,
-  success: <CircleCheck size={16} />,
-  info: <Info size={16} />,
-  warning: <TriangleAlert size={16} />,
-  error: <OctagonAlert size={16} />,
+  success: <CircleCheck size={16} className="text-emerald-500" />,
+  info: <Info size={16} className="text-blue-500" />,
+  warning: <TriangleAlert size={16} className="text-amber-500" />,
+  error: <OctagonAlert size={16} className="text-destructive" />,
 };
 
 // --- ToastProvider ---
