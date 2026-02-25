@@ -1,3 +1,4 @@
+import { Check } from "lucide-react";
 import { type ComponentProps } from "react";
 
 type CheckboxSize = "sm" | "md" | "lg";
@@ -6,22 +7,6 @@ type CheckboxProps = Omit<ComponentProps<"input">, "size" | "type"> & {
   error?: boolean;
   size?: CheckboxSize;
 };
-
-function CheckIcon() {
-  return (
-    <svg
-      className="pointer-events-none absolute inset-0 hidden p-[2px] text-primary-foreground peer-checked:block"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={3}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <polyline points="20 6 9 17 4 12" />
-    </svg>
-  );
-}
 
 const sizeStyles: Record<CheckboxSize, string> = {
   sm: "h-4 w-4 rounded",
@@ -46,7 +31,11 @@ export function Checkbox({
         } ${className}`}
         {...props}
       />
-      <CheckIcon />
+      <Check
+        size="100%"
+        strokeWidth={3}
+        className="pointer-events-none absolute inset-0 hidden p-[2px] text-primary-foreground peer-checked:block"
+      />
     </span>
   );
 }
