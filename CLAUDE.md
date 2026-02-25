@@ -10,6 +10,8 @@
 - Tailwind CSS 4（CSS変数ベースのデザイントークン）
 - TypeScript strict
 - pnpm
+- Radix UI（振る舞いが複雑なコンポーネントのみ。個別パッケージで導入）
+- lucide-react（アイコン）
 
 ## ファイル構成
 
@@ -70,6 +72,8 @@ Minor Third (×1.2) の Modular Scale を採用。詳細は [`docs/design-decisi
 - `className` を受け取って外部からスタイル上書き可能にする
 - デザイントークンは `globals.css` のCSS変数を参照（`bg-primary` 等）
 - ピル型ボタン等は `className="rounded-full"` で外から対応（専用propは不要）
+- アイコンは `lucide-react` を使用（生 SVG は使わない）
+- 振る舞いが複雑なコンポーネントは Radix UI のプリミティブをラップして使用
 
 ## デザイントークン
 
@@ -99,10 +103,10 @@ Minor Third (×1.2) の Modular Scale を採用。詳細は [`docs/design-decisi
 ## 実装済みコンポーネント
 
 - **Button** — variant: primary/secondary/ghost/outline/destructive、size: sm/md/lg
-- **Input** — variant: outline/underline、size: sm/md/lg、error prop でエラー状態切り替え
+- **Input** — variant: outline/underline、size: sm/md/lg、error prop でエラー状態切り替え、`type="password"` でパスワード表示トグル自動表示
 - **Label** — peer-disabled 連動
 - **Card** — Card / CardHeader / CardTitle / CardContent / CardFooter の5パーツ構成
-- **Select** — 複合コンポーネント（Select/SelectTrigger/SelectValue/SelectContent/SelectItem）、error/disabled 対応、キーボードナビゲーション
+- **Select** — Radix UI ベース、複合コンポーネント（Select/SelectTrigger/SelectValue/SelectContent/SelectItem）、error/disabled 対応、Portal・自動位置調整・typeahead 対応
 - **Checkbox** — size: sm/md/lg、error prop でエラー状態切り替え
 - **Radio** — size: sm/md/lg、error prop でエラー状態切り替え、name 属性でグルーピング
 - **Switch** — size: sm/md/lg、error prop でエラー状態切り替え、role="switch" 付与
@@ -110,7 +114,11 @@ Minor Third (×1.2) の Modular Scale を採用。詳細は [`docs/design-decisi
 
 ## 設計判断メモ
 
-- **cn関数は不入れない** — 今の規模では三項演算子とテンプレートリテラルで十分。依存（clsx + tailwind-merge）を増やさない
+- **cn関数は入れない** — 今の規模では三項演算子とテンプレートリテラルで十分。依存（clsx + tailwind-merge）を増やさない
 - **Typographyコンポーネントは作らない** — Tailwindクラスがそのままスタイルの説明になるため抽象化不要
 - **ピル型は className で対応** — `rounded-full` を外から渡す。多用するようになったらpropに昇格
 - **next/font は `className` で適用** — `variable` はCSS変数を定義するだけでフォントは適用されない
+- **自作 vs ライブラリの使い分け** — CSS + HTML で完結するもの（Button, Input, Checkbox 等）は自作。フォーカストラップ・Portal・スクロールロック等の複雑な振る舞いが必要なもの（Select, Dialog, Toast 等）は Radix UI を使う。見た目は全て自前のデザイントークンで制御し、Radix はヘッドレスとして振る舞いだけ担当
+- **アイコンは lucide-react** — 生 SVG がコンポーネント間で重複し始めたため導入。tree-shaking 対応で使った分だけバンドルされる。shadcn/ui と同じエコシステムで参考資料が豊富
+- **パスワードトグルは自動表示** — `type="password"` を渡すだけで Eye/EyeOff トグルが自動的に出る。パスワード以外で目アイコンが必要な場面はないため、prop によるオプトインは不要
+- **クリアボタン（×）は今は入れない** — 実プロダクトで具体的に必要になってから追加する。API 設計（clearable prop、onClear コールバック等）が推測になるため YAGNI
