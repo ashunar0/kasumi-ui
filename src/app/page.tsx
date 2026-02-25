@@ -23,6 +23,16 @@ import {
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+  DialogClose,
+} from "@/components/ui/dialog";
 
 function Section({
   title,
@@ -439,6 +449,58 @@ export default function Home() {
               </Button>
             </CardFooter>
           </Card>
+        </div>
+      </Section>
+
+      {/* Dialog */}
+      <Section title="ダイアログ">
+        <div className="flex flex-wrap gap-4">
+          {/* 確認ダイアログ */}
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="destructive">予定を削除</Button>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>本当に削除しますか？</DialogTitle>
+                <DialogDescription>
+                  この操作は取り消せません。予定に関するデータはすべて削除されます。
+                </DialogDescription>
+              </DialogHeader>
+              <DialogFooter>
+                <DialogClose asChild>
+                  <Button variant="ghost">キャンセル</Button>
+                </DialogClose>
+                <Button variant="destructive">削除する</Button>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
+
+          {/* 情報ダイアログ */}
+          <Dialog>
+            <DialogTrigger asChild>
+              <Button variant="outline">詳細を見る</Button>
+            </DialogTrigger>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>ミーティングの詳細</DialogTitle>
+                <DialogDescription>
+                  来週の月曜日 10:00〜11:00 に予定されています。
+                </DialogDescription>
+              </DialogHeader>
+              <p className="text-sm">
+                参加者：田中さん、佐藤さん、鈴木さん
+              </p>
+              <p className="text-sm">
+                議題：第3四半期のスケジュール調整
+              </p>
+              <DialogFooter>
+                <DialogClose asChild>
+                  <Button variant="ghost">閉じる</Button>
+                </DialogClose>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
         </div>
       </Section>
     </div>
