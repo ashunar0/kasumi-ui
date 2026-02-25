@@ -186,6 +186,20 @@ export default function Home() {
             </div>
           </div>
 
+          {/* password */}
+          <div className="flex gap-8">
+            <div className="space-y-3 flex-1">
+              <p className="text-ui text-muted-foreground">password — md</p>
+              <Input type="password" placeholder="パスワードを入力" />
+              <Input type="password" placeholder="パスワードが短すぎます" error />
+            </div>
+            <div className="space-y-3 flex-1">
+              <p className="text-ui text-muted-foreground">password — lg</p>
+              <Input type="password" size="lg" placeholder="パスワードを入力" />
+              <Input type="password" size="lg" placeholder="パスワードが短すぎます" error />
+            </div>
+          </div>
+
           {/* underline */}
           <div className="flex gap-8">
             <div className="space-y-3 flex-1">
