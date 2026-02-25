@@ -96,10 +96,10 @@ const PositionContext = createContext<Position>("top-right");
 
 const variantClasses: Record<ToastVariant, string> = {
   default: "border-border bg-background text-foreground",
-  success: "border-emerald-600 bg-emerald-50 text-emerald-900",
-  info: "border-blue-600 bg-blue-50 text-blue-900",
-  warning: "border-amber-600 bg-amber-50 text-amber-900",
-  error: "border-red-600 bg-red-50 text-red-900",
+  success: "border-emerald-500/50 bg-emerald-600/20 text-emerald-500 font-medium",
+  info: "border-blue-400/50 bg-blue-500/20 text-blue-500 font-medium",
+  warning: "border-amber-500/50 bg-amber-600/20 text-amber-500 font-medium",
+  error: "border-destructive/30 bg-destructive/20 text-destructive font-medium",
 };
 
 const variantIcons: Record<ToastVariant, ReactNode> = {
