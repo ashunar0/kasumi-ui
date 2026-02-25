@@ -36,7 +36,7 @@ export function DialogContent({
         {...props}
       >
         {children}
-        <DialogPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+        <DialogPrimitive.Close className="absolute right-6 top-7 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
           <X size={16} />
           <span className="sr-only">閉じる</span>
         </DialogPrimitive.Close>
@@ -82,7 +82,7 @@ export function DialogDescription({
 }: ComponentProps<typeof DialogPrimitive.Description>) {
   return (
     <DialogPrimitive.Description
-      className={`text-sm text-muted-foreground ${className}`}
+      className={`text-sm text-muted-foreground my-4 ${className}`}
       {...props}
     >
       {children}
@@ -97,10 +97,7 @@ export function DialogFooter({
   ...props
 }: ComponentProps<"div">) {
   return (
-    <div
-      className={`mt-6 flex justify-end gap-2 ${className}`}
-      {...props}
-    >
+    <div className={`mt-6 flex justify-end gap-2 ${className}`} {...props}>
       {children}
     </div>
   );
@@ -111,7 +108,5 @@ export function DialogClose({
   children,
   ...props
 }: ComponentProps<typeof DialogPrimitive.Close>) {
-  return (
-    <DialogPrimitive.Close {...props}>{children}</DialogPrimitive.Close>
-  );
+  return <DialogPrimitive.Close {...props}>{children}</DialogPrimitive.Close>;
 }
