@@ -120,7 +120,7 @@ const variantIcons: Record<ToastVariant, ReactNode> = {
 export function ToastProvider({
   children,
   position = "top-right",
-  duration = 5000,
+  duration = 4000,
 }: {
   children: ReactNode;
   position?: Position;
