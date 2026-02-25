@@ -114,7 +114,7 @@ Minor Third (×1.2) の Modular Scale を採用。詳細は [`docs/design-decisi
 - **Switch** — size: sm/md/lg、error prop でエラー状態切り替え、role="switch" 付与
 - **Textarea** — error prop でエラー状態切り替え、resize-y でリサイズ可能
 - **Dialog** — Radix UI ベース、複合コンポーネント（Dialog/DialogTrigger/DialogContent/DialogHeader/DialogTitle/DialogDescription/DialogFooter/DialogClose）、Portal・フォーカストラップ・Escape キー対応
-- **Toast** — Radix UI ベース、命令型 API（useToast フック）、variant: default/destructive、位置設定可能（ToastProvider の position prop）、複数スタック対応
+- **Toast** — Radix UI ベース、命令型 API（useToast フック）、variant: default/success/info/warning/error（Alert Callout 風の色味+アイコン）、位置設定可能（ToastProvider の position prop、デフォルト右上）、スワイプで閉じる、複数スタック対応
 
 ## 設計判断メモ
 
