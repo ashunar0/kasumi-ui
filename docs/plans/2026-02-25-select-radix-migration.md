@@ -1,3 +1,38 @@
+# Select Radix UI 移行 実装計画
+
+> **For Claude:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
+
+**Goal:** 自作 Select コンポーネントを `@radix-ui/react-select` ベースに差し替え、API 互換を維持する
+
+**Architecture:** Radix UI の Select プリミティブを内部に隠蔽し、既存の `Select` / `SelectTrigger` / `SelectValue` / `SelectContent` / `SelectItem` API をそのまま維持するラッパー方式。shadcn/ui と同じ構成。
+
+**Tech Stack:** @radix-ui/react-select, React 19, Tailwind CSS 4
+
+---
+
+### Task 1: Radix UI Select パッケージのインストール
+
+**Step 1: パッケージ追加**
+
+Run: `pnpm add @radix-ui/react-select`
+
+**Step 2: インストール確認**
+
+Run: `pnpm ls @radix-ui/react-select`
+Expected: バージョンが表示される
+
+---
+
+### Task 2: select.tsx を Radix ベースに書き換え
+
+**Files:**
+- Modify: `src/components/ui/select.tsx`
+
+**Step 1: select.tsx を以下の内容に書き換え**
+
+既存の自作コードをすべて置き換える。API（export される関数名・props）は維持。
+
+```tsx
 "use client";
 
 import * as SelectPrimitive from "@radix-ui/react-select";
@@ -151,3 +186,59 @@ export function SelectItem({
     </SelectPrimitive.Item>
   );
 }
+```
+
+**Step 2: dev サーバーで動作確認**
+
+Run: `pnpm dev`
+
+ブラウザでカタログページを開き、以下を確認:
+- Select が開閉できる
+- 値が選択できる
+- md / lg サイズが正しく表示される
+- error 状態のボーダーが赤い
+- disabled 状態が効いている
+- ESC / Arrow キーが動作する
+
+---
+
+### Task 3: 不要コードの確認と最終調整
+
+**Files:**
+- Check: `src/components/ui/select.tsx`
+- Check: `src/app/page.tsx`
+
+**Step 1: page.tsx が変更不要なことを確認**
+
+page.tsx の import と使用箇所が既存のまま動作していることを確認する。
+`useSelectContext` を page.tsx で使っていないことを確認する。
+
+**Step 2: スタイル微調整（必要に応じて）**
+
+Radix の Content は Portal で描画されるため、位置やアニメーションが自作版と微妙に異なる可能性がある。
+ブラウザで見た目を確認し、必要ならクラスを調整する。
+
+**Step 3: コミット**
+
+```bash
+git add -A
+git commit -m "refactor(select): Radix UI ベースに移行し、API 互換を維持"
+```
+
+---
+
+### Task 4: 設計ドキュメント更新
+
+**Files:**
+- Modify: `docs/plans/2026-02-24-select-design.md`
+
+**Step 1: 設計ドキュメントに Radix 移行を反映**
+
+「なぜフルスクラッチなのか」セクションを更新し、Radix に移行した経緯を記載する。
+
+**Step 2: コミット**
+
+```bash
+git add docs/plans/2026-02-24-select-design.md
+git commit -m "docs(select): Radix UI 移行の経緯を設計ドキュメントに反映"
+```
