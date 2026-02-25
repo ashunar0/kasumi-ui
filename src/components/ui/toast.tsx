@@ -6,6 +6,7 @@ import {
   Info,
   TriangleAlert,
   OctagonAlert,
+  X,
 } from "lucide-react";
 import {
   type ReactNode,
@@ -193,6 +194,12 @@ function ToastItem({
             </ToastPrimitive.Description>
           )}
         </div>
+        <ToastPrimitive.Close
+          aria-label="閉じる"
+          className="shrink-0 rounded-md p-0.5 opacity-50 transition-opacity hover:opacity-100"
+        >
+          <X size={14} />
+        </ToastPrimitive.Close>
       </div>
     </ToastPrimitive.Root>
   );
