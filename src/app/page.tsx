@@ -33,6 +33,7 @@ import {
   DialogFooter,
   DialogClose,
 } from "@/components/ui/dialog";
+import { useToast } from "@/components/ui/toast";
 
 function Section({
   title,
@@ -113,6 +114,40 @@ function SelectDemo() {
           </SelectContent>
         </Select>
       </div>
+    </div>
+  );
+}
+
+function ToastDemo() {
+  const { toast } = useToast();
+  return (
+    <div className="flex flex-wrap gap-4">
+      <Button
+        variant="primary"
+        onClick={() =>
+          toast({ title: "保存しました", description: "予定を保存しました。" })
+        }
+      >
+        成功 Toast
+      </Button>
+      <Button
+        variant="destructive"
+        onClick={() =>
+          toast({
+            title: "エラーが発生しました",
+            description: "保存に失敗しました。もう一度お試しください。",
+            variant: "destructive",
+          })
+        }
+      >
+        エラー Toast
+      </Button>
+      <Button
+        variant="outline"
+        onClick={() => toast({ title: "リンクをコピーしました" })}
+      >
+        タイトルのみ
+      </Button>
     </div>
   );
 }
@@ -502,6 +537,11 @@ export default function Home() {
             </DialogContent>
           </Dialog>
         </div>
+      </Section>
+
+      {/* Toast */}
+      <Section title="トースト">
+        <ToastDemo />
       </Section>
     </div>
   );
