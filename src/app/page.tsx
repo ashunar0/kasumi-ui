@@ -66,6 +66,7 @@ import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 function Section({
   title,
@@ -550,6 +551,34 @@ export default function Home() {
                   <Skeleton className="h-4 w-32" />
                   <Skeleton className="h-3 w-48" />
                 </div>
+              </div>
+            </div>
+          </div>
+        </Section>
+
+        {/* Avatar */}
+        <Section title="アバター">
+          <div className="space-y-6">
+            <div className="space-y-3">
+              <p className="text-ui text-muted-foreground">イニシャル</p>
+              <div className="flex items-center gap-4">
+                <Avatar size="sm">
+                  <AvatarFallback>田</AvatarFallback>
+                </Avatar>
+                <Avatar>
+                  <AvatarFallback>佐</AvatarFallback>
+                </Avatar>
+                <Avatar size="lg">
+                  <AvatarFallback>鈴</AvatarFallback>
+                </Avatar>
+              </div>
+            </div>
+            <div className="space-y-3">
+              <p className="text-ui text-muted-foreground">フォールバック（アイコン）</p>
+              <div className="flex items-center gap-4">
+                <Avatar size="sm" />
+                <Avatar />
+                <Avatar size="lg" />
               </div>
             </div>
           </div>
