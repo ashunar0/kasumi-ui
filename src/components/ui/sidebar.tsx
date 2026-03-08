@@ -119,7 +119,7 @@ export function Sidebar({ className, children, ...props }: SidebarProps) {
           <DialogPrimitive.Overlay className="fixed inset-0 z-40 bg-black/60 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 duration-200" />
           <DialogPrimitive.Content
             className={cn(
-              "fixed inset-y-0 left-0 z-50 flex flex-col bg-secondary data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:slide-in-from-left data-[state=closed]:slide-out-to-left duration-200",
+              "fixed inset-y-0 left-0 z-50 flex flex-col bg-sidebar text-sidebar-foreground data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:slide-in-from-left data-[state=closed]:slide-out-to-left duration-200",
               className,
             )}
             style={{ width: SIDEBAR_WIDTH }}
@@ -143,7 +143,7 @@ export function Sidebar({ className, children, ...props }: SidebarProps) {
       />
       <aside
         className={cn(
-          "fixed inset-y-0 left-0 z-30 flex flex-col overflow-hidden border-r border-border bg-secondary transition-[width] duration-200",
+          "fixed inset-y-0 left-0 z-30 flex flex-col overflow-hidden border-r border-sidebar-border bg-sidebar text-sidebar-foreground transition-[width] duration-200",
           className,
         )}
         style={{ width: open ? SIDEBAR_WIDTH : SIDEBAR_WIDTH_COLLAPSED }}
@@ -200,7 +200,7 @@ export function SidebarFooter({
   return (
     <div
       className={cn(
-        "flex items-center gap-2 border-t border-border px-2 py-3",
+        "flex items-center gap-2 border-t border-sidebar-border px-2 py-3",
         className,
       )}
       {...props}
@@ -300,7 +300,7 @@ export function SidebarMenuButton({
     <Comp
       data-active={isActive ? "" : undefined}
       className={cn(
-        "cursor-pointer flex w-full items-center gap-2 rounded-md px-1.5 py-2 text-ui transition-colors hover:bg-black/5 dark:hover:bg-white/10 data-active:bg-black/5 dark:data-active:bg-white/10 data-active:font-medium",
+        "cursor-pointer flex w-full items-center gap-2 rounded-md px-1.5 py-2 text-ui transition-colors hover:bg-sidebar-accent hover:text-sidebar-accent-foreground data-active:bg-sidebar-accent data-active:text-sidebar-accent-foreground data-active:font-medium",
         className,
       )}
       {...props}
@@ -360,7 +360,7 @@ export function SidebarTrigger({
       <TooltipTrigger asChild>
         <button
           className={cn(
-            "inline-flex items-center justify-center rounded-md text-muted-foreground hover:bg-black/5 dark:hover:bg-white/10 hover:text-foreground transition-colors",
+            "inline-flex items-center justify-center rounded-md text-muted-foreground hover:bg-sidebar-accent hover:text-foreground transition-colors",
             className,
           )}
           onClick={toggleSidebar}
