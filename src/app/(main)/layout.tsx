@@ -133,15 +133,7 @@ export default function MainLayout({
           </SidebarContent>
 
           <SidebarFooter>
-            <Avatar size="sm">
-              <AvatarFallback>あ</AvatarFallback>
-            </Avatar>
-            <div className="flex flex-col text-ui">
-              <span className="font-medium">あさひ</span>
-              <span className="text-xs text-muted-foreground">
-                asahi@example.com
-              </span>
-            </div>
+            <SidebarMenuButton icon={HelpCircle}>ヘルプ</SidebarMenuButton>
           </SidebarFooter>
         </Sidebar>
 

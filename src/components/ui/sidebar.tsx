@@ -200,7 +200,7 @@ export function SidebarFooter({
   return (
     <div
       className={cn(
-        "flex items-center gap-2 border-t border-border px-4 py-3",
+        "flex items-center gap-2 border-t border-border px-2 py-3",
         className,
       )}
       {...props}
@@ -300,7 +300,7 @@ export function SidebarMenuButton({
     <Comp
       data-active={isActive ? "" : undefined}
       className={cn(
-        "cursor-pointer flex w-full items-center gap-2 rounded-md px-1.5 py-2 text-ui transition-colors hover:bg-black/5 dark:hover:bg-white/10 data-[active]:bg-black/5 dark:data-[active]:bg-white/10 data-[active]:font-medium",
+        "cursor-pointer flex w-full items-center gap-2 rounded-md px-1.5 py-2 text-ui transition-colors hover:bg-black/5 dark:hover:bg-white/10 data-active:bg-black/5 dark:data-active:bg-white/10 data-active:font-medium",
         className,
       )}
       {...props}
