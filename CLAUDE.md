@@ -44,6 +44,7 @@ src/
         ├── skeleton.tsx
         ├── dialog.tsx
         ├── dropdown-menu.tsx
+        ├── field.tsx
         ├── select.tsx
         ├── switch.tsx
         ├── table.tsx
@@ -142,6 +143,7 @@ Minor Third (×1.2) の Modular Scale を採用。詳細は [`docs/design-decisi
 - **Tabs** — Radix UI ベース、複合コンポーネント（Tabs/TabsList/TabsTrigger/TabsContent）、variant: underline/pill（デフォルト underline）、キーボードナビゲーション対応
 - **Textarea** — error prop でエラー状態切り替え、resize-y でリサイズ可能
 - **DropdownMenu** — Radix UI ベース、複合コンポーネント（DropdownMenu/DropdownMenuTrigger/DropdownMenuContent/DropdownMenuItem/DropdownMenuLabel/DropdownMenuSeparator/DropdownMenuShortcut）、destructive 項目対応、Portal・キーボードナビゲーション対応
+- **Field** — 自作、複合コンポーネント（Field/FieldLabel/FieldDescription/FieldError/FieldGroup/FieldSet/FieldLegend）、フォーム入力フィールドのレイアウト・セマンティクス担当、react-hook-form 非依存、data-invalid によるエラー状態伝播
 - **Dialog** — Radix UI ベース、複合コンポーネント（Dialog/DialogTrigger/DialogContent/DialogHeader/DialogTitle/DialogDescription/DialogFooter/DialogClose）、Portal・フォーカストラップ・Escape キー対応
 - **Tooltip** — Radix UI ベース、複合コンポーネント（TooltipProvider/Tooltip/TooltipTrigger/TooltipContent）、side 指定可能（デフォルト top）、Portal・自動位置調整対応
 - **Toast** — Radix UI ベース、命令型 API（useToast フック）、variant: default/success/info/warning/error（Alert Callout 風の色味+アイコン）、位置設定可能（ToastProvider の position prop、デフォルト右上）、スワイプで閉じる、複数スタック対応
