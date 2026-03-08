@@ -49,11 +49,11 @@ export function PaginationLink({
     <button
       aria-current={isActive ? "page" : undefined}
       className={cn(
-        "inline-flex h-9 w-9 items-center justify-center rounded-md text-sm font-medium transition-colors",
+        "inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-md text-sm font-medium transition-colors",
         "hover:bg-accent hover:text-accent-foreground",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
         "disabled:pointer-events-none disabled:opacity-50",
-        isActive && "border border-border bg-background",
+        isActive && "bg-primary text-primary-foreground",
         className
       )}
       {...props}
@@ -69,7 +69,7 @@ export function PaginationPrevious({
   return (
     <PaginationLink
       aria-label="前のページへ"
-      className={cn("gap-1 px-2.5", className)}
+      className={cn("w-auto gap-1 px-2.5", className)}
       {...props}
     >
       <ChevronLeft className="h-4 w-4" />
@@ -86,7 +86,7 @@ export function PaginationNext({
   return (
     <PaginationLink
       aria-label="次のページへ"
-      className={cn("gap-1 px-2.5", className)}
+      className={cn("w-auto gap-1 px-2.5", className)}
       {...props}
     >
       <span>次へ</span>

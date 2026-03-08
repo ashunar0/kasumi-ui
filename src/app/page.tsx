@@ -687,14 +687,8 @@ export default function Home() {
           </div>
         </Section>
 
-        {/* テーブル */}
-        <section>
-          <h2 className="text-h2 font-semibold tracking-tight">テーブル</h2>
-          <p className="mt-2 text-body text-muted-foreground">
-            データを行と列で整理して表示します。
-          </p>
-          <div className="mt-6">
-            <Table>
+        <Section title="テーブル">
+          <Table>
               <TableCaption>2026年3月の予定一覧</TableCaption>
               <TableHeader>
                 <TableRow>
@@ -743,17 +737,10 @@ export default function Home() {
                 </TableRow>
               </TableFooter>
             </Table>
-          </div>
-        </section>
+        </Section>
 
-        {/* ページネーション */}
-        <section>
-          <h2 className="text-h2 font-semibold tracking-tight">ページネーション</h2>
-          <p className="mt-2 text-body text-muted-foreground">
-            コンテンツを複数ページに分けてナビゲーションを提供します。
-          </p>
-          <div className="mt-6 space-y-8">
-            <Pagination>
+        <Section title="ページネーション">
+          <Pagination>
               <PaginationContent>
                 <PaginationItem>
                   <PaginationPrevious />
@@ -778,8 +765,7 @@ export default function Home() {
                 </PaginationItem>
               </PaginationContent>
             </Pagination>
-          </div>
-        </section>
+        </Section>
 
         {/* Tooltip */}
         <Section title="ツールチップ">
