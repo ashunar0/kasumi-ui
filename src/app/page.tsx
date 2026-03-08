@@ -76,6 +76,16 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableFooter,
+  TableRow,
+  TableHead,
+  TableCell,
+  TableCaption,
+} from "@/components/ui/table";
 
 function Section({
   title,
@@ -667,6 +677,65 @@ export default function Home() {
             </Popover>
           </div>
         </Section>
+
+        {/* テーブル */}
+        <section>
+          <h2 className="text-h2 font-semibold tracking-tight">テーブル</h2>
+          <p className="mt-2 text-body text-muted-foreground">
+            データを行と列で整理して表示します。
+          </p>
+          <div className="mt-6">
+            <Table>
+              <TableCaption>2026年3月の予定一覧</TableCaption>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="w-[100px]">日付</TableHead>
+                  <TableHead>タイトル</TableHead>
+                  <TableHead>参加者</TableHead>
+                  <TableHead className="text-right">ステータス</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="font-medium">3/5</TableCell>
+                  <TableCell>デザインレビュー</TableCell>
+                  <TableCell>3人</TableCell>
+                  <TableCell className="text-right">確定</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">3/8</TableCell>
+                  <TableCell>スプリント振り返り</TableCell>
+                  <TableCell>5人</TableCell>
+                  <TableCell className="text-right">確定</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">3/12</TableCell>
+                  <TableCell>1on1 ミーティング</TableCell>
+                  <TableCell>2人</TableCell>
+                  <TableCell className="text-right">調整中</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">3/15</TableCell>
+                  <TableCell>チーム合宿</TableCell>
+                  <TableCell>8人</TableCell>
+                  <TableCell className="text-right">調整中</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">3/20</TableCell>
+                  <TableCell>プロダクトリリース</TableCell>
+                  <TableCell>4人</TableCell>
+                  <TableCell className="text-right">未定</TableCell>
+                </TableRow>
+              </TableBody>
+              <TableFooter>
+                <TableRow>
+                  <TableCell colSpan={3}>合計</TableCell>
+                  <TableCell className="text-right">5件</TableCell>
+                </TableRow>
+              </TableFooter>
+            </Table>
+          </div>
+        </section>
 
         {/* Tooltip */}
         <Section title="ツールチップ">
