@@ -276,6 +276,12 @@ export default function Home() {
             >
               新規登録2
             </Link>
+            <Link
+              href="/dashboard"
+              className="inline-flex items-center rounded-lg border border-border px-3 py-1.5 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+            >
+              ダッシュボード
+            </Link>
           </div>
 
           {/* Typography */}
