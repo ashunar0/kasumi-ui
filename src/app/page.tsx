@@ -35,6 +35,12 @@ import {
 } from "@/components/ui/dialog";
 import { useToast } from "@/components/ui/toast";
 import { Badge } from "@/components/ui/badge";
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from "@/components/ui/tabs";
 
 function Section({
   title,
@@ -284,6 +290,78 @@ export default function Home() {
                   beta
                 </Badge>
               </div>
+            </div>
+          </div>
+        </Section>
+
+        {/* Tabs */}
+        <Section title="タブ">
+          <div className="space-y-8">
+            <div>
+              <p className="text-ui text-muted-foreground mb-3">underline</p>
+              <Tabs defaultValue="schedule">
+                <TabsList>
+                  <TabsTrigger value="schedule">スケジュール</TabsTrigger>
+                  <TabsTrigger value="participants">参加者</TabsTrigger>
+                  <TabsTrigger value="settings">設定</TabsTrigger>
+                </TabsList>
+                <TabsContent value="schedule">
+                  <p className="text-sm text-muted-foreground">
+                    来週のミーティング候補日が3件あります。
+                  </p>
+                </TabsContent>
+                <TabsContent value="participants">
+                  <p className="text-sm text-muted-foreground">
+                    参加者は田中さん、佐藤さん、鈴木さんの3名です。
+                  </p>
+                </TabsContent>
+                <TabsContent value="settings">
+                  <p className="text-sm text-muted-foreground">
+                    通知設定やカレンダー連携を管理できます。
+                  </p>
+                </TabsContent>
+              </Tabs>
+            </div>
+
+            <div>
+              <p className="text-ui text-muted-foreground mb-3">pill</p>
+              <Tabs defaultValue="all">
+                <TabsList variant="pill">
+                  <TabsTrigger value="all">すべて</TabsTrigger>
+                  <TabsTrigger value="upcoming">今後の予定</TabsTrigger>
+                  <TabsTrigger value="past">過去の予定</TabsTrigger>
+                </TabsList>
+                <TabsContent value="all">
+                  <p className="text-sm text-muted-foreground">
+                    すべての予定を表示しています。
+                  </p>
+                </TabsContent>
+                <TabsContent value="upcoming">
+                  <p className="text-sm text-muted-foreground">
+                    今後の予定が2件あります。
+                  </p>
+                </TabsContent>
+                <TabsContent value="past">
+                  <p className="text-sm text-muted-foreground">
+                    過去の予定が5件あります。
+                  </p>
+                </TabsContent>
+              </Tabs>
+            </div>
+
+            <div>
+              <p className="text-ui text-muted-foreground mb-3">disabled タブ</p>
+              <Tabs defaultValue="active">
+                <TabsList>
+                  <TabsTrigger value="active">有効</TabsTrigger>
+                  <TabsTrigger value="disabled" disabled>無効</TabsTrigger>
+                </TabsList>
+                <TabsContent value="active">
+                  <p className="text-sm text-muted-foreground">
+                    このタブは選択できます。隣のタブは無効化されています。
+                  </p>
+                </TabsContent>
+              </Tabs>
             </div>
           </div>
         </Section>
