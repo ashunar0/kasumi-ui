@@ -5,67 +5,82 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #1c1917;
+  --foreground: #0c0a09;
   --primary: #1c1917;
   --primary-foreground: #ffffff;
-  --secondary: #f3f2f0;
-  --secondary-foreground: #1c1917;
-  --muted: #f3f2f0;
-  --muted-foreground: #75726e;
-  --accent: #f3f2f0;
-  --accent-foreground: #1c1917;
-  --destructive: #c4431a;
+  --secondary: #f5f5f4;
+  --secondary-foreground: #0c0a09;
+  --muted: #f5f5f4;
+  --muted-foreground: #78716c;
+  --accent: #f5f5f4;
+  --accent-foreground: #0c0a09;
+  --destructive: #e7000b;
   --destructive-foreground: #ffffff;
-  --border: #e6e4e1;
-  --input: #e6e4e1;
+  --border: #e7e5e4;
+  --input: #e7e5e4;
   --switch-track: #e5e5e5;
   --switch-thumb: #ffffff;
-  --ring: #1c1917;
+  --ring: #0c0a09;
   --radius: 0.5rem;
+  --chart-1: #bbf451;
+  --chart-2: #7ccf00;
+  --chart-3: #5ea500;
+  --chart-4: #497d00;
+  --chart-5: #3c6300;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not(.light) {
-    --background: #0f0e0d;
-    --foreground: #f5f3f0;
-    --primary: #f5f3f0;
-    --primary-foreground: #1c1917;
-    --secondary: #1f1e1c;
-    --secondary-foreground: #f5f3f0;
-    --muted: #1f1e1c;
-    --muted-foreground: #a09c97;
-    --accent: #1f1e1c;
-    --accent-foreground: #f5f3f0;
-    --destructive: #c4431a;
+    --background: #0c0a09;
+    --foreground: #fafaf9;
+    --primary: #e7e5e4;
+    --primary-foreground: #0c0a09;
+    --secondary: #292524;
+    --secondary-foreground: #fafaf9;
+    --muted: #292524;
+    --muted-foreground: #a8a29e;
+    --accent: #292524;
+    --accent-foreground: #fafaf9;
+    --destructive: #ff6467;
     --destructive-foreground: #ffffff;
-    --border: #2e2c2a;
-    --input: #2e2c2a;
-    --switch-track: #4a4a48;
-    --switch-thumb: #f5f3f0;
-    --ring: #d6d2cd;
+    --border: #292524;
+    --input: #292524;
+    --switch-track: #44403c;
+    --switch-thumb: #fafaf9;
+    --ring: #d6d3d1;
     --radius: 0.5rem;
+    --chart-1: #bbf451;
+    --chart-2: #7ccf00;
+    --chart-3: #5ea500;
+    --chart-4: #497d00;
+    --chart-5: #3c6300;
   }
 }
 
 .dark {
-  --background: #0f0e0d;
-  --foreground: #f5f3f0;
-  --primary: #f5f3f0;
-  --primary-foreground: #1c1917;
-  --secondary: #1f1e1c;
-  --secondary-foreground: #f5f3f0;
-  --muted: #1f1e1c;
-  --muted-foreground: #a09c97;
-  --accent: #1f1e1c;
-  --accent-foreground: #f5f3f0;
-  --destructive: #c4431a;
+  --background: #0c0a09;
+  --foreground: #fafaf9;
+  --primary: #fafaf9;
+  --primary-foreground: #0c0a09;
+  --secondary: #292524;
+  --secondary-foreground: #fafaf9;
+  --muted: #292524;
+  --muted-foreground: #a8a29e;
+  --accent: #292524;
+  --accent-foreground: #fafaf9;
+  --destructive: #e7000b;
   --destructive-foreground: #ffffff;
-  --border: #2e2c2a;
-  --input: #2e2c2a;
-  --switch-track: #4a4a48;
-  --switch-thumb: #f5f3f0;
-  --ring: #d6d2cd;
+  --border: #292524;
+  --input: #292524;
+  --switch-track: #44403c;
+  --switch-thumb: #fafaf9;
+  --ring: #d6d3d1;
   --radius: 0.5rem;
+  --chart-1: #bbf451;
+  --chart-2: #7ccf00;
+  --chart-3: #5ea500;
+  --chart-4: #497d00;
+  --chart-5: #3c6300;
 }
 
 @theme inline {
@@ -86,6 +101,11 @@
   --color-switch-track: var(--switch-track);
   --color-switch-thumb: var(--switch-thumb);
   --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -93,14 +113,14 @@
   --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
   /* Typography Scale: Minor Third (1.2), base 16px */
-  --text-ui: 0.875rem;              /* 14px — コンパクトUI文 */
-  --text-ui--line-height: 1.6;      /* ×1.6 */
-  --text-body: 1rem;                /* 16px — base */
-  --text-body--line-height: 1.8;    /* ×1.8 — JLREQ準拠 */
-  --text-h4: 1.1875rem;             /* 19px — base × 1.2¹ */
-  --text-h3: 1.4375rem;             /* 23px — base × 1.2² */
-  --text-h2: 1.75rem;               /* 28px — base × 1.2³ */
-  --text-h1: 2.0625rem;             /* 33px — base × 1.2⁴ */
+  --text-ui: 0.875rem; /* 14px — コンパクトUI文 */
+  --text-ui--line-height: 1.6; /* ×1.6 */
+  --text-body: 1rem; /* 16px — base */
+  --text-body--line-height: 1.8; /* ×1.8 — JLREQ準拠 */
+  --text-h4: 1.1875rem; /* 19px — base × 1.2¹ */
+  --text-h3: 1.4375rem; /* 23px — base × 1.2² */
+  --text-h2: 1.75rem; /* 28px — base × 1.2³ */
+  --text-h1: 2.0625rem; /* 33px — base × 1.2⁴ */
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
 }
@@ -127,4 +147,3 @@ body {
     height: 0;
   }
 }
-
