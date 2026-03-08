@@ -132,7 +132,7 @@ Minor Third (×1.2) の Modular Scale を採用。詳細は [`docs/design-decisi
 - **Popover** — Radix UI ベース、複合コンポーネント（Popover/PopoverTrigger/PopoverContent）、Portal・自動位置調整・フェードアニメーション対応
 - **Progress** — 自作、value prop で進捗率（0〜100）指定、transition-all でスムーズアニメーション、aria-progressbar 対応
 - **Label** — peer-disabled 連動
-- **Card** — Card / CardHeader / CardTitle / CardContent / CardFooter の5パーツ構成
+- **Card** — Card / CardHeader / CardTitle / CardDescription / CardContent / CardFooter の6パーツ構成
 - **Select** — Radix UI ベース、複合コンポーネント（Select/SelectTrigger/SelectValue/SelectContent/SelectItem）、error/disabled 対応、Portal・自動位置調整・typeahead 対応
 - **Checkbox** — size: sm/md/lg、error prop でエラー状態切り替え
 - **Radio** — size: sm/md/lg、error prop でエラー状態切り替え、name 属性でグルーピング
