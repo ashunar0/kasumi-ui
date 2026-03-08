@@ -88,11 +88,15 @@ export function SidebarProvider({
       setOpen,
       openMobile,
       setOpenMobile,
-      isMobile,
+      isMobile: isMobile ?? false,
       toggleSidebar,
     }),
     [open, setOpen, openMobile, setOpenMobile, isMobile, toggleSidebar],
   );
+
+  if (isMobile === undefined) {
+    return null;
+  }
 
   return (
     <SidebarContext.Provider value={value}>
