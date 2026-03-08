@@ -75,6 +75,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
 
 function Section({
   title,
@@ -621,6 +622,49 @@ export default function Home() {
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
+          </div>
+        </Section>
+
+        {/* Popover */}
+        <Section title="ポップオーバー">
+          <div className="flex flex-wrap gap-4">
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button variant="outline">日時を選択</Button>
+              </PopoverTrigger>
+              <PopoverContent>
+                <div className="space-y-3">
+                  <h4 className="font-medium text-sm">候補日の追加</h4>
+                  <p className="text-sm text-muted-foreground">
+                    カレンダーから候補日を選択してください。複数の日時を追加できます。
+                  </p>
+                  <Input placeholder="2026-03-15 10:00" />
+                  <Button size="sm" className="w-full">追加する</Button>
+                </div>
+              </PopoverContent>
+            </Popover>
+            <Popover>
+              <PopoverTrigger asChild>
+                <Button variant="ghost">フィルター</Button>
+              </PopoverTrigger>
+              <PopoverContent align="start">
+                <div className="space-y-3">
+                  <h4 className="font-medium text-sm">表示フィルター</h4>
+                  <label className="flex items-center gap-2">
+                    <Checkbox defaultChecked />
+                    <span className="text-sm">参加予定</span>
+                  </label>
+                  <label className="flex items-center gap-2">
+                    <Checkbox defaultChecked />
+                    <span className="text-sm">未回答</span>
+                  </label>
+                  <label className="flex items-center gap-2">
+                    <Checkbox />
+                    <span className="text-sm">不参加</span>
+                  </label>
+                </div>
+              </PopoverContent>
+            </Popover>
           </div>
         </Section>
 

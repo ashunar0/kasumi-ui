@@ -36,6 +36,7 @@ src/
         ├── input.tsx
         ├── label.tsx
         ├── card.tsx
+        ├── popover.tsx
         ├── progress.tsx
         ├── radio.tsx
         ├── separator.tsx
@@ -111,7 +112,7 @@ Minor Third (×1.2) の Modular Scale を採用。詳細は [`docs/design-decisi
 ## カタログページ
 
 - `page.tsx` にセクション区切り型で全コンポーネントを縦並び表示
-- セクション: タイポグラフィ → ボタン → バッジ → タブ → アコーディオン → プログレスバー → セパレーター → アラート → スケルトン → アバター → パンくずリスト → ツールチップ → ドロップダウンメニュー → テキスト入力 → ラベル → カード → ダイアログ → トースト
+- セクション: タイポグラフィ → ボタン → バッジ → タブ → アコーディオン → プログレスバー → セパレーター → アラート → スケルトン → アバター → パンくずリスト → ポップオーバー → ツールチップ → ドロップダウンメニュー → テキスト入力 → ラベル → カード → ダイアログ → トースト
 - テキストは日本語で記述（日程調整アプリを想定した実用的な内容）
 - コードスニペットやProps一覧は不要（シンプルに保つ）
 
@@ -124,6 +125,7 @@ Minor Third (×1.2) の Modular Scale を採用。詳細は [`docs/design-decisi
 - **Badge** — variant: default/outline、size: sm/md（デフォルト md）、色変更は className で外から指定
 - **Button** — variant: primary/secondary/ghost/outline/destructive、size: sm/md/lg
 - **Input** — variant: outline/underline、size: sm/md/lg、error prop でエラー状態切り替え、`type="password"` でパスワード表示トグル自動表示
+- **Popover** — Radix UI ベース、複合コンポーネント（Popover/PopoverTrigger/PopoverContent）、Portal・自動位置調整・フェードアニメーション対応
 - **Progress** — 自作、value prop で進捗率（0〜100）指定、transition-all でスムーズアニメーション、aria-progressbar 対応
 - **Label** — peer-disabled 連動
 - **Card** — Card / CardHeader / CardTitle / CardContent / CardFooter の5パーツ構成
