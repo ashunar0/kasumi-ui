@@ -30,6 +30,15 @@ export function CardTitle({ className, ...props }: ComponentProps<"h3">) {
   );
 }
 
+export function CardDescription({ className, ...props }: ComponentProps<"p">) {
+  return (
+    <p
+      className={cn("text-ui text-muted-foreground", className)}
+      {...props}
+    />
+  );
+}
+
 export function CardContent({ className, ...props }: DivProps) {
   return <div className={cn("px-8 pb-6", className)} {...props} />;
 }
