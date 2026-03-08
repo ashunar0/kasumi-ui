@@ -41,6 +41,12 @@ import {
   TabsTrigger,
   TabsContent,
 } from "@/components/ui/tabs";
+import {
+  TooltipProvider,
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+} from "@/components/ui/tooltip";
 
 function Section({
   title,
@@ -189,6 +195,7 @@ function ToastDemo() {
 
 export default function Home() {
   return (
+    <TooltipProvider>
     <div>
       <header className="sticky top-0 z-50 flex h-16 items-center justify-between border-b border-border bg-background/80 px-12 backdrop-blur">
         <h1 className="text-h4 font-bold tracking-tight">my-ui</h1>
@@ -363,6 +370,44 @@ export default function Home() {
                 </TabsContent>
               </Tabs>
             </div>
+          </div>
+        </Section>
+
+        {/* Tooltip */}
+        <Section title="ツールチップ">
+          <div className="flex flex-wrap items-center gap-4">
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="outline">上に表示</Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                デフォルトは上に表示されます
+              </TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="outline">下に表示</Button>
+              </TooltipTrigger>
+              <TooltipContent side="bottom">
+                side=&quot;bottom&quot; で下に表示
+              </TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="outline">左に表示</Button>
+              </TooltipTrigger>
+              <TooltipContent side="left">
+                side=&quot;left&quot; で左に表示
+              </TooltipContent>
+            </Tooltip>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Button variant="outline">右に表示</Button>
+              </TooltipTrigger>
+              <TooltipContent side="right">
+                side=&quot;right&quot; で右に表示
+              </TooltipContent>
+            </Tooltip>
           </div>
         </Section>
 
@@ -790,5 +835,6 @@ export default function Home() {
         </Section>
       </div>
     </div>
+    </TooltipProvider>
   );
 }
