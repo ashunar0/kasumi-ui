@@ -10,8 +10,7 @@ const variantClasses: Record<AlertVariant, string> = {
   default: "border-border bg-background text-foreground",
   success:
     "border-emerald-300 bg-emerald-100 text-emerald-800 dark:border-emerald-700 dark:bg-emerald-900 dark:text-emerald-100",
-  info:
-    "border-blue-300 bg-blue-100 text-blue-800 dark:border-blue-700 dark:bg-blue-900 dark:text-blue-100",
+  info: "border-blue-300 bg-blue-100 text-blue-800 dark:border-blue-700 dark:bg-blue-900 dark:text-blue-100",
   warning:
     "border-amber-300 bg-amber-100 text-amber-800 dark:border-amber-700 dark:bg-amber-900 dark:text-amber-100",
   error:
@@ -20,9 +19,13 @@ const variantClasses: Record<AlertVariant, string> = {
 
 const variantIcons: Record<AlertVariant, ReactNode> = {
   default: null,
-  success: <CircleCheck size={16} className="text-emerald-600 dark:text-emerald-100" />,
+  success: (
+    <CircleCheck size={16} className="text-emerald-600 dark:text-emerald-100" />
+  ),
   info: <Info size={16} className="text-blue-600 dark:text-blue-100" />,
-  warning: <TriangleAlert size={16} className="text-amber-600 dark:text-amber-100" />,
+  warning: (
+    <TriangleAlert size={16} className="text-amber-600 dark:text-amber-100" />
+  ),
   error: <OctagonAlert size={16} className="text-red-600 dark:text-red-100" />,
 };
 
@@ -42,7 +45,7 @@ export function Alert({
       className={cn(
         "rounded-lg border p-4",
         variantClasses[variant],
-        className
+        className,
       )}
       {...props}
     >
@@ -74,7 +77,7 @@ export function AlertDescription({
   ...props
 }: ComponentProps<"p">) {
   return (
-    <p className={cn("mt-1 text-sm opacity-80", className)} {...props}>
+    <p className={cn("mt-2 text-sm opacity-80", className)} {...props}>
       {children}
     </p>
   );
