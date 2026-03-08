@@ -1,5 +1,4 @@
 import { type ComponentProps } from "react";
-import { type FieldError as RHFFieldError } from "react-hook-form";
 import { cn } from "@/lib/utils";
 import { Label } from "@/components/ui/label";
 
@@ -38,7 +37,7 @@ export function FieldDescription({ className, ...props }: ComponentProps<"p">) {
 
 // --- FieldError ---
 type FieldErrorProps = Omit<ComponentProps<"p">, "children"> & {
-  errors?: (RHFFieldError | undefined)[];
+  errors?: ({ message?: string } | undefined)[];
 };
 
 export function FieldError({ errors, className, ...props }: FieldErrorProps) {
