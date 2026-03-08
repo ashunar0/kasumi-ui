@@ -50,7 +50,7 @@ export function LoginForm({
                 <FieldDescription className="text-center text-sm">
                   アカウントをお持ちでない方は{` `}
                   <Link
-                    href="/register"
+                    href="/register2"
                     className="underline hover:text-primary"
                   >
                     新規登録
