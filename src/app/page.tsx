@@ -63,6 +63,7 @@ import {
   AccordionContent,
 } from "@/components/ui/accordion";
 import { Progress } from "@/components/ui/progress";
+import { Separator } from "@/components/ui/separator";
 
 function Section({
   title,
@@ -472,6 +473,32 @@ export default function Home() {
                 <span className="text-muted-foreground">100%</span>
               </div>
               <Progress value={100} />
+            </div>
+          </div>
+        </Section>
+
+        {/* Separator */}
+        <Section title="セパレーター">
+          <div className="space-y-6">
+            <div className="space-y-3">
+              <p className="text-ui text-muted-foreground">horizontal</p>
+              <div className="space-y-4">
+                <p className="text-sm">ミーティングの詳細</p>
+                <Separator />
+                <p className="text-sm">参加者一覧</p>
+                <Separator />
+                <p className="text-sm">コメント</p>
+              </div>
+            </div>
+            <div className="space-y-3">
+              <p className="text-ui text-muted-foreground">vertical</p>
+              <div className="flex items-center gap-4 h-5">
+                <span className="text-sm">編集</span>
+                <Separator orientation="vertical" />
+                <span className="text-sm">複製</span>
+                <Separator orientation="vertical" />
+                <span className="text-sm">削除</span>
+              </div>
             </div>
           </div>
         </Section>
