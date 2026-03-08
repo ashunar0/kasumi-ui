@@ -56,6 +56,12 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
 } from "@/components/ui/dropdown-menu";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
 
 function Section({
   title,
@@ -378,6 +384,59 @@ export default function Home() {
                   </p>
                 </TabsContent>
               </Tabs>
+            </div>
+          </div>
+        </Section>
+
+        {/* Accordion */}
+        <Section title="アコーディオン">
+          <div className="space-y-8">
+            <div>
+              <p className="text-ui text-muted-foreground mb-3">single（1つだけ開く）</p>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="item-1">
+                  <AccordionTrigger>日程調整の作成方法は？</AccordionTrigger>
+                  <AccordionContent>
+                    「新規作成」ボタンからイベント名と候補日を入力してください。参加者にはリンクを共有するだけで回答してもらえます。
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                  <AccordionTrigger>候補日は何件まで追加できますか？</AccordionTrigger>
+                  <AccordionContent>
+                    1つのイベントにつき最大20件の候補日を追加できます。カレンダーから複数選択すると効率的です。
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                  <AccordionTrigger>回答を変更することはできますか？</AccordionTrigger>
+                  <AccordionContent>
+                    はい、同じリンクからいつでも回答を変更できます。確定前であれば何度でも更新可能です。
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </div>
+
+            <div>
+              <p className="text-ui text-muted-foreground mb-3">multiple（複数開ける）</p>
+              <Accordion type="multiple">
+                <AccordionItem value="notifications">
+                  <AccordionTrigger>通知設定</AccordionTrigger>
+                  <AccordionContent>
+                    メール通知やプッシュ通知のオン・オフを切り替えられます。リマインダーの送信タイミングも設定可能です。
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="calendar">
+                  <AccordionTrigger>カレンダー連携</AccordionTrigger>
+                  <AccordionContent>
+                    Google カレンダーや Outlook と連携すると、空き時間が自動で反映されます。
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="privacy">
+                  <AccordionTrigger>プライバシー</AccordionTrigger>
+                  <AccordionContent>
+                    回答内容の公開範囲を設定できます。「主催者のみ」「参加者全員」から選べます。
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
           </div>
         </Section>
