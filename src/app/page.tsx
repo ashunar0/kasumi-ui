@@ -62,6 +62,7 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
+import { Progress } from "@/components/ui/progress";
 
 function Section({
   title,
@@ -437,6 +438,40 @@ export default function Home() {
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
+            </div>
+          </div>
+        </Section>
+
+        {/* Progress */}
+        <Section title="プログレスバー">
+          <div className="space-y-6">
+            <div className="space-y-3">
+              <div className="flex justify-between text-sm">
+                <span>アップロード中...</span>
+                <span className="text-muted-foreground">75%</span>
+              </div>
+              <Progress value={75} />
+            </div>
+            <div className="space-y-3">
+              <div className="flex justify-between text-sm">
+                <span>回答率</span>
+                <span className="text-muted-foreground">3/5人</span>
+              </div>
+              <Progress value={60} />
+            </div>
+            <div className="space-y-3">
+              <div className="flex justify-between text-sm">
+                <span>未着手</span>
+                <span className="text-muted-foreground">0%</span>
+              </div>
+              <Progress value={0} />
+            </div>
+            <div className="space-y-3">
+              <div className="flex justify-between text-sm">
+                <span>完了</span>
+                <span className="text-muted-foreground">100%</span>
+              </div>
+              <Progress value={100} />
             </div>
           </div>
         </Section>
