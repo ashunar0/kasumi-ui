@@ -3,6 +3,7 @@
 import * as SelectPrimitive from "@radix-ui/react-select";
 import { Check, ChevronDown } from "lucide-react";
 import { type ComponentProps } from "react";
+import { cn } from "@/lib/utils";
 
 // --- Select Root ---
 type SelectProps = {
@@ -41,7 +42,7 @@ const triggerSizeStyles: Record<SelectTriggerSize, string> = {
 export function SelectTrigger({
   error,
   size = "md",
-  className = "",
+  className,
   children,
   ...props
 }: ComponentProps<typeof SelectPrimitive.Trigger> & {
@@ -50,11 +51,14 @@ export function SelectTrigger({
 }) {
   return (
     <SelectPrimitive.Trigger
-      className={`flex w-full items-center justify-between border bg-background px-3.5 py-2 text-sm transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 ${triggerSizeStyles[size]} ${
+      className={cn(
+        "flex w-full items-center justify-between border bg-background px-3.5 py-2 text-sm transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
+        triggerSizeStyles[size],
         error
           ? "border-destructive focus-visible:border-destructive"
-          : "border-input focus-visible:border-foreground"
-      } ${className}`}
+          : "border-input focus-visible:border-foreground",
+        className
+      )}
       {...props}
     >
       {children}
@@ -75,7 +79,7 @@ export function SelectValue({
 
 // --- Select Content ---
 export function SelectContent({
-  className = "",
+  className,
   children,
   position = "popper",
   ...props
@@ -84,17 +88,18 @@ export function SelectContent({
     <SelectPrimitive.Portal>
       <SelectPrimitive.Content
         position={position}
-        className={`z-50 overflow-hidden rounded-lg border border-border bg-background shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 ${
-          position === "popper" ? "translate-y-1" : ""
-        } ${className}`}
+        className={cn(
+          "z-50 overflow-hidden rounded-lg border border-border bg-background shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95",
+          position === "popper" && "translate-y-1",
+          className
+        )}
         {...props}
       >
         <SelectPrimitive.Viewport
-          className={`p-1 ${
-            position === "popper"
-              ? "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]"
-              : ""
-          }`}
+          className={cn(
+            "p-1",
+            position === "popper" && "h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]"
+          )}
         >
           {children}
         </SelectPrimitive.Viewport>
@@ -107,7 +112,7 @@ export function SelectContent({
 export function SelectItem({
   value,
   disabled = false,
-  className = "",
+  className,
   children,
   ...props
 }: ComponentProps<typeof SelectPrimitive.Item>) {
@@ -115,7 +120,10 @@ export function SelectItem({
     <SelectPrimitive.Item
       value={value}
       disabled={disabled}
-      className={`relative flex w-full cursor-pointer select-none items-center rounded-md py-1.5 pl-8 pr-2 text-sm outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 ${className}`}
+      className={cn(
+        "relative flex w-full cursor-pointer select-none items-center rounded-md py-1.5 pl-8 pr-2 text-sm outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        className
+      )}
       {...props}
     >
       <span className="absolute left-2 flex h-4 w-4 items-center justify-center">

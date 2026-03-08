@@ -2,6 +2,7 @@
 
 import { useState, type ComponentProps } from "react";
 import { Eye, EyeOff } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 type InputSize = "sm" | "md" | "lg";
 type InputVariant = "outline" | "underline";
@@ -28,7 +29,7 @@ export function Input({
   error,
   size = "md",
   variant = "outline",
-  className = "",
+  className,
   type,
   ...props
 }: InputProps) {
@@ -42,11 +43,15 @@ export function Input({
       <div className="relative w-full">
         <input
           type={inputType}
-          className={`flex w-full border-b bg-transparent px-2 py-2 text-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 ${underlineSizeStyles[size]} ${
+          className={cn(
+            "flex w-full border-b bg-transparent px-2 py-2 text-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
+            underlineSizeStyles[size],
             error
               ? "border-destructive focus-visible:border-destructive"
-              : "border-input focus-visible:border-foreground"
-          } ${isPassword ? "pr-10" : ""} ${className}`}
+              : "border-input focus-visible:border-foreground",
+            isPassword && "pr-10",
+            className
+          )}
           {...props}
         />
         {isPassword && (
@@ -68,11 +73,15 @@ export function Input({
     <div className="relative w-full">
       <input
         type={inputType}
-        className={`flex w-full border bg-background px-3.5 py-2 text-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 ${outlineSizeStyles[size]} ${
+        className={cn(
+          "flex w-full border bg-background px-3.5 py-2 text-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
+          outlineSizeStyles[size],
           error
             ? "border-destructive focus-visible:border-destructive"
-            : "border-input focus-visible:border-foreground"
-        } ${isPassword ? "pr-10" : ""} ${className}`}
+            : "border-input focus-visible:border-foreground",
+          isPassword && "pr-10",
+          className
+        )}
         {...props}
       />
       {isPassword && (

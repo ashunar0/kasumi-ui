@@ -1,4 +1,5 @@
 import { type ComponentProps } from "react";
+import { cn } from "@/lib/utils";
 
 type SwitchSize = "sm" | "md" | "lg";
 
@@ -31,7 +32,7 @@ const sizeStyles: Record<
 export function Switch({
   error,
   size = "md",
-  className = "",
+  className,
   ...props
 }: SwitchProps) {
   const s = sizeStyles[size];
@@ -40,11 +41,14 @@ export function Switch({
       <input
         type="checkbox"
         role="switch"
-        className={`peer appearance-none cursor-pointer rounded-full border bg-switch-track transition-colors checked:bg-primary checked:border-primary focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 ${s.track} ${
+        className={cn(
+          "peer appearance-none cursor-pointer rounded-full border bg-switch-track transition-colors checked:bg-primary checked:border-primary focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
+          s.track,
           error
             ? "border-destructive focus-visible:border-destructive"
-            : "border-switch-track focus-visible:border-foreground"
-        } ${className}`}
+            : "border-switch-track focus-visible:border-foreground",
+          className
+        )}
         {...props}
       />
       <span

@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import { type ComponentProps } from "react";
+import { cn } from "@/lib/utils";
 
 type CheckboxSize = "sm" | "md" | "lg";
 
@@ -17,18 +18,21 @@ const sizeStyles: Record<CheckboxSize, string> = {
 export function Checkbox({
   error,
   size = "md",
-  className = "",
+  className,
   ...props
 }: CheckboxProps) {
   return (
     <span className="relative inline-flex">
       <input
         type="checkbox"
-        className={`peer appearance-none cursor-pointer border bg-transparent transition-colors checked:bg-primary checked:border-primary focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 ${sizeStyles[size]} ${
+        className={cn(
+          "peer appearance-none cursor-pointer border bg-transparent transition-colors checked:bg-primary checked:border-primary focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
+          sizeStyles[size],
           error
             ? "border-destructive focus-visible:border-destructive"
-            : "border-input focus-visible:border-foreground"
-        } ${className}`}
+            : "border-input focus-visible:border-foreground",
+          className
+        )}
         {...props}
       />
       <Check

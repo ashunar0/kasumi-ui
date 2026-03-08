@@ -15,6 +15,7 @@ import {
   useContext,
   useReducer,
 } from "react";
+import { cn } from "@/lib/utils";
 
 // --- Types ---
 
@@ -180,7 +181,11 @@ function ToastItem({
       onOpenChange={(open) => {
         if (!open) setTimeout(onClose, 200);
       }}
-      className={`rounded-xl border shadow-lg p-4 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=cancel]:translate-x-0 data-[swipe=cancel]:transition-transform data-[swipe=end]:animate-out data-[swipe=end]:fade-out-0 data-[swipe=end]:slide-out-to-right-full ${slideAnimationClasses[position]} duration-200 ${variantClasses[variant]}`}
+      className={cn(
+        "rounded-xl border shadow-lg p-4 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0 data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=cancel]:translate-x-0 data-[swipe=cancel]:transition-transform data-[swipe=end]:animate-out data-[swipe=end]:fade-out-0 data-[swipe=end]:slide-out-to-right-full duration-200",
+        slideAnimationClasses[position],
+        variantClasses[variant]
+      )}
     >
       <div className={`flex gap-3 ${icon ? "items-start" : ""}`}>
         {icon && <span className="mt-0.5 shrink-0">{icon}</span>}

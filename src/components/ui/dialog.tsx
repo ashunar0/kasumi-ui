@@ -3,6 +3,7 @@
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { X } from "lucide-react";
 import { type ComponentProps } from "react";
+import { cn } from "@/lib/utils";
 
 // --- Dialog Root ---
 export function Dialog({
@@ -24,7 +25,7 @@ export function DialogTrigger({
 
 // --- Dialog Content (Portal + Overlay + Content + Close button) ---
 export function DialogContent({
-  className = "",
+  className,
   children,
   ...props
 }: ComponentProps<typeof DialogPrimitive.Content>) {
@@ -32,7 +33,10 @@ export function DialogContent({
     <DialogPrimitive.Portal>
       <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 duration-200" />
       <DialogPrimitive.Content
-        className={`fixed left-1/2 top-1/2 z-50 w-full max-w-lg -translate-x-1/2 -translate-y-1/2 rounded-xl border border-border bg-background p-6 shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 duration-200 ${className}`}
+        className={cn(
+          "fixed left-1/2 top-1/2 z-50 w-full max-w-lg -translate-x-1/2 -translate-y-1/2 rounded-xl border border-border bg-background p-6 shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 duration-200",
+          className
+        )}
         {...props}
       >
         {children}
@@ -47,12 +51,12 @@ export function DialogContent({
 
 // --- Dialog Header (layout div) ---
 export function DialogHeader({
-  className = "",
+  className,
   children,
   ...props
 }: ComponentProps<"div">) {
   return (
-    <div className={`flex flex-col gap-1.5 ${className}`} {...props}>
+    <div className={cn("flex flex-col gap-1.5", className)} {...props}>
       {children}
     </div>
   );
@@ -60,13 +64,13 @@ export function DialogHeader({
 
 // --- Dialog Title ---
 export function DialogTitle({
-  className = "",
+  className,
   children,
   ...props
 }: ComponentProps<typeof DialogPrimitive.Title>) {
   return (
     <DialogPrimitive.Title
-      className={`text-lg font-semibold ${className}`}
+      className={cn("text-lg font-semibold", className)}
       {...props}
     >
       {children}
@@ -76,13 +80,13 @@ export function DialogTitle({
 
 // --- Dialog Description ---
 export function DialogDescription({
-  className = "",
+  className,
   children,
   ...props
 }: ComponentProps<typeof DialogPrimitive.Description>) {
   return (
     <DialogPrimitive.Description
-      className={`text-sm text-muted-foreground my-4 ${className}`}
+      className={cn("text-sm text-muted-foreground my-4", className)}
       {...props}
     >
       {children}
@@ -92,12 +96,12 @@ export function DialogDescription({
 
 // --- Dialog Footer (layout div) ---
 export function DialogFooter({
-  className = "",
+  className,
   children,
   ...props
 }: ComponentProps<"div">) {
   return (
-    <div className={`mt-6 flex justify-end gap-2 ${className}`} {...props}>
+    <div className={cn("mt-6 flex justify-end gap-2", className)} {...props}>
       {children}
     </div>
   );

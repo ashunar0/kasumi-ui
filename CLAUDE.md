@@ -17,6 +17,8 @@
 
 ```
 src/
+├── lib/
+│   └── utils.ts          # cn() ユーティリティ（clsx + tailwind-merge）
 ├── app/
 │   ├── page.tsx          # UIカタログページ（1ページに全コンポーネント表示）
 │   ├── layout.tsx        # ルートレイアウト（lang="ja"）
@@ -43,7 +45,7 @@ src/
 - shadcn/uiのシンプルさをベースに、日本語に最適化する
 - 独自の個性・ユーモアを入れる余地を持つ
 - Catnoseさんのような「シンプル・機能的・ユーモア」を目指す
-- YAGNI: cn関数やTypographyコンポーネント等は必要になるまで入れない
+- YAGNI: Typographyコンポーネント等は必要になるまで入れない
 
 ## フォント
 
@@ -120,7 +122,7 @@ Minor Third (×1.2) の Modular Scale を採用。詳細は [`docs/design-decisi
 
 ## 設計判断メモ
 
-- **cn関数は入れない** — 今の規模では三項演算子とテンプレートリテラルで十分。依存（clsx + tailwind-merge）を増やさない
+- **cn関数を導入済み** — `src/lib/utils.ts` に `clsx` + `tailwind-merge` ベースの `cn()` を定義。全 UI コンポーネントで使用。className の外部上書き時にクラス衝突を防ぐ
 - **Typographyコンポーネントは作らない** — Tailwindクラスがそのままスタイルの説明になるため抽象化不要
 - **ピル型は className で対応** — `rounded-full` を外から渡す。多用するようになったらpropに昇格
 - **next/font は `className` で適用** — `variable` はCSS変数を定義するだけでフォントは適用されない

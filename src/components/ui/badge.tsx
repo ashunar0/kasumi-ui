@@ -1,4 +1,5 @@
 import { type ComponentProps } from "react";
+import { cn } from "@/lib/utils";
 
 type BadgeVariant = "default" | "outline";
 type BadgeSize = "sm" | "md";
@@ -21,13 +22,13 @@ const sizeStyles: Record<BadgeSize, string> = {
 export function Badge({
   variant = "default",
   size = "md",
-  className = "",
+  className,
   children,
   ...props
 }: BadgeProps) {
   return (
     <span
-      className={`inline-flex items-center font-medium ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
+      className={cn("inline-flex items-center font-medium", variantStyles[variant], sizeStyles[size], className)}
       {...props}
     >
       {children}

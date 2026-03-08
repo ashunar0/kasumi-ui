@@ -1,4 +1,5 @@
 import { type ComponentProps } from "react";
+import { cn } from "@/lib/utils";
 
 type RadioSize = "sm" | "md" | "lg";
 
@@ -16,7 +17,7 @@ const sizeStyles: Record<RadioSize, { container: string; dot: string }> = {
 export function Radio({
   error,
   size = "md",
-  className = "",
+  className,
   ...props
 }: RadioProps) {
   const s = sizeStyles[size];
@@ -24,11 +25,14 @@ export function Radio({
     <span className="relative inline-flex items-center justify-center">
       <input
         type="radio"
-        className={`peer appearance-none cursor-pointer rounded-full border bg-transparent transition-colors checked:bg-primary checked:border-primary focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 ${s.container} ${
+        className={cn(
+          "peer appearance-none cursor-pointer rounded-full border bg-transparent transition-colors checked:bg-primary checked:border-primary focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50",
+          s.container,
           error
             ? "border-destructive focus-visible:border-destructive"
-            : "border-input focus-visible:border-foreground"
-        } ${className}`}
+            : "border-input focus-visible:border-foreground",
+          className
+        )}
         {...props}
       />
       <span
