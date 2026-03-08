@@ -47,7 +47,7 @@ export function Alert({
       {...props}
     >
       <div className={cn("flex gap-3", icon && "items-start")}>
-        {icon && <span className="mt-0.5 shrink-0">{icon}</span>}
+        {icon && <span className="shrink-0">{icon}</span>}
         <div className="flex-1">{children}</div>
       </div>
     </div>
@@ -61,7 +61,7 @@ export function AlertTitle({
   ...props
 }: ComponentProps<"h5">) {
   return (
-    <h5 className={cn("font-medium leading-none", className)} {...props}>
+    <h5 className={cn("font-medium leading-4", className)} {...props}>
       {children}
     </h5>
   );
