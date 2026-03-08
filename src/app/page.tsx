@@ -64,6 +64,7 @@ import {
 } from "@/components/ui/accordion";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 
 function Section({
   title,
@@ -500,6 +501,32 @@ export default function Home() {
                 <span className="text-sm">削除</span>
               </div>
             </div>
+          </div>
+        </Section>
+
+        {/* Alert */}
+        <Section title="アラート">
+          <div className="space-y-4">
+            <Alert>
+              <AlertTitle>お知らせ</AlertTitle>
+              <AlertDescription>メンテナンスのため、明日 2:00〜4:00 はサービスを停止します。</AlertDescription>
+            </Alert>
+            <Alert variant="success">
+              <AlertTitle>保存しました</AlertTitle>
+              <AlertDescription>予定の変更が正常に保存されました。</AlertDescription>
+            </Alert>
+            <Alert variant="info">
+              <AlertTitle>新機能</AlertTitle>
+              <AlertDescription>カレンダー連携機能が追加されました。設定から有効にできます。</AlertDescription>
+            </Alert>
+            <Alert variant="warning">
+              <AlertTitle>変更を上書きします</AlertTitle>
+              <AlertDescription>既存のデータが失われる可能性があります。</AlertDescription>
+            </Alert>
+            <Alert variant="error">
+              <AlertTitle>エラーが発生しました</AlertTitle>
+              <AlertDescription>保存に失敗しました。もう一度お試しください。</AlertDescription>
+            </Alert>
           </div>
         </Section>
 

@@ -27,6 +27,7 @@ src/
     ├── theme-toggle.tsx   # ライト/ダークモード切り替えボタン
     └── ui/               # UIコンポーネント置き場
         ├── accordion.tsx
+        ├── alert.tsx
         ├── badge.tsx
         ├── button.tsx
         ├── checkbox.tsx
@@ -107,13 +108,14 @@ Minor Third (×1.2) の Modular Scale を採用。詳細は [`docs/design-decisi
 ## カタログページ
 
 - `page.tsx` にセクション区切り型で全コンポーネントを縦並び表示
-- セクション: タイポグラフィ → ボタン → バッジ → タブ → アコーディオン → プログレスバー → セパレーター → ツールチップ → ドロップダウンメニュー → テキスト入力 → ラベル → カード → ダイアログ → トースト
+- セクション: タイポグラフィ → ボタン → バッジ → タブ → アコーディオン → プログレスバー → セパレーター → アラート → ツールチップ → ドロップダウンメニュー → テキスト入力 → ラベル → カード → ダイアログ → トースト
 - テキストは日本語で記述（日程調整アプリを想定した実用的な内容）
 - コードスニペットやProps一覧は不要（シンプルに保つ）
 
 ## 実装済みコンポーネント
 
 - **Accordion** — Radix UI ベース、複合コンポーネント（Accordion/AccordionItem/AccordionTrigger/AccordionContent）、type: single/multiple、開閉アニメーション付き、ChevronDown アイコン回転
+- **Alert** — 自作、複合コンポーネント（Alert/AlertTitle/AlertDescription）、variant: default/success/info/warning/error（Toast と統一の色味・アイコン）
 - **Badge** — variant: default/outline、size: sm/md（デフォルト md）、色変更は className で外から指定
 - **Button** — variant: primary/secondary/ghost/outline/destructive、size: sm/md/lg
 - **Input** — variant: outline/underline、size: sm/md/lg、error prop でエラー状態切り替え、`type="password"` でパスワード表示トグル自動表示
