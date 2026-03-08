@@ -16,7 +16,7 @@
 | prop | 型 | デフォルト | 説明 |
 |------|----|-----------|------|
 | `variant` | `"default" \| "outline"` | `"default"` | default: 塗りつぶし、outline: 枠線のみ |
-| `size` | `"sm" \| "md"` | `"sm"` | sm: 英語やコンパクト用、md: 日本語テキスト向け |
+| `size` | `"sm" \| "md"` | `"md"` | sm: 英語やコンパクト用、md: 日本語テキスト向け |
 | `className` | `string` | `""` | 色やピル型の上書き用 |
 
 ## スタイル
@@ -29,7 +29,7 @@
 ### Size
 
 - **sm**: `text-xs px-2 py-0.5 rounded-md`
-- **md**: `text-sm px-2.5 py-0.5 rounded-md`
+- **md**: `text-sm px-3 py-1 rounded-md`
 
 ### 共通
 

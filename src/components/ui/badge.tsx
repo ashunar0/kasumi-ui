@@ -15,12 +15,12 @@ const variantStyles: Record<BadgeVariant, string> = {
 
 const sizeStyles: Record<BadgeSize, string> = {
   sm: "text-xs px-2 py-0.5 rounded-md",
-  md: "text-sm px-2.5 py-0.5 rounded-md",
+  md: "text-sm px-3 py-1 rounded-md",
 };
 
 export function Badge({
   variant = "default",
-  size = "sm",
+  size = "md",
   className = "",
   children,
   ...props

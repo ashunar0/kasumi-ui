@@ -242,31 +242,47 @@ export default function Home() {
             <div>
               <p className="text-ui text-muted-foreground mb-2">default</p>
               <div className="flex flex-wrap items-center gap-2">
-                <Badge size="sm">承認済み</Badge>
+                <Badge size="sm">done</Badge>
                 <Badge size="md">承認済み</Badge>
               </div>
             </div>
             <div>
               <p className="text-ui text-muted-foreground mb-2">outline</p>
               <div className="flex flex-wrap items-center gap-2">
-                <Badge variant="outline" size="sm">下書き</Badge>
-                <Badge variant="outline" size="md">下書き</Badge>
+                <Badge variant="outline" size="sm">
+                  draft
+                </Badge>
+                <Badge variant="outline" size="md">
+                  下書き
+                </Badge>
               </div>
             </div>
             <div>
-              <p className="text-ui text-muted-foreground mb-2">カスタムカラー</p>
+              <p className="text-ui text-muted-foreground mb-2">
+                カスタムカラー
+              </p>
               <div className="flex flex-wrap items-center gap-2">
-                <Badge className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">対応中</Badge>
-                <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">完了</Badge>
-                <Badge className="bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200">未対応</Badge>
-                <Badge className="bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200">保留</Badge>
+                <Badge className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                  対応中
+                </Badge>
+                <Badge className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                  完了
+                </Badge>
+                <Badge className="bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200">
+                  未対応
+                </Badge>
+                <Badge className="bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200">
+                  保留
+                </Badge>
               </div>
             </div>
             <div>
               <p className="text-ui text-muted-foreground mb-2">ピル型</p>
               <div className="flex flex-wrap items-center gap-2">
                 <Badge className="rounded-full">v1.0</Badge>
-                <Badge variant="outline" className="rounded-full">beta</Badge>
+                <Badge variant="outline" className="rounded-full">
+                  beta
+                </Badge>
               </div>
             </div>
           </div>

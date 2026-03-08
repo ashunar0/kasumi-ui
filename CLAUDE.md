@@ -105,7 +105,7 @@ Minor Third (×1.2) の Modular Scale を採用。詳細は [`docs/design-decisi
 
 ## 実装済みコンポーネント
 
-- **Badge** — variant: default/outline、size: sm/md、色変更は className で外から指定
+- **Badge** — variant: default/outline、size: sm/md（デフォルト md）、色変更は className で外から指定
 - **Button** — variant: primary/secondary/ghost/outline/destructive、size: sm/md/lg
 - **Input** — variant: outline/underline、size: sm/md/lg、error prop でエラー状態切り替え、`type="password"` でパスワード表示トグル自動表示
 - **Label** — peer-disabled 連動
