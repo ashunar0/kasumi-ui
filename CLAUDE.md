@@ -34,6 +34,7 @@ src/
         ├── card.tsx
         ├── radio.tsx
         ├── dialog.tsx
+        ├── dropdown-menu.tsx
         ├── select.tsx
         ├── switch.tsx
         ├── tabs.tsx
@@ -103,7 +104,7 @@ Minor Third (×1.2) の Modular Scale を採用。詳細は [`docs/design-decisi
 ## カタログページ
 
 - `page.tsx` にセクション区切り型で全コンポーネントを縦並び表示
-- セクション: タイポグラフィ → ボタン → バッジ → タブ → ツールチップ → テキスト入力 → ラベル → カード → ダイアログ → トースト
+- セクション: タイポグラフィ → ボタン → バッジ → タブ → ツールチップ → ドロップダウンメニュー → テキスト入力 → ラベル → カード → ダイアログ → トースト
 - テキストは日本語で記述（日程調整アプリを想定した実用的な内容）
 - コードスニペットやProps一覧は不要（シンプルに保つ）
 
@@ -120,6 +121,7 @@ Minor Third (×1.2) の Modular Scale を採用。詳細は [`docs/design-decisi
 - **Switch** — size: sm/md/lg、error prop でエラー状態切り替え、role="switch" 付与
 - **Tabs** — Radix UI ベース、複合コンポーネント（Tabs/TabsList/TabsTrigger/TabsContent）、variant: underline/pill（デフォルト underline）、キーボードナビゲーション対応
 - **Textarea** — error prop でエラー状態切り替え、resize-y でリサイズ可能
+- **DropdownMenu** — Radix UI ベース、複合コンポーネント（DropdownMenu/DropdownMenuTrigger/DropdownMenuContent/DropdownMenuItem/DropdownMenuLabel/DropdownMenuSeparator/DropdownMenuShortcut）、destructive 項目対応、Portal・キーボードナビゲーション対応
 - **Dialog** — Radix UI ベース、複合コンポーネント（Dialog/DialogTrigger/DialogContent/DialogHeader/DialogTitle/DialogDescription/DialogFooter/DialogClose）、Portal・フォーカストラップ・Escape キー対応
 - **Tooltip** — Radix UI ベース、複合コンポーネント（TooltipProvider/Tooltip/TooltipTrigger/TooltipContent）、side 指定可能（デフォルト top）、Portal・自動位置調整対応
 - **Toast** — Radix UI ベース、命令型 API（useToast フック）、variant: default/success/info/warning/error（Alert Callout 風の色味+アイコン）、位置設定可能（ToastProvider の position prop、デフォルト右上）、スワイプで閉じる、複数スタック対応
