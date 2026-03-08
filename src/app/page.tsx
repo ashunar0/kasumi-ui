@@ -65,6 +65,7 @@ import {
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
+import { Skeleton } from "@/components/ui/skeleton";
 
 function Section({
   title,
@@ -527,6 +528,30 @@ export default function Home() {
               <AlertTitle>エラーが発生しました</AlertTitle>
               <AlertDescription>保存に失敗しました。もう一度お試しください。</AlertDescription>
             </Alert>
+          </div>
+        </Section>
+
+        {/* Skeleton */}
+        <Section title="スケルトン">
+          <div className="space-y-6">
+            <div className="space-y-3">
+              <p className="text-ui text-muted-foreground">テキスト</p>
+              <div className="space-y-2">
+                <Skeleton className="h-4 w-3/4" />
+                <Skeleton className="h-4 w-1/2" />
+                <Skeleton className="h-4 w-5/6" />
+              </div>
+            </div>
+            <div className="space-y-3">
+              <p className="text-ui text-muted-foreground">カード</p>
+              <div className="flex items-center gap-4">
+                <Skeleton className="h-12 w-12 rounded-full" />
+                <div className="space-y-2 flex-1">
+                  <Skeleton className="h-4 w-32" />
+                  <Skeleton className="h-3 w-48" />
+                </div>
+              </div>
+            </div>
           </div>
         </Section>
 

@@ -37,6 +37,7 @@ src/
         ├── progress.tsx
         ├── radio.tsx
         ├── separator.tsx
+        ├── skeleton.tsx
         ├── dialog.tsx
         ├── dropdown-menu.tsx
         ├── select.tsx
@@ -108,7 +109,7 @@ Minor Third (×1.2) の Modular Scale を採用。詳細は [`docs/design-decisi
 ## カタログページ
 
 - `page.tsx` にセクション区切り型で全コンポーネントを縦並び表示
-- セクション: タイポグラフィ → ボタン → バッジ → タブ → アコーディオン → プログレスバー → セパレーター → アラート → ツールチップ → ドロップダウンメニュー → テキスト入力 → ラベル → カード → ダイアログ → トースト
+- セクション: タイポグラフィ → ボタン → バッジ → タブ → アコーディオン → プログレスバー → セパレーター → アラート → スケルトン → ツールチップ → ドロップダウンメニュー → テキスト入力 → ラベル → カード → ダイアログ → トースト
 - テキストは日本語で記述（日程調整アプリを想定した実用的な内容）
 - コードスニペットやProps一覧は不要（シンプルに保つ）
 
@@ -126,6 +127,7 @@ Minor Third (×1.2) の Modular Scale を採用。詳細は [`docs/design-decisi
 - **Checkbox** — size: sm/md/lg、error prop でエラー状態切り替え
 - **Radio** — size: sm/md/lg、error prop でエラー状態切り替え、name 属性でグルーピング
 - **Separator** — 自作、orientation: horizontal/vertical、aria-separator 対応
+- **Skeleton** — 自作、animate-pulse でローディング表示、className でサイズ・形状を指定
 - **Switch** — size: sm/md/lg、error prop でエラー状態切り替え、role="switch" 付与
 - **Tabs** — Radix UI ベース、複合コンポーネント（Tabs/TabsList/TabsTrigger/TabsContent）、variant: underline/pill（デフォルト underline）、キーボードナビゲーション対応
 - **Textarea** — error prop でエラー状態切り替え、resize-y でリサイズ可能
