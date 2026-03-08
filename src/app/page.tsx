@@ -86,6 +86,15 @@ import {
   TableCell,
   TableCaption,
 } from "@/components/ui/table";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationPrevious,
+  PaginationNext,
+  PaginationEllipsis,
+} from "@/components/ui/pagination";
 
 function Section({
   title,
@@ -734,6 +743,41 @@ export default function Home() {
                 </TableRow>
               </TableFooter>
             </Table>
+          </div>
+        </section>
+
+        {/* ページネーション */}
+        <section>
+          <h2 className="text-h2 font-semibold tracking-tight">ページネーション</h2>
+          <p className="mt-2 text-body text-muted-foreground">
+            コンテンツを複数ページに分けてナビゲーションを提供します。
+          </p>
+          <div className="mt-6 space-y-8">
+            <Pagination>
+              <PaginationContent>
+                <PaginationItem>
+                  <PaginationPrevious />
+                </PaginationItem>
+                <PaginationItem>
+                  <PaginationLink>1</PaginationLink>
+                </PaginationItem>
+                <PaginationItem>
+                  <PaginationLink isActive>2</PaginationLink>
+                </PaginationItem>
+                <PaginationItem>
+                  <PaginationLink>3</PaginationLink>
+                </PaginationItem>
+                <PaginationItem>
+                  <PaginationEllipsis />
+                </PaginationItem>
+                <PaginationItem>
+                  <PaginationLink>10</PaginationLink>
+                </PaginationItem>
+                <PaginationItem>
+                  <PaginationNext />
+                </PaginationItem>
+              </PaginationContent>
+            </Pagination>
           </div>
         </section>
 
