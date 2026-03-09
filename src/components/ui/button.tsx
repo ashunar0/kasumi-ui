@@ -1,4 +1,4 @@
-import { type ComponentProps } from "react";
+import { cloneElement, isValidElement, type ComponentProps, type ReactElement } from "react";
 import { cn } from "@/lib/utils";
 
 type ButtonVariant =
@@ -12,6 +12,7 @@ type ButtonSize = "sm" | "md" | "lg";
 type ButtonProps = ComponentProps<"button"> & {
   variant?: ButtonVariant;
   size?: ButtonSize;
+  asChild?: boolean;
 };
 
 const variantStyles: Record<ButtonVariant, string> = {
@@ -30,20 +31,27 @@ const sizeStyles: Record<ButtonSize, string> = {
   lg: "h-11 px-5 min-w-[80px] text-sm rounded-lg",
 };
 
+const baseStyles =
+  "cursor-pointer inline-flex items-center justify-center font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
+
 export function Button({
   variant = "primary",
   size = "md",
+  asChild,
   className,
-  disabled,
   children,
   ...props
 }: ButtonProps) {
+  const styles = cn(baseStyles, variantStyles[variant], sizeStyles[size], className);
+
+  if (asChild && isValidElement(children)) {
+    return cloneElement(children as ReactElement<Record<string, unknown>>, {
+      className: cn(styles, (children.props as { className?: string }).className),
+    });
+  }
+
   return (
-    <button
-      className={cn("cursor-pointer inline-flex items-center justify-center font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50", variantStyles[variant], sizeStyles[size], className)}
-      disabled={disabled}
-      {...props}
-    >
+    <button className={styles} {...props}>
       {children}
     </button>
   );
