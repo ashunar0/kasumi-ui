@@ -28,7 +28,7 @@ const underlineSizeStyles: Record<InputSize, string> = {
 export function Input({
   error,
   size = "md",
-  variant = "outline",
+  variant = "underline",
   className,
   type,
   ...props
@@ -40,7 +40,7 @@ export function Input({
 
   if (variant === "underline") {
     return (
-      <div className="relative w-full">
+      <div className={cn("relative w-full", className)}>
         <input
           type={inputType}
           className={cn(
@@ -50,7 +50,6 @@ export function Input({
               ? "border-destructive focus-visible:border-destructive"
               : "border-input focus-visible:border-foreground",
             isPassword && "pr-10",
-            className
           )}
           {...props}
         />
@@ -70,7 +69,7 @@ export function Input({
   }
 
   return (
-    <div className="relative w-full">
+    <div className={cn("relative w-full", className)}>
       <input
         type={inputType}
         className={cn(
@@ -80,7 +79,6 @@ export function Input({
             ? "border-destructive focus-visible:border-destructive"
             : "border-input focus-visible:border-foreground",
           isPassword && "pr-10",
-          className
         )}
         {...props}
       />
