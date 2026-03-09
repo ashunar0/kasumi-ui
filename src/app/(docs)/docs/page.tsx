@@ -4,7 +4,7 @@ export default function IntroductionPage() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-h1 font-bold tracking-tight">my-ui</h1>
+        <h1 className="text-h1 font-bold tracking-tight">kasumi/ui</h1>
         <p className="mt-2 text-muted-foreground text-body">
           あさひの自分専用デザインシステム＆UIコンポーネントライブラリ。
         </p>
