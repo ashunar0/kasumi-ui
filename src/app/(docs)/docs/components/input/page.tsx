@@ -28,15 +28,15 @@ export default function InputPage() {
   return (
     <div className="space-y-10">
       <div>
-        <h1 className="text-h1 font-bold tracking-tight">Input</h1>
-        <p className="mt-2 text-muted-foreground text-body">
+        <h1 className="text-h2 font-bold tracking-tight">Input</h1>
+        <p className="mt-2 text-muted-foreground text-ui">
           テキスト入力のためのコンポーネント。
         </p>
       </div>
 
       {/* Basic usage */}
       <section className="space-y-4">
-        <h2 className="text-h3 font-semibold tracking-tight">基本の使い方</h2>
+        <h2 className="text-h4 font-semibold tracking-tight">基本の使い方</h2>
         <ComponentPreview>
           <Input placeholder="テキストを入力" className="max-w-sm" />
         </ComponentPreview>
@@ -49,10 +49,14 @@ export default function InputPage() {
 
       {/* Variants */}
       <section className="space-y-4">
-        <h2 className="text-h3 font-semibold tracking-tight">Variant</h2>
+        <h2 className="text-h4 font-semibold tracking-tight">Variant</h2>
         <ComponentPreview className="flex-col gap-4">
           <Input variant="outline" placeholder="Outline" className="max-w-sm" />
-          <Input variant="underline" placeholder="Underline" className="max-w-sm" />
+          <Input
+            variant="underline"
+            placeholder="Underline"
+            className="max-w-sm"
+          />
         </ComponentPreview>
         <CodeBlock
           code={`<Input variant="outline" placeholder="Outline" />
@@ -62,7 +66,7 @@ export default function InputPage() {
 
       {/* Sizes */}
       <section className="space-y-4">
-        <h2 className="text-h3 font-semibold tracking-tight">Size</h2>
+        <h2 className="text-h4 font-semibold tracking-tight">Size</h2>
         <ComponentPreview className="flex-col gap-4">
           <Input size="sm" placeholder="Small" className="max-w-sm" />
           <Input size="md" placeholder="Medium" className="max-w-sm" />
@@ -77,7 +81,7 @@ export default function InputPage() {
 
       {/* Error state */}
       <section className="space-y-4">
-        <h2 className="text-h3 font-semibold tracking-tight">エラー状態</h2>
+        <h2 className="text-h4 font-semibold tracking-tight">エラー状態</h2>
         <ComponentPreview>
           <Input error placeholder="エラーのある入力" className="max-w-sm" />
         </ComponentPreview>
@@ -86,19 +90,26 @@ export default function InputPage() {
 
       {/* Password */}
       <section className="space-y-4">
-        <h2 className="text-h3 font-semibold tracking-tight">パスワード</h2>
+        <h2 className="text-h4 font-semibold tracking-tight">パスワード</h2>
         <p className="text-body text-muted-foreground">
-          type=&quot;password&quot; を指定すると、表示切替トグルが自動で表示されます。
+          type=&quot;password&quot;
+          を指定すると、表示切替トグルが自動で表示されます。
         </p>
         <ComponentPreview>
-          <Input type="password" placeholder="パスワード" className="max-w-sm" />
+          <Input
+            type="password"
+            placeholder="パスワード"
+            className="max-w-sm"
+          />
         </ComponentPreview>
-        <CodeBlock code={`<Input type="password" placeholder="パスワード" />`} />
+        <CodeBlock
+          code={`<Input type="password" placeholder="パスワード" />`}
+        />
       </section>
 
       {/* Props */}
       <section className="space-y-4">
-        <h2 className="text-h3 font-semibold tracking-tight">Props</h2>
+        <h2 className="text-h4 font-semibold tracking-tight">Props</h2>
         <PropsTable props={inputProps} />
       </section>
     </div>

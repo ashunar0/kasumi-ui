@@ -28,15 +28,15 @@ export default function ButtonPage() {
   return (
     <div className="space-y-10">
       <div>
-        <h1 className="text-h1 font-bold tracking-tight">Button</h1>
-        <p className="mt-2 text-muted-foreground text-body">
+        <h1 className="text-h2 font-bold tracking-tight">Button</h1>
+        <p className="mt-2 text-muted-foreground text-ui">
           アクションを実行するためのボタンコンポーネント。
         </p>
       </div>
 
       {/* Basic usage */}
       <section className="space-y-4">
-        <h2 className="text-h3 font-semibold tracking-tight">基本の使い方</h2>
+        <h2 className="text-h4 font-semibold tracking-tight">基本の使い方</h2>
         <ComponentPreview>
           <Button>ボタン</Button>
         </ComponentPreview>
@@ -49,7 +49,7 @@ export default function ButtonPage() {
 
       {/* Variants */}
       <section className="space-y-4">
-        <h2 className="text-h3 font-semibold tracking-tight">Variant</h2>
+        <h2 className="text-h4 font-semibold tracking-tight">Variant</h2>
         <ComponentPreview className="gap-3">
           <Button variant="primary">Primary</Button>
           <Button variant="secondary">Secondary</Button>
@@ -68,8 +68,8 @@ export default function ButtonPage() {
 
       {/* Sizes */}
       <section className="space-y-4">
-        <h2 className="text-h3 font-semibold tracking-tight">Size</h2>
-        <ComponentPreview className="gap-3 items-end">
+        <h2 className="text-h4 font-semibold tracking-tight">Size</h2>
+        <ComponentPreview className="gap-3 items-center">
           <Button size="sm">Small</Button>
           <Button size="md">Medium</Button>
           <Button size="lg">Large</Button>
@@ -83,7 +83,7 @@ export default function ButtonPage() {
 
       {/* Disabled */}
       <section className="space-y-4">
-        <h2 className="text-h3 font-semibold tracking-tight">Disabled</h2>
+        <h2 className="text-h4 font-semibold tracking-tight">Disabled</h2>
         <ComponentPreview>
           <Button disabled>無効なボタン</Button>
         </ComponentPreview>
@@ -92,7 +92,7 @@ export default function ButtonPage() {
 
       {/* Props */}
       <section className="space-y-4">
-        <h2 className="text-h3 font-semibold tracking-tight">Props</h2>
+        <h2 className="text-h4 font-semibold tracking-tight">Props</h2>
         <PropsTable props={buttonProps} />
       </section>
     </div>

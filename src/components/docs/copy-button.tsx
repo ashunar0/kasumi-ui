@@ -18,7 +18,11 @@ export function CopyButton({ code }: { code: string }) {
       className="absolute right-2 top-2 rounded-md p-1.5 text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
       aria-label="コードをコピー"
     >
-      {copied ? <Check className="size-4" /> : <Copy className="size-4" />}
+      {copied ? (
+        <Check className="size-4 text-green-500" />
+      ) : (
+        <Copy className="size-4 text-gray-500" />
+      )}
     </button>
   );
 }

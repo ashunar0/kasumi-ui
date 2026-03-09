@@ -60,9 +60,7 @@ function DocsSidebar() {
             {components.map((component) => (
               <SidebarMenuItem key={component.name}>
                 <Link href={component.href}>
-                  <SidebarMenuButton
-                    isActive={pathname === component.href}
-                  >
+                  <SidebarMenuButton isActive={pathname === component.href}>
                     {component.name}
                   </SidebarMenuButton>
                 </Link>
@@ -99,7 +97,7 @@ export default function DocsLayout({
         <DocsSidebar />
         <main className="flex-1 min-w-0">
           <DocsHeader />
-          <div className="mx-auto max-w-3xl px-6 py-10">{children}</div>
+          <div className="mx-auto max-w-3xl px-6 py-10 mb-10">{children}</div>
         </main>
       </SidebarProvider>
     </TooltipProvider>
