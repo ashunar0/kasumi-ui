@@ -2,87 +2,75 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BookOpen } from "lucide-react";
-import {
-  SidebarProvider,
-  Sidebar,
-  SidebarHeader,
-  SidebarContent,
-  SidebarGroup,
-  SidebarGroupLabel,
-  SidebarMenu,
-  SidebarMenuItem,
-  SidebarMenuButton,
-  SidebarTrigger,
-  useSidebar,
-} from "@/components/ui/sidebar";
-import { TooltipProvider } from "@/components/ui/tooltip";
+import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { TableOfContents } from "@/components/docs/toc";
+import Image from "next/image";
+
+const navItems = [{ name: "Introduction", href: "/docs" }];
 
 const components = [
   { name: "Button", href: "/docs/components/button" },
   { name: "Input", href: "/docs/components/input" },
 ];
 
-function DocsSidebar() {
-  const pathname = usePathname();
-
+function DocsHeader() {
   return (
-    <Sidebar>
-      <SidebarHeader>
+    <header className="sticky top-0 z-30 h-16 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-6">
         <Link
           href="/docs"
-          className="flex items-center gap-2 font-semibold text-sm"
+          className="font-semibold text-md flex items-center gap-2"
         >
+          <Image src="/kasumi.svg" alt="kasumi/ui" width={32} height={32} />
           kasumi/ui
         </Link>
-      </SidebarHeader>
-
-      <SidebarContent>
-        <SidebarGroup>
-          <SidebarMenu>
-            <SidebarMenuItem>
-              <Link href="/docs">
-                <SidebarMenuButton
-                  icon={BookOpen}
-                  isActive={pathname === "/docs"}
-                >
-                  Introduction
-                </SidebarMenuButton>
-              </Link>
-            </SidebarMenuItem>
-          </SidebarMenu>
-        </SidebarGroup>
-
-        <SidebarGroup>
-          <SidebarGroupLabel>Components</SidebarGroupLabel>
-          <SidebarMenu>
-            {components.map((component) => (
-              <SidebarMenuItem key={component.name}>
-                <Link href={component.href}>
-                  <SidebarMenuButton isActive={pathname === component.href}>
-                    {component.name}
-                  </SidebarMenuButton>
-                </Link>
-              </SidebarMenuItem>
-            ))}
-          </SidebarMenu>
-        </SidebarGroup>
-      </SidebarContent>
-    </Sidebar>
+        <ThemeToggle />
+      </div>
+    </header>
   );
 }
 
-function DocsHeader() {
-  const { isMobile } = useSidebar();
+function DocsNav() {
+  const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-20 flex h-14 items-center justify-between border-b border-border bg-background px-4">
-      <div className="flex items-center gap-2">
-        {isMobile && <SidebarTrigger />}
+    <nav className="space-y-6">
+      <div className="space-y-1">
+        {navItems.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className={cn(
+              "block text-sm py-1 transition-colors hover:text-foreground",
+              pathname === item.href
+                ? "text-foreground font-medium"
+                : "text-muted-foreground",
+            )}
+          >
+            {item.name}
+          </Link>
+        ))}
       </div>
-      <ThemeToggle />
-    </header>
+
+      <div className="space-y-1">
+        <p className="text-sm font-semibold mb-2">Components</p>
+        {components.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className={cn(
+              "block text-sm py-1 transition-colors hover:text-foreground",
+              pathname === item.href
+                ? "text-foreground font-medium"
+                : "text-muted-foreground",
+            )}
+          >
+            {item.name}
+          </Link>
+        ))}
+      </div>
+    </nav>
   );
 }
 
@@ -92,14 +80,30 @@ export default function DocsLayout({
   children: React.ReactNode;
 }) {
   return (
-    <TooltipProvider>
-      <SidebarProvider>
-        <DocsSidebar />
-        <main className="flex-1 min-w-0">
-          <DocsHeader />
-          <div className="mx-auto max-w-3xl px-6 py-10 mb-10">{children}</div>
-        </main>
-      </SidebarProvider>
-    </TooltipProvider>
+    <div className="min-h-screen">
+      <DocsHeader />
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="flex gap-10">
+          {/* Left navigation */}
+          <aside className="hidden md:block w-52 shrink-0 py-10">
+            <div className="sticky top-26">
+              <DocsNav />
+            </div>
+          </aside>
+
+          {/* Main content */}
+          <main className="min-w-0 flex-1 py-10" data-docs-content>
+            <div className="max-w-3xl">{children}</div>
+          </main>
+
+          {/* Right TOC */}
+          <aside className="hidden lg:block w-48 shrink-0 py-10">
+            <div className="sticky top-26">
+              <TableOfContents />
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
   );
 }

@@ -12,6 +12,7 @@ const inter = Inter({
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
   subsets: ["latin"],
+  preload: false,
   weight: ["400", "500", "600", "700"],
 });
 
@@ -23,6 +24,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "kasumi/ui",
   description: "あさひのUIライブラリ",
+  icons: {
+    icon: "/kasumi_dark.svg",
+  },
 };
 
 export default function RootLayout({
@@ -33,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`${inter.className} ${notoSansJP.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} ${notoSansJP.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning
       >
         <ThemeProvider>

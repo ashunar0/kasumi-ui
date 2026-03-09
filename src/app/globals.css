@@ -134,9 +134,9 @@
   --font-mono: var(--font-geist-mono);
   /* Typography Scale: Minor Third (1.2), base 16px */
   --text-ui: 0.875rem; /* 14px — コンパクトUI文 */
-  --text-ui--line-height: 1.6; /* ×1.6 */
+  --text-ui--line-height: 2; /* ×2.0 */
   --text-body: 1rem; /* 16px — base */
-  --text-body--line-height: 1.8; /* ×1.8 — JLREQ準拠 */
+  --text-body--line-height: 2.5; /* ×2.5 — 40px */
   --text-h4: 1.1875rem; /* 19px — base × 1.2¹ */
   --text-h3: 1.4375rem; /* 23px — base × 1.2² */
   --text-h2: 1.75rem; /* 28px — base × 1.2³ */
@@ -148,6 +148,9 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family:
+    var(--font-inter), var(--font-noto-sans-jp), ui-sans-serif, system-ui,
+    sans-serif;
 }
 
 @keyframes collapsible-down {

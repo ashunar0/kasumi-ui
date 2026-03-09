@@ -15,7 +15,7 @@ const ThemeContext = createContext<{
 const STORAGE_KEY = "kasumi-ui-theme";
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("system");
+  const [theme, setTheme] = useState<Theme>("light");
   const [mounted, setMounted] = useState(false);
 
   // localStorage から復元
