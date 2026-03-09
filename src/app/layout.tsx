@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "my-ui",
+  title: "kasumi/ui",
   description: "あさひのUIライブラリ",
 };
 

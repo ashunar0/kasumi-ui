@@ -139,7 +139,7 @@ export default function MainLayout({
 
         <main className="flex-1 min-w-0">
           <header className="sticky top-0 z-20 flex h-14 items-center gap-2 border-b border-border bg-background px-4">
-            <h1 className="text-h4 font-semibold tracking-tight">
+            <h1 className="text-sm font-semibold tracking-tight">
               ダッシュボード
             </h1>
           </header>

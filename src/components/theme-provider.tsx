@@ -12,7 +12,7 @@ const ThemeContext = createContext<{
   setTheme: () => {},
 });
 
-const STORAGE_KEY = "my-ui-theme";
+const STORAGE_KEY = "kasumi-ui-theme";
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>("system");

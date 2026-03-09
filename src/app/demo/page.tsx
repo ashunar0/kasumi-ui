@@ -41,7 +41,7 @@ function Sidebar() {
         <div className="flex h-6 w-6 items-center justify-center rounded bg-primary text-primary-foreground text-ui font-bold">
           A
         </div>
-        <span className="text-ui font-semibold text-foreground">my-ui</span>
+        <span className="text-ui font-semibold text-foreground">kasumi/ui</span>
       </div>
 
       {/* Navigation */}
@@ -187,7 +187,7 @@ export default function DemoPage() {
           {/* Title & Meta */}
           <div className="space-y-3">
             <h1 className="text-h2 font-bold tracking-tight">
-              my-ui デザインシステム
+              kasumi/ui デザインシステム
             </h1>
             <div className="flex items-center gap-4 text-ui text-muted-foreground">
               <span>最終更新: 2026年2月24日</span>
@@ -201,7 +201,7 @@ export default function DemoPage() {
           <section className="space-y-4">
             <h2 className="text-h3 font-semibold tracking-tight">概要</h2>
             <p className="text-body">
-              my-uiは、日本語に最適化されたオリジナルUIコンポーネントライブラリです。shadcn/uiのシンプルさをベースにしつつ、日本語特有のタイポグラフィ課題を解決し、数学的根拠のあるデザイントークンで構成されています。
+              kasumi/uiは、日本語に最適化されたオリジナルUIコンポーネントライブラリです。shadcn/uiのシンプルさをベースにしつつ、日本語特有のタイポグラフィ課題を解決し、数学的根拠のあるデザイントークンで構成されています。
             </p>
             <p className="text-body">
               「なんとなく」ではなく「なぜこの値か」を説明できる設計を目指しています。フォントサイズはModular

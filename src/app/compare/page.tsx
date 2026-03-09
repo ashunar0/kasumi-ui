@@ -144,7 +144,7 @@ type SpacingPreset = {
 const spacingPresets: SpacingPreset[] = [
   {
     name: "Current",
-    description: "今のmy-ui。space-y-12 / カード p-6 / gap-4",
+    description: "今のkasumi/ui。space-y-12 / カード p-6 / gap-4",
     sectionGap: 48,
     innerGap: 16,
     cardPaddingX: 24,

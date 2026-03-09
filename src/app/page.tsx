@@ -246,7 +246,7 @@ export default function Home() {
     <TooltipProvider>
       <div>
         <header className="sticky top-0 z-50 flex h-16 items-center justify-between border-b border-border bg-background/80 px-12 backdrop-blur">
-          <h1 className="text-h4 font-bold tracking-tight">my-ui</h1>
+          <h1 className="text-h4 font-bold tracking-tight">kasumi/ui</h1>
           <ThemeToggle />
         </header>
         <div className="mx-auto max-w-3xl px-6 py-16 space-y-16">
