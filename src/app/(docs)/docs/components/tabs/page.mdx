@@ -1,0 +1,126 @@
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+
+export const tabsProps = [
+  {
+    name: "defaultValue",
+    type: "string",
+    default: "-",
+    description: "初期表示するタブの値",
+  },
+  {
+    name: "variant",
+    type: '"underline" | "pill"',
+    default: '"underline"',
+    description: "タブリストのスタイルバリエーション（TabsList に指定）",
+  },
+];
+
+# Tabs
+
+<Description>コンテンツをタブで切り替えて表示するコンポーネント。Radix UI ベース。Tabs / TabsList / TabsTrigger / TabsContent の複合構成。</Description>
+
+## Usage
+
+<ComponentPreview>
+  <Tabs defaultValue="overview" className="max-w-md">
+    <TabsList>
+      <TabsTrigger value="overview">概要</TabsTrigger>
+      <TabsTrigger value="schedule">スケジュール</TabsTrigger>
+      <TabsTrigger value="members">メンバー</TabsTrigger>
+    </TabsList>
+    <TabsContent value="overview">
+      <p className="text-sm text-muted-foreground">プロジェクトの概要を表示します。</p>
+    </TabsContent>
+    <TabsContent value="schedule">
+      <p className="text-sm text-muted-foreground">スケジュール一覧を表示します。</p>
+    </TabsContent>
+    <TabsContent value="members">
+      <p className="text-sm text-muted-foreground">参加メンバーの一覧を表示します。</p>
+    </TabsContent>
+  </Tabs>
+</ComponentPreview>
+
+<CodeBlock code={`import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+
+<Tabs defaultValue="overview">
+  <TabsList>
+    <TabsTrigger value="overview">概要</TabsTrigger>
+    <TabsTrigger value="schedule">スケジュール</TabsTrigger>
+    <TabsTrigger value="members">メンバー</TabsTrigger>
+  </TabsList>
+  <TabsContent value="overview">
+    <p>プロジェクトの概要を表示します。</p>
+  </TabsContent>
+  <TabsContent value="schedule">
+    <p>スケジュール一覧を表示します。</p>
+  </TabsContent>
+  <TabsContent value="members">
+    <p>参加メンバーの一覧を表示します。</p>
+  </TabsContent>
+</Tabs>`} />
+
+## Underline
+
+デフォルトのスタイル。下線でアクティブなタブを示します。
+
+<ComponentPreview>
+  <Tabs defaultValue="tab1" className="max-w-md">
+    <TabsList variant="underline">
+      <TabsTrigger value="tab1">タブ 1</TabsTrigger>
+      <TabsTrigger value="tab2">タブ 2</TabsTrigger>
+      <TabsTrigger value="tab3">タブ 3</TabsTrigger>
+    </TabsList>
+    <TabsContent value="tab1">
+      <p className="text-sm text-muted-foreground">Underline スタイルのタブです。</p>
+    </TabsContent>
+    <TabsContent value="tab2">
+      <p className="text-sm text-muted-foreground">タブ 2 のコンテンツです。</p>
+    </TabsContent>
+    <TabsContent value="tab3">
+      <p className="text-sm text-muted-foreground">タブ 3 のコンテンツです。</p>
+    </TabsContent>
+  </Tabs>
+</ComponentPreview>
+
+<CodeBlock code={`<Tabs defaultValue="tab1">
+  <TabsList variant="underline">
+    <TabsTrigger value="tab1">タブ 1</TabsTrigger>
+    <TabsTrigger value="tab2">タブ 2</TabsTrigger>
+  </TabsList>
+  ...
+</Tabs>`} />
+
+## Pill
+
+ピル型のスタイル。背景色でアクティブなタブを示します。
+
+<ComponentPreview>
+  <Tabs defaultValue="tab1" className="max-w-md">
+    <TabsList variant="pill">
+      <TabsTrigger value="tab1">タブ 1</TabsTrigger>
+      <TabsTrigger value="tab2">タブ 2</TabsTrigger>
+      <TabsTrigger value="tab3">タブ 3</TabsTrigger>
+    </TabsList>
+    <TabsContent value="tab1">
+      <p className="text-sm text-muted-foreground">Pill スタイルのタブです。</p>
+    </TabsContent>
+    <TabsContent value="tab2">
+      <p className="text-sm text-muted-foreground">タブ 2 のコンテンツです。</p>
+    </TabsContent>
+    <TabsContent value="tab3">
+      <p className="text-sm text-muted-foreground">タブ 3 のコンテンツです。</p>
+    </TabsContent>
+  </Tabs>
+</ComponentPreview>
+
+<CodeBlock code={`<Tabs defaultValue="tab1">
+  <TabsList variant="pill">
+    <TabsTrigger value="tab1">タブ 1</TabsTrigger>
+    <TabsTrigger value="tab2">タブ 2</TabsTrigger>
+  </TabsList>
+  ...
+</Tabs>`} />
+
+## Props
+
+<PropsTable props={tabsProps} />

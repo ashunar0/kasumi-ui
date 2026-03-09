@@ -1,0 +1,220 @@
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from "@/components/ui/select";
+
+export const selectTriggerProps = [
+  {
+    name: "size",
+    type: '"sm" | "md" | "lg"',
+    default: '"md"',
+    description: "トリガーのサイズ",
+  },
+  {
+    name: "error",
+    type: "boolean",
+    default: "false",
+    description: "エラー状態を表示する",
+  },
+];
+
+export const selectProps = [
+  {
+    name: "value",
+    type: "string",
+    default: "-",
+    description: "選択中の値（制御コンポーネント用）",
+  },
+  {
+    name: "onValueChange",
+    type: "(value: string) => void",
+    default: "-",
+    description: "値が変更されたときのコールバック",
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    default: "false",
+    description: "無効状態にする",
+  },
+];
+
+export const selectItemProps = [
+  {
+    name: "value",
+    type: "string",
+    default: "-",
+    description: "選択肢の値（必須）",
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    default: "false",
+    description: "選択肢を無効にする",
+  },
+];
+
+# Select
+
+<Description>ドロップダウンリストから項目を選択するためのコンポーネント。Radix UI ベースで、キーボード操作・typeahead に対応。</Description>
+
+## Usage
+
+<ComponentPreview>
+  <Select>
+    <SelectTrigger className="w-[240px]">
+      <SelectValue placeholder="果物を選択" />
+    </SelectTrigger>
+    <SelectContent>
+      <SelectItem value="apple">りんご</SelectItem>
+      <SelectItem value="banana">バナナ</SelectItem>
+      <SelectItem value="grape">ぶどう</SelectItem>
+    </SelectContent>
+  </Select>
+</ComponentPreview>
+
+<CodeBlock code={`import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from "@/components/ui/select";
+
+<Select>
+  <SelectTrigger className="w-[240px]">
+    <SelectValue placeholder="果物を選択" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="apple">りんご</SelectItem>
+    <SelectItem value="banana">バナナ</SelectItem>
+    <SelectItem value="grape">ぶどう</SelectItem>
+  </SelectContent>
+</Select>`} />
+
+## Size
+
+<ComponentPreview className="flex-col gap-4">
+  <Select>
+    <SelectTrigger size="sm" className="w-[240px]">
+      <SelectValue placeholder="Small" />
+    </SelectTrigger>
+    <SelectContent>
+      <SelectItem value="a">選択肢 A</SelectItem>
+      <SelectItem value="b">選択肢 B</SelectItem>
+    </SelectContent>
+  </Select>
+  <Select>
+    <SelectTrigger size="md" className="w-[240px]">
+      <SelectValue placeholder="Medium" />
+    </SelectTrigger>
+    <SelectContent>
+      <SelectItem value="a">選択肢 A</SelectItem>
+      <SelectItem value="b">選択肢 B</SelectItem>
+    </SelectContent>
+  </Select>
+  <Select>
+    <SelectTrigger size="lg" className="w-[240px]">
+      <SelectValue placeholder="Large" />
+    </SelectTrigger>
+    <SelectContent>
+      <SelectItem value="a">選択肢 A</SelectItem>
+      <SelectItem value="b">選択肢 B</SelectItem>
+    </SelectContent>
+  </Select>
+</ComponentPreview>
+
+<CodeBlock
+  code={`<Select>
+  <SelectTrigger size="sm">
+    <SelectValue placeholder="Small" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="a">選択肢 A</SelectItem>
+    <SelectItem value="b">選択肢 B</SelectItem>
+  </SelectContent>
+</Select>
+
+<Select>
+  <SelectTrigger size="md">
+    <SelectValue placeholder="Medium" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="a">選択肢 A</SelectItem>
+    <SelectItem value="b">選択肢 B</SelectItem>
+  </SelectContent>
+</Select>
+
+<Select>
+  <SelectTrigger size="lg">
+    <SelectValue placeholder="Large" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="a">選択肢 A</SelectItem>
+    <SelectItem value="b">選択肢 B</SelectItem>
+  </SelectContent>
+</Select>`}
+/>
+
+## Error
+
+<ComponentPreview>
+  <Select>
+    <SelectTrigger error className="w-[240px]">
+      <SelectValue placeholder="エラー状態" />
+    </SelectTrigger>
+    <SelectContent>
+      <SelectItem value="a">選択肢 A</SelectItem>
+      <SelectItem value="b">選択肢 B</SelectItem>
+    </SelectContent>
+  </Select>
+</ComponentPreview>
+
+<CodeBlock code={`<Select>
+  <SelectTrigger error>
+    <SelectValue placeholder="エラー状態" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="a">選択肢 A</SelectItem>
+    <SelectItem value="b">選択肢 B</SelectItem>
+  </SelectContent>
+</Select>`} />
+
+## Disabled
+
+<ComponentPreview>
+  <Select disabled>
+    <SelectTrigger className="w-[240px]">
+      <SelectValue placeholder="無効な選択" />
+    </SelectTrigger>
+    <SelectContent>
+      <SelectItem value="a">選択肢 A</SelectItem>
+    </SelectContent>
+  </Select>
+</ComponentPreview>
+
+<CodeBlock code={`<Select disabled>
+  <SelectTrigger>
+    <SelectValue placeholder="無効な選択" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="a">選択肢 A</SelectItem>
+  </SelectContent>
+</Select>`} />
+
+## Props
+
+### Select
+
+<PropsTable props={selectProps} />
+
+### SelectTrigger
+
+<PropsTable props={selectTriggerProps} />
+
+### SelectItem
+
+<PropsTable props={selectItemProps} />

@@ -1,0 +1,59 @@
+import { Skeleton } from "@/components/ui/skeleton";
+
+# Skeleton
+
+<Description>コンテンツ読み込み中のプレースホルダーを表示するスケルトンコンポーネント。</Description>
+
+## Usage
+
+<ComponentPreview>
+  <Skeleton className="h-10 w-40" />
+</ComponentPreview>
+
+<CodeBlock code={`import { Skeleton } from "@/components/ui/skeleton";
+
+<Skeleton className="h-10 w-40" />`} />
+
+## Shapes
+
+className でサイズや形状を自由に指定できます。
+
+<ComponentPreview className="flex-col gap-4">
+  <Skeleton className="h-4 w-60" />
+  <Skeleton className="h-4 w-40" />
+  <Skeleton className="h-10 w-10 rounded-full" />
+</ComponentPreview>
+
+<CodeBlock
+  code={`<Skeleton className="h-4 w-60" />
+<Skeleton className="h-4 w-40" />
+<Skeleton className="h-10 w-10 rounded-full" />`}
+/>
+
+## Card Skeleton
+
+実際のレイアウトに合わせてスケルトンを組み合わせることができます。
+
+<ComponentPreview>
+  <div className="flex items-center gap-4">
+    <Skeleton className="h-12 w-12 rounded-full" />
+    <div className="space-y-2">
+      <Skeleton className="h-4 w-48" />
+      <Skeleton className="h-4 w-32" />
+    </div>
+  </div>
+</ComponentPreview>
+
+<CodeBlock
+  code={`<div className="flex items-center gap-4">
+  <Skeleton className="h-12 w-12 rounded-full" />
+  <div className="space-y-2">
+    <Skeleton className="h-4 w-48" />
+    <Skeleton className="h-4 w-32" />
+  </div>
+</div>`}
+/>
+
+## Props
+
+Skeleton は標準の `div` 要素の props をすべて受け取ります。`className` でサイズ・形状を指定してください。

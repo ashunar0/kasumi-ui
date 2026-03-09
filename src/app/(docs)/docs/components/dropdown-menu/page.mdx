@@ -1,0 +1,192 @@
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
+
+export const dropdownMenuItemProps = [
+  {
+    name: "destructive",
+    type: "boolean",
+    default: "false",
+    description: "破壊的アクション用のスタイルを適用する",
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    default: "false",
+    description: "選択肢を無効にする",
+  },
+];
+
+export const dropdownMenuContentProps = [
+  {
+    name: "sideOffset",
+    type: "number",
+    default: "4",
+    description: "トリガーからの表示位置のオフセット（px）",
+  },
+  {
+    name: "side",
+    type: '"top" | "right" | "bottom" | "left"',
+    default: '"bottom"',
+    description: "表示する方向",
+  },
+  {
+    name: "align",
+    type: '"start" | "center" | "end"',
+    default: '"center"',
+    description: "トリガーに対する配置",
+  },
+];
+
+# DropdownMenu
+
+<Description>トリガーをクリックすると表示されるメニュー。アクションの一覧やナビゲーションに使用。Radix UI ベースで、キーボードナビゲーション対応。</Description>
+
+## Usage
+
+<ComponentPreview>
+  <DropdownMenu>
+    <DropdownMenuTrigger asChild>
+      <Button variant="outline">メニューを開く</Button>
+    </DropdownMenuTrigger>
+    <DropdownMenuContent>
+      <DropdownMenuLabel>アカウント</DropdownMenuLabel>
+      <DropdownMenuSeparator />
+      <DropdownMenuItem>プロフィール</DropdownMenuItem>
+      <DropdownMenuItem>設定</DropdownMenuItem>
+      <DropdownMenuItem>通知</DropdownMenuItem>
+    </DropdownMenuContent>
+  </DropdownMenu>
+</ComponentPreview>
+
+<CodeBlock code={`import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+} from "@/components/ui/dropdown-menu";
+import { Button } from "@/components/ui/button";
+
+<DropdownMenu>
+  <DropdownMenuTrigger asChild>
+    <Button variant="outline">メニューを開く</Button>
+  </DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuLabel>アカウント</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>プロフィール</DropdownMenuItem>
+    <DropdownMenuItem>設定</DropdownMenuItem>
+    <DropdownMenuItem>通知</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>`} />
+
+## With Shortcuts
+
+<ComponentPreview>
+  <DropdownMenu>
+    <DropdownMenuTrigger asChild>
+      <Button variant="outline">編集</Button>
+    </DropdownMenuTrigger>
+    <DropdownMenuContent align="start">
+      <DropdownMenuItem>
+        元に戻す
+        <DropdownMenuShortcut>⌘Z</DropdownMenuShortcut>
+      </DropdownMenuItem>
+      <DropdownMenuItem>
+        やり直す
+        <DropdownMenuShortcut>⇧⌘Z</DropdownMenuShortcut>
+      </DropdownMenuItem>
+      <DropdownMenuSeparator />
+      <DropdownMenuItem>
+        切り取り
+        <DropdownMenuShortcut>⌘X</DropdownMenuShortcut>
+      </DropdownMenuItem>
+      <DropdownMenuItem>
+        コピー
+        <DropdownMenuShortcut>⌘C</DropdownMenuShortcut>
+      </DropdownMenuItem>
+      <DropdownMenuItem>
+        貼り付け
+        <DropdownMenuShortcut>⌘V</DropdownMenuShortcut>
+      </DropdownMenuItem>
+    </DropdownMenuContent>
+  </DropdownMenu>
+</ComponentPreview>
+
+<CodeBlock code={`<DropdownMenu>
+  <DropdownMenuTrigger asChild>
+    <Button variant="outline">編集</Button>
+  </DropdownMenuTrigger>
+  <DropdownMenuContent align="start">
+    <DropdownMenuItem>
+      元に戻す
+      <DropdownMenuShortcut>⌘Z</DropdownMenuShortcut>
+    </DropdownMenuItem>
+    <DropdownMenuItem>
+      やり直す
+      <DropdownMenuShortcut>⇧⌘Z</DropdownMenuShortcut>
+    </DropdownMenuItem>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>
+      切り取り
+      <DropdownMenuShortcut>⌘X</DropdownMenuShortcut>
+    </DropdownMenuItem>
+    <DropdownMenuItem>
+      コピー
+      <DropdownMenuShortcut>⌘C</DropdownMenuShortcut>
+    </DropdownMenuItem>
+    <DropdownMenuItem>
+      貼り付け
+      <DropdownMenuShortcut>⌘V</DropdownMenuShortcut>
+    </DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>`} />
+
+## Destructive
+
+destructive prop で破壊的アクション用のスタイルを適用できます。
+
+<ComponentPreview>
+  <DropdownMenu>
+    <DropdownMenuTrigger asChild>
+      <Button variant="outline">操作</Button>
+    </DropdownMenuTrigger>
+    <DropdownMenuContent>
+      <DropdownMenuItem>編集</DropdownMenuItem>
+      <DropdownMenuItem>複製</DropdownMenuItem>
+      <DropdownMenuSeparator />
+      <DropdownMenuItem destructive>削除</DropdownMenuItem>
+    </DropdownMenuContent>
+  </DropdownMenu>
+</ComponentPreview>
+
+<CodeBlock code={`<DropdownMenu>
+  <DropdownMenuTrigger asChild>
+    <Button variant="outline">操作</Button>
+  </DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuItem>編集</DropdownMenuItem>
+    <DropdownMenuItem>複製</DropdownMenuItem>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem destructive>削除</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>`} />
+
+## Props
+
+### DropdownMenuContent
+
+<PropsTable props={dropdownMenuContentProps} />
+
+### DropdownMenuItem
+
+<PropsTable props={dropdownMenuItemProps} />

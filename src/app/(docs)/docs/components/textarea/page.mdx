@@ -1,0 +1,68 @@
+import { Textarea } from "@/components/ui/textarea";
+
+export const textareaProps = [
+  {
+    name: "size",
+    type: '"md" | "lg"',
+    default: '"md"',
+    description: "テキストエリアのサイズ",
+  },
+  {
+    name: "error",
+    type: "boolean",
+    default: "false",
+    description: "エラー状態を表示する",
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    default: "false",
+    description: "無効状態にする",
+  },
+];
+
+# Textarea
+
+<Description>複数行のテキスト入力のためのコンポーネント。リサイズ可能です。</Description>
+
+## Usage
+
+<ComponentPreview>
+  <Textarea placeholder="メッセージを入力" className="max-w-sm" />
+</ComponentPreview>
+
+<CodeBlock code={`import { Textarea } from "@/components/ui/textarea";
+
+<Textarea placeholder="メッセージを入力" />`} />
+
+## Size
+
+<ComponentPreview className="flex-col gap-4">
+  <Textarea size="md" placeholder="Medium" className="max-w-sm" />
+  <Textarea size="lg" placeholder="Large" className="max-w-sm" />
+</ComponentPreview>
+
+<CodeBlock
+  code={`<Textarea size="md" placeholder="Medium" />
+<Textarea size="lg" placeholder="Large" />`}
+/>
+
+## Invalid
+
+<ComponentPreview>
+  <Textarea error placeholder="エラーのある入力" className="max-w-sm" />
+</ComponentPreview>
+
+<CodeBlock code={`<Textarea error placeholder="エラーのある入力" />`} />
+
+## Disabled
+
+<ComponentPreview>
+  <Textarea disabled placeholder="入力できません" className="max-w-sm" />
+</ComponentPreview>
+
+<CodeBlock code={`<Textarea disabled placeholder="入力できません" />`} />
+
+## Props
+
+<PropsTable props={textareaProps} />

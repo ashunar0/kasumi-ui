@@ -1,0 +1,215 @@
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+  DialogClose,
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+
+export const dialogContentProps = [
+  {
+    name: "className",
+    type: "string",
+    default: "-",
+    description: "追加のCSSクラス",
+  },
+];
+
+export const dialogProps = [
+  {
+    name: "open",
+    type: "boolean",
+    default: "-",
+    description: "ダイアログの開閉状態（制御コンポーネント用）",
+  },
+  {
+    name: "onOpenChange",
+    type: "(open: boolean) => void",
+    default: "-",
+    description: "開閉状態が変わったときのコールバック",
+  },
+];
+
+# Dialog
+
+<Description>モーダルダイアログ。フォーカストラップ・Escape キー・オーバーレイクリックでの閉じ操作に対応。</Description>
+
+## Usage
+
+<ComponentPreview>
+  <Dialog>
+    <DialogTrigger asChild>
+      <Button variant="outline">ダイアログを開く</Button>
+    </DialogTrigger>
+    <DialogContent>
+      <DialogHeader>
+        <DialogTitle>確認</DialogTitle>
+      </DialogHeader>
+      <DialogDescription>
+        この操作を実行してもよろしいですか？
+      </DialogDescription>
+      <DialogFooter>
+        <DialogClose asChild>
+          <Button variant="outline">キャンセル</Button>
+        </DialogClose>
+        <Button>実行</Button>
+      </DialogFooter>
+    </DialogContent>
+  </Dialog>
+</ComponentPreview>
+
+<CodeBlock code={`import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+  DialogClose,
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+
+<Dialog>
+  <DialogTrigger asChild>
+    <Button variant="outline">ダイアログを開く</Button>
+  </DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>確認</DialogTitle>
+    </DialogHeader>
+    <DialogDescription>
+      この操作を実行してもよろしいですか？
+    </DialogDescription>
+    <DialogFooter>
+      <DialogClose asChild>
+        <Button variant="outline">キャンセル</Button>
+      </DialogClose>
+      <Button>実行</Button>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>`} />
+
+## Form Dialog
+
+<ComponentPreview>
+  <Dialog>
+    <DialogTrigger asChild>
+      <Button>プロフィール編集</Button>
+    </DialogTrigger>
+    <DialogContent>
+      <DialogHeader>
+        <DialogTitle>プロフィール編集</DialogTitle>
+      </DialogHeader>
+      <DialogDescription>
+        表示名とメールアドレスを変更できます。
+      </DialogDescription>
+      <div className="space-y-4">
+        <div className="space-y-2">
+          <Label>表示名</Label>
+          <Input variant="outline" placeholder="あさひ" />
+        </div>
+        <div className="space-y-2">
+          <Label>メールアドレス</Label>
+          <Input variant="outline" type="email" placeholder="asahi@example.com" />
+        </div>
+      </div>
+      <DialogFooter>
+        <DialogClose asChild>
+          <Button variant="outline">キャンセル</Button>
+        </DialogClose>
+        <Button>保存</Button>
+      </DialogFooter>
+    </DialogContent>
+  </Dialog>
+</ComponentPreview>
+
+<CodeBlock code={`<Dialog>
+  <DialogTrigger asChild>
+    <Button>プロフィール編集</Button>
+  </DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>プロフィール編集</DialogTitle>
+    </DialogHeader>
+    <DialogDescription>
+      表示名とメールアドレスを変更できます。
+    </DialogDescription>
+    <div className="space-y-4">
+      <div className="space-y-2">
+        <Label>表示名</Label>
+        <Input variant="outline" placeholder="あさひ" />
+      </div>
+      <div className="space-y-2">
+        <Label>メールアドレス</Label>
+        <Input variant="outline" type="email" placeholder="asahi@example.com" />
+      </div>
+    </div>
+    <DialogFooter>
+      <DialogClose asChild>
+        <Button variant="outline">キャンセル</Button>
+      </DialogClose>
+      <Button>保存</Button>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>`} />
+
+## Delete Confirmation
+
+<ComponentPreview>
+  <Dialog>
+    <DialogTrigger asChild>
+      <Button variant="destructive">アカウントを削除</Button>
+    </DialogTrigger>
+    <DialogContent>
+      <DialogHeader>
+        <DialogTitle>本当に削除しますか？</DialogTitle>
+      </DialogHeader>
+      <DialogDescription>
+        この操作は取り消せません。すべてのデータが完全に削除されます。
+      </DialogDescription>
+      <DialogFooter>
+        <DialogClose asChild>
+          <Button variant="outline">キャンセル</Button>
+        </DialogClose>
+        <Button variant="destructive">削除する</Button>
+      </DialogFooter>
+    </DialogContent>
+  </Dialog>
+</ComponentPreview>
+
+<CodeBlock code={`<Dialog>
+  <DialogTrigger asChild>
+    <Button variant="destructive">アカウントを削除</Button>
+  </DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>本当に削除しますか？</DialogTitle>
+    </DialogHeader>
+    <DialogDescription>
+      この操作は取り消せません。すべてのデータが完全に削除されます。
+    </DialogDescription>
+    <DialogFooter>
+      <DialogClose asChild>
+        <Button variant="outline">キャンセル</Button>
+      </DialogClose>
+      <Button variant="destructive">削除する</Button>
+    </DialogFooter>
+  </DialogContent>
+</Dialog>`} />
+
+## Props
+
+### Dialog
+
+<PropsTable props={dialogProps} />
+
+### DialogContent
+
+<PropsTable props={dialogContentProps} />

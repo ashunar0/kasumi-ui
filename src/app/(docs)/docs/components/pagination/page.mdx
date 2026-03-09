@@ -1,0 +1,151 @@
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationPrevious,
+  PaginationNext,
+  PaginationEllipsis,
+} from "@/components/ui/pagination";
+
+export const paginationProps = [
+  {
+    name: "isActive",
+    type: "boolean",
+    default: "false",
+    description: "現在のページかどうか。PaginationLink に指定",
+  },
+];
+
+# Pagination
+
+<Description>ページ番号型のページネーションコンポーネント。前後ナビゲーション、省略記号に対応。</Description>
+
+## Usage
+
+<ComponentPreview>
+  <Pagination>
+    <PaginationContent>
+      <PaginationItem>
+        <PaginationPrevious />
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink>1</PaginationLink>
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink isActive>2</PaginationLink>
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink>3</PaginationLink>
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationNext />
+      </PaginationItem>
+    </PaginationContent>
+  </Pagination>
+</ComponentPreview>
+
+<CodeBlock code={`import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationPrevious,
+  PaginationNext,
+} from "@/components/ui/pagination";
+
+<Pagination>
+  <PaginationContent>
+    <PaginationItem>
+      <PaginationPrevious />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink>1</PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink isActive>2</PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink>3</PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationNext />
+    </PaginationItem>
+  </PaginationContent>
+</Pagination>`} />
+
+## Ellipsis
+
+ページ数が多い場合、省略記号で中間ページを省略できます。
+
+<ComponentPreview>
+  <Pagination>
+    <PaginationContent>
+      <PaginationItem>
+        <PaginationPrevious />
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink>1</PaginationLink>
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationEllipsis />
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink>4</PaginationLink>
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink isActive>5</PaginationLink>
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink>6</PaginationLink>
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationEllipsis />
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink>10</PaginationLink>
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationNext />
+      </PaginationItem>
+    </PaginationContent>
+  </Pagination>
+</ComponentPreview>
+
+<CodeBlock code={`<Pagination>
+  <PaginationContent>
+    <PaginationItem>
+      <PaginationPrevious />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink>1</PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationEllipsis />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink>4</PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink isActive>5</PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink>6</PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationEllipsis />
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationLink>10</PaginationLink>
+    </PaginationItem>
+    <PaginationItem>
+      <PaginationNext />
+    </PaginationItem>
+  </PaginationContent>
+</Pagination>`} />
+
+## Props
+
+Pagination は `<nav>` 要素、PaginationContent は `<ul>` 要素、PaginationItem は `<li>` 要素の props をそのまま受け取ります。PaginationLink 固有の props は以下の通りです。
+
+<PropsTable props={paginationProps} />

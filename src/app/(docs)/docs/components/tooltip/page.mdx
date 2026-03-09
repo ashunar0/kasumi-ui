@@ -1,0 +1,172 @@
+import {
+  TooltipProvider,
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+} from "@/components/ui/tooltip";
+import { Button } from "@/components/ui/button";
+
+export const tooltipContentProps = [
+  {
+    name: "side",
+    type: '"top" | "right" | "bottom" | "left"',
+    default: '"top"',
+    description: "ツールチップの表示位置",
+  },
+  {
+    name: "sideOffset",
+    type: "number",
+    default: "4",
+    description: "トリガーからの表示位置のオフセット（px）",
+  },
+];
+
+export const tooltipProviderProps = [
+  {
+    name: "delayDuration",
+    type: "number",
+    default: "200",
+    description: "ホバーしてから表示されるまでの遅延（ms）",
+  },
+];
+
+# Tooltip
+
+<Description>要素にホバーすると表示される補足情報のポップアップ。Radix UI ベースで、自動位置調整に対応。</Description>
+
+## Usage
+
+<ComponentPreview>
+  <TooltipProvider>
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Button variant="outline">ホバーしてみて</Button>
+      </TooltipTrigger>
+      <TooltipContent>
+        <p>補足テキスト</p>
+      </TooltipContent>
+    </Tooltip>
+  </TooltipProvider>
+</ComponentPreview>
+
+<CodeBlock code={`import {
+  TooltipProvider,
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+} from "@/components/ui/tooltip";
+import { Button } from "@/components/ui/button";
+
+<TooltipProvider>
+  <Tooltip>
+    <TooltipTrigger asChild>
+      <Button variant="outline">ホバーしてみて</Button>
+    </TooltipTrigger>
+    <TooltipContent>
+      <p>補足テキスト</p>
+    </TooltipContent>
+  </Tooltip>
+</TooltipProvider>`} />
+
+## Side
+
+side prop でツールチップの表示位置を指定できます。
+
+<ComponentPreview className="gap-4">
+  <TooltipProvider>
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Button variant="outline" size="sm">Top</Button>
+      </TooltipTrigger>
+      <TooltipContent side="top">
+        <p>上に表示</p>
+      </TooltipContent>
+    </Tooltip>
+  </TooltipProvider>
+  <TooltipProvider>
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Button variant="outline" size="sm">Right</Button>
+      </TooltipTrigger>
+      <TooltipContent side="right">
+        <p>右に表示</p>
+      </TooltipContent>
+    </Tooltip>
+  </TooltipProvider>
+  <TooltipProvider>
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Button variant="outline" size="sm">Bottom</Button>
+      </TooltipTrigger>
+      <TooltipContent side="bottom">
+        <p>下に表示</p>
+      </TooltipContent>
+    </Tooltip>
+  </TooltipProvider>
+  <TooltipProvider>
+    <Tooltip>
+      <TooltipTrigger asChild>
+        <Button variant="outline" size="sm">Left</Button>
+      </TooltipTrigger>
+      <TooltipContent side="left">
+        <p>左に表示</p>
+      </TooltipContent>
+    </Tooltip>
+  </TooltipProvider>
+</ComponentPreview>
+
+<CodeBlock
+  code={`<TooltipProvider>
+  <Tooltip>
+    <TooltipTrigger asChild>
+      <Button variant="outline">Top</Button>
+    </TooltipTrigger>
+    <TooltipContent side="top">
+      <p>上に表示</p>
+    </TooltipContent>
+  </Tooltip>
+</TooltipProvider>
+
+<TooltipProvider>
+  <Tooltip>
+    <TooltipTrigger asChild>
+      <Button variant="outline">Right</Button>
+    </TooltipTrigger>
+    <TooltipContent side="right">
+      <p>右に表示</p>
+    </TooltipContent>
+  </Tooltip>
+</TooltipProvider>
+
+<TooltipProvider>
+  <Tooltip>
+    <TooltipTrigger asChild>
+      <Button variant="outline">Bottom</Button>
+    </TooltipTrigger>
+    <TooltipContent side="bottom">
+      <p>下に表示</p>
+    </TooltipContent>
+  </Tooltip>
+</TooltipProvider>
+
+<TooltipProvider>
+  <Tooltip>
+    <TooltipTrigger asChild>
+      <Button variant="outline">Left</Button>
+    </TooltipTrigger>
+    <TooltipContent side="left">
+      <p>左に表示</p>
+    </TooltipContent>
+  </Tooltip>
+</TooltipProvider>`}
+/>
+
+## Props
+
+### TooltipProvider
+
+<PropsTable props={tooltipProviderProps} />
+
+### TooltipContent
+
+<PropsTable props={tooltipContentProps} />

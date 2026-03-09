@@ -175,11 +175,11 @@ Minor Third (×1.2) の Modular Scale を採用。詳細は [`docs/design-decisi
 
 ### ドキュメント済みコンポーネント
 
-- Button, Input
+- Accordion, Alert, Breadcrumb, Button, Card, Input, Tabs
 
 ### 未ドキュメント（今後追加）
 
-残り25コンポーネント。パターンは固まっているので量産可能。新しいコンポーネントを追加する際は `(docs)/layout.tsx` の `components` 配列にもリンクを追加すること。
+残り20コンポーネント。パターンは固まっているので量産可能。新しいコンポーネントを追加する際は `(docs)/layout.tsx` の `components` 配列にもリンクを追加すること。
 
 ## 設計判断メモ
 

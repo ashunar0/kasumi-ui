@@ -1,0 +1,98 @@
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
+
+export const alertProps = [
+  {
+    name: "variant",
+    type: '"default" | "success" | "info" | "warning" | "error"',
+    default: '"default"',
+    description: "アラートのスタイルバリエーション",
+  },
+];
+
+# Alert
+
+<Description>ユーザーへの通知やフィードバックを表示するコンポーネント。Alert / AlertTitle / AlertDescription の複合構成。</Description>
+
+## Usage
+
+<ComponentPreview>
+  <Alert className="max-w-lg">
+    <AlertTitle>お知らせ</AlertTitle>
+    <AlertDescription>
+      システムメンテナンスを予定しています。
+    </AlertDescription>
+  </Alert>
+</ComponentPreview>
+
+<CodeBlock code={`import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
+
+<Alert>
+  <AlertTitle>お知らせ</AlertTitle>
+  <AlertDescription>
+    システムメンテナンスを予定しています。
+  </AlertDescription>
+</Alert>`} />
+
+## Variant
+
+<ComponentPreview className="flex-col gap-4">
+  <Alert variant="default" className="max-w-lg">
+    <AlertTitle>Default</AlertTitle>
+    <AlertDescription>デフォルトのアラートです。</AlertDescription>
+  </Alert>
+  <Alert variant="success" className="max-w-lg">
+    <AlertTitle>Success</AlertTitle>
+    <AlertDescription>操作が正常に完了しました。</AlertDescription>
+  </Alert>
+  <Alert variant="info" className="max-w-lg">
+    <AlertTitle>Info</AlertTitle>
+    <AlertDescription>参考情報をお知らせします。</AlertDescription>
+  </Alert>
+  <Alert variant="warning" className="max-w-lg">
+    <AlertTitle>Warning</AlertTitle>
+    <AlertDescription>注意が必要な状態です。</AlertDescription>
+  </Alert>
+  <Alert variant="error" className="max-w-lg">
+    <AlertTitle>Error</AlertTitle>
+    <AlertDescription>エラーが発生しました。</AlertDescription>
+  </Alert>
+</ComponentPreview>
+
+<CodeBlock
+  code={`<Alert variant="default">
+  <AlertTitle>Default</AlertTitle>
+  <AlertDescription>デフォルトのアラートです。</AlertDescription>
+</Alert>
+<Alert variant="success">
+  <AlertTitle>Success</AlertTitle>
+  <AlertDescription>操作が正常に完了しました。</AlertDescription>
+</Alert>
+<Alert variant="info">
+  <AlertTitle>Info</AlertTitle>
+  <AlertDescription>参考情報をお知らせします。</AlertDescription>
+</Alert>
+<Alert variant="warning">
+  <AlertTitle>Warning</AlertTitle>
+  <AlertDescription>注意が必要な状態です。</AlertDescription>
+</Alert>
+<Alert variant="error">
+  <AlertTitle>Error</AlertTitle>
+  <AlertDescription>エラーが発生しました。</AlertDescription>
+</Alert>`}
+/>
+
+## Title Only
+
+<ComponentPreview>
+  <Alert variant="info" className="max-w-lg">
+    <AlertTitle>タイトルだけのアラートも使えます。</AlertTitle>
+  </Alert>
+</ComponentPreview>
+
+<CodeBlock code={`<Alert variant="info">
+  <AlertTitle>タイトルだけのアラートも使えます。</AlertTitle>
+</Alert>`} />
+
+## Props
+
+<PropsTable props={alertProps} />

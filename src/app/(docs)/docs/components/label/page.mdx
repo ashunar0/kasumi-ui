@@ -1,0 +1,65 @@
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Checkbox } from "@/components/ui/checkbox";
+
+export const labelProps = [
+  {
+    name: "htmlFor",
+    type: "string",
+    default: "—",
+    description: "関連付けるフォーム要素のid",
+  },
+];
+
+# Label
+
+<Description>フォーム要素に関連付けるラベルコンポーネント。peer-disabled 連動に対応しています。</Description>
+
+## Usage
+
+<ComponentPreview>
+  <div className="flex flex-col gap-2">
+    <Label htmlFor="name">名前</Label>
+    <Input id="name" placeholder="名前を入力" className="max-w-sm" />
+  </div>
+</ComponentPreview>
+
+<CodeBlock code={`import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+
+<Label htmlFor="name">名前</Label>
+<Input id="name" placeholder="名前を入力" />`} />
+
+## Disabled State
+
+関連するフォーム要素が disabled の場合、ラベルも自動的に半透明になります。
+
+<ComponentPreview>
+  <div className="flex flex-col gap-2">
+    <Label htmlFor="disabled-input">無効な入力</Label>
+    <Input id="disabled-input" placeholder="入力できません" disabled className="max-w-sm" />
+  </div>
+</ComponentPreview>
+
+<CodeBlock
+  code={`<Label htmlFor="disabled-input">無効な入力</Label>
+<Input id="disabled-input" placeholder="入力できません" disabled />`}
+/>
+
+## With Checkbox
+
+<ComponentPreview>
+  <div className="flex items-center gap-2">
+    <Checkbox id="terms" />
+    <Label htmlFor="terms">利用規約に同意する</Label>
+  </div>
+</ComponentPreview>
+
+<CodeBlock
+  code={`<Checkbox id="terms" />
+<Label htmlFor="terms">利用規約に同意する</Label>`}
+/>
+
+## Props
+
+<PropsTable props={labelProps} />

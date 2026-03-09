@@ -1,0 +1,87 @@
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+
+export const cardProps = [
+  {
+    name: "className",
+    type: "string",
+    default: "-",
+    description: "追加のCSSクラス",
+  },
+];
+
+# Card
+
+<Description>情報をグループ化して表示するカードコンポーネント。Card / CardHeader / CardTitle / CardDescription / CardContent / CardFooter の複合構成。</Description>
+
+## Usage
+
+<ComponentPreview>
+  <Card className="w-full max-w-sm">
+    <CardHeader>
+      <CardTitle>日程調整</CardTitle>
+      <CardDescription>参加可能な日時を選択してください。</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <p className="text-sm text-muted-foreground">候補日: 3月15日（土）、3月16日（日）</p>
+    </CardContent>
+    <CardFooter>
+      <Button size="sm">回答する</Button>
+    </CardFooter>
+  </Card>
+</ComponentPreview>
+
+<CodeBlock code={`import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
+
+<Card>
+  <CardHeader>
+    <CardTitle>日程調整</CardTitle>
+    <CardDescription>参加可能な日時を選択してください。</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>候補日: 3月15日（土）、3月16日（日）</p>
+  </CardContent>
+  <CardFooter>
+    <Button size="sm">回答する</Button>
+  </CardFooter>
+</Card>`} />
+
+## Header Only
+
+<ComponentPreview>
+  <Card className="w-full max-w-sm">
+    <CardHeader>
+      <CardTitle>通知設定</CardTitle>
+      <CardDescription>メールやプッシュ通知の設定を管理します。</CardDescription>
+    </CardHeader>
+  </Card>
+</ComponentPreview>
+
+<CodeBlock code={`<Card>
+  <CardHeader>
+    <CardTitle>通知設定</CardTitle>
+    <CardDescription>メールやプッシュ通知の設定を管理します。</CardDescription>
+  </CardHeader>
+</Card>`} />
+
+## Content Only
+
+<ComponentPreview>
+  <Card className="w-full max-w-sm">
+    <CardContent className="pt-6">
+      <p className="text-sm text-muted-foreground">シンプルなカードコンテンツ。CardHeader を省略してコンテンツだけ表示することもできます。</p>
+    </CardContent>
+  </Card>
+</ComponentPreview>
+
+<CodeBlock code={`<Card>
+  <CardContent className="pt-6">
+    <p>シンプルなカードコンテンツ。</p>
+  </CardContent>
+</Card>`} />
+
+## Props
+
+各サブコンポーネント（Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter）はすべて `className` を受け取り、外部からスタイルを上書きできます。
+
+<PropsTable props={cardProps} />

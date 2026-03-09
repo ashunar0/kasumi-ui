@@ -1,0 +1,231 @@
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableFooter,
+  TableRow,
+  TableHead,
+  TableCell,
+  TableCaption,
+} from "@/components/ui/table";
+
+export const tableProps = [
+  {
+    name: "Table",
+    type: "ComponentProps<\"table\">",
+    default: "—",
+    description: "テーブルのルート要素。横スクロール対応のラッパー付き",
+  },
+  {
+    name: "TableHeader",
+    type: "ComponentProps<\"thead\">",
+    default: "—",
+    description: "テーブルのヘッダー部分",
+  },
+  {
+    name: "TableBody",
+    type: "ComponentProps<\"tbody\">",
+    default: "—",
+    description: "テーブルのボディ部分",
+  },
+  {
+    name: "TableFooter",
+    type: "ComponentProps<\"tfoot\">",
+    default: "—",
+    description: "テーブルのフッター部分。背景色付き",
+  },
+  {
+    name: "TableRow",
+    type: "ComponentProps<\"tr\">",
+    default: "—",
+    description: "テーブルの行。ホバー時にハイライト表示",
+  },
+  {
+    name: "TableHead",
+    type: "ComponentProps<\"th\">",
+    default: "—",
+    description: "テーブルのヘッダーセル",
+  },
+  {
+    name: "TableCell",
+    type: "ComponentProps<\"td\">",
+    default: "—",
+    description: "テーブルのデータセル",
+  },
+  {
+    name: "TableCaption",
+    type: "ComponentProps<\"caption\">",
+    default: "—",
+    description: "テーブルのキャプション",
+  },
+];
+
+# Table
+
+<Description>データを行と列で表示するためのテーブルコンポーネント。横スクロール対応、ホバースタイル付き。</Description>
+
+## Usage
+
+<ComponentPreview>
+  <Table>
+    <TableHeader>
+      <TableRow>
+        <TableHead>名前</TableHead>
+        <TableHead>メール</TableHead>
+        <TableHead>ステータス</TableHead>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell>田中太郎</TableCell>
+        <TableCell>tanaka@example.com</TableCell>
+        <TableCell>アクティブ</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>佐藤花子</TableCell>
+        <TableCell>sato@example.com</TableCell>
+        <TableCell>保留中</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>鈴木一郎</TableCell>
+        <TableCell>suzuki@example.com</TableCell>
+        <TableCell>アクティブ</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</ComponentPreview>
+
+<CodeBlock code={`import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableRow,
+  TableHead,
+  TableCell,
+} from "@/components/ui/table";
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>名前</TableHead>
+      <TableHead>メール</TableHead>
+      <TableHead>ステータス</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>田中太郎</TableCell>
+      <TableCell>tanaka@example.com</TableCell>
+      <TableCell>アクティブ</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>佐藤花子</TableCell>
+      <TableCell>sato@example.com</TableCell>
+      <TableCell>保留中</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>`} />
+
+## Caption
+
+テーブルの説明テキストをキャプションとして表示できます。
+
+<ComponentPreview>
+  <Table>
+    <TableCaption>チームメンバー一覧</TableCaption>
+    <TableHeader>
+      <TableRow>
+        <TableHead>名前</TableHead>
+        <TableHead>役割</TableHead>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell>田中太郎</TableCell>
+        <TableCell>エンジニア</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>佐藤花子</TableCell>
+        <TableCell>デザイナー</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</ComponentPreview>
+
+<CodeBlock code={`<Table>
+  <TableCaption>チームメンバー一覧</TableCaption>
+  <TableHeader>
+    <TableRow>
+      <TableHead>名前</TableHead>
+      <TableHead>役割</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>田中太郎</TableCell>
+      <TableCell>エンジニア</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>`} />
+
+## Footer
+
+集計行などをフッターとして表示できます。
+
+<ComponentPreview>
+  <Table>
+    <TableHeader>
+      <TableRow>
+        <TableHead>項目</TableHead>
+        <TableHead className="text-right">金額</TableHead>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell>デザイン費</TableCell>
+        <TableCell className="text-right">¥50,000</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>開発費</TableCell>
+        <TableCell className="text-right">¥120,000</TableCell>
+      </TableRow>
+    </TableBody>
+    <TableFooter>
+      <TableRow>
+        <TableCell>合計</TableCell>
+        <TableCell className="text-right">¥170,000</TableCell>
+      </TableRow>
+    </TableFooter>
+  </Table>
+</ComponentPreview>
+
+<CodeBlock code={`<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>項目</TableHead>
+      <TableHead className="text-right">金額</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>デザイン費</TableCell>
+      <TableCell className="text-right">¥50,000</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>開発費</TableCell>
+      <TableCell className="text-right">¥120,000</TableCell>
+    </TableRow>
+  </TableBody>
+  <TableFooter>
+    <TableRow>
+      <TableCell>合計</TableCell>
+      <TableCell className="text-right">¥170,000</TableCell>
+    </TableRow>
+  </TableFooter>
+</Table>`} />
+
+## Props
+
+各サブコンポーネントは対応する HTML 要素の props をそのまま受け取ります。
+
+<PropsTable props={tableProps} />

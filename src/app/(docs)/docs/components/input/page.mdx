@@ -1,16 +1,31 @@
 import { Input } from "@/components/ui/input";
 
 export const inputProps = [
-  { name: "variant", type: '"outline" | "underline"', default: '"outline"', description: "入力フィールドのスタイル" },
-  { name: "size", type: '"sm" | "md" | "lg"', default: '"md"', description: "入力フィールドのサイズ" },
-  { name: "error", type: "boolean", default: "false", description: "エラー状態を表示する" },
+  {
+    name: "variant",
+    type: '"underline" | "outline"',
+    default: '"underline"',
+    description: "入力フィールドのスタイル",
+  },
+  {
+    name: "size",
+    type: '"sm" | "md" | "lg"',
+    default: '"md"',
+    description: "入力フィールドのサイズ",
+  },
+  {
+    name: "error",
+    type: "boolean",
+    default: "false",
+    description: "エラー状態を表示する",
+  },
 ];
 
 # Input
 
-テキスト入力のためのコンポーネント。
+<Description>テキスト入力のためのコンポーネント。</Description>
 
-## 基本の使い方
+## Usage
 
 <ComponentPreview>
   <Input placeholder="テキストを入力" className="max-w-sm" />
@@ -23,12 +38,14 @@ export const inputProps = [
 ## Variant
 
 <ComponentPreview className="flex-col gap-4">
-  <Input variant="outline" placeholder="Outline" className="max-w-sm" />
   <Input variant="underline" placeholder="Underline" className="max-w-sm" />
+  <Input variant="outline" placeholder="Outline" className="max-w-sm" />
 </ComponentPreview>
 
-<CodeBlock code={`<Input variant="outline" placeholder="Outline" />
-<Input variant="underline" placeholder="Underline" />`} />
+<CodeBlock
+  code={`<Input variant="outline" placeholder="Outline" />
+<Input variant="underline" placeholder="Underline" />`}
+/>
 
 ## Size
 
@@ -38,11 +55,13 @@ export const inputProps = [
   <Input size="lg" placeholder="Large" className="max-w-sm" />
 </ComponentPreview>
 
-<CodeBlock code={`<Input size="sm" placeholder="Small" />
+<CodeBlock
+  code={`<Input size="sm" placeholder="Small" />
 <Input size="md" placeholder="Medium" />
-<Input size="lg" placeholder="Large" />`} />
+<Input size="lg" placeholder="Large" />`}
+/>
 
-## エラー状態
+## Invalid
 
 <ComponentPreview>
   <Input error placeholder="エラーのある入力" className="max-w-sm" />
@@ -50,7 +69,7 @@ export const inputProps = [
 
 <CodeBlock code={`<Input error placeholder="エラーのある入力" />`} />
 
-## パスワード
+## Password
 
 type="password" を指定すると、表示切替トグルが自動で表示されます。
 

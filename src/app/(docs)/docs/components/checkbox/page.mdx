@@ -1,0 +1,91 @@
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
+
+export const checkboxProps = [
+  {
+    name: "size",
+    type: '"sm" | "md" | "lg"',
+    default: '"md"',
+    description: "チェックボックスのサイズ",
+  },
+  {
+    name: "error",
+    type: "boolean",
+    default: "false",
+    description: "エラー状態を表示する",
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    default: "false",
+    description: "無効状態にする",
+  },
+];
+
+# Checkbox
+
+<Description>選択状態を切り替えるチェックボックスコンポーネント。</Description>
+
+## Usage
+
+<ComponentPreview>
+  <div className="flex items-center gap-2">
+    <Checkbox id="checkbox-basic" />
+    <Label htmlFor="checkbox-basic">利用規約に同意する</Label>
+  </div>
+</ComponentPreview>
+
+<CodeBlock code={`import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
+
+<Checkbox id="checkbox-basic" />
+<Label htmlFor="checkbox-basic">利用規約に同意する</Label>`} />
+
+## Size
+
+<ComponentPreview className="gap-4 items-center">
+  <div className="flex items-center gap-2">
+    <Checkbox id="cb-sm" size="sm" />
+    <Label htmlFor="cb-sm">Small</Label>
+  </div>
+  <div className="flex items-center gap-2">
+    <Checkbox id="cb-md" size="md" />
+    <Label htmlFor="cb-md">Medium</Label>
+  </div>
+  <div className="flex items-center gap-2">
+    <Checkbox id="cb-lg" size="lg" />
+    <Label htmlFor="cb-lg">Large</Label>
+  </div>
+</ComponentPreview>
+
+<CodeBlock
+  code={`<Checkbox size="sm" />
+<Checkbox size="md" />
+<Checkbox size="lg" />`}
+/>
+
+## Invalid
+
+<ComponentPreview>
+  <div className="flex items-center gap-2">
+    <Checkbox id="cb-error" error />
+    <Label htmlFor="cb-error">エラーのある項目</Label>
+  </div>
+</ComponentPreview>
+
+<CodeBlock code={`<Checkbox error />`} />
+
+## Disabled
+
+<ComponentPreview>
+  <div className="flex items-center gap-2">
+    <Checkbox id="cb-disabled" disabled />
+    <Label htmlFor="cb-disabled">無効な項目</Label>
+  </div>
+</ComponentPreview>
+
+<CodeBlock code={`<Checkbox disabled />`} />
+
+## Props
+
+<PropsTable props={checkboxProps} />

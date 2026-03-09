@@ -1,0 +1,76 @@
+import { Badge } from "@/components/ui/badge";
+
+export const badgeProps = [
+  {
+    name: "variant",
+    type: '"default" | "outline"',
+    default: '"default"',
+    description: "バッジのスタイルバリエーション",
+  },
+  {
+    name: "size",
+    type: '"sm" | "md"',
+    default: '"md"',
+    description: "バッジのサイズ",
+  },
+];
+
+# Badge
+
+<Description>ステータスやカテゴリを示すラベルコンポーネント。</Description>
+
+## Usage
+
+<ComponentPreview>
+  <Badge>バッジ</Badge>
+</ComponentPreview>
+
+<CodeBlock code={`import { Badge } from "@/components/ui/badge";
+
+<Badge>バッジ</Badge>`} />
+
+## Variant
+
+<ComponentPreview className="gap-3">
+  <Badge variant="default">Default</Badge>
+  <Badge variant="outline">Outline</Badge>
+</ComponentPreview>
+
+<CodeBlock
+  code={`<Badge variant="default">Default</Badge>
+<Badge variant="outline">Outline</Badge>`}
+/>
+
+## Size
+
+<ComponentPreview className="gap-3 items-center">
+  <Badge size="sm">Small</Badge>
+  <Badge size="md">Medium</Badge>
+</ComponentPreview>
+
+<CodeBlock
+  code={`<Badge size="sm">Small</Badge>
+<Badge size="md">Medium</Badge>`}
+/>
+
+## Custom Color
+
+className で背景色やテキスト色を上書きできます。
+
+<ComponentPreview className="gap-3">
+  <Badge className="bg-blue-500 text-white">情報</Badge>
+  <Badge className="bg-green-500 text-white">成功</Badge>
+  <Badge className="bg-yellow-500 text-white">警告</Badge>
+  <Badge className="bg-red-500 text-white">エラー</Badge>
+</ComponentPreview>
+
+<CodeBlock
+  code={`<Badge className="bg-blue-500 text-white">情報</Badge>
+<Badge className="bg-green-500 text-white">成功</Badge>
+<Badge className="bg-yellow-500 text-white">警告</Badge>
+<Badge className="bg-red-500 text-white">エラー</Badge>`}
+/>
+
+## Props
+
+<PropsTable props={badgeProps} />

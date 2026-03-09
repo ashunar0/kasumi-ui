@@ -1,0 +1,178 @@
+import { Field, FieldLabel, FieldDescription, FieldError, FieldGroup, FieldSet, FieldLegend } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
+import { Checkbox } from "@/components/ui/checkbox";
+
+export const fieldProps = [
+  {
+    name: "Field",
+    type: "ComponentProps<\"div\">",
+    default: "—",
+    description: "フィールドのルート要素。data-invalid でエラー状態を子に伝播",
+  },
+  {
+    name: "FieldLabel",
+    type: "ComponentProps<typeof Label>",
+    default: "—",
+    description: "フィールドのラベル。エラー時に自動で赤色になる",
+  },
+  {
+    name: "FieldDescription",
+    type: "ComponentProps<\"p\">",
+    default: "—",
+    description: "フィールドの補足説明テキスト",
+  },
+  {
+    name: "FieldError",
+    type: "{ errors?: ({ message?: string } | undefined)[] }",
+    default: "—",
+    description: "エラーメッセージ表示。errors 配列から最初のメッセージを表示",
+  },
+  {
+    name: "FieldGroup",
+    type: "ComponentProps<\"div\">",
+    default: "—",
+    description: "複数のフィールドをグルーピングするコンテナ",
+  },
+  {
+    name: "FieldSet",
+    type: "ComponentProps<\"fieldset\">",
+    default: "—",
+    description: "セマンティックなフィールドセット要素",
+  },
+  {
+    name: "FieldLegend",
+    type: "ComponentProps<\"legend\">",
+    default: "—",
+    description: "FieldSet の見出し",
+  },
+];
+
+# Field
+
+<Description>フォーム入力フィールドのレイアウトとセマンティクスを担当するコンポーネント群。data-invalid によるエラー状態の伝播に対応。</Description>
+
+## Usage
+
+<ComponentPreview>
+  <Field className="max-w-sm">
+    <FieldLabel>メールアドレス</FieldLabel>
+    <Input placeholder="you@example.com" />
+  </Field>
+</ComponentPreview>
+
+<CodeBlock code={`import { Field, FieldLabel } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
+
+<Field>
+  <FieldLabel>メールアドレス</FieldLabel>
+  <Input placeholder="you@example.com" />
+</Field>`} />
+
+## Description
+
+フィールドに補足説明を追加できます。
+
+<ComponentPreview>
+  <Field className="max-w-sm">
+    <FieldLabel>ユーザー名</FieldLabel>
+    <FieldDescription>3文字以上の英数字で入力してください。</FieldDescription>
+    <Input placeholder="username" />
+  </Field>
+</ComponentPreview>
+
+<CodeBlock code={`<Field>
+  <FieldLabel>ユーザー名</FieldLabel>
+  <FieldDescription>3文字以上の英数字で入力してください。</FieldDescription>
+  <Input placeholder="username" />
+</Field>`} />
+
+## Error
+
+`data-invalid="true"` を Field に指定すると、FieldLabel が自動で赤色に変わります。FieldError はエラーメッセージを表示します。
+
+<ComponentPreview>
+  <Field className="max-w-sm" data-invalid="true">
+    <FieldLabel>メールアドレス</FieldLabel>
+    <Input error placeholder="you@example.com" />
+    <FieldError errors={[{ message: "メールアドレスの形式が正しくありません。" }]} />
+  </Field>
+</ComponentPreview>
+
+<CodeBlock code={`<Field data-invalid="true">
+  <FieldLabel>メールアドレス</FieldLabel>
+  <Input error placeholder="you@example.com" />
+  <FieldError errors={[{ message: "メールアドレスの形式が正しくありません。" }]} />
+</Field>`} />
+
+## FieldGroup
+
+複数のフィールドをまとめるコンテナです。
+
+<ComponentPreview>
+  <FieldGroup className="max-w-sm">
+    <Field>
+      <FieldLabel>姓</FieldLabel>
+      <Input placeholder="田中" />
+    </Field>
+    <Field>
+      <FieldLabel>名</FieldLabel>
+      <Input placeholder="太郎" />
+    </Field>
+  </FieldGroup>
+</ComponentPreview>
+
+<CodeBlock code={`<FieldGroup>
+  <Field>
+    <FieldLabel>姓</FieldLabel>
+    <Input placeholder="田中" />
+  </Field>
+  <Field>
+    <FieldLabel>名</FieldLabel>
+    <Input placeholder="太郎" />
+  </Field>
+</FieldGroup>`} />
+
+## FieldSet & FieldLegend
+
+セマンティックな `<fieldset>` と `<legend>` でフォームセクションをグルーピングできます。
+
+<ComponentPreview>
+  <FieldSet className="max-w-sm">
+    <FieldLegend>通知設定</FieldLegend>
+    <Field>
+      <div className="flex items-center gap-2">
+        <Checkbox id="email-notify" />
+        <FieldLabel htmlFor="email-notify">メール通知を受け取る</FieldLabel>
+      </div>
+    </Field>
+    <Field>
+      <div className="flex items-center gap-2">
+        <Checkbox id="push-notify" />
+        <FieldLabel htmlFor="push-notify">プッシュ通知を受け取る</FieldLabel>
+      </div>
+    </Field>
+  </FieldSet>
+</ComponentPreview>
+
+<CodeBlock code={`import { FieldSet, FieldLegend, Field, FieldLabel } from "@/components/ui/field";
+import { Checkbox } from "@/components/ui/checkbox";
+
+<FieldSet>
+  <FieldLegend>通知設定</FieldLegend>
+  <Field>
+    <div className="flex items-center gap-2">
+      <Checkbox id="email-notify" />
+      <FieldLabel htmlFor="email-notify">メール通知を受け取る</FieldLabel>
+    </div>
+  </Field>
+  <Field>
+    <div className="flex items-center gap-2">
+      <Checkbox id="push-notify" />
+      <FieldLabel htmlFor="push-notify">プッシュ通知を受け取る</FieldLabel>
+    </div>
+  </Field>
+</FieldSet>`} />
+
+## Props
+
+<PropsTable props={fieldProps} />

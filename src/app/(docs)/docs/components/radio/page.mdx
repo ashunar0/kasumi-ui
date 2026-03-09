@@ -1,0 +1,113 @@
+import { Radio } from "@/components/ui/radio";
+import { Label } from "@/components/ui/label";
+
+export const radioProps = [
+  {
+    name: "size",
+    type: '"sm" | "md" | "lg"',
+    default: '"md"',
+    description: "ラジオボタンのサイズ",
+  },
+  {
+    name: "error",
+    type: "boolean",
+    default: "false",
+    description: "エラー状態を表示する",
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    default: "false",
+    description: "無効状態にする",
+  },
+];
+
+# Radio
+
+<Description>複数の選択肢から1つを選ぶラジオボタンコンポーネント。</Description>
+
+## Usage
+
+<ComponentPreview>
+  <div className="flex flex-col gap-3">
+    <div className="flex items-center gap-2">
+      <Radio id="radio-1" name="plan" defaultChecked />
+      <Label htmlFor="radio-1">フリープラン</Label>
+    </div>
+    <div className="flex items-center gap-2">
+      <Radio id="radio-2" name="plan" />
+      <Label htmlFor="radio-2">プロプラン</Label>
+    </div>
+    <div className="flex items-center gap-2">
+      <Radio id="radio-3" name="plan" />
+      <Label htmlFor="radio-3">エンタープライズ</Label>
+    </div>
+  </div>
+</ComponentPreview>
+
+<CodeBlock code={`import { Radio } from "@/components/ui/radio";
+import { Label } from "@/components/ui/label";
+
+<div className="flex flex-col gap-3">
+  <div className="flex items-center gap-2">
+    <Radio id="radio-1" name="plan" defaultChecked />
+    <Label htmlFor="radio-1">フリープラン</Label>
+  </div>
+  <div className="flex items-center gap-2">
+    <Radio id="radio-2" name="plan" />
+    <Label htmlFor="radio-2">プロプラン</Label>
+  </div>
+  <div className="flex items-center gap-2">
+    <Radio id="radio-3" name="plan" />
+    <Label htmlFor="radio-3">エンタープライズ</Label>
+  </div>
+</div>`} />
+
+## Size
+
+<ComponentPreview className="gap-4 items-center">
+  <div className="flex items-center gap-2">
+    <Radio id="r-sm" name="size-demo" size="sm" defaultChecked />
+    <Label htmlFor="r-sm">Small</Label>
+  </div>
+  <div className="flex items-center gap-2">
+    <Radio id="r-md" name="size-demo" size="md" />
+    <Label htmlFor="r-md">Medium</Label>
+  </div>
+  <div className="flex items-center gap-2">
+    <Radio id="r-lg" name="size-demo" size="lg" />
+    <Label htmlFor="r-lg">Large</Label>
+  </div>
+</ComponentPreview>
+
+<CodeBlock
+  code={`<Radio size="sm" name="size-demo" />
+<Radio size="md" name="size-demo" />
+<Radio size="lg" name="size-demo" />`}
+/>
+
+## Invalid
+
+<ComponentPreview>
+  <div className="flex items-center gap-2">
+    <Radio id="r-error" name="error-demo" error />
+    <Label htmlFor="r-error">エラーのある項目</Label>
+  </div>
+</ComponentPreview>
+
+<CodeBlock code={`<Radio error />`} />
+
+## Disabled
+
+<ComponentPreview>
+  <div className="flex items-center gap-2">
+    <Radio id="r-disabled" name="disabled-demo" disabled />
+    <Label htmlFor="r-disabled">無効な項目</Label>
+  </div>
+</ComponentPreview>
+
+<CodeBlock code={`<Radio disabled />`} />
+
+## Props
+
+<PropsTable props={radioProps} />

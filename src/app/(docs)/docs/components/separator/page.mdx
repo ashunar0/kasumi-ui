@@ -1,0 +1,62 @@
+import { Separator } from "@/components/ui/separator";
+
+export const separatorProps = [
+  {
+    name: "orientation",
+    type: '"horizontal" | "vertical"',
+    default: '"horizontal"',
+    description: "区切り線の方向",
+  },
+];
+
+# Separator
+
+<Description>コンテンツを視覚的に区切るための区切り線コンポーネント。</Description>
+
+## Usage
+
+<ComponentPreview>
+  <div className="w-full max-w-sm">
+    <p className="text-sm">上のコンテンツ</p>
+    <Separator className="my-4" />
+    <p className="text-sm">下のコンテンツ</p>
+  </div>
+</ComponentPreview>
+
+<CodeBlock code={`import { Separator } from "@/components/ui/separator";
+
+<Separator />`} />
+
+## Horizontal
+
+<ComponentPreview>
+  <Separator className="max-w-sm" />
+</ComponentPreview>
+
+<CodeBlock code={`<Separator />`} />
+
+## Vertical
+
+<ComponentPreview>
+  <div className="flex items-center gap-4 h-6">
+    <span className="text-sm">項目A</span>
+    <Separator orientation="vertical" />
+    <span className="text-sm">項目B</span>
+    <Separator orientation="vertical" />
+    <span className="text-sm">項目C</span>
+  </div>
+</ComponentPreview>
+
+<CodeBlock
+  code={`<div className="flex items-center gap-4 h-6">
+  <span>項目A</span>
+  <Separator orientation="vertical" />
+  <span>項目B</span>
+  <Separator orientation="vertical" />
+  <span>項目C</span>
+</div>`}
+/>
+
+## Props
+
+<PropsTable props={separatorProps} />

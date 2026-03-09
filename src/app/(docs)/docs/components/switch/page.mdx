@@ -1,0 +1,74 @@
+import { Switch } from "@/components/ui/switch";
+
+export const switchProps = [
+  {
+    name: "size",
+    type: '"sm" | "md" | "lg"',
+    default: '"md"',
+    description: "スイッチのサイズ",
+  },
+  {
+    name: "error",
+    type: "boolean",
+    default: "false",
+    description: "エラー状態を表示する",
+  },
+  {
+    name: "disabled",
+    type: "boolean",
+    default: "false",
+    description: "無効状態にする",
+  },
+];
+
+# Switch
+
+<Description>オン・オフを切り替えるためのトグルスイッチコンポーネント。</Description>
+
+## Usage
+
+<ComponentPreview>
+  <Switch />
+</ComponentPreview>
+
+<CodeBlock code={`import { Switch } from "@/components/ui/switch";
+
+<Switch />`} />
+
+## Size
+
+<ComponentPreview className="gap-4 items-center">
+  <Switch size="sm" />
+  <Switch size="md" />
+  <Switch size="lg" />
+</ComponentPreview>
+
+<CodeBlock
+  code={`<Switch size="sm" />
+<Switch size="md" />
+<Switch size="lg" />`}
+/>
+
+## Error
+
+<ComponentPreview>
+  <Switch error />
+</ComponentPreview>
+
+<CodeBlock code={`<Switch error />`} />
+
+## Disabled
+
+<ComponentPreview className="gap-4">
+  <Switch disabled />
+  <Switch disabled defaultChecked />
+</ComponentPreview>
+
+<CodeBlock
+  code={`<Switch disabled />
+<Switch disabled defaultChecked />`}
+/>
+
+## Props
+
+<PropsTable props={switchProps} />

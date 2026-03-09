@@ -1,0 +1,108 @@
+import { ToastBasicDemo, ToastVariantsDemo, ToastPositionDemo } from "@/components/docs/toast-demo";
+
+export const toastProps = [
+  {
+    name: "position",
+    type: '"top-left" | "top-right" | "top-center" | "bottom-left" | "bottom-right" | "bottom-center"',
+    default: '"top-right"',
+    description: "トーストの表示位置。ToastProvider に指定",
+  },
+  {
+    name: "duration",
+    type: "number",
+    default: "4000",
+    description: "自動で閉じるまでの時間（ミリ秒）。ToastProvider に指定",
+  },
+  {
+    name: "title",
+    type: "string",
+    default: "—",
+    description: "トーストのタイトル",
+  },
+  {
+    name: "description",
+    type: "string",
+    default: "undefined",
+    description: "トーストの説明文",
+  },
+  {
+    name: "variant",
+    type: '"default" | "success" | "info" | "warning" | "error"',
+    default: '"default"',
+    description: "トーストのスタイルバリエーション",
+  },
+];
+
+# Toast
+
+<Description>命令型 API で通知を表示するトーストコンポーネント。useToast フックで任意のタイミングにトーストを発行できます。</Description>
+
+## Usage
+
+ルートレイアウトに `ToastProvider` を配置し、各コンポーネントから `useToast` フックでトーストを発行します。
+
+<ComponentPreview>
+  <ToastBasicDemo />
+</ComponentPreview>
+
+<CodeBlock code={`import { ToastProvider, useToast } from "@/components/ui/toast";
+import { Button } from "@/components/ui/button";
+
+// レイアウトに ToastProvider を配置
+function Layout({ children }) {
+  return <ToastProvider>{children}</ToastProvider>;
+}
+
+// 任意のコンポーネントから useToast で発行
+function MyComponent() {
+  const { toast } = useToast();
+
+  return (
+    <Button
+      onClick={() =>
+        toast({
+          title: "保存しました",
+          description: "変更が正常に保存されました。",
+        })
+      }
+    >
+      トーストを表示
+    </Button>
+  );
+}`} />
+
+## Variant
+
+5つのバリエーションで通知の種類を視覚的に区別できます。各バリエーションにはアイコンと配色が設定されています。
+
+<ComponentPreview className="flex-col gap-3">
+  <ToastVariantsDemo />
+</ComponentPreview>
+
+<CodeBlock code={`toast({ title: "通知", variant: "default" });
+toast({ title: "成功しました", variant: "success" });
+toast({ title: "お知らせ", variant: "info" });
+toast({ title: "注意してください", variant: "warning" });
+toast({ title: "エラーが発生しました", variant: "error" });`} />
+
+## Position
+
+`ToastProvider` の `position` prop でトーストの表示位置を変更できます。
+
+<ComponentPreview>
+  <ToastPositionDemo />
+</ComponentPreview>
+
+<CodeBlock code={`<ToastProvider position="bottom-center">
+  {children}
+</ToastProvider>
+
+// 指定可能な位置:
+// "top-left" | "top-right" | "top-center"
+// "bottom-left" | "bottom-right" | "bottom-center"`} />
+
+## Props
+
+`useToast` フックが返す `toast()` 関数に渡すオブジェクトと、ToastProvider の props です。
+
+<PropsTable props={toastProps} />

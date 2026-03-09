@@ -10,13 +10,37 @@ import Image from "next/image";
 const navItems = [{ name: "Introduction", href: "/docs" }];
 
 const components = [
+  { name: "Accordion", href: "/docs/components/accordion" },
+  { name: "Alert", href: "/docs/components/alert" },
+  { name: "Avatar", href: "/docs/components/avatar" },
+  { name: "Badge", href: "/docs/components/badge" },
+  { name: "Breadcrumb", href: "/docs/components/breadcrumb" },
   { name: "Button", href: "/docs/components/button" },
+  { name: "Card", href: "/docs/components/card" },
+  { name: "Checkbox", href: "/docs/components/checkbox" },
+  { name: "Dialog", href: "/docs/components/dialog" },
+  { name: "DropdownMenu", href: "/docs/components/dropdown-menu" },
+  { name: "Field", href: "/docs/components/field" },
   { name: "Input", href: "/docs/components/input" },
+  { name: "Label", href: "/docs/components/label" },
+  { name: "Pagination", href: "/docs/components/pagination" },
+  { name: "Popover", href: "/docs/components/popover" },
+  { name: "Progress", href: "/docs/components/progress" },
+  { name: "Radio", href: "/docs/components/radio" },
+  { name: "Select", href: "/docs/components/select" },
+  { name: "Separator", href: "/docs/components/separator" },
+  { name: "Skeleton", href: "/docs/components/skeleton" },
+  { name: "Switch", href: "/docs/components/switch" },
+  { name: "Table", href: "/docs/components/table" },
+  { name: "Tabs", href: "/docs/components/tabs" },
+  { name: "Textarea", href: "/docs/components/textarea" },
+  { name: "Toast", href: "/docs/components/toast" },
+  { name: "Tooltip", href: "/docs/components/tooltip" },
 ];
 
 function DocsHeader() {
   return (
-    <header className="sticky top-0 z-30 h-16 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-30 h-16 border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-6">
         <Link
           href="/docs"
@@ -85,8 +109,8 @@ export default function DocsLayout({
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex gap-10">
           {/* Left navigation */}
-          <aside className="hidden md:block w-52 shrink-0 py-10">
-            <div className="sticky top-26">
+          <aside className="hidden md:block w-52 shrink-0">
+            <div className="sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto py-10 no-scrollbar">
               <DocsNav />
             </div>
           </aside>

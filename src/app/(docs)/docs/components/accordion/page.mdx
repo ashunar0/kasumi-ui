@@ -1,0 +1,146 @@
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+
+export const accordionProps = [
+  {
+    name: "type",
+    type: '"single" | "multiple"',
+    default: "-",
+    description: "単一選択か複数選択かを指定（必須）",
+  },
+  {
+    name: "collapsible",
+    type: "boolean",
+    default: "false",
+    description: 'type="single" のとき、開いている項目を閉じられるようにする',
+  },
+  {
+    name: "defaultValue",
+    type: "string | string[]",
+    default: "-",
+    description: "初期表示で開く項目の値",
+  },
+];
+
+# Accordion
+
+<Description>開閉可能なセクションで情報を折りたたんで表示するコンポーネント。Radix UI ベース。Accordion / AccordionItem / AccordionTrigger / AccordionContent の複合構成。</Description>
+
+## Usage
+
+<ComponentPreview>
+  <Accordion type="single" collapsible className="w-full max-w-md">
+    <AccordionItem value="item-1">
+      <AccordionTrigger>日程調整の方法は？</AccordionTrigger>
+      <AccordionContent>
+        カレンダーから候補日を選択し、参加可能な時間帯をチェックしてください。
+      </AccordionContent>
+    </AccordionItem>
+    <AccordionItem value="item-2">
+      <AccordionTrigger>回答期限はありますか？</AccordionTrigger>
+      <AccordionContent>
+        作成者が設定した期限までに回答してください。期限は招待メールに記載されています。
+      </AccordionContent>
+    </AccordionItem>
+    <AccordionItem value="item-3">
+      <AccordionTrigger>回答を変更できますか？</AccordionTrigger>
+      <AccordionContent>
+        はい、期限内であればいつでも回答を変更できます。
+      </AccordionContent>
+    </AccordionItem>
+  </Accordion>
+</ComponentPreview>
+
+<CodeBlock code={`import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+
+<Accordion type="single" collapsible>
+  <AccordionItem value="item-1">
+    <AccordionTrigger>日程調整の方法は？</AccordionTrigger>
+    <AccordionContent>
+      カレンダーから候補日を選択し、参加可能な時間帯をチェックしてください。
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-2">
+    <AccordionTrigger>回答期限はありますか？</AccordionTrigger>
+    <AccordionContent>
+      作成者が設定した期限までに回答してください。
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>`} />
+
+## Multiple
+
+`type="multiple"` を指定すると、複数の項目を同時に開くことができます。
+
+<ComponentPreview>
+  <Accordion type="multiple" className="w-full max-w-md">
+    <AccordionItem value="item-1">
+      <AccordionTrigger>アカウント設定</AccordionTrigger>
+      <AccordionContent>
+        プロフィール情報やメールアドレスの変更ができます。
+      </AccordionContent>
+    </AccordionItem>
+    <AccordionItem value="item-2">
+      <AccordionTrigger>通知設定</AccordionTrigger>
+      <AccordionContent>
+        メール通知やプッシュ通知のオン・オフを切り替えられます。
+      </AccordionContent>
+    </AccordionItem>
+    <AccordionItem value="item-3">
+      <AccordionTrigger>プライバシー設定</AccordionTrigger>
+      <AccordionContent>
+        公開範囲やデータの取り扱いについて設定できます。
+      </AccordionContent>
+    </AccordionItem>
+  </Accordion>
+</ComponentPreview>
+
+<CodeBlock code={`<Accordion type="multiple">
+  <AccordionItem value="item-1">
+    <AccordionTrigger>アカウント設定</AccordionTrigger>
+    <AccordionContent>
+      プロフィール情報やメールアドレスの変更ができます。
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-2">
+    <AccordionTrigger>通知設定</AccordionTrigger>
+    <AccordionContent>
+      メール通知やプッシュ通知のオン・オフを切り替えられます。
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>`} />
+
+## Default Value
+
+`defaultValue` で初期表示時に開いておく項目を指定できます。
+
+<ComponentPreview>
+  <Accordion type="single" collapsible defaultValue="item-2" className="w-full max-w-md">
+    <AccordionItem value="item-1">
+      <AccordionTrigger>セクション 1</AccordionTrigger>
+      <AccordionContent>
+        セクション 1 のコンテンツです。
+      </AccordionContent>
+    </AccordionItem>
+    <AccordionItem value="item-2">
+      <AccordionTrigger>セクション 2（初期表示で開く）</AccordionTrigger>
+      <AccordionContent>
+        この項目は defaultValue で初期表示時に開かれています。
+      </AccordionContent>
+    </AccordionItem>
+  </Accordion>
+</ComponentPreview>
+
+<CodeBlock code={`<Accordion type="single" collapsible defaultValue="item-2">
+  <AccordionItem value="item-1">
+    <AccordionTrigger>セクション 1</AccordionTrigger>
+    <AccordionContent>セクション 1 のコンテンツです。</AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-2">
+    <AccordionTrigger>セクション 2（初期表示で開く）</AccordionTrigger>
+    <AccordionContent>この項目は初期表示時に開かれています。</AccordionContent>
+  </AccordionItem>
+</Accordion>`} />
+
+## Props
+
+<PropsTable props={accordionProps} />

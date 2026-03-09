@@ -1,0 +1,79 @@
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+
+export const avatarProps = [
+  {
+    name: "size",
+    type: '"sm" | "md" | "lg"',
+    default: '"md"',
+    description: "アバターのサイズ",
+  },
+];
+
+# Avatar
+
+<Description>ユーザーのプロフィール画像やイニシャルを表示するアバターコンポーネント。</Description>
+
+## Usage
+
+<ComponentPreview>
+  <Avatar>
+    <AvatarImage src="https://github.com/shadcn.png" alt="ユーザー" />
+  </Avatar>
+</ComponentPreview>
+
+<CodeBlock code={`import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+
+<Avatar>
+  <AvatarImage src="https://github.com/shadcn.png" alt="ユーザー" />
+</Avatar>`} />
+
+## Size
+
+<ComponentPreview className="gap-4 items-center">
+  <Avatar size="sm">
+    <AvatarImage src="https://github.com/shadcn.png" alt="ユーザー" />
+  </Avatar>
+  <Avatar size="md">
+    <AvatarImage src="https://github.com/shadcn.png" alt="ユーザー" />
+  </Avatar>
+  <Avatar size="lg">
+    <AvatarImage src="https://github.com/shadcn.png" alt="ユーザー" />
+  </Avatar>
+</ComponentPreview>
+
+<CodeBlock
+  code={`<Avatar size="sm">
+  <AvatarImage src="https://github.com/shadcn.png" alt="ユーザー" />
+</Avatar>
+<Avatar size="md">
+  <AvatarImage src="https://github.com/shadcn.png" alt="ユーザー" />
+</Avatar>
+<Avatar size="lg">
+  <AvatarImage src="https://github.com/shadcn.png" alt="ユーザー" />
+</Avatar>`}
+/>
+
+## Fallback
+
+画像がない場合はデフォルトのユーザーアイコンが表示されます。AvatarFallback でイニシャル等を指定することもできます。
+
+<ComponentPreview className="gap-4 items-center">
+  <Avatar />
+  <Avatar>
+    <AvatarFallback>AK</AvatarFallback>
+  </Avatar>
+</ComponentPreview>
+
+<CodeBlock
+  code={`{/* デフォルトアイコン */}
+<Avatar />
+
+{/* イニシャル */}
+<Avatar>
+  <AvatarFallback>AK</AvatarFallback>
+</Avatar>`}
+/>
+
+## Props
+
+<PropsTable props={avatarProps} />
