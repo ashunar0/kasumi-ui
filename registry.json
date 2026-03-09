@@ -1,0 +1,307 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "kasumi-ui",
+  "homepage": "https://kasumi-ui.vercel.app",
+  "items": [
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "dependencies": ["clsx", "tailwind-merge"],
+      "files": [
+        { "path": "src/registry/lib/utils.ts", "type": "registry:lib" }
+      ]
+    },
+    {
+      "name": "use-mobile",
+      "type": "registry:lib",
+      "files": [
+        { "path": "src/registry/lib/use-mobile.ts", "type": "registry:lib" }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:component",
+      "title": "Accordion",
+      "description": "Radix UIベースの開閉パネル。type: single/multiple対応。",
+      "dependencies": ["@radix-ui/react-accordion", "lucide-react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "src/registry/ui/accordion.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:component",
+      "title": "Alert",
+      "description": "variant: default/success/info/warning/error のアラート。",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "src/registry/ui/alert.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:component",
+      "title": "Avatar",
+      "description": "size: sm/md/lg。画像エラー時フォールバック対応。",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "src/registry/ui/avatar.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:component",
+      "title": "Badge",
+      "description": "variant: default/outline、size: sm/md。",
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "src/registry/ui/badge.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:component",
+      "title": "Breadcrumb",
+      "description": "パンくずリスト。ChevronRightセパレーター。",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "src/registry/ui/breadcrumb.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:component",
+      "title": "Button",
+      "description": "variant: primary/secondary/ghost/outline/destructive、size: sm/md/lg。",
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "src/registry/ui/button.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:component",
+      "title": "Card",
+      "description": "6パーツ構成のカードコンポーネント。",
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "src/registry/ui/card.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:component",
+      "title": "Checkbox",
+      "description": "size: sm/md/lg、error状態対応。",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "src/registry/ui/checkbox.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:component",
+      "title": "Dialog",
+      "description": "Radix UIベースのダイアログ。フォーカストラップ・Escapeキー対応。",
+      "dependencies": ["@radix-ui/react-dialog", "lucide-react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "src/registry/ui/dialog.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:component",
+      "title": "Dropdown Menu",
+      "description": "Radix UIベースのドロップダウンメニュー。",
+      "dependencies": ["@radix-ui/react-dropdown-menu"],
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "src/registry/ui/dropdown-menu.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:component",
+      "title": "Field",
+      "description": "フォームフィールドのレイアウト・セマンティクス担当。",
+      "registryDependencies": ["utils", "label"],
+      "files": [
+        { "path": "src/registry/ui/field.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:component",
+      "title": "Input",
+      "description": "variant: outline/underline、size: sm/md/lg、パスワードトグル自動表示。",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "src/registry/ui/input.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:component",
+      "title": "Label",
+      "description": "peer-disabled連動のラベル。",
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "src/registry/ui/label.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:component",
+      "title": "Pagination",
+      "description": "ページ番号型ページネーション。",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "src/registry/ui/pagination.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:component",
+      "title": "Popover",
+      "description": "Radix UIベースのポップオーバー。",
+      "dependencies": ["@radix-ui/react-popover"],
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "src/registry/ui/popover.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:component",
+      "title": "Progress",
+      "description": "進捗バー。value propで0〜100指定。",
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "src/registry/ui/progress.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "radio",
+      "type": "registry:component",
+      "title": "Radio",
+      "description": "size: sm/md/lg、error状態対応。",
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "src/registry/ui/radio.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:component",
+      "title": "Select",
+      "description": "Radix UIベースのセレクト。typeahead対応。",
+      "dependencies": ["@radix-ui/react-select", "lucide-react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "src/registry/ui/select.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:component",
+      "title": "Separator",
+      "description": "horizontal/verticalのセパレーター。",
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "src/registry/ui/separator.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:component",
+      "title": "Sidebar",
+      "description": "デスクトップ: ミニサイドバー折りたたみ、モバイル: ドロワーモード。",
+      "dependencies": ["@radix-ui/react-slot", "@radix-ui/react-collapsible", "@radix-ui/react-dialog", "lucide-react"],
+      "registryDependencies": ["utils", "use-mobile", "tooltip"],
+      "files": [
+        { "path": "src/registry/ui/sidebar.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:component",
+      "title": "Skeleton",
+      "description": "ローディング表示用スケルトン。",
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "src/registry/ui/skeleton.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:component",
+      "title": "Switch",
+      "description": "size: sm/md/lg、error状態対応。",
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "src/registry/ui/switch.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:component",
+      "title": "Table",
+      "description": "横スクロール対応のテーブル。",
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "src/registry/ui/table.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:component",
+      "title": "Tabs",
+      "description": "Radix UIベースのタブ。variant: underline/pill。",
+      "dependencies": ["@radix-ui/react-tabs"],
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "src/registry/ui/tabs.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:component",
+      "title": "Textarea",
+      "description": "error状態対応のテキストエリア。",
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "src/registry/ui/textarea.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "toast",
+      "type": "registry:component",
+      "title": "Toast",
+      "description": "Radix UIベースのトースト。variant: default/success/info/warning/error。",
+      "dependencies": ["@radix-ui/react-toast", "lucide-react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "src/registry/ui/toast.tsx", "type": "registry:component" }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:component",
+      "title": "Tooltip",
+      "description": "Radix UIベースのツールチップ。",
+      "dependencies": ["@radix-ui/react-tooltip"],
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "src/registry/ui/tooltip.tsx", "type": "registry:component" }
+      ]
+    }
+  ]
+}
