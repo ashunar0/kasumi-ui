@@ -23,9 +23,21 @@ src/
 ├── app/
 │   ├── page.tsx          # UIカタログページ（1ページに全コンポーネント表示）
 │   ├── layout.tsx        # ルートレイアウト（lang="ja"）
-│   └── globals.css       # デザイントークン（CSS変数）
+│   ├── globals.css       # デザイントークン（CSS変数）
+│   └── (docs)/           # ドキュメントサイト
+│       ├── layout.tsx    # Sidebarナビ付きレイアウト
+│       └── docs/
+│           ├── page.tsx  # Introduction
+│           └── components/
+│               ├── button/page.tsx
+│               └── input/page.tsx
 └── components/
     ├── theme-toggle.tsx   # ライト/ダークモード切り替えボタン
+    ├── docs/              # ドキュメント用コンポーネント
+    │   ├── code-block.tsx       # shikiベースのコードブロック（サーバーコンポーネント）
+    │   ├── copy-button.tsx      # コピーボタン（クライアントコンポーネント）
+    │   ├── component-preview.tsx # コンポーネントプレビュー枠
+    │   └── props-table.tsx      # Propsテーブル
     └── ui/               # UIコンポーネント置き場
         ├── accordion.tsx
         ├── alert.tsx
@@ -66,8 +78,9 @@ src/
 ## フォント
 
 - 英語: Inter（`next/font/google`、`inter.className` で body に適用）
+- 日本語: Noto Sans JP（`next/font/google`、CSS変数 `--font-noto-sans-jp` でフォールバック）
 - コード: Geist Mono（CSS変数 `--font-geist-mono` で登録）
-- 日本語: システムフォントにフォールバック（Hiragino Sans 等）
+- フォントスタック: `--font-sans: Inter, Noto Sans JP`（英語→日本語の順でフォールバック）
 
 ## タイポグラフィ
 
@@ -150,6 +163,23 @@ Minor Third (×1.2) の Modular Scale を採用。詳細は [`docs/design-decisi
 - **Tooltip** — Radix UI ベース、複合コンポーネント（TooltipProvider/Tooltip/TooltipTrigger/TooltipContent）、side 指定可能（デフォルト top）、Portal・自動位置調整対応
 - **Sidebar** — Radix UI ベース（Collapsible + Dialog）、複合コンポーネント（SidebarProvider/Sidebar/SidebarHeader/SidebarContent/SidebarFooter/SidebarGroup/SidebarGroupLabel/SidebarMenu/SidebarMenuItem/SidebarMenuButton/SidebarMenuSub/SidebarTrigger）、デスクトップ: ミニサイドバー折りたたみ（3rem）、モバイル: ドロワーモード（Radix Dialog）、useSidebar フック、折りたたみ時 Tooltip 表示
 - **Toast** — Radix UI ベース、命令型 API（useToast フック）、variant: default/success/info/warning/error（Alert Callout 風の色味+アイコン）、位置設定可能（ToastProvider の position prop、デフォルト右上）、スワイプで閉じる、複数スタック対応
+
+## ドキュメントサイト
+
+- `/docs` 以下に各コンポーネントのドキュメントを配置
+- 自分のコンポーネント（Sidebar, Table等）で構築（self-hosting）
+- 各ページ構成: タイトル → 使用例（プレビュー + コード） → バリエーション → Propsテーブル
+- コードハイライト: shiki（github-light テーマ、サーバーサイドレンダリング）
+- shadcn/ui のドキュメントサイトを参考
+- 設計書: `docs/plans/2026-03-09-docs-site-design.md`
+
+### ドキュメント済みコンポーネント
+
+- Button, Input
+
+### 未ドキュメント（今後追加）
+
+残り25コンポーネント。パターンは固まっているので量産可能。新しいコンポーネントを追加する際は `(docs)/layout.tsx` の `components` 配列にもリンクを追加すること。
 
 ## 設計判断メモ
 
