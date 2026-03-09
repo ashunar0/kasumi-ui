@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { Github } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 export function SiteHeader() {
@@ -15,7 +16,18 @@ export function SiteHeader() {
           <Image src="/kasumi.svg" alt="kasumi/ui" width={32} height={32} />
           kasumi/ui
         </Link>
-        <ThemeToggle />
+        <div className="flex items-center gap-2">
+          <a
+            href="https://github.com/ashunar0/kasumi-ui"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-md text-muted-foreground transition-colors hover:text-foreground"
+            aria-label="GitHub"
+          >
+            <Github className="h-5 w-5" />
+          </a>
+          <ThemeToggle />
+        </div>
       </div>
     </header>
   );
