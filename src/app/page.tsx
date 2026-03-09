@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
@@ -383,36 +384,78 @@ const components: ComponentCard[] = [
   },
 ];
 
+function ComponentGrid({ components }: { components: ComponentCard[] }) {
+  const router = useRouter();
+
+  return (
+    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {components.map((component) => (
+        <div
+          key={component.slug}
+          role="link"
+          tabIndex={0}
+          onClick={() => router.push(`/docs/components/${component.slug}`)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              router.push(`/docs/components/${component.slug}`);
+            }
+          }}
+          className="cursor-pointer rounded-xl border border-border bg-background transition-colors hover:border-foreground/20 hover:bg-muted/50"
+        >
+          {/* Preview area */}
+          <div className="flex h-36 items-center justify-center p-4 pointer-events-none">
+            {component.preview}
+          </div>
+          {/* Name */}
+          <div className="border-t border-border px-4 py-3">
+            <span className="text-ui font-medium">{component.name}</span>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function Home() {
   return (
-    <div className="bg-secondary">
-      <main className="mx-auto max-w-6xl px-6 py-12">
-        {/* Title */}
-        <div className="mb-12">
-          <h1 className="text-h1 font-bold tracking-tight">kasumi/ui</h1>
-          <p className="text-muted-foreground mt-2 text-body">
-            日本語最適化UIコンポーネント
+    <div>
+      {/* Hero */}
+      <section className="relative flex min-h-[calc(100svh-4rem)] items-center justify-center px-6 bg-background overflow-hidden">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, color-mix(in srgb, var(--foreground) 15%, transparent) 1px, transparent 1px)",
+            backgroundSize: "20px 20px",
+          }}
+        />
+        <div className="relative z-10 mx-auto max-w-2xl text-center">
+          <h1 className="text-[2.75rem] font-bold leading-[1.1] tracking-tight sm:text-[3.5rem]">
+            日本語のための
+            <br />
+            UIコンポーネント
+          </h1>
+          <p className="text-body text-muted-foreground mt-6 text-balance">
+            行間・文字サイズ・余白を日本語に最適化。
+            <br className="hidden sm:inline" />
+            Radix UI + Tailwind CSS ベースの26コンポーネント。
           </p>
+          <div className="mt-10 flex items-center justify-center gap-3">
+            <Button asChild size="lg">
+              <Link href="/docs">Get Started</Link>
+            </Button>
+            <Button variant="outline" asChild size="lg">
+              <Link href="/docs/components">Components</Link>
+            </Button>
+          </div>
         </div>
+      </section>
 
-        {/* Component Grid */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {components.map((component) => (
-            <Link
-              key={component.slug}
-              href={`/docs/components/${component.slug}`}
-              className="rounded-xl border border-border bg-background transition-colors hover:border-foreground/20 hover:bg-muted/50"
-            >
-              {/* Preview area */}
-              <div className="flex h-36 items-center justify-center p-4 pointer-events-none">
-                {component.preview}
-              </div>
-              {/* Name */}
-              <div className="border-t border-border px-4 py-3">
-                <span className="text-ui font-medium">{component.name}</span>
-              </div>
-            </Link>
-          ))}
+      <main className="bg-sidebar">
+        <div className="mx-auto max-w-6xl px-6 py-12">
+          {/* Component Grid */}
+          <ComponentGrid components={components} />
         </div>
       </main>
     </div>
