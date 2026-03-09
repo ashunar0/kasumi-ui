@@ -398,7 +398,7 @@ function MarqueeRow({
   return (
     <div className="group/marquee overflow-hidden">
       <div
-        className="flex w-max gap-4 hover:[animation-play-state:paused]"
+        className="flex w-max gap-4 hover:paused"
         style={{
           animation: `marquee-${direction} ${duration}s linear infinite`,
         }}
@@ -416,7 +416,7 @@ function MarqueeRow({
                 router.push(`/docs/components/${component.slug}`);
               }
             }}
-            className="w-[280px] flex-shrink-0 cursor-pointer rounded-xl border border-border bg-background transition-colors hover:border-foreground/20 hover:bg-muted/50"
+            className="w-[280px] shrink-0 cursor-pointer rounded-xl border border-border bg-background transition-colors hover:border-foreground/20 hover:bg-muted/50"
           >
             <div className="flex h-36 items-center justify-center p-4 pointer-events-none">
               {component.preview}
