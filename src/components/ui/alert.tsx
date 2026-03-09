@@ -75,10 +75,10 @@ export function AlertDescription({
   className,
   children,
   ...props
-}: ComponentProps<"p">) {
+}: ComponentProps<"div">) {
   return (
-    <p className={cn("mt-2 text-sm opacity-80", className)} {...props}>
+    <div className={cn("mt-2 text-sm opacity-80", className)} {...props}>
       {children}
-    </p>
+    </div>
   );
 }

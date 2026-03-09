@@ -1,4 +1,9 @@
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
 
 export const accordionProps = [
   {
@@ -23,7 +28,11 @@ export const accordionProps = [
 
 # Accordion
 
-<Description>開閉可能なセクションで情報を折りたたんで表示するコンポーネント。Radix UI ベース。Accordion / AccordionItem / AccordionTrigger / AccordionContent の複合構成。</Description>
+<Description>
+  開閉可能なセクションで情報を折りたたんで表示するコンポーネント。Radix UI
+  ベース。Accordion / AccordionItem / AccordionTrigger / AccordionContent
+  の複合構成。
+</Description>
 
 ## Usage
 
@@ -50,7 +59,12 @@ export const accordionProps = [
   </Accordion>
 </ComponentPreview>
 
-<CodeBlock code={`import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+<CodeBlock code={`import { 
+    Accordion, 
+    AccordionItem, 
+    AccordionTrigger, 
+    AccordionContent 
+} from "@/components/ui/accordion";
 
 <Accordion type="single" collapsible>
   <AccordionItem value="item-1">
@@ -94,7 +108,8 @@ export const accordionProps = [
   </Accordion>
 </ComponentPreview>
 
-<CodeBlock code={`<Accordion type="multiple">
+<CodeBlock
+  code={`<Accordion type="multiple">
   <AccordionItem value="item-1">
     <AccordionTrigger>アカウント設定</AccordionTrigger>
     <AccordionContent>
@@ -107,19 +122,23 @@ export const accordionProps = [
       メール通知やプッシュ通知のオン・オフを切り替えられます。
     </AccordionContent>
   </AccordionItem>
-</Accordion>`} />
+</Accordion>`}
+/>
 
 ## Default Value
 
 `defaultValue` で初期表示時に開いておく項目を指定できます。
 
 <ComponentPreview>
-  <Accordion type="single" collapsible defaultValue="item-2" className="w-full max-w-md">
+  <Accordion
+    type="single"
+    collapsible
+    defaultValue="item-2"
+    className="w-full max-w-md"
+  >
     <AccordionItem value="item-1">
       <AccordionTrigger>セクション 1</AccordionTrigger>
-      <AccordionContent>
-        セクション 1 のコンテンツです。
-      </AccordionContent>
+      <AccordionContent>セクション 1 のコンテンツです。</AccordionContent>
     </AccordionItem>
     <AccordionItem value="item-2">
       <AccordionTrigger>セクション 2（初期表示で開く）</AccordionTrigger>
@@ -130,7 +149,8 @@ export const accordionProps = [
   </Accordion>
 </ComponentPreview>
 
-<CodeBlock code={`<Accordion type="single" collapsible defaultValue="item-2">
+<CodeBlock
+  code={`<Accordion type="single" collapsible defaultValue="item-2">
   <AccordionItem value="item-1">
     <AccordionTrigger>セクション 1</AccordionTrigger>
     <AccordionContent>セクション 1 のコンテンツです。</AccordionContent>
@@ -139,7 +159,8 @@ export const accordionProps = [
     <AccordionTrigger>セクション 2（初期表示で開く）</AccordionTrigger>
     <AccordionContent>この項目は初期表示時に開かれています。</AccordionContent>
   </AccordionItem>
-</Accordion>`} />
+</Accordion>`}
+/>
 
 ## Props
 

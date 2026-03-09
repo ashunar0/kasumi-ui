@@ -3,11 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { TableOfContents } from "@/components/docs/toc";
-import Image from "next/image";
 
-const navItems = [{ name: "Introduction", href: "/docs" }];
+const navItems = [
+  { name: "Introduction", href: "/docs" },
+  { name: "Components", href: "/docs/components" },
+];
 
 const components = [
   { name: "Accordion", href: "/docs/components/accordion" },
@@ -38,23 +39,6 @@ const components = [
   { name: "Tooltip", href: "/docs/components/tooltip" },
 ];
 
-function DocsHeader() {
-  return (
-    <header className="sticky top-0 z-30 h-16 border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
-      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-6">
-        <Link
-          href="/docs"
-          className="font-semibold text-md flex items-center gap-2"
-        >
-          <Image src="/kasumi.svg" alt="kasumi/ui" width={32} height={32} />
-          kasumi/ui
-        </Link>
-        <ThemeToggle />
-      </div>
-    </header>
-  );
-}
-
 function DocsNav() {
   const pathname = usePathname();
 
@@ -66,7 +50,7 @@ function DocsNav() {
             key={item.href}
             href={item.href}
             className={cn(
-              "block text-sm py-1 transition-colors hover:text-foreground",
+              "block text-sm font-semibold py-1 transition-colors hover:text-foreground",
               pathname === item.href
                 ? "text-foreground font-medium"
                 : "text-muted-foreground",
@@ -78,13 +62,13 @@ function DocsNav() {
       </div>
 
       <div className="space-y-1">
-        <p className="text-sm font-semibold mb-2">Components</p>
+        <p className="text-xs text-muted-foreground mb-2">Components</p>
         {components.map((item) => (
           <Link
             key={item.href}
             href={item.href}
             className={cn(
-              "block text-sm py-1 transition-colors hover:text-foreground",
+              "block text-sm font-semibold py-1 transition-colors hover:text-foreground",
               pathname === item.href
                 ? "text-foreground font-medium"
                 : "text-muted-foreground",
@@ -105,7 +89,6 @@ export default function DocsLayout({
 }) {
   return (
     <div className="min-h-screen">
-      <DocsHeader />
       <div className="mx-auto max-w-7xl px-6">
         <div className="flex gap-10">
           {/* Left navigation */}

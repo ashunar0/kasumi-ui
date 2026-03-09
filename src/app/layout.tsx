@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Noto_Sans_JP, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ToastProvider } from "@/components/ui/toast";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 import "./globals.css";
 
 const inter = Inter({
@@ -25,7 +27,7 @@ export const metadata: Metadata = {
   title: "kasumi/ui",
   description: "あさひのUIライブラリ",
   icons: {
-    icon: "/kasumi_dark.svg",
+    icon: "/kasumi_light.svg",
   },
 };
 
@@ -41,7 +43,9 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <ThemeProvider>
+          <SiteHeader />
           <ToastProvider>{children}</ToastProvider>
+          <SiteFooter />
         </ThemeProvider>
       </body>
     </html>

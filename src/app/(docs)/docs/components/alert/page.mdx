@@ -11,16 +11,17 @@ export const alertProps = [
 
 # Alert
 
-<Description>ユーザーへの通知やフィードバックを表示するコンポーネント。Alert / AlertTitle / AlertDescription の複合構成。</Description>
+<Description>
+  ユーザーへの通知やフィードバックを表示するコンポーネント。Alert / AlertTitle /
+  AlertDescription の複合構成。
+</Description>
 
 ## Usage
 
 <ComponentPreview>
-  <Alert className="max-w-lg">
+  <Alert className="w-full">
     <AlertTitle>お知らせ</AlertTitle>
-    <AlertDescription>
-      システムメンテナンスを予定しています。
-    </AlertDescription>
+    <AlertDescription>システムメンテナンスを予定しています。</AlertDescription>
   </Alert>
 </ComponentPreview>
 
@@ -36,23 +37,23 @@ export const alertProps = [
 ## Variant
 
 <ComponentPreview className="flex-col gap-4">
-  <Alert variant="default" className="max-w-lg">
+  <Alert variant="default" className="w-full">
     <AlertTitle>Default</AlertTitle>
     <AlertDescription>デフォルトのアラートです。</AlertDescription>
   </Alert>
-  <Alert variant="success" className="max-w-lg">
+  <Alert variant="success" className="w-full">
     <AlertTitle>Success</AlertTitle>
     <AlertDescription>操作が正常に完了しました。</AlertDescription>
   </Alert>
-  <Alert variant="info" className="max-w-lg">
+  <Alert variant="info" className="w-full">
     <AlertTitle>Info</AlertTitle>
     <AlertDescription>参考情報をお知らせします。</AlertDescription>
   </Alert>
-  <Alert variant="warning" className="max-w-lg">
+  <Alert variant="warning" className="w-full">
     <AlertTitle>Warning</AlertTitle>
     <AlertDescription>注意が必要な状態です。</AlertDescription>
   </Alert>
-  <Alert variant="error" className="max-w-lg">
+  <Alert variant="error" className="w-full">
     <AlertTitle>Error</AlertTitle>
     <AlertDescription>エラーが発生しました。</AlertDescription>
   </Alert>
@@ -84,14 +85,16 @@ export const alertProps = [
 ## Title Only
 
 <ComponentPreview>
-  <Alert variant="info" className="max-w-lg">
+  <Alert variant="info" className="w-full">
     <AlertTitle>タイトルだけのアラートも使えます。</AlertTitle>
   </Alert>
 </ComponentPreview>
 
-<CodeBlock code={`<Alert variant="info">
+<CodeBlock
+  code={`<Alert variant="info">
   <AlertTitle>タイトルだけのアラートも使えます。</AlertTitle>
-</Alert>`} />
+</Alert>`}
+/>
 
 ## Props
 

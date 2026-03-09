@@ -21,7 +21,7 @@ export function CopyButton({ code }: { code: string }) {
       {copied ? (
         <Check className="size-4 text-green-500" />
       ) : (
-        <Copy className="size-4 text-gray-500" />
+        <Copy className="size-4 text-stone-700 cursor-pointer" />
       )}
     </button>
   );

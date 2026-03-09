@@ -67,6 +67,7 @@ export function TableOfContents() {
           <a
             key={heading.id}
             href={`#${heading.id}`}
+            onClick={() => setActiveId(heading.id)}
             className={cn(
               "block text-sm py-1 pl-3 text-muted-foreground transition-colors hover:text-foreground",
               activeId === heading.id && "text-foreground font-medium",
