@@ -130,7 +130,7 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-inter), var(--font-noto-sans-jp);
   --font-mono: var(--font-geist-mono);
   /* Typography Scale: Minor Third (1.2), base 16px */
   --text-ui: 0.875rem; /* 14px — コンパクトUI文 */
