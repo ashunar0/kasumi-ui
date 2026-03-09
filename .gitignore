@@ -42,3 +42,6 @@ next-env.d.ts
 
 # CLAUDE.md
 CLAUDE.md
+
+# shadcn registry build output
+/public/r
