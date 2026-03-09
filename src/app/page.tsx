@@ -384,35 +384,64 @@ const components: ComponentCard[] = [
   },
 ];
 
-function ComponentGrid({ components }: { components: ComponentCard[] }) {
+function MarqueeRow({
+  items,
+  direction,
+  duration = 40,
+}: {
+  items: ComponentCard[];
+  direction: "left" | "right";
+  duration?: number;
+}) {
   const router = useRouter();
 
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {components.map((component) => (
-        <div
-          key={component.slug}
-          role="link"
-          tabIndex={0}
-          onClick={() => router.push(`/docs/components/${component.slug}`)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              e.preventDefault();
-              router.push(`/docs/components/${component.slug}`);
-            }
-          }}
-          className="cursor-pointer rounded-xl border border-border bg-background transition-colors hover:border-foreground/20 hover:bg-muted/50"
-        >
-          {/* Preview area */}
-          <div className="flex h-36 items-center justify-center p-4 pointer-events-none">
-            {component.preview}
+    <div className="group/marquee overflow-hidden">
+      <div
+        className="flex w-max gap-4 hover:[animation-play-state:paused]"
+        style={{
+          animation: `marquee-${direction} ${duration}s linear infinite`,
+        }}
+      >
+        {[...items, ...items].map((component, i) => (
+          <div
+            key={`${component.slug}-${i}`}
+            role="link"
+            tabIndex={i < items.length ? 0 : -1}
+            aria-hidden={i >= items.length}
+            onClick={() => router.push(`/docs/components/${component.slug}`)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                router.push(`/docs/components/${component.slug}`);
+              }
+            }}
+            className="w-[280px] flex-shrink-0 cursor-pointer rounded-xl border border-border bg-background transition-colors hover:border-foreground/20 hover:bg-muted/50"
+          >
+            <div className="flex h-36 items-center justify-center p-4 pointer-events-none">
+              {component.preview}
+            </div>
+            <div className="border-t border-border px-4 py-3">
+              <span className="text-ui font-medium">{component.name}</span>
+            </div>
           </div>
-          {/* Name */}
-          <div className="border-t border-border px-4 py-3">
-            <span className="text-ui font-medium">{component.name}</span>
-          </div>
-        </div>
-      ))}
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ComponentMarquee({ components }: { components: ComponentCard[] }) {
+  const third = Math.ceil(components.length / 3);
+  const row1 = components.slice(0, third);
+  const row2 = components.slice(third, third * 2);
+  const row3 = components.slice(third * 2);
+
+  return (
+    <div className="flex flex-col gap-4">
+      <MarqueeRow items={row1} direction="left" duration={35} />
+      <MarqueeRow items={row2} direction="right" duration={40} />
+      <MarqueeRow items={row3} direction="left" duration={38} />
     </div>
   );
 }
@@ -453,9 +482,11 @@ export default function Home() {
       </section>
 
       <main className="bg-sidebar">
-        <div className="mx-auto max-w-6xl px-6 py-12">
-          {/* Component Grid */}
-          <ComponentGrid components={components} />
+        <div className="mx-auto w-full px-6 py-12">
+          <h2 className="text-h2 font-semibold text-center tracking-tight mb-8">
+            Components
+          </h2>
+          <ComponentMarquee components={components} />
         </div>
       </main>
     </div>
