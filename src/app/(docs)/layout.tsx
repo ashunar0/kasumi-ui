@@ -42,13 +42,14 @@ function DocsSidebar() {
         <SidebarGroup>
           <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton
-                icon={BookOpen}
-                isActive={pathname === "/docs"}
-                asChild
-              >
-                <Link href="/docs">Introduction</Link>
-              </SidebarMenuButton>
+              <Link href="/docs">
+                <SidebarMenuButton
+                  icon={BookOpen}
+                  isActive={pathname === "/docs"}
+                >
+                  Introduction
+                </SidebarMenuButton>
+              </Link>
             </SidebarMenuItem>
           </SidebarMenu>
         </SidebarGroup>
@@ -58,12 +59,13 @@ function DocsSidebar() {
           <SidebarMenu>
             {components.map((component) => (
               <SidebarMenuItem key={component.name}>
-                <SidebarMenuButton
-                  isActive={pathname === component.href}
-                  asChild
-                >
-                  <Link href={component.href}>{component.name}</Link>
-                </SidebarMenuButton>
+                <Link href={component.href}>
+                  <SidebarMenuButton
+                    isActive={pathname === component.href}
+                  >
+                    {component.name}
+                  </SidebarMenuButton>
+                </Link>
               </SidebarMenuItem>
             ))}
           </SidebarMenu>
