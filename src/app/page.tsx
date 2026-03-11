@@ -460,17 +460,21 @@ export default function Home() {
           }}
         />
         <div className="relative z-10 mx-auto max-w-2xl text-center">
-          <h1 className="text-[2.75rem] font-bold leading-[1.1] tracking-tight sm:text-[3.5rem]">
-            日本語のための
+          <h1 className="font-[family-name:var(--font-shippori-mincho)] text-[2.75rem] font-bold leading-[1.1] tracking-tight sm:text-[3.5rem]">
+            <span className="inline-block animate-[hero-in_0.8s_ease-out_both]">
+              日本語のための
+            </span>
             <br />
-            UIコンポーネント
+            <span className="inline-block animate-[hero-in_0.8s_ease-out_0.15s_both]">
+              UIコンポーネント
+            </span>
           </h1>
-          <p className="text-body text-muted-foreground mt-6 text-balance">
+          <p className="text-body text-muted-foreground mt-6 text-balance animate-[hero-in_0.8s_ease-out_0.3s_both]">
             行間・文字サイズ・余白を日本語に最適化。
             <br className="hidden sm:inline" />
             Radix UI + Tailwind CSS ベースの26コンポーネント。
           </p>
-          <div className="mt-10 flex items-center justify-center gap-3">
+          <div className="mt-10 flex items-center justify-center gap-3 animate-[hero-in_0.8s_ease-out_0.45s_both]">
             <Button asChild size="lg">
               <Link href="/docs">Get Started</Link>
             </Button>
