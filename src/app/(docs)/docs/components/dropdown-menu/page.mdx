@@ -47,7 +47,15 @@ export const dropdownMenuContentProps = [
 
 # DropdownMenu
 
-<Description>トリガーをクリックすると表示されるメニュー。アクションの一覧やナビゲーションに使用。Radix UI ベースで、キーボードナビゲーション対応。</Description>
+<Description>
+  トリガーをクリックすると表示されるメニュー。アクションの一覧やナビゲーションに使用。
+</Description>
+
+## Installation
+
+<CodeBlock
+  code={`npx shadcn@latest add https://kasumi-ui.vercel.app/r/dropdown-menu`}
+/>
 
 ## Usage
 
@@ -122,7 +130,8 @@ import { Button } from "@/components/ui/button";
   </DropdownMenu>
 </ComponentPreview>
 
-<CodeBlock code={`<DropdownMenu>
+<CodeBlock
+  code={`<DropdownMenu>
   <DropdownMenuTrigger asChild>
     <Button variant="outline">編集</Button>
   </DropdownMenuTrigger>
@@ -149,7 +158,8 @@ import { Button } from "@/components/ui/button";
       <DropdownMenuShortcut>⌘V</DropdownMenuShortcut>
     </DropdownMenuItem>
   </DropdownMenuContent>
-</DropdownMenu>`} />
+</DropdownMenu>`}
+/>
 
 ## Destructive
 
@@ -169,7 +179,8 @@ destructive prop で破壊的アクション用のスタイルを適用できま
   </DropdownMenu>
 </ComponentPreview>
 
-<CodeBlock code={`<DropdownMenu>
+<CodeBlock
+  code={`<DropdownMenu>
   <DropdownMenuTrigger asChild>
     <Button variant="outline">操作</Button>
   </DropdownMenuTrigger>
@@ -179,7 +190,8 @@ destructive prop で破壊的アクション用のスタイルを適用できま
     <DropdownMenuSeparator />
     <DropdownMenuItem destructive>削除</DropdownMenuItem>
   </DropdownMenuContent>
-</DropdownMenu>`} />
+</DropdownMenu>`}
+/>
 
 ## Props
 

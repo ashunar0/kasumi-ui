@@ -30,7 +30,13 @@ export const popoverContentProps = [
 
 # Popover
 
-<Description>トリガー要素に紐づくフローティングパネル。フォームやリッチな操作UIを格納できる。</Description>
+<Description>トリガー要素に紐づくフローティングパネル。</Description>
+
+## Installation
+
+<CodeBlock
+  code={`npx shadcn@latest add https://kasumi-ui.vercel.app/r/popover`}
+/>
 
 ## Usage
 
@@ -96,7 +102,8 @@ import { Button } from "@/components/ui/button";
   </Popover>
 </ComponentPreview>
 
-<CodeBlock code={`<Popover>
+<CodeBlock
+  code={`<Popover>
   <PopoverTrigger asChild>
     <Button variant="outline">サイズ変更</Button>
   </PopoverTrigger>
@@ -115,7 +122,8 @@ import { Button } from "@/components/ui/button";
       </div>
     </div>
   </PopoverContent>
-</Popover>`} />
+</Popover>`}
+/>
 
 ## Props
 

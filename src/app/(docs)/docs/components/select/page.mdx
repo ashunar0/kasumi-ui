@@ -59,7 +59,15 @@ export const selectItemProps = [
 
 # Select
 
-<Description>ドロップダウンリストから項目を選択するためのコンポーネント。Radix UI ベースで、キーボード操作・typeahead に対応。</Description>
+<Description>
+  ドロップダウンリストから項目を選択するためのコンポーネント。
+</Description>
+
+## Installation
+
+<CodeBlock
+  code={`npx shadcn@latest add https://kasumi-ui.vercel.app/r/select`}
+/>
 
 ## Usage
 
@@ -173,7 +181,8 @@ export const selectItemProps = [
   </Select>
 </ComponentPreview>
 
-<CodeBlock code={`<Select>
+<CodeBlock
+  code={`<Select>
   <SelectTrigger error>
     <SelectValue placeholder="エラー状態" />
   </SelectTrigger>
@@ -181,7 +190,8 @@ export const selectItemProps = [
     <SelectItem value="a">選択肢 A</SelectItem>
     <SelectItem value="b">選択肢 B</SelectItem>
   </SelectContent>
-</Select>`} />
+</Select>`}
+/>
 
 ## Disabled
 
@@ -196,14 +206,16 @@ export const selectItemProps = [
   </Select>
 </ComponentPreview>
 
-<CodeBlock code={`<Select disabled>
+<CodeBlock
+  code={`<Select disabled>
   <SelectTrigger>
     <SelectValue placeholder="無効な選択" />
   </SelectTrigger>
   <SelectContent>
     <SelectItem value="a">選択肢 A</SelectItem>
   </SelectContent>
-</Select>`} />
+</Select>`}
+/>
 
 ## Props
 

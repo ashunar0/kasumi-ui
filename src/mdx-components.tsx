@@ -51,7 +51,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 
     // ドキュメント用コンポーネント
     Description: (props: React.ComponentProps<"div">) => (
-      <div className="text-ui text-muted-foreground mt-2" {...props} />
+      <div className="text-ui text-muted-foreground mt-2 [&_p]:!m-0 [&_p]:!text-ui" {...props} />
     ),
 
     // カスタムコンポーネント（MDX用にマージン付きでラップ）

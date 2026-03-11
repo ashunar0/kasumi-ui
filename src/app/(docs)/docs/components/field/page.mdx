@@ -1,11 +1,19 @@
-import { Field, FieldLabel, FieldDescription, FieldError, FieldGroup, FieldSet, FieldLegend } from "@/components/ui/field";
+import {
+  Field,
+  FieldLabel,
+  FieldDescription,
+  FieldError,
+  FieldGroup,
+  FieldSet,
+  FieldLegend,
+} from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 
 export const fieldProps = [
   {
     name: "Field",
-    type: "ComponentProps<\"div\">",
+    type: 'ComponentProps<"div">',
     default: "—",
     description: "フィールドのルート要素。data-invalid でエラー状態を子に伝播",
   },
@@ -17,7 +25,7 @@ export const fieldProps = [
   },
   {
     name: "FieldDescription",
-    type: "ComponentProps<\"p\">",
+    type: 'ComponentProps<"p">',
     default: "—",
     description: "フィールドの補足説明テキスト",
   },
@@ -29,19 +37,19 @@ export const fieldProps = [
   },
   {
     name: "FieldGroup",
-    type: "ComponentProps<\"div\">",
+    type: 'ComponentProps<"div">',
     default: "—",
     description: "複数のフィールドをグルーピングするコンテナ",
   },
   {
     name: "FieldSet",
-    type: "ComponentProps<\"fieldset\">",
+    type: 'ComponentProps<"fieldset">',
     default: "—",
     description: "セマンティックなフィールドセット要素",
   },
   {
     name: "FieldLegend",
-    type: "ComponentProps<\"legend\">",
+    type: 'ComponentProps<"legend">',
     default: "—",
     description: "FieldSet の見出し",
   },
@@ -49,7 +57,15 @@ export const fieldProps = [
 
 # Field
 
-<Description>フォーム入力フィールドのレイアウトとセマンティクスを担当するコンポーネント群。data-invalid によるエラー状態の伝播に対応。</Description>
+<Description>
+  フォーム入力フィールドのレイアウトとセマンティクスを担当するコンポーネント群。
+</Description>
+
+## Installation
+
+<CodeBlock
+  code={`npx shadcn@latest add https://kasumi-ui.vercel.app/r/field`}
+/>
 
 ## Usage
 
@@ -80,11 +96,13 @@ import { Input } from "@/components/ui/input";
   </Field>
 </ComponentPreview>
 
-<CodeBlock code={`<Field>
+<CodeBlock
+  code={`<Field>
   <FieldLabel>ユーザー名</FieldLabel>
   <FieldDescription>3文字以上の英数字で入力してください。</FieldDescription>
   <Input placeholder="username" />
-</Field>`} />
+</Field>`}
+/>
 
 ## Error
 
@@ -94,15 +112,19 @@ import { Input } from "@/components/ui/input";
   <Field className="max-w-sm" data-invalid="true">
     <FieldLabel>メールアドレス</FieldLabel>
     <Input error placeholder="you@example.com" />
-    <FieldError errors={[{ message: "メールアドレスの形式が正しくありません。" }]} />
+    <FieldError
+      errors={[{ message: "メールアドレスの形式が正しくありません。" }]}
+    />
   </Field>
 </ComponentPreview>
 
-<CodeBlock code={`<Field data-invalid="true">
+<CodeBlock
+  code={`<Field data-invalid="true">
   <FieldLabel>メールアドレス</FieldLabel>
   <Input error placeholder="you@example.com" />
   <FieldError errors={[{ message: "メールアドレスの形式が正しくありません。" }]} />
-</Field>`} />
+</Field>`}
+/>
 
 ## FieldGroup
 
@@ -121,7 +143,8 @@ import { Input } from "@/components/ui/input";
   </FieldGroup>
 </ComponentPreview>
 
-<CodeBlock code={`<FieldGroup>
+<CodeBlock
+  code={`<FieldGroup>
   <Field>
     <FieldLabel>姓</FieldLabel>
     <Input placeholder="田中" />
@@ -130,7 +153,8 @@ import { Input } from "@/components/ui/input";
     <FieldLabel>名</FieldLabel>
     <Input placeholder="太郎" />
   </Field>
-</FieldGroup>`} />
+</FieldGroup>`}
+/>
 
 ## FieldSet & FieldLegend
 

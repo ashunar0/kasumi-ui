@@ -13,7 +13,13 @@ export const labelProps = [
 
 # Label
 
-<Description>フォーム要素に関連付けるラベルコンポーネント。peer-disabled 連動に対応しています。</Description>
+<Description>フォーム要素に関連付けるラベルコンポーネント。</Description>
+
+## Installation
+
+<CodeBlock
+  code={`npx shadcn@latest add https://kasumi-ui.vercel.app/r/label`}
+/>
 
 ## Usage
 
@@ -37,7 +43,12 @@ import { Input } from "@/components/ui/input";
 <ComponentPreview>
   <div className="flex flex-col gap-2">
     <Label htmlFor="disabled-input">無効な入力</Label>
-    <Input id="disabled-input" placeholder="入力できません" disabled className="max-w-sm" />
+    <Input
+      id="disabled-input"
+      placeholder="入力できません"
+      disabled
+      className="max-w-sm"
+    />
   </div>
 </ComponentPreview>
 

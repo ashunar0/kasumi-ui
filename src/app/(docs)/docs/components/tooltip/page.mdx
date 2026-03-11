@@ -32,7 +32,13 @@ export const tooltipProviderProps = [
 
 # Tooltip
 
-<Description>要素にホバーすると表示される補足情報のポップアップ。Radix UI ベースで、自動位置調整に対応。</Description>
+<Description>要素にホバーすると表示される補足情報のポップアップ。</Description>
+
+## Installation
+
+<CodeBlock
+  code={`npx shadcn@latest add https://kasumi-ui.vercel.app/r/tooltip`}
+/>
 
 ## Usage
 
@@ -76,7 +82,9 @@ side prop でツールチップの表示位置を指定できます。
   <TooltipProvider>
     <Tooltip>
       <TooltipTrigger asChild>
-        <Button variant="outline" size="sm">Top</Button>
+        <Button variant="outline" size="sm">
+          Top
+        </Button>
       </TooltipTrigger>
       <TooltipContent side="top">
         <p>上に表示</p>
@@ -86,7 +94,9 @@ side prop でツールチップの表示位置を指定できます。
   <TooltipProvider>
     <Tooltip>
       <TooltipTrigger asChild>
-        <Button variant="outline" size="sm">Right</Button>
+        <Button variant="outline" size="sm">
+          Right
+        </Button>
       </TooltipTrigger>
       <TooltipContent side="right">
         <p>右に表示</p>
@@ -96,7 +106,9 @@ side prop でツールチップの表示位置を指定できます。
   <TooltipProvider>
     <Tooltip>
       <TooltipTrigger asChild>
-        <Button variant="outline" size="sm">Bottom</Button>
+        <Button variant="outline" size="sm">
+          Bottom
+        </Button>
       </TooltipTrigger>
       <TooltipContent side="bottom">
         <p>下に表示</p>
@@ -106,7 +118,9 @@ side prop でツールチップの表示位置を指定できます。
   <TooltipProvider>
     <Tooltip>
       <TooltipTrigger asChild>
-        <Button variant="outline" size="sm">Left</Button>
+        <Button variant="outline" size="sm">
+          Left
+        </Button>
       </TooltipTrigger>
       <TooltipContent side="left">
         <p>左に表示</p>

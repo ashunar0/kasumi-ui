@@ -40,6 +40,10 @@ export const dialogProps = [
 
 <Description>モーダルダイアログ。フォーカストラップ・Escape キー・オーバーレイクリックでの閉じ操作に対応。</Description>
 
+## Installation
+
+<CodeBlock code={`npx shadcn@latest add https://kasumi-ui.vercel.app/r/dialog`} />
+
 ## Usage
 
 <ComponentPreview>
@@ -51,9 +55,7 @@ export const dialogProps = [
       <DialogHeader>
         <DialogTitle>確認</DialogTitle>
       </DialogHeader>
-      <DialogDescription>
-        この操作を実行してもよろしいですか？
-      </DialogDescription>
+      <DialogDescription>{"この操作を実行してもよろしいですか？"}</DialogDescription>
       <DialogFooter>
         <DialogClose asChild>
           <Button variant="outline">キャンセル</Button>
@@ -107,9 +109,7 @@ import { Button } from "@/components/ui/button";
       <DialogHeader>
         <DialogTitle>プロフィール編集</DialogTitle>
       </DialogHeader>
-      <DialogDescription>
-        表示名とメールアドレスを変更できます。
-      </DialogDescription>
+      <DialogDescription>{"表示名とメールアドレスを変更できます。"}</DialogDescription>
       <div className="space-y-4">
         <div className="space-y-2">
           <Label>表示名</Label>
@@ -171,9 +171,7 @@ import { Button } from "@/components/ui/button";
       <DialogHeader>
         <DialogTitle>本当に削除しますか？</DialogTitle>
       </DialogHeader>
-      <DialogDescription>
-        この操作は取り消せません。すべてのデータが完全に削除されます。
-      </DialogDescription>
+      <DialogDescription>{"この操作は取り消せません。すべてのデータが完全に削除されます。"}</DialogDescription>
       <DialogFooter>
         <DialogClose asChild>
           <Button variant="outline">キャンセル</Button>

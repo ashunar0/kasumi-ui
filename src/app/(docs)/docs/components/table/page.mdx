@@ -12,49 +12,49 @@ import {
 export const tableProps = [
   {
     name: "Table",
-    type: "ComponentProps<\"table\">",
+    type: 'ComponentProps<"table">',
     default: "—",
     description: "テーブルのルート要素。横スクロール対応のラッパー付き",
   },
   {
     name: "TableHeader",
-    type: "ComponentProps<\"thead\">",
+    type: 'ComponentProps<"thead">',
     default: "—",
     description: "テーブルのヘッダー部分",
   },
   {
     name: "TableBody",
-    type: "ComponentProps<\"tbody\">",
+    type: 'ComponentProps<"tbody">',
     default: "—",
     description: "テーブルのボディ部分",
   },
   {
     name: "TableFooter",
-    type: "ComponentProps<\"tfoot\">",
+    type: 'ComponentProps<"tfoot">',
     default: "—",
     description: "テーブルのフッター部分。背景色付き",
   },
   {
     name: "TableRow",
-    type: "ComponentProps<\"tr\">",
+    type: 'ComponentProps<"tr">',
     default: "—",
     description: "テーブルの行。ホバー時にハイライト表示",
   },
   {
     name: "TableHead",
-    type: "ComponentProps<\"th\">",
+    type: 'ComponentProps<"th">',
     default: "—",
     description: "テーブルのヘッダーセル",
   },
   {
     name: "TableCell",
-    type: "ComponentProps<\"td\">",
+    type: 'ComponentProps<"td">',
     default: "—",
     description: "テーブルのデータセル",
   },
   {
     name: "TableCaption",
-    type: "ComponentProps<\"caption\">",
+    type: 'ComponentProps<"caption">',
     default: "—",
     description: "テーブルのキャプション",
   },
@@ -62,7 +62,15 @@ export const tableProps = [
 
 # Table
 
-<Description>データを行と列で表示するためのテーブルコンポーネント。横スクロール対応、ホバースタイル付き。</Description>
+<Description>
+  データを行と列で表示するためのテーブルコンポーネント。
+</Description>
+
+## Installation
+
+<CodeBlock
+  code={`npx shadcn@latest add https://kasumi-ui.vercel.app/r/table`}
+/>
 
 ## Usage
 
@@ -152,7 +160,8 @@ export const tableProps = [
   </Table>
 </ComponentPreview>
 
-<CodeBlock code={`<Table>
+<CodeBlock
+  code={`<Table>
   <TableCaption>チームメンバー一覧</TableCaption>
   <TableHeader>
     <TableRow>
@@ -166,7 +175,8 @@ export const tableProps = [
       <TableCell>エンジニア</TableCell>
     </TableRow>
   </TableBody>
-</Table>`} />
+</Table>`}
+/>
 
 ## Footer
 
@@ -199,7 +209,8 @@ export const tableProps = [
   </Table>
 </ComponentPreview>
 
-<CodeBlock code={`<Table>
+<CodeBlock
+  code={`<Table>
   <TableHeader>
     <TableRow>
       <TableHead>項目</TableHead>
@@ -222,7 +233,8 @@ export const tableProps = [
       <TableCell className="text-right">¥170,000</TableCell>
     </TableRow>
   </TableFooter>
-</Table>`} />
+</Table>`}
+/>
 
 ## Props
 

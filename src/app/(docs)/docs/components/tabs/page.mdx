@@ -17,7 +17,11 @@ export const tabsProps = [
 
 # Tabs
 
-<Description>コンテンツをタブで切り替えて表示するコンポーネント。Radix UI ベース。Tabs / TabsList / TabsTrigger / TabsContent の複合構成。</Description>
+<Description>コンテンツをタブで切り替えて表示するコンポーネント。R</Description>
+
+## Installation
+
+<CodeBlock code={`npx shadcn@latest add https://kasumi-ui.vercel.app/r/tabs`} />
 
 ## Usage
 
@@ -29,13 +33,19 @@ export const tabsProps = [
       <TabsTrigger value="members">メンバー</TabsTrigger>
     </TabsList>
     <TabsContent value="overview">
-      <p className="text-sm text-muted-foreground">プロジェクトの概要を表示します。</p>
+      <p className="text-sm text-muted-foreground">
+        プロジェクトの概要を表示します。
+      </p>
     </TabsContent>
     <TabsContent value="schedule">
-      <p className="text-sm text-muted-foreground">スケジュール一覧を表示します。</p>
+      <p className="text-sm text-muted-foreground">
+        スケジュール一覧を表示します。
+      </p>
     </TabsContent>
     <TabsContent value="members">
-      <p className="text-sm text-muted-foreground">参加メンバーの一覧を表示します。</p>
+      <p className="text-sm text-muted-foreground">
+        参加メンバーの一覧を表示します。
+      </p>
     </TabsContent>
   </Tabs>
 </ComponentPreview>
@@ -71,7 +81,9 @@ export const tabsProps = [
       <TabsTrigger value="tab3">タブ 3</TabsTrigger>
     </TabsList>
     <TabsContent value="tab1">
-      <p className="text-sm text-muted-foreground">Underline スタイルのタブです。</p>
+      <p className="text-sm text-muted-foreground">
+        Underline スタイルのタブです。
+      </p>
     </TabsContent>
     <TabsContent value="tab2">
       <p className="text-sm text-muted-foreground">タブ 2 のコンテンツです。</p>
@@ -82,13 +94,15 @@ export const tabsProps = [
   </Tabs>
 </ComponentPreview>
 
-<CodeBlock code={`<Tabs defaultValue="tab1">
+<CodeBlock
+  code={`<Tabs defaultValue="tab1">
   <TabsList variant="underline">
     <TabsTrigger value="tab1">タブ 1</TabsTrigger>
     <TabsTrigger value="tab2">タブ 2</TabsTrigger>
   </TabsList>
   ...
-</Tabs>`} />
+</Tabs>`}
+/>
 
 ## Pill
 
@@ -113,13 +127,15 @@ export const tabsProps = [
   </Tabs>
 </ComponentPreview>
 
-<CodeBlock code={`<Tabs defaultValue="tab1">
+<CodeBlock
+  code={`<Tabs defaultValue="tab1">
   <TabsList variant="pill">
     <TabsTrigger value="tab1">タブ 1</TabsTrigger>
     <TabsTrigger value="tab2">タブ 2</TabsTrigger>
   </TabsList>
   ...
-</Tabs>`} />
+</Tabs>`}
+/>
 
 ## Props
 

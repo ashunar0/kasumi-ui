@@ -1,4 +1,8 @@
-import { ToastBasicDemo, ToastVariantsDemo, ToastPositionDemo } from "@/components/docs/toast-demo";
+import {
+  ToastBasicDemo,
+  ToastVariantsDemo,
+  ToastPositionDemo,
+} from "@/components/docs/toast-demo";
 
 export const toastProps = [
   {
@@ -35,7 +39,13 @@ export const toastProps = [
 
 # Toast
 
-<Description>命令型 API で通知を表示するトーストコンポーネント。useToast フックで任意のタイミングにトーストを発行できます。</Description>
+<Description>命令型 API で通知を表示するトーストコンポーネント。</Description>
+
+## Installation
+
+<CodeBlock
+  code={`npx shadcn@latest add https://kasumi-ui.vercel.app/r/toast`}
+/>
 
 ## Usage
 
@@ -50,25 +60,24 @@ import { Button } from "@/components/ui/button";
 
 // レイアウトに ToastProvider を配置
 function Layout({ children }) {
-  return <ToastProvider>{children}</ToastProvider>;
+return <ToastProvider>{children}</ToastProvider>;
 }
 
 // 任意のコンポーネントから useToast で発行
 function MyComponent() {
-  const { toast } = useToast();
+const { toast } = useToast();
 
-  return (
-    <Button
-      onClick={() =>
-        toast({
-          title: "保存しました",
-          description: "変更が正常に保存されました。",
-        })
-      }
-    >
-      トーストを表示
-    </Button>
-  );
+return (
+<Button
+onClick={() =>
+toast({
+title: "保存しました",
+description: "変更が正常に保存されました。",
+})
+} >
+トーストを表示
+</Button>
+);
 }`} />
 
 ## Variant
@@ -79,11 +88,13 @@ function MyComponent() {
   <ToastVariantsDemo />
 </ComponentPreview>
 
-<CodeBlock code={`toast({ title: "通知", variant: "default" });
+<CodeBlock
+  code={`toast({ title: "通知", variant: "default" });
 toast({ title: "成功しました", variant: "success" });
 toast({ title: "お知らせ", variant: "info" });
 toast({ title: "注意してください", variant: "warning" });
-toast({ title: "エラーが発生しました", variant: "error" });`} />
+toast({ title: "エラーが発生しました", variant: "error" });`}
+/>
 
 ## Position
 
