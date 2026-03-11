@@ -1,0 +1,228 @@
+import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetDescription,
+  SheetFooter,
+  SheetClose,
+} from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+
+export const sheetContentProps = [
+  {
+    name: "side",
+    type: '"top" | "right" | "bottom" | "left"',
+    default: '"right"',
+    description: "シートが開く方向",
+  },
+  {
+    name: "className",
+    type: "string",
+    default: "-",
+    description: "追加のCSSクラス",
+  },
+];
+
+export const sheetProps = [
+  {
+    name: "open",
+    type: "boolean",
+    default: "-",
+    description: "シートの開閉状態（制御コンポーネント用）",
+  },
+  {
+    name: "onOpenChange",
+    type: "(open: boolean) => void",
+    default: "-",
+    description: "開閉状態が変わったときのコールバック",
+  },
+];
+
+# Sheet
+
+<Description>画面端からスライドインするパネル。ナビゲーションや補足情報の表示に使用。Dialog と同じ Radix UI プリミティブをベースに構築。</Description>
+
+## Usage
+
+<ComponentPreview>
+  <Sheet>
+    <SheetTrigger asChild>
+      <Button variant="outline">シートを開く</Button>
+    </SheetTrigger>
+    <SheetContent>
+      <SheetHeader>
+        <SheetTitle>設定</SheetTitle>
+      </SheetHeader>
+      <SheetDescription>
+        アプリケーションの設定を変更できます。
+      </SheetDescription>
+    </SheetContent>
+  </Sheet>
+</ComponentPreview>
+
+<CodeBlock code={`import {
+  Sheet,
+  SheetTrigger,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetDescription,
+} from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+
+<Sheet>
+  <SheetTrigger asChild>
+    <Button variant="outline">シートを開く</Button>
+  </SheetTrigger>
+  <SheetContent>
+    <SheetHeader>
+      <SheetTitle>設定</SheetTitle>
+    </SheetHeader>
+    <SheetDescription>
+      アプリケーションの設定を変更できます。
+    </SheetDescription>
+  </SheetContent>
+</Sheet>`} />
+
+## Side
+
+`side` prop で表示位置を指定できます。`top`、`right`、`bottom`、`left` の4方向に対応。
+
+<ComponentPreview>
+  <div className="flex flex-wrap gap-2">
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button variant="outline">上</Button>
+      </SheetTrigger>
+      <SheetContent side="top">
+        <SheetHeader>
+          <SheetTitle>上からスライド</SheetTitle>
+        </SheetHeader>
+        <SheetDescription>side="top" のシートです。</SheetDescription>
+      </SheetContent>
+    </Sheet>
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button variant="outline">右</Button>
+      </SheetTrigger>
+      <SheetContent side="right">
+        <SheetHeader>
+          <SheetTitle>右からスライド</SheetTitle>
+        </SheetHeader>
+        <SheetDescription>side="right" のシートです（デフォルト）。</SheetDescription>
+      </SheetContent>
+    </Sheet>
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button variant="outline">下</Button>
+      </SheetTrigger>
+      <SheetContent side="bottom">
+        <SheetHeader>
+          <SheetTitle>下からスライド</SheetTitle>
+        </SheetHeader>
+        <SheetDescription>side="bottom" のシートです。</SheetDescription>
+      </SheetContent>
+    </Sheet>
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button variant="outline">左</Button>
+      </SheetTrigger>
+      <SheetContent side="left">
+        <SheetHeader>
+          <SheetTitle>左からスライド</SheetTitle>
+        </SheetHeader>
+        <SheetDescription>side="left" のシートです。</SheetDescription>
+      </SheetContent>
+    </Sheet>
+  </div>
+</ComponentPreview>
+
+<CodeBlock code={`<Sheet>
+  <SheetTrigger asChild>
+    <Button variant="outline">左</Button>
+  </SheetTrigger>
+  <SheetContent side="left">
+    <SheetHeader>
+      <SheetTitle>左からスライド</SheetTitle>
+    </SheetHeader>
+    <SheetDescription>side="left" のシートです。</SheetDescription>
+  </SheetContent>
+</Sheet>`} />
+
+## Form Sheet
+
+<ComponentPreview>
+  <Sheet>
+    <SheetTrigger asChild>
+      <Button>プロフィール編集</Button>
+    </SheetTrigger>
+    <SheetContent>
+      <SheetHeader>
+        <SheetTitle>プロフィール編集</SheetTitle>
+      </SheetHeader>
+      <SheetDescription>
+        表示名とメールアドレスを変更できます。
+      </SheetDescription>
+      <div className="space-y-4 mt-4">
+        <div className="space-y-2">
+          <Label>表示名</Label>
+          <Input variant="outline" placeholder="あさひ" />
+        </div>
+        <div className="space-y-2">
+          <Label>メールアドレス</Label>
+          <Input variant="outline" type="email" placeholder="asahi@example.com" />
+        </div>
+      </div>
+      <SheetFooter>
+        <SheetClose asChild>
+          <Button variant="outline">キャンセル</Button>
+        </SheetClose>
+        <Button>保存</Button>
+      </SheetFooter>
+    </SheetContent>
+  </Sheet>
+</ComponentPreview>
+
+<CodeBlock code={`<Sheet>
+  <SheetTrigger asChild>
+    <Button>プロフィール編集</Button>
+  </SheetTrigger>
+  <SheetContent>
+    <SheetHeader>
+      <SheetTitle>プロフィール編集</SheetTitle>
+    </SheetHeader>
+    <SheetDescription>
+      表示名とメールアドレスを変更できます。
+    </SheetDescription>
+    <div className="space-y-4 mt-4">
+      <div className="space-y-2">
+        <Label>表示名</Label>
+        <Input variant="outline" placeholder="あさひ" />
+      </div>
+      <div className="space-y-2">
+        <Label>メールアドレス</Label>
+        <Input variant="outline" type="email" placeholder="asahi@example.com" />
+      </div>
+    </div>
+    <SheetFooter>
+      <SheetClose asChild>
+        <Button variant="outline">キャンセル</Button>
+      </SheetClose>
+      <Button>保存</Button>
+    </SheetFooter>
+  </SheetContent>
+</Sheet>`} />
+
+## Props
+
+### Sheet
+
+<PropsTable props={sheetProps} />
+
+### SheetContent
+
+<PropsTable props={sheetContentProps} />

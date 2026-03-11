@@ -15,6 +15,7 @@ export const sidebarGroups: NavGroup[] = [
     label: "Getting Started",
     items: [
       { name: "Introduction", href: "/docs" },
+      { name: "Typography", href: "/docs/typography" },
     ],
   },
   {
@@ -40,6 +41,7 @@ export const sidebarGroups: NavGroup[] = [
       { name: "Radio", href: "/docs/components/radio" },
       { name: "Select", href: "/docs/components/select" },
       { name: "Separator", href: "/docs/components/separator" },
+      { name: "Sheet", href: "/docs/components/sheet" },
       { name: "Skeleton", href: "/docs/components/skeleton" },
       { name: "Switch", href: "/docs/components/switch" },
       { name: "Table", href: "/docs/components/table" },

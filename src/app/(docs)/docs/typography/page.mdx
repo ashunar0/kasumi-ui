@@ -1,0 +1,149 @@
+# Typography
+
+<Description>日本語に最適化されたタイポグラフィシステム。Minor Third（×1.2）のモジュラースケールと、日本語の可読性に合わせた行間設定。</Description>
+
+## スケール一覧
+
+<div className="mt-8 overflow-x-auto">
+  <table className="w-full text-sm">
+    <thead>
+      <tr className="border-b border-border">
+        <th className="text-left py-2 pr-4 font-medium">用途</th>
+        <th className="text-left py-2 pr-4 font-medium">クラス</th>
+        <th className="text-left py-2 pr-4 font-medium">サイズ</th>
+        <th className="text-left py-2 pr-4 font-medium">行間</th>
+        <th className="text-left py-2 font-medium">根拠</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr className="border-b border-border">
+        <td className="py-2 pr-4">H1</td>
+        <td className="py-2 pr-4"><code className="rounded bg-muted px-1.5 py-0.5 text-xs font-mono">text-h1</code></td>
+        <td className="py-2 pr-4">33px</td>
+        <td className="py-2 pr-4">デフォルト</td>
+        <td className="py-2">base × 1.2⁴</td>
+      </tr>
+      <tr className="border-b border-border">
+        <td className="py-2 pr-4">H2</td>
+        <td className="py-2 pr-4"><code className="rounded bg-muted px-1.5 py-0.5 text-xs font-mono">text-h2</code></td>
+        <td className="py-2 pr-4">28px</td>
+        <td className="py-2 pr-4">デフォルト</td>
+        <td className="py-2">base × 1.2³</td>
+      </tr>
+      <tr className="border-b border-border">
+        <td className="py-2 pr-4">H3</td>
+        <td className="py-2 pr-4"><code className="rounded bg-muted px-1.5 py-0.5 text-xs font-mono">text-h3</code></td>
+        <td className="py-2 pr-4">23px</td>
+        <td className="py-2 pr-4">デフォルト</td>
+        <td className="py-2">base × 1.2²</td>
+      </tr>
+      <tr className="border-b border-border">
+        <td className="py-2 pr-4">H4</td>
+        <td className="py-2 pr-4"><code className="rounded bg-muted px-1.5 py-0.5 text-xs font-mono">text-h4</code></td>
+        <td className="py-2 pr-4">19px</td>
+        <td className="py-2 pr-4">デフォルト</td>
+        <td className="py-2">base × 1.2¹</td>
+      </tr>
+      <tr className="border-b border-border">
+        <td className="py-2 pr-4">本文</td>
+        <td className="py-2 pr-4"><code className="rounded bg-muted px-1.5 py-0.5 text-xs font-mono">text-body</code></td>
+        <td className="py-2 pr-4">16px</td>
+        <td className="py-2 pr-4">×2.5</td>
+        <td className="py-2">base</td>
+      </tr>
+      <tr>
+        <td className="py-2 pr-4">UI文</td>
+        <td className="py-2 pr-4"><code className="rounded bg-muted px-1.5 py-0.5 text-xs font-mono">text-ui</code></td>
+        <td className="py-2 pr-4">14px</td>
+        <td className="py-2 pr-4">×2.0</td>
+        <td className="py-2">コンパクトUI用</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+## プレビュー
+
+<div className="mt-4 space-y-8 rounded-lg border border-border p-6">
+  <div>
+    <p className="text-xs text-muted-foreground mb-1">text-h1</p>
+    <p className="text-h1 font-bold tracking-tight">見出しレベル1</p>
+  </div>
+  <div>
+    <p className="text-xs text-muted-foreground mb-1">text-h2</p>
+    <p className="text-h2 font-semibold tracking-tight">見出しレベル2</p>
+  </div>
+  <div>
+    <p className="text-xs text-muted-foreground mb-1">text-h3</p>
+    <p className="text-h3 font-semibold tracking-tight">見出しレベル3</p>
+  </div>
+  <div>
+    <p className="text-xs text-muted-foreground mb-1">text-h4</p>
+    <p className="text-h4 font-semibold tracking-tight">見出しレベル4</p>
+  </div>
+  <div>
+    <p className="text-xs text-muted-foreground mb-1">text-body（本文）</p>
+    <p className="text-body">日本語の本文テキストです。kasumi/ui では line-height を 2.5 に設定しています。日本語は画数が多く、英語のデフォルト行間（約1.5）では窮屈に見えます。W3C「日本語組版処理の要件（JLREQ）」の推奨を参考に、実際の表示を確認しながら調整しました。</p>
+  </div>
+  <div>
+    <p className="text-xs text-muted-foreground mb-1">text-ui（UIテキスト）</p>
+    <p className="text-ui">UIテキストはコンパクトな 14px。ラベル、テーブルセル、通知など「操作する」テキストに使います。行間は 2.0 で、情報密度と可読性のバランスを取っています。</p>
+  </div>
+</div>
+
+## 使い分け
+
+- **`text-body`**（16px / ×2.5）— 「読む」テキスト。説明文、記事、初見ユーザーが読む文章
+- **`text-ui`**（14px / ×2.0）— 「操作する」テキスト。アプリUI、フォームラベル、テーブルセル
+
+見出しやボタンの行間はデフォルトのままです。見出しは1〜2行で折り返すことが少なく、ボタンは単行なので調整不要です。
+
+## Minor Third スケール
+
+フォントサイズは **Modular Scale** で決めています。基準サイズ（16px）に一定の比率（×1.2）を掛けて段階を作る手法です。
+
+```
+base × 1.2⁰ = 16px  (本文)
+base × 1.2¹ = 19px  (H4)
+base × 1.2² = 23px  (H3)
+base × 1.2³ = 28px  (H2)
+base × 1.2⁴ = 33px  (H1)
+```
+
+Minor Third（1.2）を選んだ理由は、見出しと本文のメリハリが自然で、日本語 UI で H1 が大きくなりすぎないバランスの良さです。
+
+## フォント
+
+- **英語**: Inter（`next/font/google`）
+- **日本語**: Noto Sans JP（フォールバック）
+- **コード**: Geist Mono
+
+英語は Inter、日本語は自動で Noto Sans JP にフォールバックします。OS やブラウザに依存せず、どの環境でも同じ見た目になります。
+
+## インストール
+
+kasumi/ui のレジストリからテーマをインストールすると、タイポグラフィトークンとカラーパレットがプロジェクトの CSS に追加されます。
+
+<CodeBlock code={`npx shadcn add https://kasumi-ui.vercel.app/r/theme.json`} lang="bash" />
+
+## 実装
+
+Tailwind CSS 4 の `@theme inline` でカスタムトークンとして定義しています。
+
+<CodeBlock code={`@theme inline {
+  /* Typography Scale: Minor Third (1.2), base 16px */
+  --text-ui: 0.875rem;              /* 14px */
+  --text-ui--line-height: 2;        /* ×2.0 */
+  --text-body: 1rem;                /* 16px */
+  --text-body--line-height: 2.5;    /* ×2.5 */
+  --text-h4: 1.1875rem;             /* 19px */
+  --text-h3: 1.4375rem;             /* 23px */
+  --text-h2: 1.75rem;               /* 28px */
+  --text-h1: 2.0625rem;             /* 33px */
+}`} lang="css" />
+
+`text-h1`、`text-body` 等のユーティリティクラスが自動生成され、Tailwind のクラスとして使えます。
+
+<CodeBlock code={`<h1 className="text-h1 font-bold tracking-tight">見出し</h1>
+<p className="text-body">本文テキスト</p>
+<span className="text-ui">UIテキスト</span>`} lang="tsx" />
