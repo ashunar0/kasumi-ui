@@ -9,7 +9,11 @@ type CodeBlockProps = {
 export async function CodeBlock({ code, lang = "tsx" }: CodeBlockProps) {
   const html = await codeToHtml(code.trim(), {
     lang,
-    theme: "github-light",
+    themes: {
+      light: "github-light",
+      dark: "github-dark",
+    },
+    defaultColor: false,
   });
 
   return (

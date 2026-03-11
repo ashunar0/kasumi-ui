@@ -153,6 +153,22 @@
   --animate-accordion-up: accordion-up 0.2s ease-out;
 }
 
+/* Shiki dual theme: light/dark mode switching */
+.shiki,
+.shiki span {
+  color: var(--shiki-light);
+}
+.dark .shiki,
+.dark .shiki span {
+  color: var(--shiki-dark);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) .shiki,
+  :root:not(.light) .shiki span {
+    color: var(--shiki-dark);
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);

@@ -16,12 +16,12 @@ export const sidebarGroups: NavGroup[] = [
     items: [
       { name: "Introduction", href: "/docs" },
       { name: "Typography", href: "/docs/typography" },
+      { name: "Overview", href: "/docs/components" },
     ],
   },
   {
     label: "Components",
     items: [
-      { name: "Overview", href: "/docs/components" },
       { name: "Accordion", href: "/docs/components/accordion" },
       { name: "Alert", href: "/docs/components/alert" },
       { name: "Avatar", href: "/docs/components/avatar" },
@@ -53,9 +53,7 @@ export const sidebarGroups: NavGroup[] = [
   },
   {
     label: "Blocks",
-    items: [
-      { name: "Overview", href: "/docs/blocks" },
-    ],
+    items: [{ name: "Overview", href: "/docs/blocks" }],
   },
 ];
 
