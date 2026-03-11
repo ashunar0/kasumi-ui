@@ -5,12 +5,12 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { TableOfContents } from "@/components/docs/toc";
 
-type NavGroup = {
+export type NavGroup = {
   label: string;
   items: { name: string; href: string }[];
 };
 
-const sidebarGroups: NavGroup[] = [
+export const sidebarGroups: NavGroup[] = [
   {
     label: "Getting Started",
     items: [
