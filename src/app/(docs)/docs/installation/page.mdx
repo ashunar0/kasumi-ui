@@ -1,0 +1,71 @@
+# Installation
+
+kasumi/ui のコンポーネントをプロジェクトに追加する方法を説明します。
+
+## 前提条件
+
+kasumi/ui を使うには、以下の環境が必要です。
+
+- **React 19** 以上
+- **Tailwind CSS 4**
+- **TypeScript**（推奨）
+
+## セットアップ
+
+### 1. shadcn CLI の初期化
+
+プロジェクトにまだ shadcn の設定がない場合は、初期化します。
+
+<CodeBlock code={`npx shadcn@latest init`} lang="bash" />
+
+### 2. テーマの追加
+
+kasumi/ui の日本語最適化テーマ（タイポグラフィスケール・カラーパレット）をインストールします。
+
+<CodeBlock code={`npx shadcn@latest add https://kasumi-ui.vercel.app/r/theme`} lang="bash" />
+
+これにより、Minor Third（×1.2）のモジュラースケールや日本語向けの行間設定がプロジェクトに追加されます。
+
+### 3. コンポーネントの追加
+
+必要なコンポーネントを個別にインストールします。
+
+<CodeBlock code={`npx shadcn@latest add https://kasumi-ui.vercel.app/r/button`} lang="bash" />
+
+依存する他のコンポーネントやユーティリティ（`cn()` 関数など）は自動的にインストールされます。
+
+## 手動セットアップ
+
+CLI を使わずに手動でセットアップすることもできます。
+
+### 1. 依存パッケージのインストール
+
+<CodeBlock code={`pnpm add clsx tailwind-merge`} lang="bash" />
+
+### 2. cn() ユーティリティの追加
+
+`src/lib/utils.ts` を作成します。
+
+<CodeBlock code={`import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}`} lang="ts" />
+
+### 3. フォントの設定
+
+kasumi/ui は Inter と Noto Sans JP を使用します。Next.js の場合：
+
+<CodeBlock code={`import { Inter } from "next/font/google";
+import { Noto_Sans_JP } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
+const notoSansJP = Noto_Sans_JP({
+  subsets: ["latin"],
+  variable: "--font-noto-sans-jp",
+});`} lang="tsx" />
+
+### 4. コンポーネントファイルのコピー
+
+`src/components/ui/` ディレクトリに、使いたいコンポーネントのソースコードをコピーします。各コンポーネントのドキュメントページからコードを参照できます。

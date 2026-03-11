@@ -29,17 +29,8 @@ kasumi/ui では YAGNI（You Aren't Gonna Need It）を徹底しています。�
 
 ## 使い方
 
-コンポーネントのコードをプロジェクトにコピーして使います。前提として以下が必要です。
+shadcn CLI を使ってコンポーネントを追加できます。
 
-### 1. cn() ユーティリティ
+<CodeBlock code={`npx shadcn@latest add https://kasumi-ui.vercel.app/r/button`} lang="bash" />
 
-<CodeBlock code={`import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}`} lang="ts" />
-
-### 2. 依存パッケージ
-
-<CodeBlock code={`pnpm add clsx tailwind-merge`} lang="bash" />
+セットアップ手順や手動インストールについては [Installation](/docs/installation) を参照してください。

@@ -15,6 +15,7 @@ export const sidebarGroups: NavGroup[] = [
     label: "Getting Started",
     items: [
       { name: "Introduction", href: "/docs" },
+      { name: "Installation", href: "/docs/installation" },
       { name: "Typography", href: "/docs/typography" },
       { name: "Overview", href: "/docs/components" },
     ],
