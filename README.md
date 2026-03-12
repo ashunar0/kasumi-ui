@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# kasumi/ui
 
-## Getting Started
+日本語に最適化した、シンプルで美しい UI コンポーネントライブラリ。
 
-First, run the development server:
+shadcn/ui のミニマルな設計思想をベースに、日本語タイポグラフィに合わせた行間・フォントスタックを組み込んでいます。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ドキュメント
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[https://kasumi-ui.vercel.app/docs](https://kasumi-ui.vercel.app/docs)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 特徴
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **日本語タイポグラフィ最適化** — Minor Third (×1.2) モジュラースケール、日本語に適した行間設定
+- **Inter + Noto Sans JP** — 英語・日本語それぞれに最適なフォントスタック
+- **Tailwind CSS 4** — CSS 変数ベースのデザイントークン、ライト/ダークモード対応
+- **コピー&ペーストで導入** — shadcn/ui と同じアプローチ。依存関係ではなく、自分のコードとして管理
 
-## Learn More
+## 技術スタック
 
-To learn more about Next.js, take a look at the following resources:
+- [Next.js](https://nextjs.org/) 16 (App Router)
+- [React](https://react.dev/) 19
+- [Tailwind CSS](https://tailwindcss.com/) 4
+- [Radix UI](https://www.radix-ui.com/) — 複雑な振る舞いのみ
+- [Lucide](https://lucide.dev/) — アイコン
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ライセンス
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[MIT](./LICENSE)
