@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   title: "kasumi/ui",
   description: "日本語のためのUIライブラリ",
   icons: {
-    icon: "/kasumi_light.svg",
+    icon: "/kasumi.svg",
   },
 };
 

@@ -1,16 +1,7 @@
-<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_964_54)">
-<rect width="500" height="500" rx="60" fill="white"/>
-<line y1="249.5" x2="500.016" y2="249.5" stroke="#FF0004"/>
-<line x1="88" y1="249" x2="412" y2="249" stroke="black" stroke-width="36" stroke-linecap="round"/>
-<line x1="208" y1="154" x2="412" y2="154" stroke="black" stroke-width="36" stroke-linecap="round"/>
-<line x1="329" y1="232.02" x2="329" y2="169" stroke="black" stroke-width="36" stroke-linecap="round"/>
-<line x1="172" y1="316.02" x2="172" y2="253" stroke="black" stroke-width="36" stroke-linecap="round"/>
-<line x1="88" y1="344" x2="292" y2="344" stroke="black" stroke-width="36" stroke-linecap="round"/>
-</g>
-<defs>
-<clipPath id="clip0_964_54">
-<rect width="500" height="500" rx="60" fill="white"/>
-</clipPath>
-</defs>
+<svg width="360" height="226" viewBox="0 0 360 226" fill="none" xmlns="http://www.w3.org/2000/svg">
+<line x1="18" y1="113" x2="342" y2="113" stroke="black" stroke-width="36" stroke-linecap="round"/>
+<line x1="138" y1="18" x2="342" y2="18" stroke="black" stroke-width="36" stroke-linecap="round"/>
+<line x1="259" y1="96.02" x2="259" y2="32.9998" stroke="black" stroke-width="36" stroke-linecap="round"/>
+<line x1="102" y1="180.02" x2="102" y2="117" stroke="black" stroke-width="36" stroke-linecap="round"/>
+<line x1="18" y1="208" x2="222" y2="208" stroke="black" stroke-width="36" stroke-linecap="round"/>
 </svg>

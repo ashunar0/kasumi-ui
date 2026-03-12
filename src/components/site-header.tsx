@@ -42,10 +42,18 @@ export function SiteHeader() {
                 className="hidden md:flex font-semibold text-md items-center gap-2"
               >
                 <Image
-                  src="/kasumi.svg"
+                  src="/kasumi_light.svg"
                   alt="kasumi/ui"
-                  width={32}
-                  height={32}
+                  width={24}
+                  height={24}
+                  className="dark:hidden"
+                />
+                <Image
+                  src="/kasumi_dark.svg"
+                  alt="kasumi/ui"
+                  width={24}
+                  height={24}
+                  className="hidden dark:block"
                 />
                 kasumi/ui
               </Link>
@@ -55,12 +63,31 @@ export function SiteHeader() {
               href="/"
               className="font-semibold text-md flex items-center gap-2"
             >
-              <Image src="/kasumi.svg" alt="kasumi/ui" width={32} height={32} />
+              <Image
+                src="/kasumi_light.svg"
+                alt="kasumi/ui"
+                width={24}
+                height={24}
+                className="dark:hidden"
+              />
+              <Image
+                src="/kasumi_dark.svg"
+                alt="kasumi/ui"
+                width={24}
+                height={24}
+                className="hidden dark:block"
+              />
               kasumi/ui
             </Link>
           )}
 
-          <nav className={isDocs ? "hidden md:flex items-center gap-4" : "hidden sm:flex items-center gap-4"}>
+          <nav
+            className={
+              isDocs
+                ? "hidden md:flex items-center gap-4"
+                : "hidden sm:flex items-center gap-4"
+            }
+          >
             {navLinks.map((link) => {
               const isActive = link.exact
                 ? pathname === link.href
