@@ -53,19 +53,6 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }`} lang="ts" />
 
-### 3. フォントの設定
-
-kasumi/ui は Inter と Noto Sans JP を使用します。Next.js の場合：
-
-<CodeBlock code={`import { Inter } from "next/font/google";
-import { Noto_Sans_JP } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
-const notoSansJP = Noto_Sans_JP({
-  subsets: ["latin"],
-  variable: "--font-noto-sans-jp",
-});`} lang="tsx" />
-
-### 4. コンポーネントファイルのコピー
+### 3. コンポーネントファイルのコピー
 
 `src/components/ui/` ディレクトリに、使いたいコンポーネントのソースコードをコピーします。各コンポーネントのドキュメントページからコードを参照できます。
