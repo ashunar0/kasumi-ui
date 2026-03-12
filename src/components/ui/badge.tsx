@@ -28,7 +28,12 @@ export function Badge({
 }: BadgeProps) {
   return (
     <span
-      className={cn("inline-flex items-center font-medium", variantStyles[variant], sizeStyles[size], className)}
+      className={cn(
+        "inline-flex items-center font-semibold",
+        variantStyles[variant],
+        sizeStyles[size],
+        className,
+      )}
       {...props}
     >
       {children}
