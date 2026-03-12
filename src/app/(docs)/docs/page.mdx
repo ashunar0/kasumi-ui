@@ -1,22 +1,20 @@
 # Introduction
 
-kasumi/ui は、日本語のためのUIコンポーネントライブラリです。shadcn/ui の設計思想をベースに、日本語で使うことを前提にした調整を加えています。
+kasumi/ui は、**日本語のためのUIコンポーネントライブラリ**です。shadcn/ui の設計思想をベースに、日本語で使うことを前提にした調整を加えています。
 
-多くの優れたUIライブラリは英語圏で生まれています。それらをそのまま日本語のプロダクトに持ち込むと、行間が窮屈だったり、フォントの太さが不自然だったり、小さなところで違和感が出ます。CSSを上書きすれば直せるけれど、それはコンポーネントの外側にパッチを当てているだけです。
+shadcn/ui, MUI, BootStrap など、優れたUIライブラリの多くは英語圏で生まれています。それらをそのまま日本語のプロダクトに持ち込むと、余白や行間が窮屈だったり、小さなところで違和感が出ます。CSSを上書きすれば直せますが、それはコンポーネントの外側にパッチを当てているだけです。
 
-kasumi/ui は、最初から日本語で使うことを前提にコンポーネントを設計しています。
+kasumi/ui は、最初から**日本語で使うこと**を前提にコンポーネントを設計しています。
 
 ## 日本語のためのタイポグラフィ
 
 日本語と英語では、読みやすい行間が違います。英語のデフォルトでは日本語の本文が詰まって見える。kasumi/ui では Minor Third（×1.2）のモジュラースケールを採用し、本文には line-height 2.5、UI テキストには 2.0 を設定しています。見出しはデフォルトのまま。用途ごとに行間を分けることで、日本語のテキストが自然に読めるようになっています。
 
-フォントは Inter と Noto Sans JP の組み合わせです。英語はInter、日本語は自動でNoto Sans JPにフォールバックします。OSやブラウザに依存せず、どの環境でも同じ見た目になります。
-
 ## 引き算のデザイン
 
 コンポーネントに機能を足すのは簡単です。clearableなInput、ローディング付きのButton、自動バリデーション付きのField。でも、使わない機能のためにAPIが複雑になるのは避けたい。
 
-kasumi/ui では YAGNI（You Aren't Gonna Need It）を徹底しています。実際に必要になるまで機能を追加しない。ピル型ボタンは `rounded-full` を外から渡せばいいし、Typographyコンポーネントは作らなくてもTailwindのクラスで事足りる。多用するようになったら、そのときにpropに昇格させます。
+kasumi/ui では **YAGNI（You Aren't Gonna Need It）** を徹底しています。実際に必要になるまで機能を追加しない。ピル型ボタンは `rounded-full` を外から渡せばいいし、Typographyコンポーネントは作らなくてもTailwindのクラスで事足りる。多用するようになったら、そのときにpropに昇格させます。
 
 ## 自作とライブラリの線引き
 
@@ -31,6 +29,9 @@ kasumi/ui では YAGNI（You Aren't Gonna Need It）を徹底しています。�
 
 shadcn CLI を使ってコンポーネントを追加できます。
 
-<CodeBlock code={`npx shadcn@latest add https://kasumi-ui.vercel.app/r/button`} lang="bash" />
+<CodeBlock
+  code={`npx shadcn@latest add https://kasumi-ui.vercel.app/r/button`}
+  lang="bash"
+/>
 
 セットアップ手順や手動インストールについては [Installation](/docs/installation) を参照してください。

@@ -138,7 +138,8 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --font-sans: var(--font-inter), var(--font-noto-sans-jp);
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji";
   --font-mono: var(--font-geist-mono);
   /* Typography Scale: Minor Third (1.2), base 16px */
   --text-ui: 0.875rem; /* 14px — コンパクトUI文 */
@@ -172,9 +173,8 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family:
-    var(--font-inter), var(--font-noto-sans-jp), ui-sans-serif, system-ui,
-    sans-serif;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji";
 }
 
 @keyframes marquee-left {
