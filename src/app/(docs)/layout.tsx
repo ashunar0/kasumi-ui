@@ -65,7 +65,7 @@ function DocsNav() {
     <nav className="space-y-6">
       {sidebarGroups.map((group) => (
         <div key={group.label} className="space-y-1">
-          <p className="text-xs text-muted-foreground mb-2">{group.label}</p>
+          <p className="text-xs font-semibold mb-2">{group.label}</p>
           {group.items.map((item) => (
             <Link
               key={item.href}
