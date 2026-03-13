@@ -8,9 +8,9 @@
   ],
   "files": [
     {
-      "path": "src/registry/ui/separator.tsx",
+      "path": "ui/separator.tsx",
       "content": "import { type ComponentProps } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport function Separator({\n  orientation = \"horizontal\",\n  className,\n  ...props\n}: ComponentProps<\"div\"> & {\n  orientation?: \"horizontal\" | \"vertical\";\n}) {\n  return (\n    <div\n      role=\"separator\"\n      aria-orientation={orientation}\n      className={cn(\n        \"shrink-0 bg-border\",\n        orientation === \"horizontal\" ? \"h-px w-full\" : \"h-full w-px\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n",
-      "type": "registry:component"
+      "type": "registry:ui"
     }
   ],
   "type": "registry:component"

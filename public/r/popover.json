@@ -11,9 +11,9 @@
   ],
   "files": [
     {
-      "path": "src/registry/ui/popover.tsx",
+      "path": "ui/popover.tsx",
       "content": "\"use client\";\n\nimport * as PopoverPrimitive from \"@radix-ui/react-popover\";\nimport { type ComponentProps } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\n// --- Popover Root ---\nexport function Popover({\n  children,\n  ...props\n}: ComponentProps<typeof PopoverPrimitive.Root>) {\n  return <PopoverPrimitive.Root {...props}>{children}</PopoverPrimitive.Root>;\n}\n\n// --- Popover Trigger ---\nexport function PopoverTrigger({\n  children,\n  ...props\n}: ComponentProps<typeof PopoverPrimitive.Trigger>) {\n  return (\n    <PopoverPrimitive.Trigger {...props}>{children}</PopoverPrimitive.Trigger>\n  );\n}\n\n// --- Popover Content ---\nexport function PopoverContent({\n  className,\n  children,\n  sideOffset = 4,\n  ...props\n}: ComponentProps<typeof PopoverPrimitive.Content>) {\n  return (\n    <PopoverPrimitive.Portal>\n      <PopoverPrimitive.Content\n        sideOffset={sideOffset}\n        className={cn(\n          \"z-50 w-72 rounded-xl border border-border bg-background p-4 shadow-md outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 duration-200\",\n          className\n        )}\n        {...props}\n      >\n        {children}\n      </PopoverPrimitive.Content>\n    </PopoverPrimitive.Portal>\n  );\n}\n",
-      "type": "registry:component"
+      "type": "registry:ui"
     }
   ],
   "type": "registry:component"

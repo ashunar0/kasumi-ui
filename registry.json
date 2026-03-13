@@ -66,14 +66,14 @@
       "type": "registry:lib",
       "dependencies": ["clsx", "tailwind-merge"],
       "files": [
-        { "path": "src/registry/lib/utils.ts", "type": "registry:lib" }
+        { "path": "lib/utils.ts", "type": "registry:lib" }
       ]
     },
     {
       "name": "use-mobile",
       "type": "registry:lib",
       "files": [
-        { "path": "src/registry/lib/use-mobile.ts", "type": "registry:lib" }
+        { "path": "lib/use-mobile.ts", "type": "registry:lib" }
       ]
     },
     {
@@ -84,7 +84,7 @@
       "dependencies": ["@radix-ui/react-accordion", "lucide-react"],
       "registryDependencies": ["utils"],
       "files": [
-        { "path": "src/registry/ui/accordion.tsx", "type": "registry:component" }
+        { "path": "ui/accordion.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -95,7 +95,7 @@
       "dependencies": ["lucide-react"],
       "registryDependencies": ["utils"],
       "files": [
-        { "path": "src/registry/ui/alert.tsx", "type": "registry:component" }
+        { "path": "ui/alert.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -106,7 +106,7 @@
       "dependencies": ["lucide-react"],
       "registryDependencies": ["utils"],
       "files": [
-        { "path": "src/registry/ui/avatar.tsx", "type": "registry:component" }
+        { "path": "ui/avatar.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -116,7 +116,7 @@
       "description": "variant: default/outline、size: sm/md。",
       "registryDependencies": ["utils"],
       "files": [
-        { "path": "src/registry/ui/badge.tsx", "type": "registry:component" }
+        { "path": "ui/badge.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -127,7 +127,7 @@
       "dependencies": ["lucide-react"],
       "registryDependencies": ["utils"],
       "files": [
-        { "path": "src/registry/ui/breadcrumb.tsx", "type": "registry:component" }
+        { "path": "ui/breadcrumb.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -137,7 +137,7 @@
       "description": "variant: primary/secondary/ghost/outline/destructive、size: sm/md/lg。",
       "registryDependencies": ["utils"],
       "files": [
-        { "path": "src/registry/ui/button.tsx", "type": "registry:component" }
+        { "path": "ui/button.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -147,7 +147,7 @@
       "description": "6パーツ構成のカードコンポーネント。",
       "registryDependencies": ["utils"],
       "files": [
-        { "path": "src/registry/ui/card.tsx", "type": "registry:component" }
+        { "path": "ui/card.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -158,7 +158,7 @@
       "dependencies": ["lucide-react"],
       "registryDependencies": ["utils"],
       "files": [
-        { "path": "src/registry/ui/checkbox.tsx", "type": "registry:component" }
+        { "path": "ui/checkbox.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -169,7 +169,7 @@
       "dependencies": ["@radix-ui/react-dialog", "lucide-react"],
       "registryDependencies": ["utils"],
       "files": [
-        { "path": "src/registry/ui/dialog.tsx", "type": "registry:component" }
+        { "path": "ui/dialog.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -180,7 +180,7 @@
       "dependencies": ["@radix-ui/react-dropdown-menu"],
       "registryDependencies": ["utils"],
       "files": [
-        { "path": "src/registry/ui/dropdown-menu.tsx", "type": "registry:component" }
+        { "path": "ui/dropdown-menu.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -190,7 +190,7 @@
       "description": "フォームフィールドのレイアウト・セマンティクス担当。",
       "registryDependencies": ["utils", "label"],
       "files": [
-        { "path": "src/registry/ui/field.tsx", "type": "registry:component" }
+        { "path": "ui/field.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -201,7 +201,7 @@
       "dependencies": ["lucide-react"],
       "registryDependencies": ["utils"],
       "files": [
-        { "path": "src/registry/ui/input.tsx", "type": "registry:component" }
+        { "path": "ui/input.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -211,7 +211,7 @@
       "description": "peer-disabled連動のラベル。",
       "registryDependencies": ["utils"],
       "files": [
-        { "path": "src/registry/ui/label.tsx", "type": "registry:component" }
+        { "path": "ui/label.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -222,7 +222,7 @@
       "dependencies": ["lucide-react"],
       "registryDependencies": ["utils"],
       "files": [
-        { "path": "src/registry/ui/pagination.tsx", "type": "registry:component" }
+        { "path": "ui/pagination.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -233,7 +233,7 @@
       "dependencies": ["@radix-ui/react-popover"],
       "registryDependencies": ["utils"],
       "files": [
-        { "path": "src/registry/ui/popover.tsx", "type": "registry:component" }
+        { "path": "ui/popover.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -243,7 +243,7 @@
       "description": "進捗バー。value propで0〜100指定。",
       "registryDependencies": ["utils"],
       "files": [
-        { "path": "src/registry/ui/progress.tsx", "type": "registry:component" }
+        { "path": "ui/progress.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -253,7 +253,7 @@
       "description": "size: sm/md/lg、error状態対応。",
       "registryDependencies": ["utils"],
       "files": [
-        { "path": "src/registry/ui/radio.tsx", "type": "registry:component" }
+        { "path": "ui/radio.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -264,7 +264,7 @@
       "dependencies": ["@radix-ui/react-select", "lucide-react"],
       "registryDependencies": ["utils"],
       "files": [
-        { "path": "src/registry/ui/select.tsx", "type": "registry:component" }
+        { "path": "ui/select.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -274,7 +274,7 @@
       "description": "horizontal/verticalのセパレーター。",
       "registryDependencies": ["utils"],
       "files": [
-        { "path": "src/registry/ui/separator.tsx", "type": "registry:component" }
+        { "path": "ui/separator.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -285,7 +285,7 @@
       "dependencies": ["@radix-ui/react-slot", "@radix-ui/react-collapsible", "@radix-ui/react-dialog", "lucide-react"],
       "registryDependencies": ["utils", "use-mobile", "tooltip"],
       "files": [
-        { "path": "src/registry/ui/sidebar.tsx", "type": "registry:component" }
+        { "path": "ui/sidebar.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -295,7 +295,7 @@
       "description": "ローディング表示用スケルトン。",
       "registryDependencies": ["utils"],
       "files": [
-        { "path": "src/registry/ui/skeleton.tsx", "type": "registry:component" }
+        { "path": "ui/skeleton.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -305,7 +305,7 @@
       "description": "size: sm/md/lg、error状態対応。",
       "registryDependencies": ["utils"],
       "files": [
-        { "path": "src/registry/ui/switch.tsx", "type": "registry:component" }
+        { "path": "ui/switch.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -315,7 +315,7 @@
       "description": "横スクロール対応のテーブル。",
       "registryDependencies": ["utils"],
       "files": [
-        { "path": "src/registry/ui/table.tsx", "type": "registry:component" }
+        { "path": "ui/table.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -326,7 +326,7 @@
       "dependencies": ["@radix-ui/react-tabs"],
       "registryDependencies": ["utils"],
       "files": [
-        { "path": "src/registry/ui/tabs.tsx", "type": "registry:component" }
+        { "path": "ui/tabs.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -336,7 +336,7 @@
       "description": "error状態対応のテキストエリア。",
       "registryDependencies": ["utils"],
       "files": [
-        { "path": "src/registry/ui/textarea.tsx", "type": "registry:component" }
+        { "path": "ui/textarea.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -347,7 +347,7 @@
       "dependencies": ["@radix-ui/react-toast", "lucide-react"],
       "registryDependencies": ["utils"],
       "files": [
-        { "path": "src/registry/ui/toast.tsx", "type": "registry:component" }
+        { "path": "ui/toast.tsx", "type": "registry:ui" }
       ]
     },
     {
@@ -358,7 +358,7 @@
       "dependencies": ["@radix-ui/react-tooltip"],
       "registryDependencies": ["utils"],
       "files": [
-        { "path": "src/registry/ui/tooltip.tsx", "type": "registry:component" }
+        { "path": "ui/tooltip.tsx", "type": "registry:ui" }
       ]
     }
   ]

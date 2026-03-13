@@ -11,9 +11,9 @@
   ],
   "files": [
     {
-      "path": "src/registry/ui/tooltip.tsx",
+      "path": "ui/tooltip.tsx",
       "content": "\"use client\";\n\nimport * as TooltipPrimitive from \"@radix-ui/react-tooltip\";\nimport { type ComponentProps } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\n// --- Tooltip Provider ---\nexport function TooltipProvider({\n  delayDuration = 200,\n  children,\n  ...props\n}: ComponentProps<typeof TooltipPrimitive.Provider>) {\n  return (\n    <TooltipPrimitive.Provider delayDuration={delayDuration} {...props}>\n      {children}\n    </TooltipPrimitive.Provider>\n  );\n}\n\n// --- Tooltip Root ---\nexport function Tooltip({\n  children,\n  ...props\n}: ComponentProps<typeof TooltipPrimitive.Root>) {\n  return (\n    <TooltipPrimitive.Root {...props}>{children}</TooltipPrimitive.Root>\n  );\n}\n\n// --- Tooltip Trigger ---\nexport function TooltipTrigger({\n  children,\n  ...props\n}: ComponentProps<typeof TooltipPrimitive.Trigger>) {\n  return (\n    <TooltipPrimitive.Trigger {...props}>{children}</TooltipPrimitive.Trigger>\n  );\n}\n\n// --- Tooltip Content ---\nexport function TooltipContent({\n  sideOffset = 4,\n  className,\n  children,\n  ...props\n}: ComponentProps<typeof TooltipPrimitive.Content>) {\n  return (\n    <TooltipPrimitive.Portal>\n      <TooltipPrimitive.Content\n        sideOffset={sideOffset}\n        className={cn(\n          \"z-50 overflow-hidden rounded-md bg-foreground px-3 py-1.5 text-xs text-background animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2\",\n          className\n        )}\n        {...props}\n      >\n        {children}\n      </TooltipPrimitive.Content>\n    </TooltipPrimitive.Portal>\n  );\n}\n",
-      "type": "registry:component"
+      "type": "registry:ui"
     }
   ],
   "type": "registry:component"

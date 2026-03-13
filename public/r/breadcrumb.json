@@ -11,9 +11,9 @@
   ],
   "files": [
     {
-      "path": "src/registry/ui/breadcrumb.tsx",
+      "path": "ui/breadcrumb.tsx",
       "content": "import { ChevronRight } from \"lucide-react\";\nimport { type ComponentProps } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\n// --- Breadcrumb ---\nexport function Breadcrumb({\n  className,\n  children,\n  ...props\n}: ComponentProps<\"nav\">) {\n  return (\n    <nav aria-label=\"パンくずリスト\" className={className} {...props}>\n      {children}\n    </nav>\n  );\n}\n\n// --- BreadcrumbList ---\nexport function BreadcrumbList({\n  className,\n  children,\n  ...props\n}: ComponentProps<\"ol\">) {\n  return (\n    <ol\n      className={cn(\n        \"flex flex-wrap items-center gap-1.5 text-sm text-muted-foreground\",\n        className\n      )}\n      {...props}\n    >\n      {children}\n    </ol>\n  );\n}\n\n// --- BreadcrumbItem ---\nexport function BreadcrumbItem({\n  className,\n  children,\n  ...props\n}: ComponentProps<\"li\">) {\n  return (\n    <li\n      className={cn(\"inline-flex items-center gap-1.5\", className)}\n      {...props}\n    >\n      {children}\n    </li>\n  );\n}\n\n// --- BreadcrumbLink ---\nexport function BreadcrumbLink({\n  className,\n  children,\n  ...props\n}: ComponentProps<\"a\">) {\n  return (\n    <a\n      className={cn(\"transition-colors hover:text-foreground\", className)}\n      {...props}\n    >\n      {children}\n    </a>\n  );\n}\n\n// --- BreadcrumbPage ---\nexport function BreadcrumbPage({\n  className,\n  children,\n  ...props\n}: ComponentProps<\"span\">) {\n  return (\n    <span\n      role=\"link\"\n      aria-current=\"page\"\n      aria-disabled=\"true\"\n      className={cn(\"font-medium text-foreground\", className)}\n      {...props}\n    >\n      {children}\n    </span>\n  );\n}\n\n// --- BreadcrumbSeparator ---\nexport function BreadcrumbSeparator({\n  className,\n  children,\n  ...props\n}: ComponentProps<\"li\">) {\n  return (\n    <li\n      role=\"presentation\"\n      aria-hidden=\"true\"\n      className={cn(\"[&>svg]:h-3.5 [&>svg]:w-3.5\", className)}\n      {...props}\n    >\n      {children ?? <ChevronRight />}\n    </li>\n  );\n}\n",
-      "type": "registry:component"
+      "type": "registry:ui"
     }
   ],
   "type": "registry:component"

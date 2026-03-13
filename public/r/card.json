@@ -8,9 +8,9 @@
   ],
   "files": [
     {
-      "path": "src/registry/ui/card.tsx",
+      "path": "ui/card.tsx",
       "content": "import { type ComponentProps } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ntype DivProps = ComponentProps<\"div\">;\n\nexport function Card({ className, ...props }: DivProps) {\n  return (\n    <div\n      className={cn(\"rounded-xl border border-border bg-background shadow-sm\", className)}\n      {...props}\n    />\n  );\n}\n\nexport function CardHeader({ className, ...props }: DivProps) {\n  return (\n    <div\n      className={cn(\"flex flex-col gap-1.5 px-8 pt-8 pb-4\", className)}\n      {...props}\n    />\n  );\n}\n\nexport function CardTitle({ className, ...props }: ComponentProps<\"h3\">) {\n  return (\n    <h3\n      className={cn(\"text-lg font-semibold leading-none tracking-tight\", className)}\n      {...props}\n    />\n  );\n}\n\nexport function CardDescription({ className, ...props }: ComponentProps<\"p\">) {\n  return (\n    <p\n      className={cn(\"text-ui text-muted-foreground\", className)}\n      {...props}\n    />\n  );\n}\n\nexport function CardContent({ className, ...props }: DivProps) {\n  return <div className={cn(\"px-8 pb-6\", className)} {...props} />;\n}\n\nexport function CardFooter({ className, ...props }: DivProps) {\n  return (\n    <div\n      className={cn(\"flex items-center gap-2 px-8 pt-2 pb-8\", className)}\n      {...props}\n    />\n  );\n}\n",
-      "type": "registry:component"
+      "type": "registry:ui"
     }
   ],
   "type": "registry:component"

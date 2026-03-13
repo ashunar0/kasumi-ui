@@ -8,9 +8,9 @@
   ],
   "files": [
     {
-      "path": "src/registry/ui/textarea.tsx",
+      "path": "ui/textarea.tsx",
       "content": "import { type ComponentProps } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ntype TextareaSize = \"md\" | \"lg\";\n\ntype TextareaProps = Omit<ComponentProps<\"textarea\">, \"size\"> & {\n  error?: boolean;\n  size?: TextareaSize;\n};\n\nconst sizeStyles: Record<TextareaSize, string> = {\n  md: \"px-3.5 py-2\",\n  lg: \"px-4 py-2.5\",\n};\n\nexport function Textarea({\n  error,\n  size = \"md\",\n  className,\n  ...props\n}: TextareaProps) {\n  return (\n    <textarea\n      className={cn(\n        \"flex w-full min-h-20 resize-y rounded-lg border bg-background text-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50\",\n        sizeStyles[size],\n        error\n          ? \"border-destructive focus-visible:border-destructive\"\n          : \"border-input focus-visible:border-foreground\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n",
-      "type": "registry:component"
+      "type": "registry:ui"
     }
   ],
   "type": "registry:component"

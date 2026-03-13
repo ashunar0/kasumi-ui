@@ -8,9 +8,9 @@
   ],
   "files": [
     {
-      "path": "src/registry/ui/skeleton.tsx",
+      "path": "ui/skeleton.tsx",
       "content": "import { type ComponentProps } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport function Skeleton({ className, ...props }: ComponentProps<\"div\">) {\n  return (\n    <div\n      className={cn(\"animate-pulse rounded-md bg-muted\", className)}\n      {...props}\n    />\n  );\n}\n",
-      "type": "registry:component"
+      "type": "registry:ui"
     }
   ],
   "type": "registry:component"
