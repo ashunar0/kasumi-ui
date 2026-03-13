@@ -351,6 +351,17 @@
       ]
     },
     {
+      "name": "sheet",
+      "type": "registry:component",
+      "title": "Sheet",
+      "description": "Radix UIベースのスライドインパネル。side: top/bottom/left/right。",
+      "dependencies": ["@radix-ui/react-dialog", "lucide-react"],
+      "registryDependencies": ["utils"],
+      "files": [
+        { "path": "ui/sheet.tsx", "type": "registry:ui" }
+      ]
+    },
+    {
       "name": "tooltip",
       "type": "registry:component",
       "title": "Tooltip",
