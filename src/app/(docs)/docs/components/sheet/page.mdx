@@ -51,7 +51,7 @@ export const sheetProps = [
 ## Installation
 
 <CodeBlock
-  code={`npx shadcn@latest add https://kasumi-ui.vercel.app/r/sheet`}
+  code={`npx shadcn@latest add https://kasumi-ui.vercel.app/r/sheet.json`}
 />
 
 ## Usage
@@ -65,7 +65,9 @@ export const sheetProps = [
       <SheetHeader>
         <SheetTitle>設定</SheetTitle>
       </SheetHeader>
-      <SheetDescription>{"アプリケーションの設定を変更できます。"}</SheetDescription>
+      <SheetDescription>
+        {"アプリケーションの設定を変更できます。"}
+      </SheetDescription>
     </SheetContent>
   </Sheet>
 </ComponentPreview>
@@ -119,7 +121,9 @@ import { Button } from "@/components/ui/button";
         <SheetHeader>
           <SheetTitle>右からスライド</SheetTitle>
         </SheetHeader>
-        <SheetDescription>{"side=\"right\" のシートです（デフォルト）。"}</SheetDescription>
+        <SheetDescription>
+          {'side="right" のシートです（デフォルト）。'}
+        </SheetDescription>
       </SheetContent>
     </Sheet>
     <Sheet>
@@ -172,7 +176,9 @@ import { Button } from "@/components/ui/button";
       <SheetHeader>
         <SheetTitle>プロフィール編集</SheetTitle>
       </SheetHeader>
-      <SheetDescription>{"表示名とメールアドレスを変更できます。"}</SheetDescription>
+      <SheetDescription>
+        {"表示名とメールアドレスを変更できます。"}
+      </SheetDescription>
       <div className="space-y-4 mt-4">
         <div className="space-y-2">
           <Label>表示名</Label>
