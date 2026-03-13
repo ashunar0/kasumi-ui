@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "progress",
+  "title": "Progress",
+  "description": "進捗バー。value propで0〜100指定。",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/progress.tsx",
+      "content": "\"use client\";\n\nimport { type ComponentProps } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport function Progress({\n  value = 0,\n  className,\n  ...props\n}: ComponentProps<\"div\"> & {\n  value?: number;\n}) {\n  return (\n    <div\n      role=\"progressbar\"\n      aria-valuenow={value}\n      aria-valuemin={0}\n      aria-valuemax={100}\n      className={cn(\"h-2 w-full overflow-hidden rounded-full bg-secondary\", className)}\n      {...props}\n    >\n      <div\n        className=\"h-full rounded-full bg-primary transition-all\"\n        style={{ width: `${value}%` }}\n      />\n    </div>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

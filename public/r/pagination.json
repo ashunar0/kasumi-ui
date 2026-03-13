@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pagination",
+  "title": "Pagination",
+  "description": "ページ番号型ページネーション。",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/pagination.tsx",
+      "content": "import { type ComponentProps } from \"react\";\nimport { ChevronLeft, ChevronRight, MoreHorizontal } from \"lucide-react\";\nimport { cn } from \"@/lib/utils\";\n\n// --- Pagination ---\nexport function Pagination({ className, ...props }: ComponentProps<\"nav\">) {\n  return (\n    <nav\n      role=\"navigation\"\n      aria-label=\"ページネーション\"\n      className={cn(\"mx-auto flex w-full justify-center\", className)}\n      {...props}\n    />\n  );\n}\n\n// --- PaginationContent ---\nexport function PaginationContent({\n  className,\n  ...props\n}: ComponentProps<\"ul\">) {\n  return (\n    <ul\n      className={cn(\"flex flex-row items-center gap-1\", className)}\n      {...props}\n    />\n  );\n}\n\n// --- PaginationItem ---\nexport function PaginationItem({\n  className,\n  ...props\n}: ComponentProps<\"li\">) {\n  return <li className={cn(\"\", className)} {...props} />;\n}\n\n// --- PaginationLink ---\ntype PaginationLinkProps = ComponentProps<\"button\"> & {\n  isActive?: boolean;\n};\n\nexport function PaginationLink({\n  className,\n  isActive,\n  ...props\n}: PaginationLinkProps) {\n  return (\n    <button\n      aria-current={isActive ? \"page\" : undefined}\n      className={cn(\n        \"inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-md text-sm font-medium transition-colors\",\n        \"hover:bg-accent hover:text-accent-foreground\",\n        \"focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2\",\n        \"disabled:pointer-events-none disabled:opacity-50\",\n        isActive && \"bg-primary text-primary-foreground\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\n// --- PaginationPrevious ---\nexport function PaginationPrevious({\n  className,\n  ...props\n}: ComponentProps<typeof PaginationLink>) {\n  return (\n    <PaginationLink\n      aria-label=\"前のページへ\"\n      className={cn(\"w-auto gap-1 px-2.5\", className)}\n      {...props}\n    >\n      <ChevronLeft className=\"h-4 w-4\" />\n      <span>前へ</span>\n    </PaginationLink>\n  );\n}\n\n// --- PaginationNext ---\nexport function PaginationNext({\n  className,\n  ...props\n}: ComponentProps<typeof PaginationLink>) {\n  return (\n    <PaginationLink\n      aria-label=\"次のページへ\"\n      className={cn(\"w-auto gap-1 px-2.5\", className)}\n      {...props}\n    >\n      <span>次へ</span>\n      <ChevronRight className=\"h-4 w-4\" />\n    </PaginationLink>\n  );\n}\n\n// --- PaginationEllipsis ---\nexport function PaginationEllipsis({\n  className,\n  ...props\n}: ComponentProps<\"span\">) {\n  return (\n    <span\n      aria-hidden\n      className={cn(\n        \"flex h-9 w-9 items-center justify-center\",\n        className\n      )}\n      {...props}\n    >\n      <MoreHorizontal className=\"h-4 w-4\" />\n      <span className=\"sr-only\">その他のページ</span>\n    </span>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

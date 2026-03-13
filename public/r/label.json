@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "label",
+  "title": "Label",
+  "description": "peer-disabled連動のラベル。",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/label.tsx",
+      "content": "import { type ComponentProps } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ntype LabelProps = ComponentProps<\"label\">;\n\nexport function Label({ className, ...props }: LabelProps) {\n  return (\n    <label\n      className={cn(\"text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70\", className)}\n      {...props}\n    />\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

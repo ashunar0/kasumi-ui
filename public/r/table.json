@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "table",
+  "title": "Table",
+  "description": "横スクロール対応のテーブル。",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/table.tsx",
+      "content": "import { type ComponentProps } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\n// --- Table ---\nexport function Table({ className, ...props }: ComponentProps<\"table\">) {\n  return (\n    <div className=\"relative w-full overflow-auto\">\n      <table\n        className={cn(\"w-full caption-bottom text-sm\", className)}\n        {...props}\n      />\n    </div>\n  );\n}\n\n// --- TableHeader ---\nexport function TableHeader({\n  className,\n  ...props\n}: ComponentProps<\"thead\">) {\n  return (\n    <thead className={cn(\"[&_tr]:border-b [&_tr]:border-border\", className)} {...props} />\n  );\n}\n\n// --- TableBody ---\nexport function TableBody({\n  className,\n  ...props\n}: ComponentProps<\"tbody\">) {\n  return (\n    <tbody\n      className={cn(\"[&_tr:last-child]:border-0\", className)}\n      {...props}\n    />\n  );\n}\n\n// --- TableFooter ---\nexport function TableFooter({\n  className,\n  ...props\n}: ComponentProps<\"tfoot\">) {\n  return (\n    <tfoot\n      className={cn(\n        \"border-t border-border bg-muted/50 font-medium [&>tr:last-child]:border-b-0\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\n// --- TableRow ---\nexport function TableRow({ className, ...props }: ComponentProps<\"tr\">) {\n  return (\n    <tr\n      className={cn(\n        \"border-b border-border transition-colors hover:bg-muted/50 data-[state=selected]:bg-muted\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\n// --- TableHead ---\nexport function TableHead({\n  className,\n  ...props\n}: ComponentProps<\"th\">) {\n  return (\n    <th\n      className={cn(\n        \"h-10 px-3 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\n// --- TableCell ---\nexport function TableCell({\n  className,\n  ...props\n}: ComponentProps<\"td\">) {\n  return (\n    <td\n      className={cn(\n        \"p-3 align-middle [&:has([role=checkbox])]:pr-0\",\n        className\n      )}\n      {...props}\n    />\n  );\n}\n\n// --- TableCaption ---\nexport function TableCaption({\n  className,\n  ...props\n}: ComponentProps<\"caption\">) {\n  return (\n    <caption\n      className={cn(\"mt-4 text-sm text-muted-foreground\", className)}\n      {...props}\n    />\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

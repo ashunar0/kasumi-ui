@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "button",
+  "title": "Button",
+  "description": "variant: primary/secondary/ghost/outline/destructive、size: sm/md/lg。",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/button.tsx",
+      "content": "import { cloneElement, isValidElement, type ComponentProps, type ReactElement } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ntype ButtonVariant =\n  | \"primary\"\n  | \"secondary\"\n  | \"ghost\"\n  | \"outline\"\n  | \"destructive\";\ntype ButtonSize = \"sm\" | \"md\" | \"lg\";\n\ntype ButtonProps = ComponentProps<\"button\"> & {\n  variant?: ButtonVariant;\n  size?: ButtonSize;\n  asChild?: boolean;\n};\n\nconst variantStyles: Record<ButtonVariant, string> = {\n  primary: \"bg-primary text-primary-foreground hover:bg-primary/90\",\n  secondary: \"bg-secondary text-secondary-foreground hover:bg-secondary/80\",\n  ghost: \"hover:bg-accent hover:text-accent-foreground\",\n  outline:\n    \"border border-border bg-background hover:bg-accent hover:text-accent-foreground\",\n  destructive:\n    \"bg-destructive text-destructive-foreground hover:bg-destructive/90\",\n};\n\nconst sizeStyles: Record<ButtonSize, string> = {\n  sm: \"h-9 px-3 text-sm rounded-md\",\n  md: \"h-10 px-5 min-w-[80px] text-sm rounded-lg\",\n  lg: \"h-11 px-5 min-w-[80px] text-sm rounded-lg\",\n};\n\nconst baseStyles =\n  \"cursor-pointer inline-flex items-center justify-center font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50\";\n\nexport function Button({\n  variant = \"primary\",\n  size = \"md\",\n  asChild,\n  className,\n  children,\n  ...props\n}: ButtonProps) {\n  const styles = cn(baseStyles, variantStyles[variant], sizeStyles[size], className);\n\n  if (asChild && isValidElement(children)) {\n    return cloneElement(children as ReactElement<Record<string, unknown>>, {\n      className: cn(styles, (children.props as { className?: string }).className),\n    });\n  }\n\n  return (\n    <button className={styles} {...props}>\n      {children}\n    </button>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

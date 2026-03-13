@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "checkbox",
+  "title": "Checkbox",
+  "description": "size: sm/md/lg、error状態対応。",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/checkbox.tsx",
+      "content": "import { Check } from \"lucide-react\";\nimport { type ComponentProps } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ntype CheckboxSize = \"sm\" | \"md\" | \"lg\";\n\ntype CheckboxProps = Omit<ComponentProps<\"input\">, \"size\" | \"type\"> & {\n  error?: boolean;\n  size?: CheckboxSize;\n};\n\nconst sizeStyles: Record<CheckboxSize, string> = {\n  sm: \"h-4 w-4 rounded\",\n  md: \"h-[18px] w-[18px] rounded\",\n  lg: \"h-5 w-5 rounded-md\",\n};\n\nexport function Checkbox({\n  error,\n  size = \"md\",\n  className,\n  ...props\n}: CheckboxProps) {\n  return (\n    <span className=\"relative inline-flex\">\n      <input\n        type=\"checkbox\"\n        className={cn(\n          \"peer appearance-none cursor-pointer border bg-transparent transition-colors checked:bg-primary checked:border-primary focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50\",\n          sizeStyles[size],\n          error\n            ? \"border-destructive focus-visible:border-destructive\"\n            : \"border-input focus-visible:border-foreground\",\n          className\n        )}\n        {...props}\n      />\n      <Check\n        size=\"100%\"\n        strokeWidth={3}\n        className=\"pointer-events-none absolute inset-0 hidden p-[2px] text-primary-foreground peer-checked:block\"\n      />\n    </span>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

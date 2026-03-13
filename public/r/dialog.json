@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "dialog",
+  "title": "Dialog",
+  "description": "Radix UIベースのダイアログ。フォーカストラップ・Escapeキー対応。",
+  "dependencies": [
+    "@radix-ui/react-dialog",
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/dialog.tsx",
+      "content": "\"use client\";\n\nimport * as DialogPrimitive from \"@radix-ui/react-dialog\";\nimport { X } from \"lucide-react\";\nimport { type ComponentProps } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\n// --- Dialog Root ---\nexport function Dialog({\n  children,\n  ...props\n}: ComponentProps<typeof DialogPrimitive.Root>) {\n  return <DialogPrimitive.Root {...props}>{children}</DialogPrimitive.Root>;\n}\n\n// --- Dialog Trigger ---\nexport function DialogTrigger({\n  children,\n  ...props\n}: ComponentProps<typeof DialogPrimitive.Trigger>) {\n  return (\n    <DialogPrimitive.Trigger {...props}>{children}</DialogPrimitive.Trigger>\n  );\n}\n\n// --- Dialog Content (Portal + Overlay + Content + Close button) ---\nexport function DialogContent({\n  className,\n  children,\n  ...props\n}: ComponentProps<typeof DialogPrimitive.Content>) {\n  return (\n    <DialogPrimitive.Portal>\n      <DialogPrimitive.Overlay className=\"fixed inset-0 z-50 bg-black/50 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 duration-200\" />\n      <DialogPrimitive.Content\n        className={cn(\n          \"fixed left-1/2 top-1/2 z-50 w-full max-w-lg -translate-x-1/2 -translate-y-1/2 rounded-xl border border-border bg-background p-6 shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 duration-200\",\n          className\n        )}\n        {...props}\n      >\n        {children}\n        <DialogPrimitive.Close className=\"absolute right-6 top-7 rounded-sm opacity-70 transition-opacity hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring\">\n          <X size={16} />\n          <span className=\"sr-only\">閉じる</span>\n        </DialogPrimitive.Close>\n      </DialogPrimitive.Content>\n    </DialogPrimitive.Portal>\n  );\n}\n\n// --- Dialog Header (layout div) ---\nexport function DialogHeader({\n  className,\n  children,\n  ...props\n}: ComponentProps<\"div\">) {\n  return (\n    <div className={cn(\"flex flex-col gap-1.5\", className)} {...props}>\n      {children}\n    </div>\n  );\n}\n\n// --- Dialog Title ---\nexport function DialogTitle({\n  className,\n  children,\n  ...props\n}: ComponentProps<typeof DialogPrimitive.Title>) {\n  return (\n    <DialogPrimitive.Title\n      className={cn(\"text-lg font-semibold\", className)}\n      {...props}\n    >\n      {children}\n    </DialogPrimitive.Title>\n  );\n}\n\n// --- Dialog Description ---\nexport function DialogDescription({\n  className,\n  children,\n  ...props\n}: ComponentProps<typeof DialogPrimitive.Description>) {\n  return (\n    <DialogPrimitive.Description\n      className={cn(\"text-sm text-muted-foreground my-4\", className)}\n      {...props}\n    >\n      {children}\n    </DialogPrimitive.Description>\n  );\n}\n\n// --- Dialog Footer (layout div) ---\nexport function DialogFooter({\n  className,\n  children,\n  ...props\n}: ComponentProps<\"div\">) {\n  return (\n    <div className={cn(\"mt-6 flex justify-end gap-2\", className)} {...props}>\n      {children}\n    </div>\n  );\n}\n\n// --- Dialog Close ---\nexport function DialogClose({\n  children,\n  ...props\n}: ComponentProps<typeof DialogPrimitive.Close>) {\n  return <DialogPrimitive.Close {...props}>{children}</DialogPrimitive.Close>;\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

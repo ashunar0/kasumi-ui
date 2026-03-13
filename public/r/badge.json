@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "badge",
+  "title": "Badge",
+  "description": "variant: default/outline、size: sm/md。",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/badge.tsx",
+      "content": "import { type ComponentProps } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ntype BadgeVariant = \"default\" | \"outline\";\ntype BadgeSize = \"sm\" | \"md\";\n\ntype BadgeProps = ComponentProps<\"span\"> & {\n  variant?: BadgeVariant;\n  size?: BadgeSize;\n};\n\nconst variantStyles: Record<BadgeVariant, string> = {\n  default: \"bg-primary text-primary-foreground\",\n  outline: \"border border-border text-foreground\",\n};\n\nconst sizeStyles: Record<BadgeSize, string> = {\n  sm: \"text-xs px-2 py-0.5 rounded-md\",\n  md: \"text-sm px-3 py-1 rounded-md\",\n};\n\nexport function Badge({\n  variant = \"default\",\n  size = \"md\",\n  className,\n  children,\n  ...props\n}: BadgeProps) {\n  return (\n    <span\n      className={cn(\"inline-flex items-center font-medium\", variantStyles[variant], sizeStyles[size], className)}\n      {...props}\n    >\n      {children}\n    </span>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

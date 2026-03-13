@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "avatar",
+  "title": "Avatar",
+  "description": "size: sm/md/lg。画像エラー時フォールバック対応。",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/avatar.tsx",
+      "content": "\"use client\";\n\nimport { User } from \"lucide-react\";\nimport { type ComponentProps, useState } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\n// --- Size styles ---\n\ntype AvatarSize = \"sm\" | \"md\" | \"lg\";\n\nconst sizeClasses: Record<AvatarSize, string> = {\n  sm: \"h-8 w-8\",\n  md: \"h-10 w-10\",\n  lg: \"h-12 w-12\",\n};\n\nconst iconSizes: Record<AvatarSize, number> = {\n  sm: 14,\n  md: 18,\n  lg: 22,\n};\n\n// --- Avatar ---\nexport function Avatar({\n  size = \"md\",\n  className,\n  children,\n  ...props\n}: ComponentProps<\"div\"> & {\n  size?: AvatarSize;\n}) {\n  return (\n    <div\n      className={cn(\n        \"relative inline-flex shrink-0 items-center justify-center overflow-hidden rounded-full bg-muted\",\n        sizeClasses[size],\n        className\n      )}\n      data-size={size}\n      {...props}\n    >\n      {children ?? <User size={iconSizes[size]} className=\"text-muted-foreground\" />}\n    </div>\n  );\n}\n\n// --- AvatarImage ---\nexport function AvatarImage({\n  className,\n  onError,\n  ...props\n}: ComponentProps<\"img\">) {\n  const [hasError, setHasError] = useState(false);\n\n  if (hasError) return null;\n\n  return (\n    <img\n      className={cn(\"h-full w-full object-cover\", className)}\n      onError={(e) => {\n        setHasError(true);\n        onError?.(e);\n      }}\n      {...props}\n    />\n  );\n}\n\n// --- AvatarFallback ---\nexport function AvatarFallback({\n  className,\n  children,\n  ...props\n}: ComponentProps<\"span\">) {\n  return (\n    <span\n      className={cn(\n        \"absolute inset-0 flex items-center justify-center text-sm font-medium text-muted-foreground\",\n        className\n      )}\n      {...props}\n    >\n      {children}\n    </span>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}

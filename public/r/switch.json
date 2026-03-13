@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "switch",
+  "title": "Switch",
+  "description": "size: sm/md/lg、error状態対応。",
+  "registryDependencies": [
+    "utils"
+  ],
+  "files": [
+    {
+      "path": "src/registry/ui/switch.tsx",
+      "content": "import { type ComponentProps } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\ntype SwitchSize = \"sm\" | \"md\" | \"lg\";\n\ntype SwitchProps = Omit<ComponentProps<\"input\">, \"size\" | \"type\" | \"role\"> & {\n  error?: boolean;\n  size?: SwitchSize;\n};\n\nconst sizeStyles: Record<\n  SwitchSize,\n  { track: string; thumb: string; translate: string }\n> = {\n  sm: {\n    track: \"h-4 w-7\",\n    thumb: \"h-3 w-3\",\n    translate: \"peer-checked:translate-x-3\",\n  },\n  md: {\n    track: \"h-5 w-9\",\n    thumb: \"h-4 w-4\",\n    translate: \"peer-checked:translate-x-4\",\n  },\n  lg: {\n    track: \"h-6 w-11\",\n    thumb: \"h-5 w-5\",\n    translate: \"peer-checked:translate-x-5\",\n  },\n};\n\nexport function Switch({\n  error,\n  size = \"md\",\n  className,\n  ...props\n}: SwitchProps) {\n  const s = sizeStyles[size];\n  return (\n    <span className=\"relative inline-flex\">\n      <input\n        type=\"checkbox\"\n        role=\"switch\"\n        className={cn(\n          \"peer appearance-none cursor-pointer rounded-full border bg-switch-track transition-colors checked:bg-primary checked:border-primary focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50\",\n          s.track,\n          error\n            ? \"border-destructive focus-visible:border-destructive\"\n            : \"border-switch-track focus-visible:border-foreground\",\n          className\n        )}\n        {...props}\n      />\n      <span\n        className={`pointer-events-none absolute top-1/2 left-0.5 -translate-y-1/2 rounded-full bg-switch-thumb peer-checked:bg-primary-foreground transition-all ${s.translate} ${s.thumb}`}\n      />\n    </span>\n  );\n}\n",
+      "type": "registry:component"
+    }
+  ],
+  "type": "registry:component"
+}
