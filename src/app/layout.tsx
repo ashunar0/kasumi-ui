@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { ToastProvider } from "@/components/ui/toast";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const shipporiMincho = Shippori_Mincho({
@@ -41,6 +42,7 @@ export default function RootLayout({
           <SiteHeader />
           <ToastProvider>{children}</ToastProvider>
           <SiteFooter />
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
